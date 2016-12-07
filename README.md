@@ -15,12 +15,12 @@ pip install -r requirements.txt
 ``` 
 
 ## The snippets...
+Here we have the Jupyter (Python) Notebook __Machine Learning Snippets__.
 
-
-- [Supervised learning](supervised)
+- __Supervised learning__
     - Classification
         - [Text Binary Classification (scikit-learn)](supervised/text_binary_classification) - Binary classification with Naive Bayes (scikit-learn)
-    - Regression
-- Unsupervised learning
-    - Clustering
-- Dimension reduction
+    - Regression (tbd)
+- __Unsupervised learning__ (tbd)
+    - Clustering (tbd)
+- Dimension reduction (tbd)
