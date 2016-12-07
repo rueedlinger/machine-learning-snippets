@@ -15,4 +15,12 @@ pip install -r requirements.txt
 ``` 
 
 ## The snippets...
-tbd
+
+
+- [Supervised learning](supervised)
+    - Classification
+        - [Text Binary Classification (scikit-learn)](supervised/text_binary_classification) - Binary classification with Naive Bayes (scikit-learn)
+    - Regression
+- Unsupervised learning
+    - Clustering
+- Dimension reduction
