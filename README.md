@@ -19,7 +19,7 @@ Here we have the Jupyter (Python) Notebook __Machine Learning Snippets__.
 
 - __Supervised learning__
     - Classification
-        - [Text Binary Classification (scikit-learn)](supervised/text_binary_classification) - Binary classification with Naive Bayes (scikit-learn)
+        - [Text Classification (scikit-learn)](supervised/text_classification) - Classification with Naive Bayes (scikit-learn)
     - Regression (tbd)
 - __Unsupervised learning__ (tbd)
     - Clustering (tbd)
