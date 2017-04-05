@@ -26,7 +26,7 @@ Here we have the Jupyter (Python) Notebook __Machine Learning Snippets__.
 - Dimension reduction
     - linear
         - [PCA](unsupervised/pca/dimensionality_reduction_pca.ipynb)
-    - nonlinear
+    - nonlinear (Manifold learning)
         - [MDS](unsupervised/mds/dimensionality_reduction_mds.ipynb)
         - [Isomap](unsupervised/isomap/dimensionality_reduction_isomap.ipynb)
         - [t-SNE](unsupervised/tsne/dimensionality_reduction_tsne.ipynb)
