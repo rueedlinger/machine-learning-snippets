@@ -23,4 +23,10 @@ Here we have the Jupyter (Python) Notebook __Machine Learning Snippets__.
     - Regression (tbd)
 - __Unsupervised learning__ (tbd)
     - Clustering (tbd)
-- Dimension reduction (tbd)
+- Dimension reduction
+    - linear
+        - [PCA](unsupervised/pca/dimensionality_reduction_pca.ipynb)
+    - nonlinear
+        - [MDS](unsupervised/mds/dimensionality_reduction_mds.ipynb)
+        - [Isomap](unsupervised/isomap/dimensionality_reduction_isomap.ipynb)
+        - [t-SNE](unsupervised/tsne/dimensionality_reduction_tsne.ipynb)
