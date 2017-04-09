@@ -25,7 +25,8 @@ Here we have the Jupyter (Python) Notebook __Machine Learning Snippets__.
     - Clustering (tbd)
 - Dimension reduction
     - linear
-        - [PCA](unsupervised/pca/dimensionality_reduction_pca.ipynb)
+        - [PCA with SVD](unsupervised/pca/dimensionality_reduction_pca.ipynb)
+        - [PCA with Eigenvector and Correlation Matrix](unsupervised/eigen/dimensionality_reduction_eigen.ipynb)
     - nonlinear (Manifold learning)
         - [MDS](unsupervised/mds/dimensionality_reduction_mds.ipynb)
         - [Isomap](unsupervised/isomap/dimensionality_reduction_isomap.ipynb)
