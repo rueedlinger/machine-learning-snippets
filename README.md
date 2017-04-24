@@ -43,7 +43,8 @@ Here we have the Jupyter (Python) Notebook __Machine Learning Snippets__.
     - Regression (tbd)
 - __Unsupervised learning__ (tbd)
     - Clustering
-        - [K-means](unsupervised/clustering/kmeans/clustering_kmeans.ipynb)
+        - [K-means](unsupervised/clustering/kmeans/clustering_kmeans.ipynb) (scikit-learn)
+        - [MeanShift](unsupervised/clustering/meanshift/clustering_meanshift.ipynb) (scikit-learn)
 - Dimension reduction
     - linear
         - [PCA with SVD](unsupervised/dimensionality_reduction/pca/dimensionality_reduction_pca.ipynb) (scikit-learn)
