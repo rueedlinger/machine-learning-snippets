@@ -46,6 +46,10 @@ Here we have the Jupyter (Python) Notebook __Machine Learning Snippets__.
         - [K-means](unsupervised/clustering/kmeans/clustering_kmeans.ipynb) (scikit-learn)
         - [MeanShift](unsupervised/clustering/meanshift/clustering_meanshift.ipynb) (scikit-learn)
         - [DBSCAN](unsupervised/clustering/dbscan/clustering_dbscan.ipynb) (scikit-learn)
+        - [Agglomerative Clustering (Hierarchical Clustering)](unsupervised/clustering/agglomerative/clustering_agglomerative.ipynb) (scikit-learn)
+        - [Hierarchical Clustering](unsupervised/clustering/hclust/clustering_hclust.ipynb) (SciPy)
+    - Clustering Text
+        - tbd
 - Dimension reduction
     - linear
         - [PCA with SVD](unsupervised/dimensionality_reduction/pca/dimensionality_reduction_pca.ipynb) (scikit-learn)
