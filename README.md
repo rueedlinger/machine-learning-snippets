@@ -3,7 +3,7 @@ These __Machine Learning Snippets__ are tested with Python 3.5.x. (http://conda.
 
 ## Get started...
 To get started create a virtual environment and install the required packages. 
-The following example shows how to crate an environment with _conda_ and Python 3.5 with
+The following example shows how to create an environment with Python 3.5 and 
 the required packages.
 
 
@@ -13,7 +13,7 @@ _"virtualenv"_ (https://virtualenv.pypa.io/)
 and Python 3.5 with the required packages.
 
 ```bash
-virtualenv --python=/usr/bin/python3.5 py35-ps
+virtualenv --python=/usr/bin/python3.5 py35-ml
 
 source py35-ps/bin/activate
 
@@ -26,9 +26,9 @@ The following example shows how to create an environment with _"conda"_
 the required packages.
 
 ```bash
-conda create -n py35-ps python=3.5
+conda create -n py35-ml python=3.5
 
-source activate py35-ps
+source activate py35-ml
 
 pip install -r requirements.txt
 ``` 
@@ -47,6 +47,7 @@ Here we have the Jupyter (Python) Notebook __Machine Learning Snippets__.
         - [MeanShift](unsupervised/clustering/meanshift/clustering_meanshift.ipynb) (scikit-learn)
         - [DBSCAN](unsupervised/clustering/dbscan/clustering_dbscan.ipynb) (scikit-learn)
         - [Agglomerative Clustering (Hierarchical Clustering)](unsupervised/clustering/agglomerative/clustering_agglomerative.ipynb) (scikit-learn)
+        - [Gaussian Mixture Model](unsupervised/clustering/gaussian_mixture/clustering_gaussian_mixture.ipynb) (scikit-learn)
         - [Hierarchical Clustering](unsupervised/clustering/hclust/clustering_hclust.ipynb) (SciPy)
     - Clustering Text
         - tbd
