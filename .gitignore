@@ -90,3 +90,6 @@ ENV/
 
 # Mac files
 .DS_Store
+
+# markdown output directory
+out/
