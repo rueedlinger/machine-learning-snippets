@@ -42,20 +42,21 @@ Here we have the Jupyter (Python) Notebook __Machine Learning Snippets__.
         - [Text Classification with Naive Bayes](supervised/text_classification) (scikit-learn)
     - Regression (tbd)
 - __Unsupervised learning__ 
-    - [Clustering basics and model evaluation](unsupervised/clustering/clustering_basics_model_evaluation.ipynb) (scikit-learn)
-        - Centroid-based clustering
-            - [K-means](unsupervised/clustering/kmeans/clustering_kmeans.ipynb) (scikit-learn)
-        - Density-based clustering
-            - [MeanShift](unsupervised/clustering/meanshift/clustering_meanshift.ipynb) (scikit-learn)
-            - [DBSCAN](unsupervised/clustering/dbscan/clustering_dbscan.ipynb) (scikit-learn)
-        - Connectivity based clustering
-            - [Agglomerative Clustering (Hierarchical Clustering)](unsupervised/clustering/agglomerative/clustering_agglomerative.ipynb) (scikit-learn)
-            - [Hierarchical Clustering](unsupervised/clustering/hclust/clustering_hclust.ipynb) (SciPy)
-        - Distribution-based clustering
-            - [Gaussian Mixture Model](unsupervised/clustering/gaussian_mixture/clustering_gaussian_mixture.ipynb) (scikit-learn)
+    - Examples
+        - [Clustering Basics and Model Evaluation](unsupervised/clustering/clustering_basics_model_evaluation.ipynb) (scikit-learn)
+        - [Text Clustering Basics](unsupervised/clustering/clustering_text.ipynb) (scikit-learn)
+    - Centroid-based clustering
+        - [K-means](unsupervised/clustering/kmeans/clustering_kmeans.ipynb) (scikit-learn)
+    - Density-based clustering
+        - [MeanShift](unsupervised/clustering/meanshift/clustering_meanshift.ipynb) (scikit-learn)
+        - [DBSCAN](unsupervised/clustering/dbscan/clustering_dbscan.ipynb) (scikit-learn)
+    - Connectivity based clustering
+        - [Agglomerative Clustering (Hierarchical Clustering)](unsupervised/clustering/agglomerative/clustering_agglomerative.ipynb) (scikit-learn)
+        - [Hierarchical Clustering](unsupervised/clustering/hclust/clustering_hclust.ipynb) (SciPy)
+    - Distribution-based clustering
+        - [Gaussian Mixture Model](unsupervised/clustering/gaussian_mixture/clustering_gaussian_mixture.ipynb) (scikit-learn)
         
-    - Clustering Text
-        - tbd
+       
 - Dimension reduction
     - linear
         - [PCA with SVD](unsupervised/dimensionality_reduction/pca/dimensionality_reduction_pca.ipynb) (scikit-learn)
