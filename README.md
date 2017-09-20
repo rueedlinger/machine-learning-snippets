@@ -40,7 +40,9 @@ Here we have the Jupyter (Python) Notebook __Machine Learning Snippets__.
 - __Supervised learning__
     - Classification
         - [Text Classification with Naive Bayes](supervised/text_classification) (scikit-learn)
-    - Regression (tbd)
+    - Regression
+        - [Multiple Linear Regression with sklearn](supervised/linear_regression/multiple_linear_regression_sklearn.ipynb) (scikit-learn)
+        - [Multiple Linear Regression with statsmodels](supervised/linear_regression/multiple_linear_regression_statsmodels.ipynb) (statsmodels)
 - __Unsupervised learning__ 
     - Examples
         - [Clustering Basics and Model Evaluation](unsupervised/clustering/clustering_basics_model_evaluation.ipynb) (scikit-learn)
