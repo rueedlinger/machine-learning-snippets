@@ -1,69 +1,101 @@
-# Python Machine Learning Snippets
-These __Machine Learning Snippets__ are tested with Python 3.5.x. (http://conda.pydata.org/)
+#  Python Machine Learning Snippets
+_Python Machine Learning Snippets (pymls)_ is an ongoing project. This project contains various machine learning 
+examples as Jupyter Notebooks with scikit-learn, statsmodel, numpy and other libraries.
+The examples are tested with Python 3.6.x.
 
 ## Get started...
-To get started create a virtual environment and install the required packages. 
-The following example shows how to create an environment with Python 3.5 and 
-the required packages.
+To get started you can choose one of the these approaches:
 
+- create a virtual environment with _virtualenv_ and install the required packages with _pip_
+- create a new conda environment and install the packges with _conda install_ 
+- use the docker image _rueedlinger/pyml_ (https://github.com/rueedlinger/docker-pyml) which has all 
+required packages already installed.
 
 ### Virtualenv
-The following example shows how to create an environment with 
-_"virtualenv"_ (https://virtualenv.pypa.io/)
-and Python 3.5 with the required packages.
+The next example shows how to create an environment with "virtualenv" (https://virtualenv.pypa.io/) 
+and install the required packages.
 
 ```bash
-virtualenv --python=/usr/bin/python3.5 py35-ml
+virtualenv --python=/usr/bin/python3.6 py36-ml
 
-source py35-ps/bin/activate
+source py36-ml/bin/activate
 
 pip install -r requirements.txt
 ``` 
 
 ### Conda
-The following example shows how to create an environment with _"conda"_ 
-(http://conda.pydata.org/) and Python 3.5 with
-the required packages.
+Another aproach is to create an environment with _conda_ 
+(http://conda.pydata.org/) and the required packages.
 
 ```bash
-conda create -n py35-ml python=3.5
+conda create -n py36-ml python=3.6
 
-source activate py35-ml
+source activate py36-ml
 
 pip install -r requirements.txt
 ``` 
 
+### Docker
+tbd
+
+```bash
+git clone https://github.com/rueedlinger/machine-learning-snippets.git
+```
+
+You can just start the Docker image with the following command.
+
+```bash
+docker run -v /path/to/notebooks:/notebooks -p8888:8888 -it rueedlinger/pyml:0.3
+```
+
+> With the _-v_ flag you can specify where the volume is mounted on your local machine. This should 
+> point to the location where the notebooks are stored. The Juypter Notebook is running on port 8888. 
+> To change the port mapping to the container you can us the -p. To use the latest image you can change 
+> the tag _0.3_ to _latest_.
+
+
+Or use the bash script _run-docker.sh_ with linux or mac which will start the Jupyter notebook and mount the voulme _'/notebook'_.
+
+    ./run-docker.sh
+    
+Next you shoud see the following output in the command line.
+
+        Copy/paste this URL into your browser when you connect for the first time,
+        to login with a token:
+            http://localhost:8888/?token=e00b3199838bcc3f15a3227fd52752eec4992ad8111d1b57
+
+To connect to the Jupyter Notebook you have to copy/paste this URL into your browser.
 
 ## The snippets...
-Here we have the Jupyter (Python) Notebook __Machine Learning Snippets__.
+At the moment there are the following machine learning snippets available as Jupyter (Python) Notebook.
 
 - __Supervised learning__
     - Classification
-        - [Text Classification with Naive Bayes](supervised/text_classification) (scikit-learn)
+        - [Text Classification with Naive Bayes](notebooks/supervised/text_classification) (scikit-learn)
     - Regression
-        - [Multiple Linear Regression with sklearn](supervised/linear_regression/multiple_linear_regression_sklearn.ipynb) (scikit-learn)
-        - [Multiple Linear Regression with statsmodels](supervised/linear_regression/multiple_linear_regression_statsmodels.ipynb) (statsmodels)
+        - [Multiple Linear Regression with sklearn](notebooks/supervised/linear_regression/multiple_linear_regression_sklearn.ipynb) (scikit-learn)
+        - [Multiple Linear Regression with statsmodels](notebooks/supervised/linear_regression/multiple_linear_regression_statsmodels.ipynb) (statsmodels)
 - __Unsupervised learning__ 
     - Examples
-        - [Clustering Basics and Model Evaluation](unsupervised/clustering/clustering_basics_model_evaluation.ipynb) (scikit-learn)
-        - [Text Clustering Basics](unsupervised/clustering/clustering_text.ipynb) (scikit-learn)
+        - [Clustering Basics and Model Evaluation](notebooks/unsupervised/clustering/clustering_basics_model_evaluation.ipynb) (scikit-learn)
+        - [Text Clustering Basics](notebooks/unsupervised/clustering/clustering_text.ipynb) (scikit-learn)
     - Centroid-based clustering
-        - [K-means](unsupervised/clustering/kmeans/clustering_kmeans.ipynb) (scikit-learn)
+        - [K-means](notebooks/unsupervised/clustering/kmeans/clustering_kmeans.ipynb) (scikit-learn)
     - Density-based clustering
-        - [MeanShift](unsupervised/clustering/meanshift/clustering_meanshift.ipynb) (scikit-learn)
-        - [DBSCAN](unsupervised/clustering/dbscan/clustering_dbscan.ipynb) (scikit-learn)
+        - [MeanShift](notebooks/unsupervised/clustering/meanshift/clustering_meanshift.ipynb) (scikit-learn)
+        - [DBSCAN](notebooks/unsupervised/clustering/dbscan/clustering_dbscan.ipynb) (scikit-learn)
     - Connectivity based clustering
-        - [Agglomerative Clustering (Hierarchical Clustering)](unsupervised/clustering/agglomerative/clustering_agglomerative.ipynb) (scikit-learn)
-        - [Hierarchical Clustering](unsupervised/clustering/hclust/clustering_hclust.ipynb) (SciPy)
+        - [Agglomerative Clustering (Hierarchical Clustering)](notebooks/unsupervised/clustering/agglomerative/clustering_agglomerative.ipynb) (scikit-learn)
+        - [Hierarchical Clustering](notebooks/unsupervised/clustering/hclust/clustering_hclust.ipynb) (SciPy)
     - Distribution-based clustering
-        - [Gaussian Mixture Model](unsupervised/clustering/gaussian_mixture/clustering_gaussian_mixture.ipynb) (scikit-learn)
+        - [Gaussian Mixture Model](notebooks/unsupervised/clustering/gaussian_mixture/clustering_gaussian_mixture.ipynb) (scikit-learn)
         
        
 - Dimension reduction
     - linear
-        - [PCA with SVD](unsupervised/dimensionality_reduction/pca/dimensionality_reduction_pca.ipynb) (scikit-learn)
-        - [PCA with Eigenvector and Correlation Matrix](unsupervised/dimensionality_reduction/eigen/dimensionality_reduction_eigen.ipynb) (numpy)
+        - [PCA with SVD](notebooks/unsupervised/dimensionality_reduction/pca/dimensionality_reduction_pca.ipynb) (scikit-learn)
+        - [PCA with Eigenvector and Correlation Matrix](notebooks/unsupervised/dimensionality_reduction/eigen/dimensionality_reduction_eigen.ipynb) (numpy)
     - nonlinear (Manifold learning)
-        - [MDS](unsupervised/dimensionality_reduction/mds/dimensionality_reduction_mds.ipynb) (scikit-learn)
-        - [Isomap](unsupervised/dimensionality_reduction/isomap/dimensionality_reduction_isomap.ipynb) (scikit-learn)
-        - [t-SNE](unsupervised/dimensionality_reduction/tsne/dimensionality_reduction_tsne.ipynb) (scikit-learn)
+        - [MDS](notebooks/unsupervised/dimensionality_reduction/mds/dimensionality_reduction_mds.ipynb) (scikit-learn)
+        - [Isomap](notebooks/unsupervised/dimensionality_reduction/isomap/dimensionality_reduction_isomap.ipynb) (scikit-learn)
+        - [t-SNE](notebooks/unsupervised/dimensionality_reduction/tsne/dimensionality_reduction_tsne.ipynb) (scikit-learn)
