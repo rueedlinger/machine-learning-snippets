@@ -3,7 +3,7 @@ _Python Machine Learning Snippets (pymls)_ is an ongoing project. This project c
 examples as Jupyter Notebooks with scikit-learn, statsmodel, numpy and other libraries.
 The examples are tested with Python 3.6.x.
 
-> __Note:__ This is an ongoing project and is fare from complete.
+> __Note:__ This is an ongoing project and is far away from complete.
 
 ## Get started...
 To get started you can choose one of the these approaches:
