@@ -1,7 +1,9 @@
-#  Python Machine Learning Snippets
+#  Python Machine Learning Snippets (pymls)
 _Python Machine Learning Snippets (pymls)_ is an ongoing project. This project contains various machine learning 
 examples as Jupyter Notebooks with scikit-learn, statsmodel, numpy and other libraries.
 The examples are tested with Python 3.6.x.
+
+> __Note:__ This is an ongoing project and is fare from complete.
 
 ## Get started...
 To get started you can choose one of the these approaches:
@@ -10,6 +12,12 @@ To get started you can choose one of the these approaches:
 - create a new conda environment and install the packges with _conda install_ 
 - use the docker image _rueedlinger/pyml_ (https://github.com/rueedlinger/docker-pyml) which has all 
 required packages already installed.
+
+First you should get a copy of this project. To do this just use the git _clone_ or _fork_ command.
+
+```bash
+git clone https://github.com/rueedlinger/machine-learning-snippets.git
+```
 
 ### Virtualenv
 The next example shows how to create an environment with "virtualenv" (https://virtualenv.pypa.io/) 
@@ -36,11 +44,7 @@ pip install -r requirements.txt
 ``` 
 
 ### Docker
-tbd
 
-```bash
-git clone https://github.com/rueedlinger/machine-learning-snippets.git
-```
 
 You can just start the Docker image with the following command.
 
@@ -71,7 +75,7 @@ At the moment there are the following machine learning snippets available as Jup
 
 - __Supervised learning__
     - Classification
-        - [Text Classification with Naive Bayes](notebooks/supervised/text_classification) (scikit-learn)
+        - [Text Classification with Naive Bayes](notebooks/supervised/text_classification/text_classification.ipynb) (scikit-learn)
     - Regression
         - [Multiple Linear Regression with sklearn](notebooks/supervised/linear_regression/multiple_linear_regression_sklearn.ipynb) (scikit-learn)
         - [Multiple Linear Regression with statsmodels](notebooks/supervised/linear_regression/multiple_linear_regression_statsmodels.ipynb) (statsmodels)
