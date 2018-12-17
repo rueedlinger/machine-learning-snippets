@@ -93,3 +93,7 @@ ENV/
 
 # markdown output directory
 out/
+
+
+# PyCharm
+.idea/

@@ -24,7 +24,7 @@ The next example shows how to create an environment with "virtualenv" (https://v
 and install the required packages.
 
 ```bash
-virtualenv --python=/usr/bin/python3.6 py36-ml
+python3 -m py36-ml
 
 source py36-ml/bin/activate
 
@@ -40,27 +40,30 @@ conda create -n py36-ml python=3.6
 
 source activate py36-ml
 
-pip install -r requirements.txt
+conda install --yes --file requirements.txt
 ``` 
 
 ### Docker
 
-
-You can just start the Docker image with the following command.
+First we create a Docker image with all the required Python libraries to run 
+the machine learning snippets.
 
 ```bash
-docker run -v /path/to/notebooks:/notebooks -p8888:8888 -it rueedlinger/pyml:0.3
+docker build -t pymls .
 ```
 
-> With the _-v_ flag you can specify where the volume is mounted on your local machine. This should 
+
+After you have created the image you can just start the Docker image with the following command.
+
+```bash
+docker run -v ${PWD}/notebooks:/notebooks -p8888:8888 -it pymls
+```
+
+> _${PWD}_ gives you the current working directory. With the _-v_ flag you can specify where the volume is mounted on your local machine. This should 
 > point to the location where the notebooks are stored. The Juypter Notebook is running on port 8888. 
-> To change the port mapping to the container you can us the -p. To use the latest image you can change 
-> the tag _0.3_ to _latest_.
+> To change the port mapping to the container you can us the -p flag. 
 
 
-Or use the bash script _run-docker.sh_ with linux or mac which will start the Jupyter notebook and mount the voulme _'/notebook'_.
-
-    ./run-docker.sh
     
 Next you shoud see the following output in the command line.
 
