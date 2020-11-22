@@ -1,6 +1,6 @@
 #  Python Machine Learning Snippets (pymls)
 _Python Machine Learning Snippets (pymls)_ is an ongoing project. This project contains various machine learning 
-examples as Jupyter Notebooks with scikit-learn, statsmodel, numpy and other libraries.
+examples as Jupyter notebooks with scikit-learn, statsmodel, numpy and other libraries.
 The examples are tested with Python 3.7.x.
 
 > __Note:__ This is an ongoing project and is far away from complete.
@@ -28,9 +28,9 @@ You can start `jupyter-lab` to playadround withe the Juypter notebooks.
 pipenv run jupyter-lab
 ```
 
-### Run the Tests
+### Run the Tests (nbval)
 
-To test the notebooks this project uses [nbval](https://github.com/computationalmodelling/nbval), which is a `py.test` plugin for validating Jupyter notebooks.
+To test the Jupyter notebooks this project uses [nbval](https://github.com/computationalmodelling/nbval), which is a `py.test` plugin for validating Jupyter notebooks.
 
 This will check all Jupyter notebooks for errors.
 
@@ -38,7 +38,7 @@ This will check all Jupyter notebooks for errors.
 pipenv run py.test --nbval-lax
 ```
 
-### Upgrade Packages
+### Upgrade Python Packages
 Check which packages have changed.
 
 ```
@@ -51,17 +51,15 @@ This will upgrade everything.
 pipenv update
 ```
 
-### CI Build
-See the GitHub Action [build.yml](.github/workflows/build.yml) for more details. 
+### CI Build (GitHub Actions)
+See the GitHub Actions [build.yml](.github/workflows/build.yml) file for more details. 
 ![CI Build](https://github.com/rueedlinger/machine-learning-snippets/workflows/CI%20Build/badge.svg)
 
 ### Export the Jupyter Notebooks
-To export the Jupyter notebooks in to another format like Markdonw, HTML, PDF, etc. 
+To export the Jupyter notebooks to another format like Markdonw, HTML or PDF. You can adapt the [export-notebooks.sh](export-notebooks.sh) script. 
+This scrip uses `nbconvert` to convert the Jupyter notebooks to other formats.
 
-You can adapt the [export-notebooks.sh](export-notebooks.sh) script. This scrip uses 
-`nbconvert` to convert the Jupyter notebooks.
-
-## The snippets...
+## The Snippets...
 At the moment there are the following machine learning snippets available as Jupyter (Python) Notebook.
 
 - __Supervised learning__
