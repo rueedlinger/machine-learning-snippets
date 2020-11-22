@@ -25,8 +25,6 @@ $ pipenv install --dev
 
 ### Run the Notebook
 
-Find out what’s changed.
-
 ```bash
 pipenv run jupyter-lab
 ```
