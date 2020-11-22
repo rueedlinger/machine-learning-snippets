@@ -1,4 +1,4 @@
-name: Build / Test Jupyter Notebooks
+name: CI Build
 on:
   push:
     branches: [ master, develop, fix/*, feature/* ]
@@ -6,6 +6,7 @@ on:
     branches: [ master ]
 jobs:
   build:
+    name: 'Test Jupyter Notebooks'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
