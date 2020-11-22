@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "9a03cc48cc51554d1dd0692d96b50957826f34f8a3f832152e9f56dc794298c0"
+            "sha256": "fad40e958e4e66d087963c9fcbf21198512d6b25f21b57c58c28cdd689887b80"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -491,13 +491,6 @@
             "index": "pypi",
             "version": "==1.1.4"
         },
-        "pandoc": {
-            "hashes": [
-                "sha256:1b54f65f127583be75c74b63378ca42a8adc80955de3d33e8915fec35617b1fd"
-            ],
-            "index": "pypi",
-            "version": "==1.0.2"
-        },
         "pandocfilters": {
             "hashes": [
                 "sha256:bc63fbb50534b4b1f8ebe1860889289e8af94a23bff7445259592df25a3906eb"
@@ -565,13 +558,6 @@
                 "sha256:fbd922f702582cb0d71ef94442bfca57624352622d75e3be7a1e7e9360b07e72"
             ],
             "version": "==8.0.1"
-        },
-        "ply": {
-            "hashes": [
-                "sha256:00c7c1aaa88358b9c765b6d3000c6eec0ba42abca5351b095321aef446081da3",
-                "sha256:096f9b8350b65ebd2fd1346b12452efe5b9607f7482813ffca50c22722a807ce"
-            ],
-            "version": "==3.11"
         },
         "prometheus-client": {
             "hashes": [
@@ -880,7 +866,7 @@
                 "sha256:5b26757dc6f79a3b7dc9fab95359328d5747fcb2409d331ea66d0272b90ab2a0",
                 "sha256:8b995ffe925347a2138d7ac0fe77155e4311a0ea6d6da4f5128fe4b3cbe5ed71"
             ],
-            "markers": "platform_system == 'Darwin'",
+            "markers": "sys_platform == 'darwin'",
             "version": "==0.1.0"
         },
         "attrs": {
