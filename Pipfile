@@ -16,6 +16,7 @@ numpy = "*"
 scipy = "*"
 matplotlib = "*"
 statsmodels = "*"
+nbconvert = "*"
 
 [requires]
 python_version = "3.7"
