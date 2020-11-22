@@ -29,6 +29,15 @@ $ pipenv install --dev
 pipenv run jupyter-lab
 ```
 
+### Run the Tests
+To test the notebooks this project use [nbval](https://github.com/computationalmodelling/nbval) a py.test plugin for validating Jupyter notebooks.
+
+This will check all Jupyter notebooks for errors.
+
+```bash
+pipenv run py.test --nbval-lax
+```
+
 ### Upgrade Packages
 Check which packages have changed.
 
@@ -42,6 +51,11 @@ Run for upgrading everything.
 pipenv update
 ```
 
+#### Export the Jupyter Notebooks
+To export the Jupyter notebooks in to another format like Markdonw, HTML, PDF, etc. 
+
+You can adapt the [export-notebooks.sh](export-notebooks.sh) script. This scrip uses 
+`nbconvert` to convert the Jupyter notebooks.
 
 ## The snippets...
 At the moment there are the following machine learning snippets available as Jupyter (Python) Notebook.

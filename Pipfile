@@ -4,6 +4,8 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+pytest = "*"
+nbval = "*"
 
 [packages]
 jupyterlab = "*"
@@ -14,6 +16,7 @@ numpy = "*"
 scipy = "*"
 matplotlib = "*"
 statsmodels = "*"
+nbconvert = "*"
 
 [requires]
 python_version = "3.7"
