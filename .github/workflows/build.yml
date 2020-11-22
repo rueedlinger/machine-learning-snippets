@@ -1,0 +1,29 @@
+name: Build / Test Jupyter Notebooks
+on:
+  push:
+    branches: [ master, develop, fix/*, feature/* ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+      - name: Install pipenv
+        env:
+          PIPENV_NOSPIN: 'true'
+          WORKON_HOME: ~/.pipenv/virtualenvs
+          PIPENV_CACHE_DIR: ~/.pipenv/pipcache
+        run: pip install pipenv
+      - name: Build and Test
+        env:
+          PIPENV_NOSPIN: 'true'
+          WORKON_HOME: ~/.pipenv/virtualenvs
+          PIPENV_CACHE_DIR: ~/.pipenv/pipcache
+        run: |
+          pipenv install --dev
+          pipenv run py.test --nbval-lax
