@@ -51,7 +51,7 @@ Run for upgrading everything.
 pipenv update
 ```
 
-#### Export the Jupyter Notebooks
+### Export the Jupyter Notebooks
 To export the Jupyter notebooks in to another format like Markdonw, HTML, PDF, etc. 
 
 You can adapt the [export-notebooks.sh](export-notebooks.sh) script. This scrip uses 
