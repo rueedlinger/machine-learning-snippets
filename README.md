@@ -51,6 +51,9 @@ Run for upgrading everything.
 pipenv update
 ```
 
+### CI Build
+See the GitHub Action [build.yml](.github/workflows/build.yml).
+
 ### Export the Jupyter Notebooks
 To export the Jupyter notebooks in to another format like Markdonw, HTML, PDF, etc. 
 
