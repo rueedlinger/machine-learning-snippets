@@ -30,12 +30,12 @@ pipenv run jupyter-lab
 ```
 
 ### Run the Tests
-To the teh Notebooks this project use `[nbval](https://github.com/computationalmodelling/nbval)` a py.test plugin for validating Jupyter notebooks.
+To test the notebooks this project use [nbval](https://github.com/computationalmodelling/nbval) a py.test plugin for validating Jupyter notebooks.
 
 This will check all Jupyter notebooks for errors.
 
 ```bash
-py.test --nbval-lax
+pipenv run py.test --nbval-lax
 ```
 
 ### Upgrade Packages
