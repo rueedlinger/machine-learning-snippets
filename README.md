@@ -1,77 +1,33 @@
 #  Python Machine Learning Snippets (pymls)
 _Python Machine Learning Snippets (pymls)_ is an ongoing project. This project contains various machine learning 
 examples as Jupyter Notebooks with scikit-learn, statsmodel, numpy and other libraries.
-The examples are tested with Python 3.6.x.
+The examples are tested with Python 3.7.x.
 
 > __Note:__ This is an ongoing project and is far away from complete.
 
-## Get started...
-To get started you can choose one of the these approaches:
+## Getting Started
 
-- create a virtual environment with _virtualenv_ and install the required packages with _pip_
-- create a new conda environment and install the packges with _conda install_ 
-- use the docker image _rueedlinger/pyml_ (https://github.com/rueedlinger/docker-pyml) which has all 
-required packages already installed.
+All the required Python packages can be installed with `pipenv`.
 
-First you should get a copy of this project. To do this just use the git _clone_ or _fork_ command.
+### Project Setup
+
+First you nee to install pipenv.
 
 ```bash
-git clone https://github.com/rueedlinger/machine-learning-snippets.git
+$ pip install --user pipenv
 ```
 
-### Virtualenv
-The next example shows how to create an environment with "virtualenv" (https://virtualenv.pypa.io/) 
-and install the required packages.
+Install all the required packages
 
 ```bash
-python3 -m py36-ml
-
-source py36-ml/bin/activate
-
-pip install -r requirements.txt
-``` 
-
-### Conda
-Another aproach is to create an environment with _conda_ 
-(http://conda.pydata.org/) and the required packages.
-
-```bash
-conda create -n py36-ml python=3.6
-
-source activate py36-ml
-
-conda install --yes --file requirements.txt
-``` 
-
-### Docker
-
-First we create a Docker image with all the required Python libraries to run 
-the machine learning snippets.
-
-```bash
-docker build -t pymls .
+$ pipenv install --dev
 ```
 
-
-After you have created the image you can just start the Docker image with the following command.
+### Run the Notebook
 
 ```bash
-docker run -v ${PWD}/notebooks:/notebooks -p8888:8888 -it pymls
+pipenv run jupyter-lab
 ```
-
-> _${PWD}_ gives you the current working directory. With the _-v_ flag you can specify where the volume is mounted on your local machine. This should 
-> point to the location where the notebooks are stored. The Juypter Notebook is running on port 8888. 
-> To change the port mapping to the container you can us the -p flag. 
-
-
-    
-Next you shoud see the following output in the command line.
-
-        Copy/paste this URL into your browser when you connect for the first time,
-        to login with a token:
-            http://localhost:8888/?token=e00b3199838bcc3f15a3227fd52752eec4992ad8111d1b57
-
-To connect to the Jupyter Notebook you have to copy/paste this URL into your browser.
 
 ## The snippets...
 At the moment there are the following machine learning snippets available as Jupyter (Python) Notebook.
