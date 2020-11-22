@@ -6,11 +6,9 @@ The examples are tested with Python 3.7.x.
 > __Note:__ This is an ongoing project and is far away from complete.
 
 ## Getting Started
-
 All the required Python packages can be installed with `pipenv`.
 
 ### Project Setup
-
 First you nee to install pipenv.
 
 ```bash
@@ -24,13 +22,15 @@ $ pipenv install --dev
 ```
 
 ### Run the Notebook
+You can start `jupyter-lab` to playadround withe the Juypter notebooks.
 
 ```bash
 pipenv run jupyter-lab
 ```
 
 ### Run the Tests
-To test the notebooks this project use [nbval](https://github.com/computationalmodelling/nbval) a py.test plugin for validating Jupyter notebooks.
+
+To test the notebooks this project uses [nbval](https://github.com/computationalmodelling/nbval), which is a `py.test` plugin for validating Jupyter notebooks.
 
 This will check all Jupyter notebooks for errors.
 
@@ -45,14 +45,15 @@ Check which packages have changed.
 pipenv update --outdated
 ```
 
-Run for upgrading everything.
+This will upgrade everything.
 
 ```bash
 pipenv update
 ```
 
 ### CI Build
-See the GitHub Action [build.yml](.github/workflows/build.yml).
+See the GitHub Action [build.yml](.github/workflows/build.yml) for more details. 
+![CI Build](https://github.com/rueedlinger/machine-learning-snippets/workflows/CI%20Build/badge.svg)
 
 ### Export the Jupyter Notebooks
 To export the Jupyter notebooks in to another format like Markdonw, HTML, PDF, etc. 
