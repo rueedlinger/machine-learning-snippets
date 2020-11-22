@@ -1,4 +1,4 @@
->**Note**: This is a generated output from the Jupyter notebook file [clustering_basics_model_evaluation.ipynb](clustering_basics_model_evaluation.ipynb).
+>**Note**: This is a generated markdown export from the Jupyter notebook file [clustering_basics_model_evaluation.ipynb](clustering_basics_model_evaluation.ipynb).
 
 # Clustering Basics and Model Evaluation
 

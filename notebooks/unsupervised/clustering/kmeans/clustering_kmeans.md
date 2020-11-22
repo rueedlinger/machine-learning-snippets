@@ -1,4 +1,4 @@
->**Note**: This is a generated output from the Jupyter notebook file [clustering_kmeans.ipynb](clustering_kmeans.ipynb).
+>**Note**: This is a generated markdown export from the Jupyter notebook file [clustering_kmeans.ipynb](clustering_kmeans.ipynb).
 
 # Clustering with K-means 
 

@@ -1,4 +1,4 @@
->**Note**: This is a generated output from the Jupyter notebook file [clustering_hclust.ipynb](clustering_hclust.ipynb).
+>**Note**: This is a generated markdown export from the Jupyter notebook file [clustering_hclust.ipynb](clustering_hclust.ipynb).
 
 # Hierarchical Clustering (SciPy)
 

@@ -56,8 +56,8 @@ See the GitHub Actions [build.yml](.github/workflows/build.yml) file for more de
 ![CI Build](https://github.com/rueedlinger/machine-learning-snippets/workflows/CI%20Build/badge.svg)
 
 ### Export the Jupyter Notebooks
-To export the Jupyter notebooks to another format like Markdonw, HTML or PDF. You can adapt the [export-notebooks.sh](export-notebooks.sh) script. 
-This scrip uses `nbconvert` to convert the Jupyter notebooks to other formats.
+To export the Jupyter notebooks to Markdonw the [export-notebooks.sh](export-notebooks.sh) script can be used. 
+This scrip uses `nbconvert` to convert the Jupyter notebooks.
 
 ## The Snippets...
 At the moment there are the following machine learning snippets available as Jupyter (Python) Notebook.

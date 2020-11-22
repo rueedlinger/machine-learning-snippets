@@ -1,4 +1,4 @@
->**Note**: This is a generated output from the Jupyter notebook file [clustering_gaussian_mixture.ipynb](clustering_gaussian_mixture.ipynb).
+>**Note**: This is a generated markdown export from the Jupyter notebook file [clustering_gaussian_mixture.ipynb](clustering_gaussian_mixture.ipynb).
 
 # Clustering with a Gaussian Mixture Model
 

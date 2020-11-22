@@ -1,4 +1,4 @@
->**Note**: This is a generated output from the Jupyter notebook file [dimensionality_reduction_tsne.ipynb](dimensionality_reduction_tsne.ipynb).
+>**Note**: This is a generated markdown export from the Jupyter notebook file [dimensionality_reduction_tsne.ipynb](dimensionality_reduction_tsne.ipynb).
 
 # Dimensionality Reduction with t-SNE
 

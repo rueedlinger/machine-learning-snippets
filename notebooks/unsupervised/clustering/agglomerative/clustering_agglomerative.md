@@ -1,4 +1,4 @@
->**Note**: This is a generated output from the Jupyter notebook file [clustering_agglomerative.ipynb](clustering_agglomerative.ipynb).
+>**Note**: This is a generated markdown export from the Jupyter notebook file [clustering_agglomerative.ipynb](clustering_agglomerative.ipynb).
 
 # Agglomerative Clustering (Hierarchical Clustering) 
 

@@ -1,4 +1,4 @@
->**Note**: This is a generated output from the Jupyter notebook file [dimensionality_reduction_pca.ipynb](dimensionality_reduction_pca.ipynb).
+>**Note**: This is a generated markdown export from the Jupyter notebook file [dimensionality_reduction_pca.ipynb](dimensionality_reduction_pca.ipynb).
 
 # Dimensionality Reduction with PCA (SVD)
 

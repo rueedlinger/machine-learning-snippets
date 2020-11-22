@@ -1,4 +1,4 @@
->**Note**: This is a generated output from the Jupyter notebook file [clustering_text.ipynb](clustering_text.ipynb).
+>**Note**: This is a generated markdown export from the Jupyter notebook file [clustering_text.ipynb](clustering_text.ipynb).
 
 # Text Clustering Basics
 

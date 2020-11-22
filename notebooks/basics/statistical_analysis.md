@@ -1,4 +1,4 @@
->**Note**: This is a generated output from the Jupyter notebook file [statistical_analysis.ipynb](statistical_analysis.ipynb).
+>**Note**: This is a generated markdown export from the Jupyter notebook file [statistical_analysis.ipynb](statistical_analysis.ipynb).
 
 ## Statistical Analysis
 

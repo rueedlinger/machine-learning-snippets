@@ -1,4 +1,4 @@
->**Note**: This is a generated output from the Jupyter notebook file [dimensionality_reduction_mds.ipynb](dimensionality_reduction_mds.ipynb).
+>**Note**: This is a generated markdown export from the Jupyter notebook file [dimensionality_reduction_mds.ipynb](dimensionality_reduction_mds.ipynb).
 
 # Dimensionality Reduction with MDS
 

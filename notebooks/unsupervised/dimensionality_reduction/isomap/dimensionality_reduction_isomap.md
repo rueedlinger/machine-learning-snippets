@@ -1,4 +1,4 @@
->**Note**: This is a generated output from the Jupyter notebook file [dimensionality_reduction_isomap.ipynb](dimensionality_reduction_isomap.ipynb).
+>**Note**: This is a generated markdown export from the Jupyter notebook file [dimensionality_reduction_isomap.ipynb](dimensionality_reduction_isomap.ipynb).
 
 # Dimensionality Reduction with Isomap
 

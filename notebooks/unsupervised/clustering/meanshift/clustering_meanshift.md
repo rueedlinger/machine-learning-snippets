@@ -1,4 +1,4 @@
->**Note**: This is a generated output from the Jupyter notebook file [clustering_meanshift.ipynb](clustering_meanshift.ipynb).
+>**Note**: This is a generated markdown export from the Jupyter notebook file [clustering_meanshift.ipynb](clustering_meanshift.ipynb).
 
 # Clustering with MeanShift
 

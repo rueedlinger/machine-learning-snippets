@@ -1,4 +1,4 @@
->**Note**: This is a generated output from the Jupyter notebook file [multiple_linear_regression_sklearn.ipynb](multiple_linear_regression_sklearn.ipynb).
+>**Note**: This is a generated markdown export from the Jupyter notebook file [multiple_linear_regression_sklearn.ipynb](multiple_linear_regression_sklearn.ipynb).
 
 ## Multiple Linear Regression with scikit-learn
 

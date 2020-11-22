@@ -1,4 +1,4 @@
->**Note**: This is a generated output from the Jupyter notebook file [multiple_linear_regression_statsmodels.ipynb](multiple_linear_regression_statsmodels.ipynb).
+>**Note**: This is a generated markdown export from the Jupyter notebook file [multiple_linear_regression_statsmodels.ipynb](multiple_linear_regression_statsmodels.ipynb).
 
 ## Multiple Linear Regression with statsmodels
 

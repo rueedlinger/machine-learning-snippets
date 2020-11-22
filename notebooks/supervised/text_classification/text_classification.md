@@ -1,4 +1,4 @@
->**Note**: This is a generated output from the Jupyter notebook file [text_classification.ipynb](text_classification.ipynb).
+>**Note**: This is a generated markdown export from the Jupyter notebook file [text_classification.ipynb](text_classification.ipynb).
 
 # Text Classification (scikit-learn) with Naive Bayes
 

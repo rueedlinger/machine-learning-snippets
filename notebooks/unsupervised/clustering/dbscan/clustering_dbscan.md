@@ -1,4 +1,4 @@
->**Note**: This is a generated output from the Jupyter notebook file [clustering_dbscan.ipynb](clustering_dbscan.ipynb).
+>**Note**: This is a generated markdown export from the Jupyter notebook file [clustering_dbscan.ipynb](clustering_dbscan.ipynb).
 
 # Clustering with DBSCAN
 
