@@ -25,9 +25,25 @@ $ pipenv install --dev
 
 ### Run the Notebook
 
+Find out what’s changed.
+
 ```bash
 pipenv run jupyter-lab
 ```
+
+### Upgrade Packages
+Check which packages have changed.
+
+```
+pipenv update --outdated
+```
+
+Run for upgrading everything.
+
+```bash
+pipenv update
+```
+
 
 ## The snippets...
 At the moment there are the following machine learning snippets available as Jupyter (Python) Notebook.
@@ -62,3 +78,4 @@ At the moment there are the following machine learning snippets available as Jup
         - [MDS](notebooks/unsupervised/dimensionality_reduction/mds/dimensionality_reduction_mds.ipynb) (scikit-learn)
         - [Isomap](notebooks/unsupervised/dimensionality_reduction/isomap/dimensionality_reduction_isomap.ipynb) (scikit-learn)
         - [t-SNE](notebooks/unsupervised/dimensionality_reduction/tsne/dimensionality_reduction_tsne.ipynb) (scikit-learn)
+
