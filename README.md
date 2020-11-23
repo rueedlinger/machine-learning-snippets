@@ -3,13 +3,13 @@ _Python Machine Learning Snippets (pymls)_ is an ongoing project. This project c
 examples as Jupyter notebooks with scikit-learn, statsmodel, numpy and other libraries.
 The examples are tested with Python 3.7.x.
 
-> __Note:__ This is an ongoing project and is far away from complete.
+> __Note:__ This is an ongoing project and far away from complete.
 
 ## Getting Started
 All the required Python packages can be installed with `pipenv`.
 
 ### Project Setup
-First you nee to install pipenv.
+First you nee to install `pipenv`.
 
 ```bash
 $ pip install --user pipenv
@@ -22,7 +22,7 @@ $ pipenv install --dev
 ```
 
 ### Run the Notebook
-You can start `jupyter-lab` to playadround withe the Juypter notebooks.
+You can start `jupyter-lab` to play around with the Juypter notebooks.
 
 ```bash
 pipenv run jupyter-lab
@@ -30,7 +30,8 @@ pipenv run jupyter-lab
 
 ### Run the Tests (nbval)
 
-To test the Jupyter notebooks this project uses [nbval](https://github.com/computationalmodelling/nbval), which is a `py.test` plugin for validating Jupyter notebooks.
+To test the Jupyter notebooks this project uses [nbval](https://github.com/computationalmodelling/nbval), which is a `py.test` 
+plugin for validating Jupyter notebooks.
 
 This will check all Jupyter notebooks for errors.
 
@@ -60,7 +61,7 @@ To export the Jupyter notebooks to Markdonw the [export-notebooks.sh](export-not
 This scrip uses `nbconvert` to convert the Jupyter notebooks.
 
 ## The Snippets...
-At the moment there are the following machine learning snippets available as Jupyter (Python) Notebook.
+The following machine learning snippets are available as Jupyter Notebook.
 
 - __Supervised learning__
     - Classification

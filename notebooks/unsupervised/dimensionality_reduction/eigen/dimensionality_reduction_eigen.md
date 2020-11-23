@@ -34,6 +34,19 @@ df.corr()
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -48,29 +61,29 @@ df.corr()
     <tr>
       <th>sepal length (cm)</th>
       <td>1.000000</td>
-      <td>-0.109369</td>
+      <td>-0.117570</td>
       <td>0.871754</td>
-      <td>0.817954</td>
+      <td>0.817941</td>
     </tr>
     <tr>
       <th>sepal width (cm)</th>
-      <td>-0.109369</td>
+      <td>-0.117570</td>
       <td>1.000000</td>
-      <td>-0.420516</td>
-      <td>-0.356544</td>
+      <td>-0.428440</td>
+      <td>-0.366126</td>
     </tr>
     <tr>
       <th>petal length (cm)</th>
       <td>0.871754</td>
-      <td>-0.420516</td>
+      <td>-0.428440</td>
       <td>1.000000</td>
-      <td>0.962757</td>
+      <td>0.962865</td>
     </tr>
     <tr>
       <th>petal width (cm)</th>
-      <td>0.817954</td>
-      <td>-0.356544</td>
-      <td>0.962757</td>
+      <td>0.817941</td>
+      <td>-0.366126</td>
+      <td>0.962865</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -87,7 +100,7 @@ sns.heatmap(corr)
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x10a8c8f28>
+    <AxesSubplot:>
 
 
 
@@ -117,6 +130,19 @@ pd.DataFrame([eig_vals])
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -130,10 +156,10 @@ pd.DataFrame([eig_vals])
   <tbody>
     <tr>
       <th>0</th>
-      <td>2.910818</td>
-      <td>0.921221</td>
-      <td>0.147353</td>
-      <td>0.020608</td>
+      <td>2.918498</td>
+      <td>0.91403</td>
+      <td>0.146757</td>
+      <td>0.020715</td>
     </tr>
   </tbody>
 </table>
@@ -152,6 +178,19 @@ pd.DataFrame(eig_vecs)
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -165,31 +204,31 @@ pd.DataFrame(eig_vecs)
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.522372</td>
-      <td>-0.372318</td>
-      <td>-0.721017</td>
-      <td>0.261996</td>
+      <td>0.521066</td>
+      <td>-0.377418</td>
+      <td>-0.719566</td>
+      <td>0.261286</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-0.263355</td>
-      <td>-0.925556</td>
-      <td>0.242033</td>
-      <td>-0.124135</td>
+      <td>-0.269347</td>
+      <td>-0.923296</td>
+      <td>0.244382</td>
+      <td>-0.123510</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.581254</td>
-      <td>-0.021095</td>
-      <td>0.140892</td>
-      <td>-0.801154</td>
+      <td>0.580413</td>
+      <td>-0.024492</td>
+      <td>0.142126</td>
+      <td>-0.801449</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.565611</td>
-      <td>-0.065416</td>
-      <td>0.633801</td>
-      <td>0.523546</td>
+      <td>0.564857</td>
+      <td>-0.066942</td>
+      <td>0.634273</td>
+      <td>0.523597</td>
     </tr>
   </tbody>
 </table>
@@ -212,6 +251,19 @@ pd.DataFrame(matrix_w, columns=['PC1', 'PC2'])
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -223,23 +275,23 @@ pd.DataFrame(matrix_w, columns=['PC1', 'PC2'])
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.522372</td>
-      <td>-0.372318</td>
+      <td>0.521066</td>
+      <td>-0.377418</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-0.263355</td>
-      <td>-0.925556</td>
+      <td>-0.269347</td>
+      <td>-0.923296</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.581254</td>
-      <td>-0.021095</td>
+      <td>0.580413</td>
+      <td>-0.024492</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.565611</td>
-      <td>-0.065416</td>
+      <td>0.564857</td>
+      <td>-0.066942</td>
     </tr>
   </tbody>
 </table>
@@ -261,6 +313,19 @@ df.head()
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -273,32 +338,32 @@ df.head()
   <tbody>
     <tr>
       <th>0</th>
-      <td>2.669231</td>
-      <td>-5.180887</td>
+      <td>2.640270</td>
+      <td>-5.204041</td>
       <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2.696434</td>
-      <td>-4.643645</td>
+      <td>2.670730</td>
+      <td>-4.666910</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>2.481163</td>
-      <td>-4.752183</td>
+      <td>2.454606</td>
+      <td>-4.773636</td>
       <td>0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>2.571512</td>
-      <td>-4.626615</td>
+      <td>2.545517</td>
+      <td>-4.648463</td>
       <td>0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>2.590658</td>
-      <td>-5.236211</td>
+      <td>2.561228</td>
+      <td>-5.258629</td>
       <td>0</td>
     </tr>
   </tbody>
@@ -324,7 +389,7 @@ plt.legend(bbox_to_anchor=(1.25, 1))
 
 
 
-    <matplotlib.legend.Legend at 0x10ab8bbe0>
+    <matplotlib.legend.Legend at 0x109ff3590>
 
 
 

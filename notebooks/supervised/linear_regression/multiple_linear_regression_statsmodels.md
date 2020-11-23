@@ -36,42 +36,42 @@ print(res.summary())
 
                                 OLS Regression Results                            
     ==============================================================================
-    Dep. Variable:                      y   R-squared:                       0.728
-    Model:                            OLS   Adj. R-squared:                  0.718
-    Method:                 Least Squares   F-statistic:                     70.06
-    Date:                Fri, 30 Oct 2020   Prob (F-statistic):           8.50e-88
-    Time:                        09:04:53   Log-Likelihood:                -1053.8
-    No. Observations:                 354   AIC:                             2136.
-    Df Residuals:                     340   BIC:                             2190.
+    Dep. Variable:                      y   R-squared:                       0.724
+    Model:                            OLS   Adj. R-squared:                  0.713
+    Method:                 Least Squares   F-statistic:                     68.59
+    Date:                Mon, 23 Nov 2020   Prob (F-statistic):           1.14e-86
+    Time:                        22:16:23   Log-Likelihood:                -1067.4
+    No. Observations:                 354   AIC:                             2163.
+    Df Residuals:                     340   BIC:                             2217.
     Df Model:                          13                                         
     Covariance Type:            nonrobust                                         
     ==============================================================================
                      coef    std err          t      P>|t|      [0.025      0.975]
     ------------------------------------------------------------------------------
-    const         44.0878      6.177      7.137      0.000      31.938      56.238
-    CRIM          -0.1248      0.037     -3.354      0.001      -0.198      -0.052
-    ZN             0.0665      0.017      3.807      0.000       0.032       0.101
-    INDUS         -0.0580      0.075     -0.769      0.443      -0.206       0.090
-    CHAS           3.1769      1.181      2.689      0.008       0.853       5.501
-    NOX          -17.8546      4.636     -3.851      0.000     -26.974      -8.735
-    RM             3.0239      0.501      6.040      0.000       2.039       4.009
-    AGE           -0.0066      0.016     -0.416      0.678      -0.038       0.025
-    DIS           -1.8322      0.247     -7.410      0.000      -2.319      -1.346
-    RAD            0.3892      0.082      4.743      0.000       0.228       0.551
-    TAX           -0.0151      0.005     -3.155      0.002      -0.025      -0.006
-    PTRATIO       -0.9300      0.158     -5.897      0.000      -1.240      -0.620
-    B              0.0084      0.003      2.577      0.010       0.002       0.015
-    LSTAT         -0.5012      0.061     -8.284      0.000      -0.620      -0.382
+    const         38.9656      6.588      5.915      0.000      26.007      51.924
+    CRIM          -0.1365      0.038     -3.607      0.000      -0.211      -0.062
+    ZN             0.0598      0.018      3.375      0.001       0.025       0.095
+    INDUS          0.0528      0.073      0.721      0.471      -0.091       0.197
+    CHAS           3.2390      1.142      2.835      0.005       0.992       5.486
+    NOX          -18.9859      4.761     -3.988      0.000     -28.351      -9.621
+    RM             3.5202      0.536      6.569      0.000       2.466       4.574
+    AGE            0.0001      0.017      0.009      0.993      -0.033       0.033
+    DIS           -1.5380      0.251     -6.125      0.000      -2.032      -1.044
+    RAD            0.3309      0.078      4.229      0.000       0.177       0.485
+    TAX           -0.0112      0.004     -2.560      0.011      -0.020      -0.003
+    PTRATIO       -0.9968      0.164     -6.075      0.000      -1.320      -0.674
+    B              0.0104      0.003      3.025      0.003       0.004       0.017
+    LSTAT         -0.5512      0.063     -8.705      0.000      -0.676      -0.427
     ==============================================================================
-    Omnibus:                      122.408   Durbin-Watson:                   1.802
-    Prob(Omnibus):                  0.000   Jarque-Bera (JB):              503.572
-    Skew:                           1.454   Prob(JB):                    4.47e-110
-    Kurtosis:                       8.068   Cond. No.                     1.50e+04
+    Omnibus:                      117.165   Durbin-Watson:                   1.576
+    Prob(Omnibus):                  0.000   Jarque-Bera (JB):              446.191
+    Skew:                           1.415   Prob(JB):                     1.29e-97
+    Kurtosis:                       7.716   Cond. No.                     1.55e+04
     ==============================================================================
     
     Notes:
     [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-    [2] The condition number is large, 1.5e+04. This might indicate that there are
+    [2] The condition number is large, 1.55e+04. This might indicate that there are
     strong multicollinearity or other numerical problems.
 
 
@@ -83,20 +83,20 @@ res.pvalues
 
 
 
-    const      5.793213e-12
-    CRIM       8.869828e-04
-    ZN         1.666095e-04
-    INDUS      4.426706e-01
-    CHAS       7.514282e-03
-    NOX        1.405692e-04
-    RM         4.045495e-09
-    AGE        6.779796e-01
-    DIS        1.009368e-12
-    RAD        3.110157e-06
-    TAX        1.750243e-03
-    PTRATIO    8.928530e-09
-    B          1.037824e-02
-    LSTAT      2.781755e-15
+    const      8.110143e-09
+    CRIM       3.557312e-04
+    ZN         8.243261e-04
+    INDUS      4.712342e-01
+    CHAS       4.852990e-03
+    NOX        8.169866e-05
+    RM         1.905718e-10
+    AGE        9.930348e-01
+    DIS        2.510370e-09
+    RAD        3.023042e-05
+    TAX        1.091144e-02
+    PTRATIO    3.328726e-09
+    B          2.678575e-03
+    LSTAT      1.400212e-16
     dtype: float64
 
 
@@ -173,89 +173,89 @@ dat.head()
   </thead>
   <tbody>
     <tr>
-      <th>406</th>
-      <td>20.71620</td>
+      <th>306</th>
+      <td>0.07503</td>
+      <td>33.0</td>
+      <td>2.18</td>
       <td>0.0</td>
-      <td>18.10</td>
-      <td>0.0</td>
-      <td>0.659</td>
-      <td>4.138</td>
-      <td>100.0</td>
-      <td>1.1781</td>
-      <td>24.0</td>
-      <td>666.0</td>
-      <td>20.2</td>
-      <td>370.22</td>
-      <td>23.34</td>
-      <td>11.9</td>
+      <td>0.472</td>
+      <td>7.420</td>
+      <td>71.9</td>
+      <td>3.0992</td>
+      <td>7.0</td>
+      <td>222.0</td>
+      <td>18.4</td>
+      <td>396.90</td>
+      <td>6.47</td>
+      <td>33.4</td>
     </tr>
     <tr>
-      <th>257</th>
-      <td>0.61154</td>
-      <td>20.0</td>
-      <td>3.97</td>
-      <td>0.0</td>
-      <td>0.647</td>
-      <td>8.704</td>
-      <td>86.9</td>
-      <td>1.8010</td>
-      <td>5.0</td>
-      <td>264.0</td>
-      <td>13.0</td>
-      <td>389.70</td>
-      <td>5.12</td>
-      <td>50.0</td>
-    </tr>
-    <tr>
-      <th>219</th>
-      <td>0.11425</td>
+      <th>218</th>
+      <td>0.11069</td>
       <td>0.0</td>
       <td>13.89</td>
       <td>1.0</td>
       <td>0.550</td>
-      <td>6.373</td>
-      <td>92.4</td>
-      <td>3.3633</td>
+      <td>5.951</td>
+      <td>93.8</td>
+      <td>2.8893</td>
       <td>5.0</td>
       <td>276.0</td>
       <td>16.4</td>
+      <td>396.90</td>
+      <td>17.92</td>
+      <td>21.5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.02729</td>
+      <td>0.0</td>
+      <td>7.07</td>
+      <td>0.0</td>
+      <td>0.469</td>
+      <td>7.185</td>
+      <td>61.1</td>
+      <td>4.9671</td>
+      <td>2.0</td>
+      <td>242.0</td>
+      <td>17.8</td>
+      <td>392.83</td>
+      <td>4.03</td>
+      <td>34.7</td>
+    </tr>
+    <tr>
+      <th>249</th>
+      <td>0.19073</td>
+      <td>22.0</td>
+      <td>5.86</td>
+      <td>0.0</td>
+      <td>0.431</td>
+      <td>6.718</td>
+      <td>17.5</td>
+      <td>7.8265</td>
+      <td>7.0</td>
+      <td>330.0</td>
+      <td>19.1</td>
       <td>393.74</td>
-      <td>10.50</td>
-      <td>23.0</td>
+      <td>6.56</td>
+      <td>26.2</td>
     </tr>
     <tr>
-      <th>169</th>
-      <td>2.44953</td>
+      <th>329</th>
+      <td>0.06724</td>
       <td>0.0</td>
-      <td>19.58</td>
+      <td>3.24</td>
       <td>0.0</td>
-      <td>0.605</td>
-      <td>6.402</td>
-      <td>95.2</td>
-      <td>2.2625</td>
-      <td>5.0</td>
-      <td>403.0</td>
-      <td>14.7</td>
-      <td>330.04</td>
-      <td>11.32</td>
-      <td>22.3</td>
-    </tr>
-    <tr>
-      <th>132</th>
-      <td>0.59005</td>
-      <td>0.0</td>
-      <td>21.89</td>
-      <td>0.0</td>
-      <td>0.624</td>
-      <td>6.372</td>
-      <td>97.9</td>
-      <td>2.3274</td>
+      <td>0.460</td>
+      <td>6.333</td>
+      <td>17.2</td>
+      <td>5.2146</td>
       <td>4.0</td>
-      <td>437.0</td>
-      <td>21.2</td>
-      <td>385.76</td>
-      <td>11.12</td>
-      <td>23.0</td>
+      <td>430.0</td>
+      <td>16.9</td>
+      <td>375.21</td>
+      <td>7.34</td>
+      <td>22.6</td>
     </tr>
   </tbody>
 </table>
@@ -271,39 +271,39 @@ print(results.summary())
 
                                 OLS Regression Results                            
     ==============================================================================
-    Dep. Variable:                  PRICE   R-squared:                       0.658
-    Model:                            OLS   Adj. R-squared:                  0.648
-    Method:                 Least Squares   F-statistic:                     66.05
-    Date:                Fri, 30 Oct 2020   Prob (F-statistic):           8.00e-74
-    Time:                        09:04:58   Log-Likelihood:                -1094.4
-    No. Observations:                 354   AIC:                             2211.
-    Df Residuals:                     343   BIC:                             2253.
+    Dep. Variable:                  PRICE   R-squared:                       0.651
+    Model:                            OLS   Adj. R-squared:                  0.641
+    Method:                 Least Squares   F-statistic:                     63.91
+    Date:                Mon, 23 Nov 2020   Prob (F-statistic):           3.11e-72
+    Time:                        22:16:23   Log-Likelihood:                -1109.0
+    No. Observations:                 354   AIC:                             2240.
+    Df Residuals:                     343   BIC:                             2283.
     Df Model:                          10                                         
     Covariance Type:            nonrobust                                         
     ==============================================================================
                      coef    std err          t      P>|t|      [0.025      0.975]
     ------------------------------------------------------------------------------
-    Intercept     26.6504      6.555      4.065      0.000      13.757      39.544
-    CRIM          -0.1832      0.041     -4.489      0.000      -0.264      -0.103
-    ZN             0.0441      0.019      2.362      0.019       0.007       0.081
-    INDUS         -0.2310      0.075     -3.069      0.002      -0.379      -0.083
-    CHAS           4.1816      1.308      3.196      0.002       1.609       6.755
-    NOX          -26.7490      4.873     -5.489      0.000     -36.334     -17.164
-    RM             5.2540      0.477     11.008      0.000       4.315       6.193
-    DIS           -1.5998      0.264     -6.068      0.000      -2.118      -1.081
-    RAD            0.2174      0.054      4.057      0.000       0.112       0.323
-    PTRATIO       -1.1178      0.174     -6.442      0.000      -1.459      -0.776
-    B              0.0139      0.004      3.916      0.000       0.007       0.021
+    Intercept     18.3219      6.940      2.640      0.009       4.671      31.973
+    CRIM          -0.1831      0.042     -4.364      0.000      -0.266      -0.101
+    ZN             0.0429      0.019      2.215      0.027       0.005       0.081
+    INDUS         -0.1000      0.074     -1.359      0.175      -0.245       0.045
+    CHAS           4.3620      1.269      3.438      0.001       1.867       6.857
+    NOX          -25.1844      5.044     -4.993      0.000     -35.105     -15.264
+    RM             6.0514      0.505     11.982      0.000       5.058       7.045
+    DIS           -1.2697      0.264     -4.808      0.000      -1.789      -0.750
+    RAD            0.1511      0.056      2.675      0.008       0.040       0.262
+    PTRATIO       -1.1179      0.182     -6.157      0.000      -1.475      -0.761
+    B              0.0149      0.004      3.890      0.000       0.007       0.022
     ==============================================================================
-    Omnibus:                      160.668   Durbin-Watson:                   1.875
-    Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1107.863
-    Skew:                           1.766   Prob(JB):                    2.69e-241
-    Kurtosis:                      10.914   Cond. No.                     9.62e+03
+    Omnibus:                      174.282   Durbin-Watson:                   1.705
+    Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1328.627
+    Skew:                           1.916   Prob(JB):                    3.11e-289
+    Kurtosis:                      11.683   Cond. No.                     9.83e+03
     ==============================================================================
     
     Notes:
     [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-    [2] The condition number is large, 9.62e+03. This might indicate that there are
+    [2] The condition number is large, 9.83e+03. This might indicate that there are
     strong multicollinearity or other numerical problems.
 
 
@@ -315,26 +315,26 @@ print(results.summary())
 
                                 OLS Regression Results                            
     ==============================================================================
-    Dep. Variable:                  PRICE   R-squared:                       0.237
-    Model:                            OLS   Adj. R-squared:                  0.232
-    Method:                 Least Squares   F-statistic:                     54.39
-    Date:                Fri, 30 Oct 2020   Prob (F-statistic):           2.66e-21
-    Time:                        09:04:59   Log-Likelihood:                -1236.6
-    No. Observations:                 354   AIC:                             2479.
-    Df Residuals:                     351   BIC:                             2491.
+    Dep. Variable:                  PRICE   R-squared:                       0.227
+    Model:                            OLS   Adj. R-squared:                  0.222
+    Method:                 Least Squares   F-statistic:                     51.47
+    Date:                Mon, 23 Nov 2020   Prob (F-statistic):           2.50e-20
+    Time:                        22:16:23   Log-Likelihood:                -1249.7
+    No. Observations:                 354   AIC:                             2505.
+    Df Residuals:                     351   BIC:                             2517.
     Df Model:                           2                                         
     Covariance Type:            nonrobust                                         
     ==============================================================================
                      coef    std err          t      P>|t|      [0.025      0.975]
     ------------------------------------------------------------------------------
-    Intercept     22.0958      0.517     42.717      0.000      21.078      23.113
-    CRIM          -0.2970      0.049     -6.068      0.000      -0.393      -0.201
-    ZN             0.1313      0.018      7.194      0.000       0.095       0.167
+    Intercept     22.4342      0.535     41.935      0.000      21.382      23.486
+    CRIM          -0.3101      0.050     -6.228      0.000      -0.408      -0.212
+    ZN             0.1350      0.020      6.724      0.000       0.096       0.175
     ==============================================================================
-    Omnibus:                      111.809   Durbin-Watson:                   2.054
-    Prob(Omnibus):                  0.000   Jarque-Bera (JB):              280.122
-    Skew:                           1.537   Prob(JB):                     1.49e-61
-    Kurtosis:                       6.089   Cond. No.                         32.2
+    Omnibus:                      110.593   Durbin-Watson:                   1.817
+    Prob(Omnibus):                  0.000   Jarque-Bera (JB):              265.558
+    Skew:                           1.545   Prob(JB):                     2.16e-58
+    Kurtosis:                       5.909   Cond. No.                         30.1
     ==============================================================================
     
     Notes:

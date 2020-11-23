@@ -58,7 +58,7 @@ plt.legend(bbox_to_anchor=(1.25, 1))
 
 
 
-    <matplotlib.legend.Legend at 0x118b7b710>
+    <matplotlib.legend.Legend at 0x129dcde90>
 
 
 
@@ -85,7 +85,7 @@ ax.scatter(df.X, df.Y, df.Z, 'o')
 
 
 
-    <mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x11463fdd8>
+    <mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x129d4ab50>
 
 
 
@@ -120,7 +120,7 @@ fig.suptitle('MeanShift bandwith 2', fontsize=14, fontweight='bold')
 
 
 
-    <matplotlib.text.Text at 0x114a62be0>
+    Text(0.5, 0.98, 'MeanShift bandwith 2')
 
 
 
@@ -155,7 +155,7 @@ plt.legend(bbox_to_anchor=(1.25, 1))
 
 
 
-    <matplotlib.legend.Legend at 0x11561bbe0>
+    <matplotlib.legend.Legend at 0x12a3c3590>
 
 
 
@@ -190,7 +190,7 @@ plt.legend(bbox_to_anchor=(1.25, 1))
 
 
 
-    <matplotlib.legend.Legend at 0x114d58278>
+    <matplotlib.legend.Legend at 0x12a53cd10>
 
 
 

@@ -196,7 +196,7 @@ print('------------------')
 
     English sample:
     ------------------
-    in his mind and answered briefly Yes Although they had but that moment left the school behind them they were
+    the hot vapour from an oven You see this toothpick said Scrooge returning quickly to the charge for the reason
     ------------------
 
 
@@ -320,12 +320,12 @@ for scoring in ['f1_weighted', 'accuracy']:
 ```
 
     f1_weighted
-    scores: [1. 1. 1. 1. 1.]
-    f1_weighted: 1.000000 (+/- 0.0000)
+    scores: [0.99839742 1.         1.         1.         0.99839742]
+    f1_weighted: 0.999359 (+/- 0.0016)
     
     accuracy
-    scores: [1. 1. 1. 1. 1.]
-    accuracy: 1.000000 (+/- 0.0000)
+    scores: [0.99839744 1.         1.         1.         0.99839744]
+    accuracy: 0.999359 (+/- 0.0016)
     
 
 
@@ -344,14 +344,14 @@ print(metrics.classification_report(y_test, predicted, digits=4))
 
                   precision    recall  f1-score   support
     
-               0     1.0000    0.9980    0.9990       510
-               1     0.9980    1.0000    0.9990       499
-               2     1.0000    1.0000    1.0000       545
-               3     1.0000    1.0000    1.0000       526
+               0     1.0000    1.0000    1.0000       520
+               1     1.0000    1.0000    1.0000       521
+               2     1.0000    1.0000    1.0000       518
+               3     1.0000    1.0000    1.0000       521
     
-        accuracy                         0.9995      2080
-       macro avg     0.9995    0.9995    0.9995      2080
-    weighted avg     0.9995    0.9995    0.9995      2080
+        accuracy                         1.0000      2080
+       macro avg     1.0000    1.0000    1.0000      2080
+    weighted avg     1.0000    1.0000    1.0000      2080
     
 
 
@@ -375,10 +375,10 @@ def show_top10(classifier, vectorizer, categories):
 show_top10(text_clf.named_steps['clf'], text_clf.named_steps['vect'], data.labels)
 ```
 
-    de: ich ein das es sie zu er die der und
-    en: was that in his he it of to and the
-    fr: qu une que les un il la et le de
-    nl: op te dat zijn hij van een de het en
+    de: das ein ich zu es sie er die der und
+    en: in that was his he it of to and the
+    fr: qu que une les un il la et le de
+    nl: op te dat van zijn hij de een het en
 
 
 Let's see which and how many features our model has.
@@ -392,9 +392,9 @@ print('first features: %s'% feature_names[0:10])
 print('last features: %s' % feature_names[-10:])
 ```
 
-    number of features: 810
-    first features: ['aan' 'aber' 'about' 'achter' 'affaires' 'after' 'again' 'ah' 'ai' 'air']
-    last features: ['zum' 'zurück' 'zwei' 'écria' 'étaient' 'était' 'été' 'één' 'être' 'über']
+    number of features: 817
+    first features: ['aan' 'aber' 'about' 'after' 'again' 'ah' 'ai' 'air' 'al' 'all']
+    last features: ['zur' 'zurück' 'zwei' 'écria' 'étaient' 'était' 'été' 'één' 'être' 'über']
 
 
 ### New data
@@ -419,11 +419,11 @@ for i, p in enumerate(predicted):
     
 ```
 
-    Hallo mein Name ist Hugo.  -->  de , prob: 0.8465503443879293
-    Hi my name is Hugo.  -->  en , prob: 0.8139826132571543
-    Bonjour mon nom est Hugo.  -->  fr , prob: 0.9424888211931489
-    Hallo mijn naam is Hugo.  -->  nl , prob: 0.671550222783606
-    Eins, zwei und drei.  -->  de , prob: 0.9401711673287002
-    One, two and three.  -->  en , prob: 0.9766522503508528
-    Un, deux et trois.  -->  fr , prob: 0.9847047536301917
-    Een, twee en drie.  -->  nl , prob: 0.9602156048432912
+    Hallo mein Name ist Hugo.  -->  de , prob: 0.727758460300435
+    Hi my name is Hugo.  -->  en , prob: 0.8749000442535747
+    Bonjour mon nom est Hugo.  -->  fr , prob: 0.9472092060269602
+    Hallo mijn naam is Hugo.  -->  nl , prob: 0.7178162121892449
+    Eins, zwei und drei.  -->  de , prob: 0.9384867043639714
+    One, two and three.  -->  en , prob: 0.9715622581608496
+    Un, deux et trois.  -->  fr , prob: 0.985332436283478
+    Een, twee en drie.  -->  nl , prob: 0.9727240391210078

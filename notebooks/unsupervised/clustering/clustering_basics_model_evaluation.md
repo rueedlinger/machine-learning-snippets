@@ -73,7 +73,7 @@ silhouette_avg = metrics.silhouette_score(iris.data, label, metric='euclidean')
 print(silhouette_avg)
 ```
 
-    0.552591944521
+    0.5528190123564091
 
 
 With a boxplot we can easily plot the silhouette score for every cluster. If we do not know the true cluster size, we could try to optimize silhouette score if we change the parameters for our cluster algorithm.
@@ -89,7 +89,7 @@ sns.boxplot(x="label", y="score", data=sample_silhouette_values, palette=colors)
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x10c5ffa20>
+    <AxesSubplot:xlabel='label', ylabel='score'>
 
 
 
@@ -109,7 +109,7 @@ metrics.adjusted_rand_score(iris.target, label)
 
 
 
-    0.73023827228346971
+    0.7302382722834697
 
 
 
@@ -121,7 +121,7 @@ metrics.adjusted_mutual_info_score(iris.target, label)
 
 
 
-    0.74837239332294836
+    0.7551191675800484
 
 
 
@@ -133,7 +133,7 @@ metrics.accuracy_score(iris.target, label)
 
 
 
-    0.89333333333333331
+    0.09333333333333334
 
 
 
@@ -151,4 +151,4 @@ kmeans.predict(N)
 
 
 
-    array([0, 1, 2], dtype=int32)
+    array([1, 2, 0], dtype=int32)

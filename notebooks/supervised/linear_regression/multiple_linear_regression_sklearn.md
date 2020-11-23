@@ -217,7 +217,7 @@ sns.displot(y)
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x103ede950>
+    <seaborn.axisgrid.FacetGrid at 0x10a168210>
 
 
 
@@ -233,8 +233,15 @@ sns.pairplot(X);
 ```
 
 
+
+
+    <seaborn.axisgrid.PairGrid at 0x1284ec610>
+
+
+
+
     
-![png](multiple_linear_regression_sklearn_files/multiple_linear_regression_sklearn_6_0.png)
+![png](multiple_linear_regression_sklearn_files/multiple_linear_regression_sklearn_6_1.png)
     
 
 
@@ -302,10 +309,10 @@ print('Coefficients:
 
     No coef: 13
     Coefficients: 
-     [-8.49704327e-02  3.68780357e-02  1.43273216e-02  1.84141617e+00
-     -1.55263313e+01  5.00031565e+00 -1.09172283e-02 -1.35697360e+00
-      2.65465661e-01 -1.31176682e-02 -9.01378907e-01  1.29778965e-02
-     -4.17773304e-01]
+     [-1.09133967e-01  4.51332207e-02  3.47257239e-02  2.64616098e+00
+     -2.23924822e+01  3.64585479e+00  1.42101758e-02 -1.38601762e+00
+      3.34309274e-01 -1.04709080e-02 -9.86969095e-01  1.01332440e-02
+     -5.69197153e-01]
 
 
 
@@ -368,8 +375,15 @@ sns.displot(residual, kind="kde");
 ```
 
 
+
+
+    <seaborn.axisgrid.FacetGrid at 0x1330e2690>
+
+
+
+
     
-![png](multiple_linear_regression_sklearn_files/multiple_linear_regression_sklearn_16_0.png)
+![png](multiple_linear_regression_sklearn_files/multiple_linear_regression_sklearn_16_1.png)
     
 
 
@@ -383,7 +397,7 @@ metrics.r2_score(y_train, lr.predict(X_train))
 
 
 
-    0.7692238132450142
+    0.7272314781987589
 
 
 
@@ -395,7 +409,7 @@ metrics.mean_squared_error(y_train, lr.predict(X_train))
 
 
 
-    20.361601457779884
+    22.901326603645916
 
 
 
@@ -407,7 +421,7 @@ metrics.r2_score(y_test, predicted)
 
 
 
-    0.6333909771667214
+    0.7625805547167954
 
 
 
@@ -419,7 +433,7 @@ metrics.mean_squared_error(y_test, predicted)
 
 
 
-    27.545627033179198
+    20.246787893478285
 
 
 
@@ -429,8 +443,8 @@ print(lr.intercept_)
 print(lr.coef_)
 ```
 
-    25.25192411940813
-    [-8.49704327e-02  3.68780357e-02  1.43273216e-02  1.84141617e+00
-     -1.55263313e+01  5.00031565e+00 -1.09172283e-02 -1.35697360e+00
-      2.65465661e-01 -1.31176682e-02 -9.01378907e-01  1.29778965e-02
-     -4.17773304e-01]
+    38.51995350990657
+    [-1.09133967e-01  4.51332207e-02  3.47257239e-02  2.64616098e+00
+     -2.23924822e+01  3.64585479e+00  1.42101758e-02 -1.38601762e+00
+      3.34309274e-01 -1.04709080e-02 -9.86969095e-01  1.01332440e-02
+     -5.69197153e-01]

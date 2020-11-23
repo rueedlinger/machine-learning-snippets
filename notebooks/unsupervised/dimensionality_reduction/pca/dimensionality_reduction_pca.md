@@ -33,6 +33,19 @@ df.head()
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -45,32 +58,32 @@ df.head()
   <tbody>
     <tr>
       <th>0</th>
-      <td>-2.684207</td>
-      <td>0.326607</td>
+      <td>-2.684126</td>
+      <td>0.319397</td>
       <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-2.715391</td>
-      <td>-0.169557</td>
+      <td>-2.714142</td>
+      <td>-0.177001</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>-2.889820</td>
-      <td>-0.137346</td>
+      <td>-2.888991</td>
+      <td>-0.144949</td>
       <td>0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>-2.746437</td>
-      <td>-0.311124</td>
+      <td>-2.745343</td>
+      <td>-0.318299</td>
       <td>0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>-2.728593</td>
-      <td>0.333925</td>
+      <td>-2.728717</td>
+      <td>0.326755</td>
       <td>0</td>
     </tr>
   </tbody>
@@ -96,7 +109,7 @@ plt.legend(bbox_to_anchor=(1.25, 1))
 
 
 
-    <matplotlib.legend.Legend at 0x10b807e48>
+    <matplotlib.legend.Legend at 0x12e366390>
 
 
 
