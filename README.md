@@ -23,14 +23,15 @@ $ pipenv install --dev
 ### Run the Notebook
 You can start `jupyter-lab` to play around with the Juypter notebooks.
 
+
 ```bash
 pipenv run jupyter-lab
 ```
 
 ### Run the Tests (nbval)
-
 To test the Jupyter notebooks this project uses [nbval](https://github.com/computationalmodelling/nbval), which is a `py.test` 
 plugin for validating Jupyter notebooks.
+
 
 This will check all Jupyter notebooks for errors.
 
