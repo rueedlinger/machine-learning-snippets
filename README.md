@@ -1,6 +1,5 @@
-#  Python Machine Learning Snippets (pymls)
-_Python Machine Learning Snippets (pymls)_ is my ongoing pet project where I try out different machine learning models. 
-This project contains various machine learning examples as Jupyter notebooks with scikit-learn, statsmodel, numpy and other libraries.
+#  Python Machine Learning Snippets
+_Python Machine Learning Snippets_ is my ongoing pet project where I try out different machine learning models. This project contains various machine learning examples as Jupyter notebooks with scikit-learn, statsmodel, numpy and other libraries.
 
 > __Note:__ This is an ongoing project and far away from complete.
 
@@ -59,16 +58,19 @@ Some of the files (*.png) are stored in Git LFS. When you want to work with them
 ```bash
 git lfs checkout
 ```
-
 ### CI Build (GitHub Actions)
 See the GitHub Actions [build.yml](.github/workflows/build.yml) file for more details. 
 ![CI Build](https://github.com/rueedlinger/machine-learning-snippets/workflows/CI%20Build/badge.svg)
-
-### Export the Jupyter Notebooks
-To export the Jupyter notebooks to Markdonw the [export-notebooks.sh](export-notebooks.sh) script can be used. 
+### Export the Jupyter Notebooks to Markdown
+To export the Jupyter notebooks to Markdown just run the [export-notebooks.sh](export-notebooks.sh) script. 
 This scrip uses `nbconvert` to convert the Jupyter notebooks.
 
-## The Snippets...
+```bash
+chmod 755 export-notebooks.sh
+./export-notebooks.sh
+```
+
+# The Snippets...
 The following machine learning snippets are available as Jupyter Notebook.
 
 - __Supervised learning__
