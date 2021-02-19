@@ -11,7 +11,7 @@ All the required Python packages can be installed with `pipenv`.
 First you nee to install `pipenv`.
 
 ```bash
-$ pip install --user pipenv
+pip install --user pipenv
 ```
 
 Install all the required packages
@@ -50,6 +50,14 @@ This will upgrade everything.
 
 ```bash
 pipenv update
+```
+
+### Git LFS
+
+Some of the files (*.png) are stored in Git LFS. When you want to work with them locally you need to install git-lfs and check them out.
+
+```bash
+git lfs checkout
 ```
 
 ### CI Build (GitHub Actions)
