@@ -6,21 +6,21 @@ FORMAT="markdown"
 ######
 # Clenaup. First remove exsting markdonw files
 ######
-# files=$(find $DIR_NOTEBOOKS -not -path '*/\.*' -name "*.md")
-#
-#for path in $files; do # Not recommended, will break on whitespace
-#    rm $path
-#done
+files=$(find $DIR_NOTEBOOKS -not -path '*/\.*' -name "*.md")
+
+for path in $files; do # Not recommended, will break on whitespace
+    rm $path
+done
 
 
 ######
 # Clenaup. First remove exsting png files
 ######
-#files=$(find $DIR_NOTEBOOKS -not -path '*/\.*' -name "*.png")
-#
-#for path in $files; do # Not recommended, will break on whitespace
-#    rm $path
-#done
+files=$(find $DIR_NOTEBOOKS -not -path '*/\.*' -name "*.png")
+
+for path in $files; do # Not recommended, will break on whitespace
+    rm $path
+done
 
 ######
 # Export notebooks to markdown

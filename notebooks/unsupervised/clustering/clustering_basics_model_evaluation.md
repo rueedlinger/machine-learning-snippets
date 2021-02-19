@@ -121,7 +121,7 @@ metrics.adjusted_mutual_info_score(iris.target, label)
 
 
 
-    0.7551191675800484
+    0.7551191675800483
 
 
 
@@ -133,7 +133,7 @@ metrics.accuracy_score(iris.target, label)
 
 
 
-    0.09333333333333334
+    0.8933333333333333
 
 
 
@@ -151,4 +151,4 @@ kmeans.predict(N)
 
 
 
-    array([1, 2, 0], dtype=int32)
+    array([0, 1, 2], dtype=int32)
