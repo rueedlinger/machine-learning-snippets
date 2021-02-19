@@ -54,16 +54,30 @@ for i in range(len(clusters)):
 plt.legend(bbox_to_anchor=(1.25, 1))
 ```
 
+    <ipython-input-1-3b2b8dace7ce>:14: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+      label=clusters[i], color=plt.cm.jet(np.float(i) / len(np.unique(label))))
+    <ipython-input-1-3b2b8dace7ce>:14: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+      label=clusters[i], color=plt.cm.jet(np.float(i) / len(np.unique(label))))
+    <ipython-input-1-3b2b8dace7ce>:14: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+      label=clusters[i], color=plt.cm.jet(np.float(i) / len(np.unique(label))))
+    <ipython-input-1-3b2b8dace7ce>:14: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+      label=clusters[i], color=plt.cm.jet(np.float(i) / len(np.unique(label))))
 
 
 
-    <matplotlib.legend.Legend at 0x10bd093d0>
+
+
+    <matplotlib.legend.Legend at 0x12acf3ee0>
 
 
 
 
     
-![png](clustering_dbscan_files/clustering_dbscan_3_1.png)
+![png](clustering_dbscan_files/clustering_dbscan_3_2.png)
     
 
 
@@ -84,7 +98,7 @@ ax.scatter(df.X, df.Y, df.Z, 'o')
 
 
 
-    <mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x12a4103d0>
+    <mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x12ae80dc0>
 
 
 
@@ -113,16 +127,21 @@ for i, l in enumerate(np.unique(label)):
 plt.legend(bbox_to_anchor=(1.25, 1))
 ```
 
+    <ipython-input-1-7e77581ca2d5>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
 
 
 
-    <matplotlib.legend.Legend at 0x12a5a5690>
+
+
+    <matplotlib.legend.Legend at 0x12af99550>
 
 
 
 
     
-![png](clustering_dbscan_files/clustering_dbscan_5_1.png)
+![png](clustering_dbscan_files/clustering_dbscan_5_2.png)
     
 
 
@@ -145,16 +164,33 @@ for i, l in enumerate(np.unique(label)):
 plt.legend(bbox_to_anchor=(1.25, 1))
 ```
 
+    <ipython-input-1-7b825743da37>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
+    <ipython-input-1-7b825743da37>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
+    <ipython-input-1-7b825743da37>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
+    <ipython-input-1-7b825743da37>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
+    <ipython-input-1-7b825743da37>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
 
 
 
-    <matplotlib.legend.Legend at 0x12a6fae90>
+
+
+    <matplotlib.legend.Legend at 0x12aff5520>
 
 
 
 
     
-![png](clustering_dbscan_files/clustering_dbscan_6_1.png)
+![png](clustering_dbscan_files/clustering_dbscan_6_2.png)
     
 
 
@@ -177,16 +213,45 @@ for i, l in enumerate(np.unique(label)):
 plt.legend(bbox_to_anchor=(1.25, 1))
 ```
 
+    <ipython-input-1-8b10e92be714>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
+    <ipython-input-1-8b10e92be714>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
+    <ipython-input-1-8b10e92be714>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
+    <ipython-input-1-8b10e92be714>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
+    <ipython-input-1-8b10e92be714>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
+    <ipython-input-1-8b10e92be714>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
+    <ipython-input-1-8b10e92be714>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
+    <ipython-input-1-8b10e92be714>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
+    <ipython-input-1-8b10e92be714>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
 
 
 
-    <matplotlib.legend.Legend at 0x12a779250>
+
+
+    <matplotlib.legend.Legend at 0x12b1b0df0>
 
 
 
 
     
-![png](clustering_dbscan_files/clustering_dbscan_7_1.png)
+![png](clustering_dbscan_files/clustering_dbscan_7_2.png)
     
 
 
@@ -209,14 +274,31 @@ for i, l in enumerate(np.unique(label)):
 plt.legend(bbox_to_anchor=(1.25, 1))
 ```
 
+    <ipython-input-1-5be09ed3fdf2>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
+    <ipython-input-1-5be09ed3fdf2>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
+    <ipython-input-1-5be09ed3fdf2>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
+    <ipython-input-1-5be09ed3fdf2>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
+    <ipython-input-1-5be09ed3fdf2>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
 
 
 
-    <matplotlib.legend.Legend at 0x109d30590>
+
+
+    <matplotlib.legend.Legend at 0x12b137f40>
 
 
 
 
     
-![png](clustering_dbscan_files/clustering_dbscan_8_1.png)
+![png](clustering_dbscan_files/clustering_dbscan_8_2.png)
     

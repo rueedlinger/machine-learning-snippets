@@ -17,7 +17,7 @@ pip install --user pipenv
 Install all the required packages
 
 ```bash
-$ pipenv install --dev
+pipenv install --dev
 ```
 
 ### Run the Notebook
@@ -65,7 +65,7 @@ See the GitHub Actions [build.yml](.github/workflows/build.yml) file for more de
 ![CI Build](https://github.com/rueedlinger/machine-learning-snippets/workflows/CI%20Build/badge.svg)
 
 ### Export the Jupyter Notebooks
-To export the Jupyter notebooks to Markdonw the [export-notebooks.sh](export-notebooks.sh) script can be used. 
+To export the Jupyter notebooks to markdown the [export-notebooks.sh](export-notebooks.sh) script can be used. 
 This scrip uses `nbconvert` to convert the Jupyter notebooks.
 
 ## The Snippets...

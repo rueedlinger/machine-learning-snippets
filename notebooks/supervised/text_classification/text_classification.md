@@ -196,7 +196,7 @@ print('------------------')
 
     English sample:
     ------------------
-    the hot vapour from an oven You see this toothpick said Scrooge returning quickly to the charge for the reason
+    no nearer Scrooge stopped Not so much in obedience as in surprise and fear for on the raising of the
     ------------------
 
 
@@ -320,12 +320,12 @@ for scoring in ['f1_weighted', 'accuracy']:
 ```
 
     f1_weighted
-    scores: [0.99839742 1.         1.         1.         0.99839742]
-    f1_weighted: 0.999359 (+/- 0.0016)
+    scores: [1.         1.         0.99839755 1.         1.        ]
+    f1_weighted: 0.999680 (+/- 0.0013)
     
     accuracy
-    scores: [0.99839744 1.         1.         1.         0.99839744]
-    accuracy: 0.999359 (+/- 0.0016)
+    scores: [1.         1.         0.99839744 1.         1.        ]
+    accuracy: 0.999679 (+/- 0.0013)
     
 
 
@@ -344,14 +344,14 @@ print(metrics.classification_report(y_test, predicted, digits=4))
 
                   precision    recall  f1-score   support
     
-               0     1.0000    1.0000    1.0000       520
-               1     1.0000    1.0000    1.0000       521
-               2     1.0000    1.0000    1.0000       518
-               3     1.0000    1.0000    1.0000       521
+               0     1.0000    1.0000    1.0000       500
+               1     0.9981    1.0000    0.9991       538
+               2     1.0000    1.0000    1.0000       521
+               3     1.0000    0.9981    0.9990       521
     
-        accuracy                         1.0000      2080
-       macro avg     1.0000    1.0000    1.0000      2080
-    weighted avg     1.0000    1.0000    1.0000      2080
+        accuracy                         0.9995      2080
+       macro avg     0.9995    0.9995    0.9995      2080
+    weighted avg     0.9995    0.9995    0.9995      2080
     
 
 
@@ -375,10 +375,14 @@ def show_top10(classifier, vectorizer, categories):
 show_top10(text_clf.named_steps['clf'], text_clf.named_steps['vect'], data.labels)
 ```
 
-    de: das ein ich zu es sie er die der und
-    en: in that was his he it of to and the
-    fr: qu que une les un il la et le de
-    nl: op te dat van zijn hij de een het en
+    de: ein ich das es zu sie er die der und
+    en: was that in his he it of to and the
+    fr: qu que une les un il et la le de
+    nl: op te dat zijn hij van de het een en
+
+
+    /Users/mru/.local/share/virtualenvs/machine-learning-snippets-mLikUPnf/lib/python3.8/site-packages/sklearn/utils/deprecation.py:101: FutureWarning: Attribute coef_ was deprecated in version 0.24 and will be removed in 1.1 (renaming of 0.26).
+      warnings.warn(msg, category=FutureWarning)
 
 
 Let's see which and how many features our model has.
@@ -392,9 +396,9 @@ print('first features: %s'% feature_names[0:10])
 print('last features: %s' % feature_names[-10:])
 ```
 
-    number of features: 817
+    number of features: 827
     first features: ['aan' 'aber' 'about' 'after' 'again' 'ah' 'ai' 'air' 'al' 'all']
-    last features: ['zur' 'zurück' 'zwei' 'écria' 'étaient' 'était' 'été' 'één' 'être' 'über']
+    last features: ['zu' 'zur' 'zwei' 'écria' 'étaient' 'était' 'été' 'één' 'être' 'über']
 
 
 ### New data
@@ -419,11 +423,11 @@ for i, p in enumerate(predicted):
     
 ```
 
-    Hallo mein Name ist Hugo.  -->  de , prob: 0.727758460300435
-    Hi my name is Hugo.  -->  en , prob: 0.8749000442535747
-    Bonjour mon nom est Hugo.  -->  fr , prob: 0.9472092060269602
-    Hallo mijn naam is Hugo.  -->  nl , prob: 0.7178162121892449
-    Eins, zwei und drei.  -->  de , prob: 0.9384867043639714
-    One, two and three.  -->  en , prob: 0.9715622581608496
-    Un, deux et trois.  -->  fr , prob: 0.985332436283478
-    Een, twee en drie.  -->  nl , prob: 0.9727240391210078
+    Hallo mein Name ist Hugo.  -->  de , prob: 0.9111766416160973
+    Hi my name is Hugo.  -->  en , prob: 0.8386288247786287
+    Bonjour mon nom est Hugo.  -->  fr , prob: 0.9458704238188957
+    Hallo mijn naam is Hugo.  -->  nl , prob: 0.831785147789571
+    Eins, zwei und drei.  -->  de , prob: 0.928043141684978
+    One, two and three.  -->  en , prob: 0.9715859788245595
+    Un, deux et trois.  -->  fr , prob: 0.9852144295414156
+    Een, twee en drie.  -->  nl , prob: 0.9676309215244104

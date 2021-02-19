@@ -385,7 +385,7 @@ sns.pairplot(df, hue="Target")
 
 
 
-    <seaborn.axisgrid.PairGrid at 0x1045c92d0>
+    <seaborn.axisgrid.PairGrid at 0x12c325e20>
 
 
 
@@ -403,7 +403,7 @@ sns.displot(df, x="Age" ,hue="Sex", label="male", kind="kde", log_scale=False)
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x1254c7ad0>
+    <seaborn.axisgrid.FacetGrid at 0x13363c9a0>
 
 
 
@@ -456,7 +456,7 @@ sns.displot(female, x="Age" ,hue="Sex", label="male", kind="kde", log_scale=Fals
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x124920d50>
+    <seaborn.axisgrid.FacetGrid at 0x12dde6a00>
 
 
 
@@ -474,7 +474,7 @@ sns.displot(male, x="Age" ,hue="Sex", label="male", kind="kde", log_scale=False)
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x1259f77d0>
+    <seaborn.axisgrid.FacetGrid at 0x12ddf4c40>
 
 
 
