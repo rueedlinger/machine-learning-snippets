@@ -18,6 +18,7 @@ matplotlib = "*"
 statsmodels = "*"
 nbconvert = "*"
 graphviz = "*"
+xgboost = "*"
 
 [requires]
 python_version = "3.8"

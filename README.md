@@ -83,15 +83,29 @@ chmod 755 export-notebooks.sh
 The following machine learning snippets are available as Jupyter Notebook.
 
 - **Supervised learning**
+
   - Classification
-    - [Text Classification with Naive Bayes](notebooks/supervised/text_classification/text_classification.md) (scikit-learn)
+    - [Text classification with naive bayes](notebooks/supervised/text_classification/text_classification.md) (scikit-learn)
   - Regression
-    - [Multiple Linear Regression with sklearn](notebooks/supervised/linear_regression/multiple_linear_regression_sklearn.md) (scikit-learn)
-    - [Multiple Linear Regression with statsmodels](notebooks/supervised/linear_regression/multiple_linear_regression_statsmodels.md) (statsmodels)
+
+    - Parametric
+
+      - [Linear regression with sklearn (OLS)](notebooks/supervised/regression/multiple_linear_regression_sklearn.md) (scikit-learn)
+      - [Linear regression with statsmodels (OLS)](notebooks/supervised/regression/multiple_linear_regression_statsmodels.md) (statsmodels)
+      - [Regression with SVM](notebooks/supervised/regression/regression_svm.md) (scikit-learn)
+
+    - Non-parametric
+      - [Regression with kNN](notebooks/supervised/regression/regression_kNN.md) (scikit-learn)
+      - [Regression with decision tree](notebooks/supervised/regression/regression_tree.md) (scikit-learn)
+    - Ensemble learning
+
+      - [Regression with random forest](notebooks/supervised/regression/regression_random_forest.md) (scikit-learn)
+      - [Regression with gradient boosting](notebooks/supervised/regression/regression_xgboost.md) (xgboost)
+
 - **Unsupervised learning**
   - Examples
-    - [Clustering Basics and Model Evaluation](notebooks/unsupervised/clustering/clustering_basics_model_evaluation.md) (scikit-learn)
-    - [Text Clustering Basics](notebooks/unsupervised/clustering/clustering_text.md) (scikit-learn)
+    - [Clustering basics and model evaluation](notebooks/unsupervised/clustering/clustering_basics_model_evaluation.md) (scikit-learn)
+    - [Text clustering basics](notebooks/unsupervised/clustering/clustering_text.md) (scikit-learn)
   - Centroid-based clustering
     - [K-means](notebooks/unsupervised/clustering/kmeans/clustering_kmeans.md) (scikit-learn)
   - Density-based clustering
