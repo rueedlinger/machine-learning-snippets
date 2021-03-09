@@ -46,9 +46,9 @@ The following machine learning snippets are available as Jupyter Notebook.
       - [Linear regression with statsmodels (OLS)](notebooks/supervised/regression/multiple_linear_regression_statsmodels.md) (statsmodels)
       - [Regression with SVM](notebooks/supervised/regression/linear/regression_svm.ipynb) (scikit-learn)
 
-    - Non-parametric (nonlienar)
-      - [Regression with kNN](notebooks/supervised/regression/nonlienar/regression_kNN.ipynb) (scikit-learn)
-      - [Regression with decision tree](notebooks/supervised/regression/nonlienar/regression_tree.ipynb) (scikit-learn)
+    - Non-parametric (nonlinear)
+      - [Regression with kNN](notebooks/supervised/regression/nonlinear/regression_kNN.ipynb) (scikit-learn)
+      - [Regression with decision tree](notebooks/supervised/regression/nonlinear/regression_tree.ipynb) (scikit-learn)
     - Ensemble learning
 
       - [Regression with random forest](notebooks/supervised/regression/ensemble/regression_random_forest.ipynb) (scikit-learn)
