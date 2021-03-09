@@ -46,6 +46,21 @@ function export_notebooks() {
 
 }
 
+function execute_notebooks() {
+    ######
+    # Execute notebooks
+    ######
+    files=$(find $DIR_NOTEBOOKS -not -path '*/\.*' -name "*.ipynb")
+
+    for path in $files; do # Not recommended, will break on whitespace
+        echo "execute notebook ${path}"
+        # this will execute the notebooks
+        pipenv run jupyter nbconvert --to notebook --inplace --execute $path 
+        
+    done
+
+}
+
 while test $# -gt 0
 do
     case "$1" in
@@ -58,8 +73,12 @@ do
             cleanup_images
             ;;
         --export) 
-            echo "clean-img"
+            echo "argument $1"
             export_notebooks
+            ;;
+        --run) 
+            echo "argument $1"
+            execute_notebooks
             ;;
         --*) 
             echo "bad option $1"
