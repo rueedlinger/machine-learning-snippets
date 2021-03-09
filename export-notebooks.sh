@@ -67,33 +67,38 @@ do
         --rm-md) 
             echo "argument $1"
             cleanup_md
+            exit 0
             ;;
         --rm-img) 
             echo "argument $1"
             cleanup_images
+            exit 0
             ;;
         --export) 
             echo "argument $1"
             export_notebooks
+            exit 0
             ;;
         --run) 
             echo "argument $1"
             execute_notebooks
+            exit 0
             ;;
         --*) 
             echo "bad option $1"
             ;;
         *)  
-            echo "argument $1"
-            cleanup_images
-            cleanup_md
-            export_notebooks
+            echo "bad option $1"
+            exit 0
             ;;
     esac
     shift
 done
 
-exit 0
+echo "export notebooks to markdown"
+cleanup_md
+cleanup_images
+export_notebooks
 
 
 
