@@ -17,7 +17,7 @@ done
 # Clenaup. First remove exsting png files
 ######
 files=$(find $DIR_NOTEBOOKS -not -path '*/\.*' -name "*.png")
-
+#
 for path in $files; do # Not recommended, will break on whitespace
     rm $path
 done
