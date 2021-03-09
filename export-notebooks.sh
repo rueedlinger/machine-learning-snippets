@@ -14,6 +14,18 @@ function cleanup_md() {
     done
 }
 
+function remove_style() {
+    ######
+    # Remove HTML style tag in markdown
+    ######
+    files=$(find $DIR_NOTEBOOKS -not -path '*/\.*' -name "*.md")
+    
+    for path in $files; do # Not recommended, will break on whitespace
+        sed -i '' '/<style.*>/,/<\/style>/d' $path
+    done
+
+}
+
 function cleanup_images() {
     ######
     # Clenaup. First remove exsting png files
@@ -74,6 +86,11 @@ do
             cleanup_images
             exit 0
             ;;
+        --rm-style) 
+            echo "argument $1"
+            remove_style
+            exit 0
+            ;;
         --export) 
             echo "argument $1"
             export_notebooks
@@ -86,6 +103,7 @@ do
             ;;
         --*) 
             echo "bad option $1"
+            exit 0
             ;;
         *)  
             echo "bad option $1"
@@ -99,6 +117,7 @@ echo "export notebooks to markdown"
 cleanup_md
 cleanup_images
 export_notebooks
+remove_style
 
 
 
