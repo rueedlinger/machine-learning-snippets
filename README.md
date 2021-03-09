@@ -38,73 +38,88 @@ The following machine learning snippets are available as Jupyter Notebook.
 
 ### Classification
 
-- Text
+#### Text
 
-  - [Text classification with naive bayes](notebooks/supervised/text_classification/text_classification.ipynb) (scikit-learn)
+- [Text classification with naive bayes](notebooks/supervised/text_classification/text_classification.ipynb) (scikit-learn)
 
-- Linear
+#### Linear
 
-  - [Classification with logistic regression](notebooks/supervised/classification/linear/classification_logistic_regression.ipynb) (scikit-learn)
-  - [Classification with ridge regression](notebooks/supervised/classification/linear/classification_ridge.ipynb) (scikit-learn)
-  - [Classification with stochastic gradient descent (SGD)](notebooks/supervised/classification/linear/classification_sdg.ipynb) (scikit-learn)
+- [Classification with logistic regression](notebooks/supervised/classification/linear/classification_logistic_regression.ipynb) (scikit-learn)
+- [Classification with ridge regression](notebooks/supervised/classification/linear/classification_ridge.ipynb) (scikit-learn)
+- [Classification with stochastic gradient descent (SGD)](notebooks/supervised/classification/linear/classification_sdg.ipynb) (scikit-learn)
 
-- SVM
+#### SVM
 
-  - [Classification with SVM](notebooks/supervised/classification/svm/classification_svm.ipynb) (scikit-learn)
+- [Classification with SVM](notebooks/supervised/classification/svm/classification_svm.ipynb) (scikit-learn)
 
-- Non-parametric (nonlinear)
+#### Non-parametric (nonlinear)
 
-  - [Classification with kNN](notebooks/supervised/classification/nonlinear/classification_kNN.ipynb) (scikit-learn)
-  - [Classification with decision trees](notebooks/supervised/classification/nonlinear/classification_decision_trees.ipynb) (scikit-learn)
+- [Classification with kNN](notebooks/supervised/classification/nonlinear/classification_kNN.ipynb) (scikit-learn)
+- [Classification with decision trees](notebooks/supervised/classification/nonlinear/classification_decision_trees.ipynb) (scikit-learn)
 
-- Ensemble learning
-  - [Classification with random forest](notebooks/supervised/classification/ensemble/classification_random_forest.ipynb) (scikit-learn)
-  - [Classification with gradient boosting](notebooks/supervised/classification/ensemble/classification_xgboost.ipynb) (xgboost)
+#### Ensemble learning
+
+- [Classification with random forest](notebooks/supervised/classification/ensemble/classification_random_forest.ipynb) (scikit-learn)
+- [Classification with gradient boosting](notebooks/supervised/classification/ensemble/classification_xgboost.ipynb) (xgboost)
 
 ### Regression
 
-- Linear
+#### Linear
 
-  - [Linear regression with sklearn (OLS)](notebooks/supervised/regression/linear/multiple_linear_regression_sklearn.ipynb) (scikit-learn)
-  - [Linear regression with statsmodels (OLS)](notebooks/supervised/regression/linear/multiple_linear_regression_statsmodels.ipynb) (statsmodels)
-  - [Lasso Regression](notebooks/supervised/regression/linear/regression_lasso.ipynb) (scikit-learn)
-  - [Ridge Regression](notebooks/supervised/regression/linear/regression_ridge.ipynb) (scikit-learn)
-  - [Regression with stochastic gradient descent](notebooks/supervised/regression/linear/regression_sgd.ipynb) (scikit-learn)
+- [Linear regression with sklearn (OLS)](notebooks/supervised/regression/linear/multiple_linear_regression_sklearn.ipynb) (scikit-learn)
+- [Linear regression with statsmodels (OLS)](notebooks/supervised/regression/linear/multiple_linear_regression_statsmodels.ipynb) (statsmodels)
+- [Lasso Regression](notebooks/supervised/regression/linear/regression_lasso.ipynb) (scikit-learn)
+- [Ridge Regression](notebooks/supervised/regression/linear/regression_ridge.ipynb) (scikit-learn)
+- [Regression with stochastic gradient descent](notebooks/supervised/regression/linear/regression_sgd.ipynb) (scikit-learn)
 
-- SVM
+#### SVM
 
-  - [Regression with SVM](notebooks/supervised/regression/svm/regression_svm.ipynb) (scikit-learn)
+- [Regression with SVM](notebooks/supervised/regression/svm/regression_svm.ipynb) (scikit-learn)
 
-- Non-parametric (nonlinear)
-  - [Regression with kNN](notebooks/supervised/regression/nonlinear/regression_kNN.ipynb) (scikit-learn)
-  - [Regression with decision tree](notebooks/supervised/regression/nonlinear/regression_tree.ipynb) (scikit-learn)
-- Ensemble learning
+#### Non-parametric (nonlinear)
 
-  - [Regression with random forest](notebooks/supervised/regression/ensemble/regression_random_forest.ipynb) (scikit-learn)
-  - [Regression with gradient boosting](notebooks/supervised/regression/ensemble/regression_xgboost.ipynb) (xgboost)
+- [Regression with kNN](notebooks/supervised/regression/nonlinear/regression_kNN.ipynb) (scikit-learn)
+- [Regression with decision tree](notebooks/supervised/regression/nonlinear/regression_tree.ipynb) (scikit-learn)
+
+#### Ensemble learning
+
+- [Regression with random forest](notebooks/supervised/regression/ensemble/regression_random_forest.ipynb) (scikit-learn)
+- [Regression with gradient boosting](notebooks/supervised/regression/ensemble/regression_xgboost.ipynb) (xgboost)
 
 ## Unsupervised learning
 
-- Examples
-  - [Clustering basics and model evaluation](notebooks/unsupervised/clustering/clustering_basics_model_evaluation.ipynb) (scikit-learn)
-  - [Text clustering basics](notebooks/unsupervised/clustering/clustering_text.ipynb) (scikit-learn)
-- Centroid-based clustering
-  - [K-means](notebooks/unsupervised/clustering/kmeans/clustering_kmeans.ipynb) (scikit-learn)
-- Density-based clustering
-  - [MeanShift](notebooks/unsupervised/clustering/meanshift/clustering_meanshift.ipynb) (scikit-learn)
-  - [DBSCAN](notebooks/unsupervised/clustering/dbscan/clustering_dbscan.ipynb) (scikit-learn)
-- Connectivity based clustering
-  - [Agglomerative Clustering (Hierarchical Clustering)](notebooks/unsupervised/clustering/agglomerative/clustering_agglomerative.ipynb) (scikit-learn)
-  - [Hierarchical Clustering](notebooks/unsupervised/clustering/hclust/clustering_hclust.ipynb) (SciPy)
-- Distribution-based clustering
-  - [Gaussian Mixture Model](notebooks/unsupervised/clustering/gaussian_mixture/clustering_gaussian_mixture.ipynb) (scikit-learn)
+#### Examples
+
+- [Clustering basics and model evaluation](notebooks/unsupervised/clustering/clustering_basics_model_evaluation.ipynb) (scikit-learn)
+- [Text clustering basics](notebooks/unsupervised/clustering/clustering_text.ipynb) (scikit-learn)
+
+#### Centroid-based clustering
+
+- [K-means](notebooks/unsupervised/clustering/kmeans/clustering_kmeans.ipynb) (scikit-learn)
+
+#### Density-based clustering
+
+- [MeanShift](notebooks/unsupervised/clustering/meanshift/clustering_meanshift.ipynb) (scikit-learn)
+- [DBSCAN](notebooks/unsupervised/clustering/dbscan/clustering_dbscan.ipynb) (scikit-learn)
+
+#### Connectivity based clustering
+
+- [Agglomerative Clustering (Hierarchical Clustering)](notebooks/unsupervised/clustering/agglomerative/clustering_agglomerative.ipynb) (scikit-learn)
+- [Hierarchical Clustering](notebooks/unsupervised/clustering/hclust/clustering_hclust.ipynb) (SciPy)
+
+#### Distribution-based clustering
+
+- [Gaussian Mixture Model](notebooks/unsupervised/clustering/gaussian_mixture/clustering_gaussian_mixture.ipynb) (scikit-learn)
 
 ## Dimension reduction
 
-- linear
-  - [PCA with SVD](notebooks/unsupervised/dimensionality_reduction/pca/dimensionality_reduction_pca.ipynb) (scikit-learn)
-  - [PCA with Eigenvector and Correlation Matrix](notebooks/unsupervised/dimensionality_reduction/eigen/dimensionality_reduction_eigen.ipynb) (numpy)
-- nonlinear (Manifold learning)
-  - [MDS](notebooks/unsupervised/dimensionality_reduction/mds/dimensionality_reduction_mds.ipynb) (scikit-learn)
-  - [Isomap](notebooks/unsupervised/dimensionality_reduction/isomap/dimensionality_reduction_isomap.ipynb) (scikit-learn)
-  - [t-SNE](notebooks/unsupervised/dimensionality_reduction/tsne/dimensionality_reduction_tsne.ipynb) (scikit-learn)
+### Linear
+
+- [PCA with SVD](notebooks/unsupervised/dimensionality_reduction/pca/dimensionality_reduction_pca.ipynb) (scikit-learn)
+- [PCA with Eigenvector and Correlation Matrix](notebooks/unsupervised/dimensionality_reduction/eigen/dimensionality_reduction_eigen.ipynb) (numpy)
+
+### Nonlinear (Manifold learning)
+
+- [MDS](notebooks/unsupervised/dimensionality_reduction/mds/dimensionality_reduction_mds.ipynb) (scikit-learn)
+- [Isomap](notebooks/unsupervised/dimensionality_reduction/isomap/dimensionality_reduction_isomap.ipynb) (scikit-learn)
+- [t-SNE](notebooks/unsupervised/dimensionality_reduction/tsne/dimensionality_reduction_tsne.ipynb) (scikit-learn)
