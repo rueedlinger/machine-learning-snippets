@@ -40,11 +40,17 @@ The following machine learning snippets are available as Jupyter Notebook.
     - [Text classification with naive bayes](notebooks/supervised/text_classification/text_classification.md) (scikit-learn)
   - Regression
 
-    - Parametric (linear)
+    - Linear
 
       - [Linear regression with sklearn (OLS)](notebooks/supervised/regression/linear/multiple_linear_regression_sklearn.ipynb) (scikit-learn)
-      - [Linear regression with statsmodels (OLS)](notebooks/supervised/regression/multiple_linear_regression_statsmodels.md) (statsmodels)
-      - [Regression with SVM](notebooks/supervised/regression/linear/regression_svm.ipynb) (scikit-learn)
+      - [Linear regression with statsmodels (OLS)](notebooks/supervised/regression/linear/multiple_linear_regression_statsmodels.ipynb) (statsmodels)
+      - [Lasso Regression](notebooks/supervised/regression/linear/regression_lasso.ipynb) (scikit-learn)
+      - [Ridge Regression](notebooks/supervised/regression/linear/regression_ridge.ipynb) (scikit-learn)
+      - [Regression with stochastic gradient descent](notebooks/supervised/regression/linear/regression_sgd.ipynb) (scikit-learn)
+
+    - SVM
+
+      - [Regression with SVM](notebooks/supervised/regression/svm/regression_svm.ipynb) (scikit-learn)
 
     - Non-parametric (nonlinear)
       - [Regression with kNN](notebooks/supervised/regression/nonlinear/regression_kNN.ipynb) (scikit-learn)
