@@ -38,7 +38,28 @@ The following machine learning snippets are available as Jupyter Notebook.
 
 ### Classification
 
-- [Text classification with naive bayes](notebooks/supervised/text_classification/text_classification.ipynb) (scikit-learn)
+- Text
+
+  - [Text classification with naive bayes](notebooks/supervised/text_classification/text_classification.ipynb) (scikit-learn)
+
+- Linear
+
+  - [Classification with logistic regression](notebooks/supervised/classification/linear/classification_logistic_regression.ipynb) (scikit-learn)
+  - [Classification with ridge regression](notebooks/supervised/classification/linear/classification_ridge.ipynb) (scikit-learn)
+  - [Classification with stochastic gradient descent (SGD)](notebooks/supervised/classification/linear/classification_sdg.ipynb) (scikit-learn)
+
+- SVM
+
+  - [Classification with SVM](notebooks/supervised/classification/svm/classification_svm.ipynb) (scikit-learn)
+
+- Non-parametric (nonlinear)
+
+  - [Classification with kNN](notebooks/supervised/classification/nonlinear/classification_kNN.ipynb) (scikit-learn)
+  - [Classification with decision trees](notebooks/supervised/classification/nonlinear/classification_decision_trees.ipynb) (scikit-learn)
+
+- Ensemble learning
+  - [Classification with random forest](notebooks/supervised/classification/ensemble/classification_random_forest.ipynb) (scikit-learn)
+  - [Classification with gradient boosting](notebooks/supervised/classification/ensemble/classification_xgboost.ipynb) (xgboost)
 
 ### Regression
 
