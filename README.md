@@ -6,11 +6,9 @@ _Python Machine Learning Snippets_ is my ongoing pet project where I try out dif
 
 ## Getting Started
 
-All the required Python packages can be installed with `pipenv`.
-
 ### Project Setup
 
-First you need to install `pipenv`.
+All the required Python packages can be installed with `pipenv`.
 
 ```bash
 pip install --user pipenv
@@ -22,6 +20,8 @@ Install all the required packages
 $ pipenv install --dev
 ```
 
+> **Note:** To run the tests, export the notebooks or more details see [BUILD.md](BUILD.md)
+
 ### Run the Notebook
 
 You can start `jupyter-lab` to play around with the Juypter notebooks.
@@ -30,97 +30,96 @@ You can start `jupyter-lab` to play around with the Juypter notebooks.
 pipenv run jupyter-lab
 ```
 
-### Run the Tests (nbval)
-
-To test the Jupyter notebooks this project uses [nbval](https://github.com/computationalmodelling/nbval), which is a `py.test`
-plugin for validating Jupyter notebooks.
-
-This will check all Jupyter notebooks for errors.
-
-```bash
-pipenv run py.test --nbval-lax
-```
-
-### Upgrade Python Packages
-
-Check which packages have changed.
-
-```
-pipenv update --outdated
-```
-
-This will upgrade everything.
-
-```bash
-pipenv update
-```
-
-### Git LFS
-
-Some of the files (\*.png) are stored in Git LFS. When you want to work with them locally you need to install git-lfs and check them out.
-
-```bash
-git lfs checkout
-```
-
-### CI Build (GitHub Actions)
-
-See the GitHub Actions [build.yml](.github/workflows/build.yml) file for more details.
-![CI Build](https://github.com/rueedlinger/machine-learning-snippets/workflows/CI%20Build/badge.svg)
-
-### Export the Jupyter Notebooks to Markdown
-
-To export the Jupyter notebooks to Markdown just run the [export-notebooks.sh](export-notebooks.sh) script.
-This scrip uses `nbconvert` to convert the Jupyter notebooks.
-
-```bash
-chmod 755 export-notebooks.sh
-./export-notebooks.sh
-```
-
 # The Snippets...
 
 The following machine learning snippets are available as Jupyter Notebook.
 
-- **Supervised learning**
+## Supervised learning
 
-  - Classification
-    - [Text classification with naive bayes](notebooks/supervised/text_classification/text_classification.md) (scikit-learn)
-  - Regression
+### Classification
 
-    - Parametric
+#### Text
 
-      - [Linear regression with sklearn (OLS)](notebooks/supervised/regression/multiple_linear_regression_sklearn.md) (scikit-learn)
-      - [Linear regression with statsmodels (OLS)](notebooks/supervised/regression/multiple_linear_regression_statsmodels.md) (statsmodels)
-      - [Regression with SVM](notebooks/supervised/regression/regression_svm.md) (scikit-learn)
+- [Text classification with naive bayes](notebooks/supervised/text_classification/text_classification.md) (scikit-learn)
 
-    - Non-parametric
-      - [Regression with kNN](notebooks/supervised/regression/regression_kNN.md) (scikit-learn)
-      - [Regression with decision tree](notebooks/supervised/regression/regression_tree.md) (scikit-learn)
-    - Ensemble learning
+#### Linear
 
-      - [Regression with random forest](notebooks/supervised/regression/regression_random_forest.md) (scikit-learn)
-      - [Regression with gradient boosting](notebooks/supervised/regression/regression_xgboost.md) (xgboost)
+- [Classification with logistic regression](notebooks/supervised/classification/linear/classification_logistic_regression.md) (scikit-learn)
+- [Classification with ridge regression](notebooks/supervised/classification/linear/classification_ridge.md) (scikit-learn)
+- [Classification with stochastic gradient descent (SGD)](notebooks/supervised/classification/linear/classification_sdg.md) (scikit-learn)
 
-- **Unsupervised learning**
-  - Examples
-    - [Clustering basics and model evaluation](notebooks/unsupervised/clustering/clustering_basics_model_evaluation.md) (scikit-learn)
-    - [Text clustering basics](notebooks/unsupervised/clustering/clustering_text.md) (scikit-learn)
-  - Centroid-based clustering
-    - [K-means](notebooks/unsupervised/clustering/kmeans/clustering_kmeans.md) (scikit-learn)
-  - Density-based clustering
-    - [MeanShift](notebooks/unsupervised/clustering/meanshift/clustering_meanshift.md) (scikit-learn)
-    - [DBSCAN](notebooks/unsupervised/clustering/dbscan/clustering_dbscan.md) (scikit-learn)
-  - Connectivity based clustering
-    - [Agglomerative Clustering (Hierarchical Clustering)](notebooks/unsupervised/clustering/agglomerative/clustering_agglomerative.md) (scikit-learn)
-    - [Hierarchical Clustering](notebooks/unsupervised/clustering/hclust/clustering_hclust.md) (SciPy)
-  - Distribution-based clustering
-    - [Gaussian Mixture Model](notebooks/unsupervised/clustering/gaussian_mixture/clustering_gaussian_mixture.md) (scikit-learn)
-- Dimension reduction
-  - linear
-    - [PCA with SVD](notebooks/unsupervised/dimensionality_reduction/pca/dimensionality_reduction_pca.md) (scikit-learn)
-    - [PCA with Eigenvector and Correlation Matrix](notebooks/unsupervised/dimensionality_reduction/eigen/dimensionality_reduction_eigen.md) (numpy)
-  - nonlinear (Manifold learning)
-    - [MDS](notebooks/unsupervised/dimensionality_reduction/mds/dimensionality_reduction_mds.md) (scikit-learn)
-    - [Isomap](notebooks/unsupervised/dimensionality_reduction/isomap/dimensionality_reduction_isomap.md) (scikit-learn)
-    - [t-SNE](notebooks/unsupervised/dimensionality_reduction/tsne/dimensionality_reduction_tsne.md) (scikit-learn)
+#### SVM
+
+- [Classification with SVM](notebooks/supervised/classification/svm/classification_svm.md) (scikit-learn)
+
+#### Non-parametric (nonlinear)
+
+- [Classification with kNN](notebooks/supervised/classification/nonlinear/classification_kNN.md) (scikit-learn)
+- [Classification with decision trees](notebooks/supervised/classification/nonlinear/classification_decision_trees.md) (scikit-learn)
+
+#### Ensemble learning
+
+- [Classification with random forest](notebooks/supervised/classification/ensemble/classification_random_forest.md) (scikit-learn)
+- [Classification with gradient boosting](notebooks/supervised/classification/ensemble/classification_xgboost.md) (xgboost)
+
+### Regression
+
+#### Linear
+
+- [Linear regression with sklearn (OLS)](notebooks/supervised/regression/linear/multiple_linear_regression_sklearn.md) (scikit-learn)
+- [Linear regression with statsmodels (OLS)](notebooks/supervised/regression/linear/multiple_linear_regression_statsmodels.md) (statsmodels)
+- [Lasso Regression](notebooks/supervised/regression/linear/regression_lasso.md) (scikit-learn)
+- [Ridge Regression](notebooks/supervised/regression/linear/regression_ridge.md) (scikit-learn)
+- [Regression with stochastic gradient descent](notebooks/supervised/regression/linear/regression_sgd.md) (scikit-learn)
+
+#### SVM
+
+- [Regression with SVM](notebooks/supervised/regression/svm/regression_svm.md) (scikit-learn)
+
+#### Non-parametric (nonlinear)
+
+- [Regression with kNN](notebooks/supervised/regression/nonlinear/regression_kNN.md) (scikit-learn)
+- [Regression with decision tree](notebooks/supervised/regression/nonlinear/regression_tree.md) (scikit-learn)
+
+#### Ensemble learning
+
+- [Regression with random forest](notebooks/supervised/regression/ensemble/regression_random_forest.md) (scikit-learn)
+- [Regression with gradient boosting](notebooks/supervised/regression/ensemble/regression_xgboost.md) (xgboost)
+
+## Unsupervised learning
+
+#### Examples
+
+- [Clustering basics and model evaluation](notebooks/unsupervised/clustering/clustering_basics_model_evaluation.ipynb) (scikit-learn)
+- [Text clustering basics](notebooks/unsupervised/clustering/clustering_text.ipynb) (scikit-learn)
+
+#### Centroid-based clustering
+
+- [K-means](notebooks/unsupervised/clustering/kmeans/clustering_kmeans.ipynb) (scikit-learn)
+
+#### Density-based clustering
+
+- [MeanShift](notebooks/unsupervised/clustering/meanshift/clustering_meanshift.md) (scikit-learn)
+- [DBSCAN](notebooks/unsupervised/clustering/dbscan/clustering_dbscan.md) (scikit-learn)
+
+#### Connectivity based clustering
+
+- [Agglomerative Clustering (Hierarchical Clustering)](notebooks/unsupervised/clustering/agglomerative/clustering_agglomerative.md) (scikit-learn)
+- [Hierarchical Clustering](notebooks/unsupervised/clustering/hclust/clustering_hclust.md) (SciPy)
+
+#### Distribution-based clustering
+
+- [Gaussian Mixture Model](notebooks/unsupervised/clustering/gaussian_mixture/clustering_gaussian_mixture.md) (scikit-learn)
+
+## Dimension reduction
+
+### Linear
+
+- [PCA with SVD](notebooks/unsupervised/dimensionality_reduction/pca/dimensionality_reduction_pca.md) (scikit-learn)
+- [PCA with Eigenvector and Correlation Matrix](notebooks/unsupervised/dimensionality_reduction/eigen/dimensionality_reduction_eigen.md) (numpy)
+
+### Nonlinear (Manifold learning)
+
+- [MDS](notebooks/unsupervised/dimensionality_reduction/mds/dimensionality_reduction_mds.md) (scikit-learn)
+- [Isomap](notebooks/unsupervised/dimensionality_reduction/isomap/dimensionality_reduction_isomap.md) (scikit-learn)
+- [t-SNE](notebooks/unsupervised/dimensionality_reduction/tsne/dimensionality_reduction_tsne.md) (scikit-learn)
