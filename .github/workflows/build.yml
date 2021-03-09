@@ -3,8 +3,7 @@ on:
   push:
     branches: 
     - '**'
-  pull_request:
-    branches: [ master ]
+    - '!master'
 jobs:
   build:
     name: 'Test Jupyter Notebooks'
