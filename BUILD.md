@@ -27,7 +27,9 @@ pipenv update
 
 ## Git LFS
 
-Some of the files (\*.png) are stored in Git LFS. When you want to work with them locally you need to install git-lfs and check them out.
+Some of the files (\*.png) are stored in Git LFS. When you want to work with them locally you need to install git-lfs.
+
+Checkout out the data from Git LFS.
 
 ```bash
 git lfs checkout
