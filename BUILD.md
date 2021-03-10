@@ -11,6 +11,12 @@ This will check all Jupyter notebooks for errors.
 pipenv run py.test --nbval-lax
 ```
 
+Or you can run the tests in parallel with the _pytest-xdist_ plugin.
+
+```bash
+pipenv run py.test --nbval-lax -n auto --dist loadscope
+```
+
 ## Upgrade Python Packages
 
 Check which packages have changed.
