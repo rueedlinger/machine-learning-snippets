@@ -20,6 +20,7 @@ statsmodels = "*"
 nbconvert = "*"
 graphviz = "*"
 xgboost = "*"
+auto-sklearn = "*"
 
 [requires]
 python_version = "3.8"
