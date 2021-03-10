@@ -1,7 +1,6 @@
->**Note**: This is a generated markdown export from the Jupyter notebook file [regression_random_forest.ipynb](regression_random_forest.ipynb).
+> **Note**: This is a generated markdown export from the Jupyter notebook file [regression_random_forest.ipynb](regression_random_forest.ipynb).
 
 ## Regression with random forest
-
 
 ```python
 %matplotlib inline
@@ -13,23 +12,22 @@ import numpy as np
 from sklearn import ensemble, datasets, metrics, model_selection
 ```
 
-
 ```python
 boston = datasets.load_boston()
 print(boston.DESCR)
 ```
 
     .. _boston_dataset:
-    
+
     Boston house prices dataset
     ---------------------------
-    
-    **Data Set Characteristics:**  
-    
-        :Number of Instances: 506 
-    
+
+    **Data Set Characteristics:**
+
+        :Number of Instances: 506
+
         :Number of Attributes: 13 numeric/categorical predictive. Median Value (attribute 14) is usually the target.
-    
+
         :Attribute Information (in order):
             - CRIM     per capita crime rate by town
             - ZN       proportion of residential land zoned for lots over 25,000 sq.ft.
@@ -45,39 +43,35 @@ print(boston.DESCR)
             - B        1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town
             - LSTAT    % lower status of the population
             - MEDV     Median value of owner-occupied homes in $1000's
-    
+
         :Missing Attribute Values: None
-    
+
         :Creator: Harrison, D. and Rubinfeld, D.L.
-    
+
     This is a copy of UCI ML housing dataset.
     https://archive.ics.uci.edu/ml/machine-learning-databases/housing/
-    
-    
+
+
     This dataset was taken from the StatLib library which is maintained at Carnegie Mellon University.
-    
+
     The Boston house-price data of Harrison, D. and Rubinfeld, D.L. 'Hedonic
     prices and the demand for clean air', J. Environ. Economics & Management,
     vol.5, 81-102, 1978.   Used in Belsley, Kuh & Welsch, 'Regression diagnostics
     ...', Wiley, 1980.   N.B. Various transformations are used in the table on
     pages 244-261 of the latter.
-    
+
     The Boston house-price data has been used in many machine learning papers that address regression
-    problems.   
-         
+    problems.
+
     .. topic:: References
-    
+
        - Belsley, Kuh & Welsch, 'Regression diagnostics: Identifying Influential Data and Sources of Collinearity', Wiley, 1980. 244-261.
        - Quinlan,R. (1993). Combining Instance-Based and Model-Based Learning. In Proceedings on the Tenth International Conference of Machine Learning, 236-243, University of Massachusetts, Amherst. Morgan Kaufmann.
-    
-
-
 
 ```python
 X = pd.DataFrame(boston.data, columns=boston.feature_names)
 y = boston.target
 ```
-
 
 ```python
 X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, train_size=0.7)
@@ -89,20 +83,12 @@ print('test samples', len(X_test))
     train samples: 354
     test samples 152
 
-
-
 ```python
 model = ensemble.RandomForestRegressor(n_estimators=100, max_depth=4, criterion='mse')
 model.fit(X_train, y_train)
 ```
 
-
-
-
     RandomForestRegressor(max_depth=4)
-
-
-
 
 ```python
 predicted = model.predict(X_test)
@@ -115,12 +101,7 @@ ax.set_ylabel('Predicted')
 _ = ax.plot([0, y.max()], [0, y.max()], ls='-', color='red')
 ```
 
-
-    
 ![png](regression_random_forest_files/regression_random_forest_6_0.png)
-    
-
-
 
 ```python
 residual = y_test - predicted
@@ -133,30 +114,15 @@ ax.set_ylabel('residual')
 _ = plt.axhline(0, color='red', ls='--')
 ```
 
-
-    
 ![png](regression_random_forest_files/regression_random_forest_7_0.png)
-    
-
-
 
 ```python
 sns.displot(residual, kind="kde");
 ```
 
+    <seaborn.axisgrid.FacetGrid at 0x12fd2a2b0>
 
-
-
-    <seaborn.axisgrid.FacetGrid at 0x1291900a0>
-
-
-
-
-    
 ![png](regression_random_forest_files/regression_random_forest_8_1.png)
-    
-
-
 
 ```python
 print("r2 score: {}".format(metrics.r2_score(y_test, predicted)))
@@ -165,7 +131,7 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.8770165931215066
-    mse: 9.67140058503843
-    rmse: 3.109887551831807
-    mae: 2.4252094693612243
+    r2 score: 0.7593037765835967
+    mse: 16.42462022575749
+    rmse: 4.052729971976604
+    mae: 2.9573274966193814

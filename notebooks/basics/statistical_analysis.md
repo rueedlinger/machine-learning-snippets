@@ -1,26 +1,24 @@
->**Note**: This is a generated markdown export from the Jupyter notebook file [statistical_analysis.ipynb](statistical_analysis.ipynb).
+> **Note**: This is a generated markdown export from the Jupyter notebook file [statistical_analysis.ipynb](statistical_analysis.ipynb).
 
-## Statistical Analysis
+## Statistical analysis
 
 In this notebook we use _pandas_ and the _stats_ module from _scipy_ for some basic statistical analysis.
-
 
 ```python
 %matplotlib inline
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-from scipy import stats 
+from scipy import stats
 
 import pandas as pd
 
 from matplotlib import pyplot as plt
 plt.style.use("ggplot")
- 
+
 ```
 
 First we need some data. Let'use pandas to load the _'adult'_ data set from the _UC Irvine Machine Learning Repository_ in our dataframe.
-
 
 ```python
 df = pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data", names=["Age", "Workclass", "fnlwgt", "Education", "Education-Num", "Martial Status",
@@ -34,23 +32,7 @@ df['Sex'] = df['Sex'].str.strip()
 df.head()
 ```
 
-
-
-
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -167,50 +149,32 @@ df.head()
 </table>
 </div>
 
-
-
-### Descriptive statistics 
+### Descriptive statistics
 
 Let's have a first look at the shape of our dataframe.
-
 
 ```python
 df.shape
 ```
 
-
-
-
     (32561, 15)
 
-
-
 What are the column names.
-
 
 ```python
 df.columns
 ```
-
-
-
 
     Index(['Age', 'Workclass', 'fnlwgt', 'Education', 'Education-Num',
            'Martial Status', 'Occupation', 'Relationship', 'Race', 'Sex',
            'Capital Gain', 'Capital Loss', 'Hours per week', 'Country', 'Target'],
           dtype='object')
 
-
-
 We can calculate the mean, median, standard error of the mean (sem), variance, standard deviation (std) and the quantiles for every column in the dataframe
-
 
 ```python
 df.mean()
 ```
-
-
-
 
     Age                   38.581647
     fnlwgt            189778.366512
@@ -220,15 +184,9 @@ df.mean()
     Hours per week        40.437456
     dtype: float64
 
-
-
-
 ```python
 df.median()
 ```
-
-
-
 
     Age                   37.0
     fnlwgt            178356.0
@@ -238,15 +196,9 @@ df.median()
     Hours per week        40.0
     dtype: float64
 
-
-
-
 ```python
 df.sem()
 ```
-
-
-
 
     Age                 0.075593
     fnlwgt            584.937250
@@ -256,15 +208,9 @@ df.sem()
     Hours per week      0.068427
     dtype: float64
 
-
-
-
 ```python
 df.var()
 ```
-
-
-
 
     Age               1.860614e+02
     fnlwgt            1.114080e+10
@@ -274,15 +220,9 @@ df.var()
     Hours per week    1.524590e+02
     dtype: float64
 
-
-
-
 ```python
 df.std()
 ```
-
-
-
 
     Age                   13.640433
     fnlwgt            105549.977697
@@ -292,15 +232,9 @@ df.std()
     Hours per week        12.347429
     dtype: float64
 
-
-
-
 ```python
 df.quantile(q=0.5)
 ```
-
-
-
 
     Age                   37.0
     fnlwgt            178356.0
@@ -310,30 +244,11 @@ df.quantile(q=0.5)
     Hours per week        40.0
     Name: 0.5, dtype: float64
 
-
-
-
 ```python
 df.quantile(q=[0.05, 0.95])
 ```
 
-
-
-
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -369,116 +284,49 @@ df.quantile(q=[0.05, 0.95])
 </table>
 </div>
 
-
-
 In the next sample we replace a value with _None_ so that we can show how to hanlde missing values in a dataframe.
 
-## Basic Visualization
+## Basic visualization
 
 First let's create a pair plot
 
-
 ```python
-sns.pairplot(df, hue="Target")
+_ = sns.pairplot(df, hue="Target")
 ```
 
-
-
-
-    <seaborn.axisgrid.PairGrid at 0x105d41520>
-
-
-
-
-    
-![png](statistical_analysis_files/statistical_analysis_21_1.png)
-    
-
-
+![png](statistical_analysis_files/statistical_analysis_21_0.png)
 
 ```python
-sns.displot(df, x="Age" ,hue="Sex", label="male", kind="kde", log_scale=False)
+_ = sns.displot(df, x="Age" ,hue="Sex", label="male", kind="kde", log_scale=False)
 ```
 
-
-
-
-    <seaborn.axisgrid.FacetGrid at 0x1240d1d30>
-
-
-
-
-    
-![png](statistical_analysis_files/statistical_analysis_22_1.png)
-    
-
+![png](statistical_analysis_files/statistical_analysis_22_0.png)
 
 ## Inferential statistics
-
 
 ```python
 female = df[df.Sex == 'Female']
 male = df[df.Sex == 'Male']
-
 ```
 
 T-Test
 
-
 ```python
 t, p = stats.ttest_ind(female['Age'], male['Age'])
-print(t)
-print(p)
+print("test statistic: {}".format(t))
+print("p-value: {}".format(p))
 ```
 
-    -16.092517011911756
-    4.8239930687799265e-58
+    test statistic: -16.092517011911756
+    p-value: 4.8239930687799265e-58
 
-
-Wilcoxon rank-sum test 
-
+Wilcoxon rank-sum test
 
 ```python
 z, p = stats.ranksums(female['Age'], male['Age'])
-print(z)
-print(p)
+print("test statistic: {}".format(z))
+print("p-value: {}".format(p))
 ```
 
-    -18.107256874221704
-    2.79324734147619e-73
-
-
-
-```python
-sns.displot(female, x="Age" ,hue="Sex", label="male", kind="kde", log_scale=False)
-```
-
-
-
-
-    <seaborn.axisgrid.FacetGrid at 0x12aa09070>
-
-
-
-
-    
-![png](statistical_analysis_files/statistical_analysis_29_1.png)
-    
-
-
-
-```python
-sns.displot(male, x="Age" ,hue="Sex", label="male", kind="kde", log_scale=False)
-```
-
-
-
-
-    <seaborn.axisgrid.FacetGrid at 0x12355b2b0>
-
-
-
-
-    
-![png](statistical_analysis_files/statistical_analysis_30_1.png)
-    
+    test statistic: -18.107256874221704
+    p-value: 2.79324734147619e-73

@@ -1,7 +1,6 @@
->**Note**: This is a generated markdown export from the Jupyter notebook file [dimensionality_reduction_mds.ipynb](dimensionality_reduction_mds.ipynb).
+> **Note**: This is a generated markdown export from the Jupyter notebook file [dimensionality_reduction_mds.ipynb](dimensionality_reduction_mds.ipynb).
 
 # Dimensionality Reduction with MDS
-
 
 ```python
 %matplotlib inline
@@ -15,13 +14,11 @@ from matplotlib.colors import ListedColormap
 
 ```
 
-
 ```python
 iris = datasets.load_iris()
 mds = manifold.MDS(n_components=2)
 new_dim = mds.fit_transform(iris.data)
 ```
-
 
 ```python
 df = pd.DataFrame(new_dim, columns=['X', 'Y'])
@@ -29,23 +26,7 @@ df['label'] = iris.target
 df.head()
 ```
 
-
-
-
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -58,40 +39,37 @@ df.head()
   <tbody>
     <tr>
       <th>0</th>
-      <td>-2.598483</td>
-      <td>-0.775403</td>
+      <td>2.526056</td>
+      <td>0.988943</td>
       <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-2.720524</td>
-      <td>-0.248398</td>
+      <td>2.691088</td>
+      <td>0.473491</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>-2.882803</td>
-      <td>-0.355172</td>
+      <td>2.843890</td>
+      <td>0.593626</td>
       <td>0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>-2.770201</td>
-      <td>-0.132852</td>
+      <td>2.750009</td>
+      <td>0.363184</td>
       <td>0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>-2.642623</td>
-      <td>-0.809329</td>
+      <td>2.566797</td>
+      <td>1.027324</td>
       <td>0</td>
     </tr>
   </tbody>
 </table>
 </div>
-
-
-
 
 ```python
 fig = plt.figure()
@@ -105,14 +83,6 @@ plt.scatter(df[df.label == 2].X, df[df.label == 2].Y, color='green', label=iris.
 plt.legend(bbox_to_anchor=(1.25, 1))
 ```
 
+    <matplotlib.legend.Legend at 0x125e47fd0>
 
-
-
-    <matplotlib.legend.Legend at 0x1261d1df0>
-
-
-
-
-    
 ![png](dimensionality_reduction_mds_files/dimensionality_reduction_mds_4_1.png)
-    

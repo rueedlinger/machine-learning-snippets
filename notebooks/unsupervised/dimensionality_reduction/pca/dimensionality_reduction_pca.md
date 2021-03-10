@@ -1,7 +1,6 @@
->**Note**: This is a generated markdown export from the Jupyter notebook file [dimensionality_reduction_pca.ipynb](dimensionality_reduction_pca.ipynb).
+> **Note**: This is a generated markdown export from the Jupyter notebook file [dimensionality_reduction_pca.ipynb](dimensionality_reduction_pca.ipynb).
 
 # Dimensionality Reduction with PCA (SVD)
-
 
 ```python
 %matplotlib inline
@@ -15,13 +14,11 @@ from matplotlib.colors import ListedColormap
 
 ```
 
-
 ```python
 iris = datasets.load_iris()
 pca = decomposition.PCA(n_components=2)
 new_dim = pca.fit_transform(iris.data)
 ```
-
 
 ```python
 df = pd.DataFrame(new_dim, columns=['X', 'Y'])
@@ -29,23 +26,7 @@ df['label'] = iris.target
 df.head()
 ```
 
-
-
-
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -90,9 +71,6 @@ df.head()
 </table>
 </div>
 
-
-
-
 ```python
 
 fig = plt.figure()
@@ -106,14 +84,6 @@ plt.scatter(df[df.label == 2].X, df[df.label == 2].Y, color='green', label=iris.
 plt.legend(bbox_to_anchor=(1.25, 1))
 ```
 
+    <matplotlib.legend.Legend at 0x12b776df0>
 
-
-
-    <matplotlib.legend.Legend at 0x129493fd0>
-
-
-
-
-    
 ![png](dimensionality_reduction_pca_files/dimensionality_reduction_pca_4_1.png)
-    

@@ -1,7 +1,6 @@
->**Note**: This is a generated markdown export from the Jupyter notebook file [classification_kNN.ipynb](classification_kNN.ipynb).
+> **Note**: This is a generated markdown export from the Jupyter notebook file [classification_kNN.ipynb](classification_kNN.ipynb).
 
-## Classification with kNN
-
+## Classification with k-nearest neighbors (k-NN)
 
 ```python
 %matplotlib inline
@@ -15,26 +14,25 @@ from sklearn import neighbors, datasets, metrics, model_selection, preprocessing
 
 Load the data set
 
-
 ```python
 wine = datasets.load_wine()
 print(wine.DESCR)
 ```
 
     .. _wine_dataset:
-    
+
     Wine recognition dataset
     ------------------------
-    
+
     **Data Set Characteristics:**
-    
+
         :Number of Instances: 178 (50 in each of three classes)
         :Number of Attributes: 13 numeric, predictive attributes and the class
         :Attribute Information:
      		- Alcohol
      		- Malic acid
      		- Ash
-    		- Alcalinity of ash  
+    		- Alcalinity of ash
      		- Magnesium
     		- Total phenols
      		- Flavanoids
@@ -44,14 +42,14 @@ print(wine.DESCR)
      		- Hue
      		- OD280/OD315 of diluted wines
      		- Proline
-    
+
         - class:
                 - class_0
                 - class_1
                 - class_2
-    		
+
         :Summary Statistics:
-        
+
         ============================= ==== ===== ======= =====
                                        Min   Max   Mean     SD
         ============================= ==== ===== ======= =====
@@ -69,56 +67,53 @@ print(wine.DESCR)
         OD280/OD315 of diluted wines: 1.27  4.00    2.61  0.71
         Proline:                       278  1680     746   315
         ============================= ==== ===== ======= =====
-    
+
         :Missing Attribute Values: None
         :Class Distribution: class_0 (59), class_1 (71), class_2 (48)
         :Creator: R.A. Fisher
         :Donor: Michael Marshall (MARSHALL%PLU@io.arc.nasa.gov)
         :Date: July, 1988
-    
+
     This is a copy of UCI ML Wine recognition datasets.
     https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data
-    
+
     The data is the results of a chemical analysis of wines grown in the same
     region in Italy by three different cultivators. There are thirteen different
     measurements taken for different constituents found in the three types of
     wine.
-    
-    Original Owners: 
-    
-    Forina, M. et al, PARVUS - 
-    An Extendible Package for Data Exploration, Classification and Correlation. 
+
+    Original Owners:
+
+    Forina, M. et al, PARVUS -
+    An Extendible Package for Data Exploration, Classification and Correlation.
     Institute of Pharmaceutical and Food Analysis and Technologies,
     Via Brigata Salerno, 16147 Genoa, Italy.
-    
+
     Citation:
-    
+
     Lichman, M. (2013). UCI Machine Learning Repository
     [https://archive.ics.uci.edu/ml]. Irvine, CA: University of California,
-    School of Information and Computer Science. 
-    
+    School of Information and Computer Science.
+
     .. topic:: References
-    
-      (1) S. Aeberhard, D. Coomans and O. de Vel, 
-      Comparison of Classifiers in High Dimensional Settings, 
-      Tech. Rep. no. 92-02, (1992), Dept. of Computer Science and Dept. of  
-      Mathematics and Statistics, James Cook University of North Queensland. 
-      (Also submitted to Technometrics). 
-    
-      The data was used with many others for comparing various 
-      classifiers. The classes are separable, though only RDA 
-      has achieved 100% correct classification. 
-      (RDA : 100%, QDA 99.4%, LDA 98.9%, 1NN 96.1% (z-transformed data)) 
-      (All results using the leave-one-out technique) 
-    
-      (2) S. Aeberhard, D. Coomans and O. de Vel, 
-      "THE CLASSIFICATION PERFORMANCE OF RDA" 
-      Tech. Rep. no. 92-01, (1992), Dept. of Computer Science and Dept. of 
-      Mathematics and Statistics, James Cook University of North Queensland. 
+
+      (1) S. Aeberhard, D. Coomans and O. de Vel,
+      Comparison of Classifiers in High Dimensional Settings,
+      Tech. Rep. no. 92-02, (1992), Dept. of Computer Science and Dept. of
+      Mathematics and Statistics, James Cook University of North Queensland.
+      (Also submitted to Technometrics).
+
+      The data was used with many others for comparing various
+      classifiers. The classes are separable, though only RDA
+      has achieved 100% correct classification.
+      (RDA : 100%, QDA 99.4%, LDA 98.9%, 1NN 96.1% (z-transformed data))
+      (All results using the leave-one-out technique)
+
+      (2) S. Aeberhard, D. Coomans and O. de Vel,
+      "THE CLASSIFICATION PERFORMANCE OF RDA"
+      Tech. Rep. no. 92-01, (1992), Dept. of Computer Science and Dept. of
+      Mathematics and Statistics, James Cook University of North Queensland.
       (Also submitted to Journal of Chemometrics).
-    
-
-
 
 ```python
 X = pd.DataFrame(wine.data, columns=wine.feature_names)
@@ -127,9 +122,8 @@ y = wine.target
 
 Stratify the data by the target label
 
-
 ```python
-X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, train_size=0.7, stratify=y)
+X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, train_size=0.5, stratify=y)
 
 df_train = pd.DataFrame(y_train, columns=['target'])
 df_train['type'] = 'train'
@@ -139,35 +133,23 @@ df_test['type'] = 'test'
 
 df_set = df_train.append(df_test)
 
-_ = sns.countplot(x='target', hue='type', data=df_set)     
+_ = sns.countplot(x='target', hue='type', data=df_set)
 
 print('train samples:', len(X_train))
 print('test samples', len(X_test))
 ```
 
-    train samples: 124
-    test samples 54
+    train samples: 89
+    test samples 89
 
-
-
-    
 ![png](classification_kNN_files/classification_kNN_6_1.png)
-    
-
-
 
 ```python
 model = neighbors.KNeighborsClassifier(n_neighbors=5, weights='distance')
 model.fit(X_train, y_train)
 ```
 
-
-
-
     KNeighborsClassifier(weights='distance')
-
-
-
 
 ```python
 predicted = model.predict(X_test)
@@ -180,23 +162,7 @@ truth_table = truth_table.groupby(['target_predicted', 'target_truth']).size().u
 truth_table
 ```
 
-
-
-
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -215,39 +181,31 @@ truth_table
   <tbody>
     <tr>
       <th>0</th>
-      <td>16.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>28.0</td>
+      <td>5.0</td>
+      <td>3.0</td>
     </tr>
     <tr>
       <th>1</th>
       <td>0.0</td>
-      <td>14.0</td>
-      <td>7.0</td>
+      <td>25.0</td>
+      <td>6.0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>2.0</td>
-      <td>7.0</td>
-      <td>8.0</td>
+      <td>1.0</td>
+      <td>6.0</td>
+      <td>15.0</td>
     </tr>
   </tbody>
 </table>
 </div>
 
-
-
-
 ```python
 _ = sns.heatmap(truth_table, annot=True, cmap="Blues")
 ```
 
-
-    
 ![png](classification_kNN_files/classification_kNN_9_0.png)
-    
-
-
 
 ```python
 print("accuracy: {:.3f}".format(metrics.accuracy_score(y_test, predicted)))
@@ -256,7 +214,7 @@ print("recall: {:.3f}".format(metrics.recall_score(y_test, predicted, average='w
 print("f1 score: {:.3f}".format(metrics.f1_score(y_test, predicted, average='weighted')))
 ```
 
-    accuracy: 0.704
-    precision: 0.723
-    recall: 0.704
-    f1 score: 0.712
+    accuracy: 0.764
+    precision: 0.763
+    recall: 0.764
+    f1 score: 0.758
