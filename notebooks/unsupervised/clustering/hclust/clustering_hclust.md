@@ -12,20 +12,28 @@ import numpy as np
 import pandas as pd
 
 from scipy.cluster.hierarchy import dendrogram, linkage
-from scipy.cluster.hierarchy import cophenet
-from scipy.spatial.distance import pdist
 ```
 
 
 ```python
-data, labels_true = datasets.make_blobs(n_samples=750, centers=[[1,1],[0,5],[2,8]], cluster_std=0.7,
+max_samples = 20
+labels = range(1, max_samples+1)
+
+data, labels_true = datasets.make_blobs(n_samples=max_samples, centers=[[1,1],[0,5],[2,8]], cluster_std=0.7,
                             random_state=0)
-
-
-plt.scatter(data[:,0], data[:,1])
 
 df = pd.DataFrame(data, columns=['X', 'Y'])
 
+plt.scatter(df.X, df.Y)
+
+
+for label, x, y in zip(labels, df.X, df.Y):
+    plt.annotate(
+        label,
+        xy=(x, y), xytext=(-3, 3),
+        textcoords='offset points', ha='right', va='bottom')
+
+plt.show()
 ```
 
 
@@ -36,19 +44,83 @@ df = pd.DataFrame(data, columns=['X', 'Y'])
 
 
 ```python
-Z = linkage(df, 'ward')
-c, coph_dists = cophenet(Z, pdist(df, metric='euclidean'))
-c
+linked = linkage(df, method='single', metric='euclidean')
+dendrogram(linked, labels=labels, orientation='top', distance_sort='descending', show_leaf_counts=True)
+
+plt.show()
 ```
 
 
-
-
-    0.8336974676406612
-
+    
+![png](clustering_hclust_files/clustering_hclust_3_0.png)
+    
 
 
 
 ```python
+linked = linkage(df, method='ward', metric='euclidean')
+dendrogram(linked, labels=labels, orientation='top', distance_sort='descending', show_leaf_counts=True)
 
+plt.show()
 ```
+
+
+    
+![png](clustering_hclust_files/clustering_hclust_4_0.png)
+    
+
+
+
+```python
+linked = linkage(df, method='complete', metric='euclidean')
+dendrogram(linked, labels=labels, orientation='top', distance_sort='descending', show_leaf_counts=True)
+
+plt.show()
+```
+
+
+    
+![png](clustering_hclust_files/clustering_hclust_5_0.png)
+    
+
+
+
+```python
+linked = linkage(df, method='average', metric='euclidean')
+dendrogram(linked, labels=labels, orientation='top', distance_sort='descending', show_leaf_counts=True)
+
+plt.show()
+```
+
+
+    
+![png](clustering_hclust_files/clustering_hclust_6_0.png)
+    
+
+
+
+```python
+linked = linkage(df, method='weighted', metric='euclidean')
+dendrogram(linked, labels=labels, orientation='top', distance_sort='descending', show_leaf_counts=True)
+
+plt.show()
+```
+
+
+    
+![png](clustering_hclust_files/clustering_hclust_7_0.png)
+    
+
+
+
+```python
+linked = linkage(df, method='centroid', metric='euclidean')
+dendrogram(linked, labels=labels, orientation='top', distance_sort='descending', show_leaf_counts=True)
+
+plt.show()
+```
+
+
+    
+![png](clustering_hclust_files/clustering_hclust_8_0.png)
+    

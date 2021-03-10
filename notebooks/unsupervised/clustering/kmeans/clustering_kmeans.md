@@ -24,6 +24,7 @@ data, labels_true = datasets.make_blobs(n_samples=750, centers=[[1,1],[0,5],[2,8
 plt.scatter(data[:,0], data[:,1])
 
 df = pd.DataFrame(data, columns=['X', 'Y'])
+
 ```
 
 
@@ -45,32 +46,17 @@ ax = fig.add_subplot(111)
 
 
 for i in range(kmeans.n_clusters):
-    plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
+    plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(float(i) / len(np.unique(label))))
 
 for i in kmeans.cluster_centers_:
     plt.scatter(i[0], i[1], color='black', marker='+', s=100)
     
-plt.legend(bbox_to_anchor=(1.25, 1))
+_ = plt.legend(bbox_to_anchor=(1.25, 1))
 ```
-
-    <ipython-input-1-e08db6ac7c55>:12: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-    <ipython-input-1-e08db6ac7c55>:12: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-
-
-
-
-
-    <matplotlib.legend.Legend at 0x121e74ca0>
-
-
 
 
     
-![png](clustering_kmeans_files/clustering_kmeans_3_2.png)
+![png](clustering_kmeans_files/clustering_kmeans_3_0.png)
     
 
 
@@ -87,35 +73,17 @@ fig.suptitle('K-means n=3', fontsize=14, fontweight='bold')
 ax = fig.add_subplot(111)
 
 for i in range(kmeans.n_clusters):
-    plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
+    plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(float(i) / len(np.unique(label))))
 
 for i in kmeans.cluster_centers_:
     plt.scatter(i[0], i[1], color='black', marker='+', s=100)
     
-plt.legend(bbox_to_anchor=(1.25, 1))
+_ = plt.legend(bbox_to_anchor=(1.25, 1))
 ```
-
-    <ipython-input-1-76fb897fa33c>:10: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-    <ipython-input-1-76fb897fa33c>:10: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-    <ipython-input-1-76fb897fa33c>:10: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-
-
-
-
-
-    <matplotlib.legend.Legend at 0x121fc2190>
-
-
 
 
     
-![png](clustering_kmeans_files/clustering_kmeans_5_2.png)
+![png](clustering_kmeans_files/clustering_kmeans_5_0.png)
     
 
 
@@ -134,38 +102,17 @@ ax = fig.add_subplot(111)
 
 
 for i in range(kmeans.n_clusters):
-    plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
+    plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(float(i) / len(np.unique(label))))
     
 for i in kmeans.cluster_centers_:
     plt.scatter(i[0], i[1], color='black', marker='+', s=100)
 
-plt.legend(bbox_to_anchor=(1.25, 1))
+_ = plt.legend(bbox_to_anchor=(1.25, 1))
 ```
-
-    <ipython-input-1-dae570f48ffe>:12: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-    <ipython-input-1-dae570f48ffe>:12: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-    <ipython-input-1-dae570f48ffe>:12: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-    <ipython-input-1-dae570f48ffe>:12: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-
-
-
-
-
-    <matplotlib.legend.Legend at 0x122102970>
-
-
 
 
     
-![png](clustering_kmeans_files/clustering_kmeans_7_2.png)
+![png](clustering_kmeans_files/clustering_kmeans_7_0.png)
     
 
 
@@ -182,41 +129,17 @@ ax = fig.add_subplot(111)
 
 
 for i in range(kmeans.n_clusters):
-    plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
+    plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(float(i) / len(np.unique(label))))
     
 for i in kmeans.cluster_centers_:
     plt.scatter(i[0], i[1], color='black', marker='+', s=100)
 
-plt.legend(bbox_to_anchor=(1.25, 1))
+_ = plt.legend(bbox_to_anchor=(1.25, 1))
 ```
-
-    <ipython-input-1-0aff14253d88>:12: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-    <ipython-input-1-0aff14253d88>:12: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-    <ipython-input-1-0aff14253d88>:12: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-    <ipython-input-1-0aff14253d88>:12: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-    <ipython-input-1-0aff14253d88>:12: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-
-
-
-
-
-    <matplotlib.legend.Legend at 0x122232880>
-
-
 
 
     
-![png](clustering_kmeans_files/clustering_kmeans_8_2.png)
+![png](clustering_kmeans_files/clustering_kmeans_8_0.png)
     
 
 
@@ -229,19 +152,12 @@ fig = plt.figure()
 ax = p3.Axes3D(fig)
 ax.view_init(7, -80)
 
-ax.scatter(df.X, df.Y, df.Z, 'o')
+_ = ax.scatter(df.X, df.Y, df.Z, 'o')
 ```
 
 
-
-
-    <mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x1223744c0>
-
-
-
-
     
-![png](clustering_kmeans_files/clustering_kmeans_9_1.png)
+![png](clustering_kmeans_files/clustering_kmeans_9_0.png)
     
 
 
@@ -261,21 +177,13 @@ fig.suptitle('K-means n=2', fontsize=14, fontweight='bold')
 for l in np.unique(label):
     
     ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 
-               'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
+               'o', color=plt.cm.jet(float(l) / len(np.unique(label))))
 
 ```
 
-    <ipython-input-1-cb9c11940bdc>:14: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
-    <ipython-input-1-cb9c11940bdc>:14: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
-
-
 
     
-![png](clustering_kmeans_files/clustering_kmeans_10_1.png)
+![png](clustering_kmeans_files/clustering_kmeans_10_0.png)
     
 
 
@@ -295,24 +203,13 @@ fig.suptitle('K-means n=3', fontsize=14, fontweight='bold')
 for l in np.unique(label):
     
     ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 
-               'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
+               'o', color=plt.cm.jet(float(l) / len(np.unique(label))))
 
 ```
 
-    <ipython-input-1-a87e53ad7267>:14: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
-    <ipython-input-1-a87e53ad7267>:14: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
-    <ipython-input-1-a87e53ad7267>:14: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
-
-
 
     
-![png](clustering_kmeans_files/clustering_kmeans_11_1.png)
+![png](clustering_kmeans_files/clustering_kmeans_11_0.png)
     
 
 
@@ -332,27 +229,13 @@ fig.suptitle('K-means n=4', fontsize=14, fontweight='bold')
 for l in np.unique(label):
     
     ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 
-               'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
+               'o', color=plt.cm.jet(float(l) / len(np.unique(label))))
 
 ```
 
-    <ipython-input-1-4ae8f4bce688>:14: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
-    <ipython-input-1-4ae8f4bce688>:14: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
-    <ipython-input-1-4ae8f4bce688>:14: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
-    <ipython-input-1-4ae8f4bce688>:14: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
-
-
 
     
-![png](clustering_kmeans_files/clustering_kmeans_12_1.png)
+![png](clustering_kmeans_files/clustering_kmeans_12_0.png)
     
 
 
@@ -372,28 +255,11 @@ fig.suptitle('K-means n=5', fontsize=14, fontweight='bold')
 for l in np.unique(label):
     
     ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 
-               'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
+               'o', color=plt.cm.jet(float(l) / len(np.unique(label))))
 
 ```
 
-    <ipython-input-1-cf01c1d1d2ad>:14: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
-    <ipython-input-1-cf01c1d1d2ad>:14: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
-    <ipython-input-1-cf01c1d1d2ad>:14: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
-    <ipython-input-1-cf01c1d1d2ad>:14: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
-    <ipython-input-1-cf01c1d1d2ad>:14: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
-
-
 
     
-![png](clustering_kmeans_files/clustering_kmeans_13_1.png)
+![png](clustering_kmeans_files/clustering_kmeans_13_0.png)
     

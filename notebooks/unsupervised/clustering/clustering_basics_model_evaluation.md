@@ -83,19 +83,12 @@ With a boxplot we can easily plot the silhouette score for every cluster. If we 
 sample_silhouette_values = pd.DataFrame(metrics.silhouette_samples(iris.data, label), columns=['score'])
 sample_silhouette_values['label'] = label
 
-sns.boxplot(x="label", y="score", data=sample_silhouette_values, palette=colors)
+_ = sns.boxplot(x="label", y="score", data=sample_silhouette_values, palette=colors)
 ```
 
 
-
-
-    <AxesSubplot:xlabel='label', ylabel='score'>
-
-
-
-
     
-![png](clustering_basics_model_evaluation_files/clustering_basics_model_evaluation_10_1.png)
+![png](clustering_basics_model_evaluation_files/clustering_basics_model_evaluation_10_0.png)
     
 
 

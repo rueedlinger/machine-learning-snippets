@@ -81,19 +81,12 @@ df.corr()
 
 
 ```python
-sns.heatmap(corr)
+_ = sns.heatmap(corr)
 ```
 
 
-
-
-    <AxesSubplot:>
-
-
-
-
     
-![png](dimensionality_reduction_eigen_files/dimensionality_reduction_eigen_6_1.png)
+![png](dimensionality_reduction_eigen_files/dimensionality_reduction_eigen_6_0.png)
     
 
 
@@ -317,18 +310,11 @@ plt.scatter(df[df.label == 0].X, df[df.label == 0].Y, color='red', label=iris.ta
 plt.scatter(df[df.label == 1].X, df[df.label == 1].Y, color='blue', label=iris.target_names[1])
 plt.scatter(df[df.label == 2].X, df[df.label == 2].Y, color='green', label=iris.target_names[2])
 
-plt.legend(bbox_to_anchor=(1.25, 1))
+_ = plt.legend(bbox_to_anchor=(1.25, 1))
 
 ```
 
 
-
-
-    <matplotlib.legend.Legend at 0x12b072910>
-
-
-
-
     
-![png](dimensionality_reduction_eigen_files/dimensionality_reduction_eigen_15_1.png)
+![png](dimensionality_reduction_eigen_files/dimensionality_reduction_eigen_15_0.png)
     

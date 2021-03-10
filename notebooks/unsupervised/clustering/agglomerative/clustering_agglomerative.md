@@ -48,30 +48,15 @@ clusters = list(set(label))
 
 for i in range(len(clusters)):
     plt.scatter(df[df.label == clusters[i]].X, df[df.label == clusters[i]].Y, 
-                label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
+                label=i, color=plt.cm.jet(float(i) / len(np.unique(label))))
 
 
-plt.legend(bbox_to_anchor=(1.25, 1))
+_ = plt.legend(bbox_to_anchor=(1.25, 1))
 ```
-
-    <ipython-input-1-409a480594c9>:14: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-    <ipython-input-1-409a480594c9>:14: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-
-
-
-
-
-    <matplotlib.legend.Legend at 0x129361d30>
-
-
 
 
     
-![png](clustering_agglomerative_files/clustering_agglomerative_3_2.png)
+![png](clustering_agglomerative_files/clustering_agglomerative_3_0.png)
     
 
 
@@ -91,32 +76,14 @@ clusters = list(set(label))
 
 for i in range(len(clusters)):
     plt.scatter(df[df.label == clusters[i]].X, df[df.label == clusters[i]].Y, 
-                label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
+                label=i, color=plt.cm.jet(float(i) / len(np.unique(label))))
 
-plt.legend(bbox_to_anchor=(1.25, 1))
+_ = plt.legend(bbox_to_anchor=(1.25, 1))
 ```
-
-    <ipython-input-1-f4b0e4f64271>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-    <ipython-input-1-f4b0e4f64271>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-    <ipython-input-1-f4b0e4f64271>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-
-
-
-
-
-    <matplotlib.legend.Legend at 0x129a099a0>
-
-
 
 
     
-![png](clustering_agglomerative_files/clustering_agglomerative_5_2.png)
+![png](clustering_agglomerative_files/clustering_agglomerative_5_0.png)
     
 
 
@@ -136,35 +103,14 @@ clusters = list(set(label))
 
 for i in range(len(clusters)):
     plt.scatter(df[df.label == clusters[i]].X, df[df.label == clusters[i]].Y, 
-                label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
+                label=i, color=plt.cm.jet(float(i) / len(np.unique(label))))
 
-plt.legend(bbox_to_anchor=(1.25, 1))
+_ = plt.legend(bbox_to_anchor=(1.25, 1))
 ```
-
-    <ipython-input-1-cd1ddd3c5461>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-    <ipython-input-1-cd1ddd3c5461>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-    <ipython-input-1-cd1ddd3c5461>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-    <ipython-input-1-cd1ddd3c5461>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-
-
-
-
-
-    <matplotlib.legend.Legend at 0x129abfe50>
-
-
 
 
     
-![png](clustering_agglomerative_files/clustering_agglomerative_7_2.png)
+![png](clustering_agglomerative_files/clustering_agglomerative_7_0.png)
     
 
 
@@ -182,38 +128,14 @@ clusters = list(set(label))
 
 for i in range(len(clusters)):
     plt.scatter(df[df.label == clusters[i]].X, df[df.label == clusters[i]].Y, 
-                label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
+                label=i, color=plt.cm.jet(float(i) / len(np.unique(label))))
 
-plt.legend(bbox_to_anchor=(1.25, 1))
+_ = plt.legend(bbox_to_anchor=(1.25, 1))
 ```
-
-    <ipython-input-1-786f718b8c21>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-    <ipython-input-1-786f718b8c21>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-    <ipython-input-1-786f718b8c21>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-    <ipython-input-1-786f718b8c21>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-    <ipython-input-1-786f718b8c21>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-
-
-
-
-
-    <matplotlib.legend.Legend at 0x129c3f130>
-
-
 
 
     
-![png](clustering_agglomerative_files/clustering_agglomerative_8_2.png)
+![png](clustering_agglomerative_files/clustering_agglomerative_8_0.png)
     
 
 
@@ -228,19 +150,12 @@ fig = plt.figure()
 ax = p3.Axes3D(fig)
 ax.view_init(7, -80)
 
-ax.scatter(df.X, df.Y, df.Z, 'o')
+_ = ax.scatter(df.X, df.Y, df.Z, 'o')
 ```
 
 
-
-
-    <mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x129d9d130>
-
-
-
-
     
-![png](clustering_agglomerative_files/clustering_agglomerative_9_1.png)
+![png](clustering_agglomerative_files/clustering_agglomerative_9_0.png)
     
 
 
@@ -258,29 +173,14 @@ fig.suptitle('AgglomerativeClustering n=2', fontsize=14, fontweight='bold')
 
 for i, l in enumerate(np.unique(label)):
     ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 'o', 
-               color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
+               color=plt.cm.jet(float(i) / len(np.unique(label))), label=l)
     
-plt.legend(bbox_to_anchor=(1.25, 1))
+_ = plt.legend(bbox_to_anchor=(1.25, 1))
 ```
 
-    <ipython-input-1-8c43a5207c47>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
-    <ipython-input-1-8c43a5207c47>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
-
-
-
-
-
-    <matplotlib.legend.Legend at 0x129e2bca0>
-
-
-
 
     
-![png](clustering_agglomerative_files/clustering_agglomerative_10_2.png)
+![png](clustering_agglomerative_files/clustering_agglomerative_10_0.png)
     
 
 
@@ -298,42 +198,12 @@ fig.suptitle('AgglomerativeClustering n=5', fontsize=14, fontweight='bold')
 
 for i, l in enumerate(np.unique(label)):
     ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 'o', 
-               color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
+               color=plt.cm.jet(float(i) / len(np.unique(label))), label=l)
     
-plt.legend(bbox_to_anchor=(1.25, 1))
+_ = plt.legend(bbox_to_anchor=(1.25, 1))
 ```
 
-    <ipython-input-1-ad8da41e07ea>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
-    <ipython-input-1-ad8da41e07ea>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
-    <ipython-input-1-ad8da41e07ea>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
-    <ipython-input-1-ad8da41e07ea>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
-    <ipython-input-1-ad8da41e07ea>:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      color=plt.cm.jet(np.float(i) / len(np.unique(label))), label=l)
-
-
-
-
-
-    <matplotlib.legend.Legend at 0x129be4f40>
-
-
-
 
     
-![png](clustering_agglomerative_files/clustering_agglomerative_11_2.png)
+![png](clustering_agglomerative_files/clustering_agglomerative_11_0.png)
     
-
-
-
-```python
-
-```
