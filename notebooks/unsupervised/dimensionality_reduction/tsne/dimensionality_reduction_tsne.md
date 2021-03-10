@@ -44,32 +44,32 @@ df.head()
   <tbody>
     <tr>
       <th>0</th>
-      <td>24.371307</td>
-      <td>-2.267375</td>
+      <td>-7.802678</td>
+      <td>22.163740</td>
       <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>21.753838</td>
-      <td>-1.255062</td>
+      <td>-6.938743</td>
+      <td>24.750223</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>21.944386</td>
-      <td>-2.420390</td>
+      <td>-8.131725</td>
+      <td>24.800585</td>
       <td>0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>21.472452</td>
-      <td>-2.041926</td>
+      <td>-7.868579</td>
+      <td>25.161163</td>
       <td>0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>24.414719</td>
-      <td>-2.605456</td>
+      <td>-8.280317</td>
+      <td>22.155890</td>
       <td>0</td>
     </tr>
   </tbody>
@@ -88,17 +88,10 @@ plt.scatter(df[df.label == 0].X, df[df.label == 0].Y, color='red', label=iris.ta
 plt.scatter(df[df.label == 1].X, df[df.label == 1].Y, color='blue', label=iris.target_names[1])
 plt.scatter(df[df.label == 2].X, df[df.label == 2].Y, color='green', label=iris.target_names[2])
 
-plt.legend(bbox_to_anchor=(1.25, 1))
+_ = plt.legend(bbox_to_anchor=(1.25, 1))
 ```
 
 
-
-
-    <matplotlib.legend.Legend at 0x126f10ee0>
-
-
-
-
     
-![png](dimensionality_reduction_tsne_files/dimensionality_reduction_tsne_4_1.png)
+![png](dimensionality_reduction_tsne_files/dimensionality_reduction_tsne_4_0.png)
     
