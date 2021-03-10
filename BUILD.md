@@ -41,11 +41,6 @@ Checkout out the data from Git LFS.
 git lfs checkout
 ```
 
-## CI Build (GitHub Actions)
-
-See the GitHub Actions [build.yml](.github/workflows/build.yml) file for more details.
-![CI Build](https://github.com/rueedlinger/machine-learning-snippets/workflows/CI%20Build/badge.svg)
-
 ## Export the Jupyter Notebooks to Markdown
 
 To export the Jupyter notebooks to Markdown just run the [export-notebooks.sh](export-notebooks.sh) script.
