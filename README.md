@@ -56,7 +56,7 @@ The following machine learning snippets are available as Jupyter Notebook.
 
 ### Non-parametric (nonlinear)
 
-- [Classification with kNN](notebooks/supervised/classification/nonlinear/classification_kNN.md) (scikit-learn)
+- [Classification with k-NN](notebooks/supervised/classification/nonlinear/classification_kNN.md) (scikit-learn)
 - [Classification with decision trees](notebooks/supervised/classification/nonlinear/classification_decision_trees.md) (scikit-learn)
 
 ### Ensemble learning
@@ -80,7 +80,7 @@ The following machine learning snippets are available as Jupyter Notebook.
 
 ### Non-parametric (nonlinear)
 
-- [Regression with kNN](notebooks/supervised/regression/nonlinear/regression_kNN.md) (scikit-learn)
+- [Regression with k-NN](notebooks/supervised/regression/nonlinear/regression_kNN.md) (scikit-learn)
 - [Regression with decision tree](notebooks/supervised/regression/nonlinear/regression_tree.md) (scikit-learn)
 
 ### Ensemble learning
