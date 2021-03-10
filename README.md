@@ -36,7 +36,7 @@ The following machine learning snippets are available as Jupyter Notebook.
 
 ## Basics
 
-- [Statistical Analysis](notebooks/basics/statistical_analysis.md)
+- [Statistical analysis](notebooks/basics/statistical_analysis.md)
 
 ## Classification
 
