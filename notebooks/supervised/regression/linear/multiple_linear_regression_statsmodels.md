@@ -1,7 +1,6 @@
->**Note**: This is a generated markdown export from the Jupyter notebook file [multiple_linear_regression_statsmodels.ipynb](multiple_linear_regression_statsmodels.ipynb).
+> **Note**: This is a generated markdown export from the Jupyter notebook file [multiple_linear_regression_statsmodels.ipynb](multiple_linear_regression_statsmodels.ipynb).
 
 ## Linear regression with statsmodels (OLS)
-
 
 ```python
 import statsmodels.api as sm
@@ -17,23 +16,22 @@ from sklearn import datasets, model_selection, metrics
 
 We load the boston house-prices dataset and `X` are our features and `y` is the target variable `medv` (Median value of owner-occupied homes in $1000s).
 
-
 ```python
 boston = datasets.load_boston()
 print(boston.DESCR)
 ```
 
     .. _boston_dataset:
-    
+
     Boston house prices dataset
     ---------------------------
-    
-    **Data Set Characteristics:**  
-    
-        :Number of Instances: 506 
-    
+
+    **Data Set Characteristics:**
+
+        :Number of Instances: 506
+
         :Number of Attributes: 13 numeric/categorical predictive. Median Value (attribute 14) is usually the target.
-    
+
         :Attribute Information (in order):
             - CRIM     per capita crime rate by town
             - ZN       proportion of residential land zoned for lots over 25,000 sq.ft.
@@ -49,35 +47,32 @@ print(boston.DESCR)
             - B        1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town
             - LSTAT    % lower status of the population
             - MEDV     Median value of owner-occupied homes in $1000's
-    
+
         :Missing Attribute Values: None
-    
+
         :Creator: Harrison, D. and Rubinfeld, D.L.
-    
+
     This is a copy of UCI ML housing dataset.
     https://archive.ics.uci.edu/ml/machine-learning-databases/housing/
-    
-    
+
+
     This dataset was taken from the StatLib library which is maintained at Carnegie Mellon University.
-    
+
     The Boston house-price data of Harrison, D. and Rubinfeld, D.L. 'Hedonic
     prices and the demand for clean air', J. Environ. Economics & Management,
     vol.5, 81-102, 1978.   Used in Belsley, Kuh & Welsch, 'Regression diagnostics
     ...', Wiley, 1980.   N.B. Various transformations are used in the table on
     pages 244-261 of the latter.
-    
+
     The Boston house-price data has been used in many machine learning papers that address regression
-    problems.   
-         
+    problems.
+
     .. topic:: References
-    
+
        - Belsley, Kuh & Welsch, 'Regression diagnostics: Identifying Influential Data and Sources of Collinearity', Wiley, 1980. 244-261.
        - Quinlan,R. (1993). Combining Instance-Based and Model-Based Learning. In Proceedings on the Tenth International Conference of Machine Learning, 236-243, University of Massachusetts, Amherst. Morgan Kaufmann.
-    
-
 
 Let's split the data in a test and training set.
-
 
 ```python
 X = pd.DataFrame(boston.data, columns=boston.feature_names)
@@ -87,9 +82,8 @@ X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, train_
 ```
 
 ## Fitting models - the standard way
+
 ### Full model without an intercept
-
-
 
 ```python
 model = sm.OLS(y_train, X_train)
@@ -97,7 +91,7 @@ result = model.fit()
 print(result.summary())
 ```
 
-                                     OLS Regression Results                                
+                                     OLS Regression Results
     =======================================================================================
     Dep. Variable:                      y   R-squared (uncentered):                   0.959
     Model:                            OLS   Adj. R-squared (uncentered):              0.958
@@ -106,8 +100,8 @@ print(result.summary())
     Time:                        17:50:42   Log-Likelihood:                         -1059.0
     No. Observations:                 354   AIC:                                      2144.
     Df Residuals:                     341   BIC:                                      2194.
-    Df Model:                          13                                                  
-    Covariance Type:            nonrobust                                                  
+    Df Model:                          13
+    Covariance Type:            nonrobust
     ==============================================================================
                      coef    std err          t      P>|t|      [0.025      0.975]
     ------------------------------------------------------------------------------
@@ -130,33 +124,23 @@ print(result.summary())
     Skew:                           2.077   Prob(JB):                         0.00
     Kurtosis:                      13.631   Cond. No.                     8.43e+03
     ==============================================================================
-    
+
     Notes:
     [1] R² is computed without centering (uncentered) since the model does not contain a constant.
     [2] Standard Errors assume that the covariance matrix of the errors is correctly specified.
     [3] The condition number is large, 8.43e+03. This might indicate that there are
     strong multicollinearity or other numerical problems.
 
-
-
 ```python
 fig = sm.qqplot(result.resid, fit=True, line="s")
 plt.show()
 ```
 
-
-    
 ![png](multiple_linear_regression_statsmodels_files/multiple_linear_regression_statsmodels_8_0.png)
-    
-
-
 
 ```python
 result.pvalues < 0.05
 ```
-
-
-
 
     CRIM       False
     ZN          True
@@ -173,9 +157,6 @@ result.pvalues < 0.05
     LSTAT       True
     dtype: bool
 
-
-
-
 ```python
 predicted = result.predict(X_test)
 
@@ -190,10 +171,7 @@ print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
     rmse: 5.261501563340688
     mae: 3.715267710128775
 
-
 ### Full model with an intercept
-
-
 
 ```python
 model = sm.OLS(y_train, sm.add_constant(X_train))
@@ -201,7 +179,7 @@ result = model.fit()
 print(result.summary())
 ```
 
-                                OLS Regression Results                            
+                                OLS Regression Results
     ==============================================================================
     Dep. Variable:                      y   R-squared:                       0.705
     Model:                            OLS   Adj. R-squared:                  0.693
@@ -210,8 +188,8 @@ print(result.summary())
     Time:                        17:50:42   Log-Likelihood:                -1046.1
     No. Observations:                 354   AIC:                             2120.
     Df Residuals:                     340   BIC:                             2174.
-    Df Model:                          13                                         
-    Covariance Type:            nonrobust                                         
+    Df Model:                          13
+    Covariance Type:            nonrobust
     ==============================================================================
                      coef    std err          t      P>|t|      [0.025      0.975]
     ------------------------------------------------------------------------------
@@ -235,25 +213,18 @@ print(result.summary())
     Skew:                           1.988   Prob(JB):                    1.13e-263
     Kurtosis:                      11.142   Cond. No.                     1.51e+04
     ==============================================================================
-    
+
     Notes:
     [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
     [2] The condition number is large, 1.51e+04. This might indicate that there are
     strong multicollinearity or other numerical problems.
-
-
 
 ```python
 fig = sm.qqplot(result.resid, fit=True, line="s")
 plt.show()
 ```
 
-
-    
 ![png](multiple_linear_regression_statsmodels_files/multiple_linear_regression_statsmodels_13_0.png)
-    
-
-
 
 ```python
 predicted = result.predict(sm.add_constant(X_test))
@@ -269,19 +240,15 @@ print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
     rmse: 4.8971085683471935
     mae: 3.4576855853797674
 
-
 ## Fitting models using R-style formulas
-We can also fit a model with the R syntax `y ~ x_1 + x_2` and build some complexer models.
 
+We can also fit a model with the R syntax `y ~ x_1 + x_2` and build some complexer models.
 
 ```python
 dat = X_train.copy()
 dat['MEDV'] = y_train
 dat.head()
 ```
-
-
-
 
 <div>
 <table border="1" class="dataframe">
@@ -394,17 +361,14 @@ dat.head()
 </table>
 </div>
 
-
-
 ### Full model with an intercept
-
 
 ```python
 result = smf.ols('MEDV ~ CRIM + ZN + INDUS + CHAS + NOX + RM + AGE + DIS + RAD + TAX + PTRATIO + B', data=dat).fit()
 print(result.summary())
 ```
 
-                                OLS Regression Results                            
+                                OLS Regression Results
     ==============================================================================
     Dep. Variable:                   MEDV   R-squared:                       0.644
     Model:                            OLS   Adj. R-squared:                  0.631
@@ -413,8 +377,8 @@ print(result.summary())
     Time:                        17:50:42   Log-Likelihood:                -1079.2
     No. Observations:                 354   AIC:                             2184.
     Df Residuals:                     341   BIC:                             2235.
-    Df Model:                          12                                         
-    Covariance Type:            nonrobust                                         
+    Df Model:                          12
+    Covariance Type:            nonrobust
     ==============================================================================
                      coef    std err          t      P>|t|      [0.025      0.975]
     ------------------------------------------------------------------------------
@@ -437,13 +401,11 @@ print(result.summary())
     Skew:                           2.548   Prob(JB):                         0.00
     Kurtosis:                      16.722   Cond. No.                     1.48e+04
     ==============================================================================
-    
+
     Notes:
     [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
     [2] The condition number is large, 1.48e+04. This might indicate that there are
     strong multicollinearity or other numerical problems.
-
-
 
 ```python
 fig = sm.qqplot(result.resid, fit=True, line="s")
@@ -451,12 +413,7 @@ fig = sm.qqplot(result.resid, fit=True, line="s")
 plt.show()
 ```
 
-
-    
 ![png](multiple_linear_regression_statsmodels_files/multiple_linear_regression_statsmodels_19_0.png)
-    
-
-
 
 ```python
 predicted = result.predict(X_test)
@@ -472,16 +429,14 @@ print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
     rmse: 5.4642847758762185
     mae: 3.6904444809675634
 
-
 ### Model with a polynomial and the target variable log transformed
-
 
 ```python
 result = smf.ols('np.log(MEDV) ~ CRIM + CHAS + NOX + RM + DIS + RAD + TAX + PTRATIO + B + pow(AGE, 2)', data=dat).fit()
 print(result.summary())
 ```
 
-                                OLS Regression Results                            
+                                OLS Regression Results
     ==============================================================================
     Dep. Variable:           np.log(MEDV)   R-squared:                       0.663
     Model:                            OLS   Adj. R-squared:                  0.653
@@ -490,8 +445,8 @@ print(result.summary())
     Time:                        17:50:42   Log-Likelihood:                 33.875
     No. Observations:                 354   AIC:                            -45.75
     Df Residuals:                     343   BIC:                            -3.188
-    Df Model:                          10                                         
-    Covariance Type:            nonrobust                                         
+    Df Model:                          10
+    Covariance Type:            nonrobust
     ===============================================================================
                       coef    std err          t      P>|t|      [0.025      0.975]
     -------------------------------------------------------------------------------
@@ -512,22 +467,17 @@ print(result.summary())
     Skew:                           1.188   Prob(JB):                    6.57e-195
     Kurtosis:                      10.415   Cond. No.                     1.72e+05
     ==============================================================================
-    
+
     Notes:
     [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
     [2] The condition number is large, 1.72e+05. This might indicate that there are
     strong multicollinearity or other numerical problems.
 
-
 Let's plot the QQ-Plot for the residuals
-
 
 ```python
 result.pvalues < 0.05
 ```
-
-
-
 
     Intercept       True
     CRIM            True
@@ -541,9 +491,6 @@ result.pvalues < 0.05
     B               True
     pow(AGE, 2)     True
     dtype: bool
-
-
-
 
 ```python
 predicted = np.exp(result.predict(X_test))
@@ -559,14 +506,9 @@ print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
     rmse: 4.984465988446782
     mae: 3.0912974099283534
 
-
-
 ```python
 fig = sm.qqplot(result.resid, fit=True, line="q")
 plt.show()
 ```
 
-
-    
 ![png](multiple_linear_regression_statsmodels_files/multiple_linear_regression_statsmodels_26_0.png)
-    

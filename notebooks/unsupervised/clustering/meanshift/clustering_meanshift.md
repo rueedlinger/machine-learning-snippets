@@ -1,7 +1,6 @@
->**Note**: This is a generated markdown export from the Jupyter notebook file [clustering_meanshift.ipynb](clustering_meanshift.ipynb).
+> **Note**: This is a generated markdown export from the Jupyter notebook file [clustering_meanshift.ipynb](clustering_meanshift.ipynb).
 
 # Clustering with MeanShift
-
 
 ```python
 %matplotlib inline
@@ -16,7 +15,6 @@ from sklearn import cluster
 from sklearn import manifold
 ```
 
-
 ```python
 data, labels_true = datasets.make_blobs(n_samples=750, centers=[[1,1],[0,5],[2,8]], cluster_std=0.7,
                             random_state=0)
@@ -27,12 +25,7 @@ plt.scatter(data[:,0], data[:,1])
 df = pd.DataFrame(data, columns=['X', 'Y'])
 ```
 
-
-    
 ![png](clustering_meanshift_files/clustering_meanshift_2_0.png)
-    
-
-
 
 ```python
 meanshift = cluster.MeanShift(bandwidth=1)
@@ -71,14 +64,7 @@ plt.legend(bbox_to_anchor=(1.25, 1))
 
     <matplotlib.legend.Legend at 0x12b3de2e0>
 
-
-
-
-    
 ![png](clustering_meanshift_files/clustering_meanshift_3_2.png)
-    
-
-
 
 ```python
 data, t = datasets.make_swiss_roll(n_samples=200, noise=0.1, random_state=0)
@@ -93,19 +79,9 @@ ax.view_init(7, -80)
 ax.scatter(df.X, df.Y, df.Z, 'o')
 ```
 
-
-
-
     <mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x12b4dc250>
 
-
-
-
-    
 ![png](clustering_meanshift_files/clustering_meanshift_4_1.png)
-    
-
-
 
 ```python
 meanshift = cluster.MeanShift(bandwidth=2)
@@ -119,10 +95,10 @@ ax.view_init(7, -80)
 
 
 for l in np.unique(label):
-    
-    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 
+
+    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z,
                'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))), label=l)
-    
+
 fig.suptitle('MeanShift bandwith 2', fontsize=14, fontweight='bold')
 
 #plt.legend(bbox_to_anchor=(1.25, 1))
@@ -444,14 +420,7 @@ fig.suptitle('MeanShift bandwith 2', fontsize=14, fontweight='bold')
 
     Text(0.5, 0.98, 'MeanShift bandwith 2')
 
-
-
-
-    
 ![png](clustering_meanshift_files/clustering_meanshift_5_2.png)
-    
-
-
 
 ```python
 meanshift = cluster.MeanShift(bandwidth=8)
@@ -465,8 +434,8 @@ ax.view_init(7, -80)
 
 
 for l in np.unique(label):
-    
-    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 
+
+    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z,
                'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))), label=l)
 
 fig.suptitle('MeanShift bandwith 8', fontsize=14, fontweight='bold')
@@ -496,14 +465,7 @@ plt.legend(bbox_to_anchor=(1.25, 1))
 
     <matplotlib.legend.Legend at 0x12b87af40>
 
-
-
-
-    
 ![png](clustering_meanshift_files/clustering_meanshift_6_2.png)
-    
-
-
 
 ```python
 meanshift = cluster.MeanShift(bandwidth=10)
@@ -517,8 +479,8 @@ ax.view_init(7, -80)
 
 
 for l in np.unique(label):
-    
-    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 
+
+    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z,
                'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))), label=l)
 
 fig.suptitle('MeanShift bandwith 10', fontsize=14, fontweight='bold')
@@ -539,9 +501,4 @@ plt.legend(bbox_to_anchor=(1.25, 1))
 
     <matplotlib.legend.Legend at 0x12b815160>
 
-
-
-
-    
 ![png](clustering_meanshift_files/clustering_meanshift_7_2.png)
-    

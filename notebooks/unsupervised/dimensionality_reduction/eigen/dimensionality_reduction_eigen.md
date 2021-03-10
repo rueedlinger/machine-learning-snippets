@@ -1,9 +1,8 @@
->**Note**: This is a generated markdown export from the Jupyter notebook file [dimensionality_reduction_eigen.ipynb](dimensionality_reduction_eigen.ipynb).
+> **Note**: This is a generated markdown export from the Jupyter notebook file [dimensionality_reduction_eigen.ipynb](dimensionality_reduction_eigen.ipynb).
 
 # Dimensionality Reduction with Eigenvector / Eigenvalues and Correlation Matrix (PCA)
 
 inspired by http://sebastianraschka.com/Articles/2015_pca_in_3_steps.html#eigendecomposition---computing-eigenvectors-and-eigenvalues
-
 
 ```python
 %matplotlib inline
@@ -16,22 +15,17 @@ from numpy import linalg as LA
 from sklearn import datasets
 ```
 
-
 ```python
 iris = datasets.load_iris()
 ```
 
 First we need the correlation matrix
 
-
 ```python
 df = pd.DataFrame(iris.data, columns=iris.feature_names)
 corr = df.corr()
 df.corr()
 ```
-
-
-
 
 <div>
 <table border="1" class="dataframe">
@@ -77,26 +71,13 @@ df.corr()
 </table>
 </div>
 
-
-
-
 ```python
 sns.heatmap(corr)
 ```
 
-
-
-
     <AxesSubplot:>
 
-
-
-
-    
 ![png](dimensionality_reduction_eigen_files/dimensionality_reduction_eigen_6_1.png)
-    
-
-
 
 ```python
 eig_vals, eig_vecs = LA.eig(corr)
@@ -108,13 +89,9 @@ eig_pairs.sort(key=lambda x: x[0], reverse=True)
 
 Eigenvalues
 
-
 ```python
 pd.DataFrame([eig_vals])
 ```
-
-
-
 
 <div>
 <table border="1" class="dataframe">
@@ -139,17 +116,11 @@ pd.DataFrame([eig_vals])
 </table>
 </div>
 
-
-
 Eigenvector as Principal component
-
 
 ```python
 pd.DataFrame(eig_vecs)
 ```
-
-
-
 
 <div>
 <table border="1" class="dataframe">
@@ -195,10 +166,7 @@ pd.DataFrame(eig_vecs)
 </table>
 </div>
 
-
-
 Create the projection matrix for a new two dimensional space
-
 
 ```python
 matrix_w = np.hstack((eig_pairs[0][1].reshape(len(corr),1),
@@ -207,9 +175,6 @@ matrix_w = np.hstack((eig_pairs[0][1].reshape(len(corr),1),
 
 pd.DataFrame(matrix_w, columns=['PC1', 'PC2'])
 ```
-
-
-
 
 <div>
 <table border="1" class="dataframe">
@@ -245,9 +210,6 @@ pd.DataFrame(matrix_w, columns=['PC1', 'PC2'])
 </table>
 </div>
 
-
-
-
 ```python
 new_dim = np.dot(np.array(iris.data), matrix_w)
 
@@ -256,9 +218,6 @@ df['label'] = iris.target
 df.head()
 
 ```
-
-
-
 
 <div>
 <table border="1" class="dataframe">
@@ -305,9 +264,6 @@ df.head()
 </table>
 </div>
 
-
-
-
 ```python
 fig = plt.figure()
 fig.suptitle('PCA with Eigenvector', fontsize=14, fontweight='bold')
@@ -321,14 +277,6 @@ plt.legend(bbox_to_anchor=(1.25, 1))
 
 ```
 
-
-
-
     <matplotlib.legend.Legend at 0x1294e7fd0>
 
-
-
-
-    
 ![png](dimensionality_reduction_eigen_files/dimensionality_reduction_eigen_15_1.png)
-    

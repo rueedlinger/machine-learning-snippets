@@ -1,7 +1,6 @@
->**Note**: This is a generated markdown export from the Jupyter notebook file [clustering_kmeans.ipynb](clustering_kmeans.ipynb).
+> **Note**: This is a generated markdown export from the Jupyter notebook file [clustering_kmeans.ipynb](clustering_kmeans.ipynb).
 
-# Clustering with K-means 
-
+# Clustering with K-means
 
 ```python
 %matplotlib inline
@@ -15,7 +14,6 @@ from sklearn import datasets
 from sklearn import cluster
 ```
 
-
 ```python
 data, labels_true = datasets.make_blobs(n_samples=750, centers=[[1,1],[0,5],[2,8]], cluster_std=0.7,
                             random_state=0)
@@ -26,12 +24,7 @@ plt.scatter(data[:,0], data[:,1])
 df = pd.DataFrame(data, columns=['X', 'Y'])
 ```
 
-
-    
 ![png](clustering_kmeans_files/clustering_kmeans_2_0.png)
-    
-
-
 
 ```python
 kmeans = cluster.KMeans(n_clusters=2)
@@ -49,7 +42,7 @@ for i in range(kmeans.n_clusters):
 
 for i in kmeans.cluster_centers_:
     plt.scatter(i[0], i[1], color='black', marker='+', s=100)
-    
+
 plt.legend(bbox_to_anchor=(1.25, 1))
 ```
 
@@ -66,16 +59,9 @@ plt.legend(bbox_to_anchor=(1.25, 1))
 
     <matplotlib.legend.Legend at 0x12ecf7b80>
 
-
-
-
-    
 ![png](clustering_kmeans_files/clustering_kmeans_3_2.png)
-    
-
 
 Clustering with 3 clusters
-
 
 ```python
 kmeans = cluster.KMeans(n_clusters=3)
@@ -91,7 +77,7 @@ for i in range(kmeans.n_clusters):
 
 for i in kmeans.cluster_centers_:
     plt.scatter(i[0], i[1], color='black', marker='+', s=100)
-    
+
 plt.legend(bbox_to_anchor=(1.25, 1))
 ```
 
@@ -111,16 +97,9 @@ plt.legend(bbox_to_anchor=(1.25, 1))
 
     <matplotlib.legend.Legend at 0x12ee42070>
 
-
-
-
-    
 ![png](clustering_kmeans_files/clustering_kmeans_5_2.png)
-    
-
 
 Clustering with 4 clusters
-
 
 ```python
 kmeans = cluster.KMeans(n_clusters=4)
@@ -135,7 +114,7 @@ ax = fig.add_subplot(111)
 
 for i in range(kmeans.n_clusters):
     plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-    
+
 for i in kmeans.cluster_centers_:
     plt.scatter(i[0], i[1], color='black', marker='+', s=100)
 
@@ -161,14 +140,7 @@ plt.legend(bbox_to_anchor=(1.25, 1))
 
     <matplotlib.legend.Legend at 0x12ef83850>
 
-
-
-
-    
 ![png](clustering_kmeans_files/clustering_kmeans_7_2.png)
-    
-
-
 
 ```python
 kmeans = cluster.KMeans(n_clusters=5)
@@ -183,7 +155,7 @@ ax = fig.add_subplot(111)
 
 for i in range(kmeans.n_clusters):
     plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(np.float(i) / len(np.unique(label))))
-    
+
 for i in kmeans.cluster_centers_:
     plt.scatter(i[0], i[1], color='black', marker='+', s=100)
 
@@ -212,14 +184,7 @@ plt.legend(bbox_to_anchor=(1.25, 1))
 
     <matplotlib.legend.Legend at 0x12f0b2760>
 
-
-
-
-    
 ![png](clustering_kmeans_files/clustering_kmeans_8_2.png)
-    
-
-
 
 ```python
 data, t = datasets.make_swiss_roll(n_samples=200, noise=0.1, random_state=0)
@@ -232,19 +197,9 @@ ax.view_init(7, -80)
 ax.scatter(df.X, df.Y, df.Z, 'o')
 ```
 
-
-
-
     <mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x12f1f5520>
 
-
-
-
-    
 ![png](clustering_kmeans_files/clustering_kmeans_9_1.png)
-    
-
-
 
 ```python
 
@@ -259,8 +214,8 @@ ax.view_init(7, -80)
 fig.suptitle('K-means n=2', fontsize=14, fontweight='bold')
 
 for l in np.unique(label):
-    
-    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 
+
+    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z,
                'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
 
 ```
@@ -272,13 +227,7 @@ for l in np.unique(label):
     Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
       'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
 
-
-
-    
 ![png](clustering_kmeans_files/clustering_kmeans_10_1.png)
-    
-
-
 
 ```python
 
@@ -293,8 +242,8 @@ ax.view_init(7, -80)
 fig.suptitle('K-means n=3', fontsize=14, fontweight='bold')
 
 for l in np.unique(label):
-    
-    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 
+
+    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z,
                'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
 
 ```
@@ -309,13 +258,7 @@ for l in np.unique(label):
     Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
       'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
 
-
-
-    
 ![png](clustering_kmeans_files/clustering_kmeans_11_1.png)
-    
-
-
 
 ```python
 
@@ -330,8 +273,8 @@ ax.view_init(7, -80)
 fig.suptitle('K-means n=4', fontsize=14, fontweight='bold')
 
 for l in np.unique(label):
-    
-    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 
+
+    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z,
                'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
 
 ```
@@ -349,13 +292,7 @@ for l in np.unique(label):
     Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
       'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
 
-
-
-    
 ![png](clustering_kmeans_files/clustering_kmeans_12_1.png)
-    
-
-
 
 ```python
 
@@ -370,8 +307,8 @@ ax.view_init(7, -80)
 fig.suptitle('K-means n=5', fontsize=14, fontweight='bold')
 
 for l in np.unique(label):
-    
-    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 
+
+    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z,
                'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
 
 ```
@@ -392,8 +329,4 @@ for l in np.unique(label):
     Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
       'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
 
-
-
-    
 ![png](clustering_kmeans_files/clustering_kmeans_13_1.png)
-    

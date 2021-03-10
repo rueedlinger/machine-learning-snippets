@@ -1,7 +1,6 @@
->**Note**: This is a generated markdown export from the Jupyter notebook file [dimensionality_reduction_isomap.ipynb](dimensionality_reduction_isomap.ipynb).
+> **Note**: This is a generated markdown export from the Jupyter notebook file [dimensionality_reduction_isomap.ipynb](dimensionality_reduction_isomap.ipynb).
 
 # Dimensionality Reduction with Isomap
-
 
 ```python
 %matplotlib inline
@@ -14,22 +13,17 @@ from matplotlib.colors import ListedColormap
 
 ```
 
-
 ```python
 iris = datasets.load_iris()
 isomap = manifold.Isomap(n_components=2)
 new_dim = isomap.fit_transform(iris.data)
 ```
 
-
 ```python
 df = pd.DataFrame(new_dim, columns=['X', 'Y'])
 df['label'] = iris.target
 df.head()
 ```
-
-
-
 
 <div>
 <table border="1" class="dataframe">
@@ -76,9 +70,6 @@ df.head()
 </table>
 </div>
 
-
-
-
 ```python
 fig = plt.figure()
 fig.suptitle('Isomap', fontsize=14, fontweight='bold')
@@ -91,14 +82,6 @@ plt.scatter(df[df.label == 2].X, df[df.label == 2].Y, color='green', label=iris.
 plt.legend(bbox_to_anchor=(1.25, 1))
 ```
 
-
-
-
     <matplotlib.legend.Legend at 0x12a88a970>
 
-
-
-
-    
 ![png](dimensionality_reduction_isomap_files/dimensionality_reduction_isomap_4_1.png)
-    
