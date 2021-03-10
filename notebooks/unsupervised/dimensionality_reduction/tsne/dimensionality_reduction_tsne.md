@@ -44,32 +44,32 @@ df.head()
   <tbody>
     <tr>
       <th>0</th>
-      <td>20.581169</td>
-      <td>-6.639849</td>
+      <td>-10.623450</td>
+      <td>-20.953716</td>
       <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>23.091278</td>
-      <td>-5.364086</td>
+      <td>-10.837776</td>
+      <td>-23.359653</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>23.023956</td>
-      <td>-6.571707</td>
+      <td>-10.236986</td>
+      <td>-23.735226</td>
       <td>0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>23.455103</td>
-      <td>-6.145949</td>
+      <td>-9.913889</td>
+      <td>-23.917128</td>
       <td>0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>20.603352</td>
-      <td>-7.061602</td>
+      <td>-11.029625</td>
+      <td>-20.927248</td>
       <td>0</td>
     </tr>
   </tbody>
@@ -94,7 +94,7 @@ plt.legend(bbox_to_anchor=(1.25, 1))
 
 
 
-    <matplotlib.legend.Legend at 0x123e7de20>
+    <matplotlib.legend.Legend at 0x121ed4ca0>
 
 
 

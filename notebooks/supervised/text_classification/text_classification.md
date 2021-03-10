@@ -196,7 +196,7 @@ print('------------------')
 
     English sample:
     ------------------
-    long long forgotten Your lip is trembling said the Ghost And what is that upon your cheek Scrooge muttered with
+    End of It STAVE MARLEY'S GHOST MARLEY was dead to begin with There is no doubt whatever about that The
     ------------------
 
 
@@ -320,12 +320,12 @@ for scoring in ['f1_weighted', 'accuracy']:
 ```
 
     f1_weighted
-    scores: [1.         1.         0.99839732 1.         1.        ]
-    f1_weighted: 0.999679 (+/- 0.0013)
+    scores: [0.99839745 0.99839742 1.         1.         1.        ]
+    f1_weighted: 0.999359 (+/- 0.0016)
     
     accuracy
-    scores: [1.         1.         0.99839744 1.         1.        ]
-    accuracy: 0.999679 (+/- 0.0013)
+    scores: [0.99839744 0.99839744 1.         1.         1.        ]
+    accuracy: 0.999359 (+/- 0.0016)
     
 
 
@@ -344,10 +344,10 @@ print(metrics.classification_report(y_test, predicted, digits=4))
 
                   precision    recall  f1-score   support
     
-               0     1.0000    1.0000    1.0000       538
-               1     1.0000    1.0000    1.0000       503
-               2     1.0000    1.0000    1.0000       541
-               3     1.0000    1.0000    1.0000       498
+               0     1.0000    1.0000    1.0000       516
+               1     1.0000    1.0000    1.0000       522
+               2     1.0000    1.0000    1.0000       523
+               3     1.0000    1.0000    1.0000       519
     
         accuracy                         1.0000      2080
        macro avg     1.0000    1.0000    1.0000      2080
@@ -375,10 +375,10 @@ def show_top10(classifier, vectorizer, categories):
 show_top10(text_clf.named_steps['clf'], text_clf.named_steps['vect'], data.labels)
 ```
 
-    de: ich das ein sie zu es er die der und
+    de: ein das ich es zu sie er die der und
     en: was that in his he it of to and the
-    fr: vous une que les un il et la le de
-    nl: op te dat zijn hij van de het een en
+    fr: vous une que les un il la et le de
+    nl: op te dat zijn hij van het de een en
 
 
     /Users/mru/.local/share/virtualenvs/machine-learning-snippets-mLikUPnf/lib/python3.8/site-packages/sklearn/utils/deprecation.py:101: FutureWarning: Attribute coef_ was deprecated in version 0.24 and will be removed in 1.1 (renaming of 0.26).
@@ -396,9 +396,9 @@ print('first features: %s'% feature_names[0:10])
 print('last features: %s' % feature_names[-10:])
 ```
 
-    number of features: 814
-    first features: ['aan' 'aber' 'about' 'after' 'again' 'ah' 'ai' 'air' 'al' 'all']
-    last features: ['zum' 'zwei' 'zóó' 'écria' 'étaient' 'était' 'été' 'één' 'être' 'über']
+    number of features: 823
+    first features: ['aan' 'aber' 'about' 'affaires' 'after' 'again' 'ai' 'air' 'al' 'all']
+    last features: ['zurück' 'zwei' 'zóó' 'écria' 'étaient' 'était' 'été' 'één' 'être' 'über']
 
 
 ### New data
@@ -423,11 +423,11 @@ for i, p in enumerate(predicted):
     
 ```
 
-    Hallo mein Name ist Hugo.  -->  de , prob: 0.771440883768027
-    Hi my name is Hugo.  -->  en , prob: 0.874638441598477
-    Bonjour mon nom est Hugo.  -->  fr , prob: 0.9419234196452347
-    Hallo mijn naam is Hugo.  -->  nl , prob: 0.8237294007510075
-    Eins, zwei und drei.  -->  de , prob: 0.9345726783911261
-    One, two and three.  -->  en , prob: 0.9731641153178053
-    Un, deux et trois.  -->  fr , prob: 0.9850644561804058
-    Een, twee en drie.  -->  nl , prob: 0.9699852940845446
+    Hallo mein Name ist Hugo.  -->  de , prob: 0.7236232179373793
+    Hi my name is Hugo.  -->  en , prob: 0.856163438650243
+    Bonjour mon nom est Hugo.  -->  fr , prob: 0.9523580224267726
+    Hallo mijn naam is Hugo.  -->  nl , prob: 0.7275688119884336
+    Eins, zwei und drei.  -->  de , prob: 0.9302891186910273
+    One, two and three.  -->  en , prob: 0.9763196206194424
+    Un, deux et trois.  -->  fr , prob: 0.987710666620261
+    Een, twee en drie.  -->  nl , prob: 0.9677895457889932

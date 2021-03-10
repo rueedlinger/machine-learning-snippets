@@ -266,19 +266,12 @@ Let's plot the features
 
 
 ```python
-sns.pairplot(X);
+_ = sns.pairplot(X);
 ```
 
 
-
-
-    <seaborn.axisgrid.PairGrid at 0x122425130>
-
-
-
-
     
-![png](multiple_linear_regression_sklearn_files/multiple_linear_regression_sklearn_10_1.png)
+![png](multiple_linear_regression_sklearn_files/multiple_linear_regression_sklearn_10_0.png)
     
 
 
@@ -335,11 +328,11 @@ print('Intercept:', lr.intercept_)
 
     No coef: 13
     Coefficients: 
-     [-1.19020289e-01  5.06048509e-02  6.38588706e-03  3.62865786e-01
-     -1.78397041e+01  3.66498415e+00  9.69257947e-03 -1.38130939e+00
-      3.11386356e-01 -1.20938509e-02 -9.66748565e-01  8.08914452e-03
-     -5.39431973e-01]
-    Intercept: 37.437349058708904
+     [-9.33734742e-02  4.41145892e-02  7.03424188e-03  8.84598824e-01
+     -1.54487513e+01  4.43547333e+00  1.65146217e-02 -1.36943957e+00
+      2.92684774e-01 -1.47129029e-02 -8.89161181e-01  1.08826510e-02
+     -5.35051052e-01]
+    Intercept: 29.456924136094496
 
 
 Print the predicated values against the the true values. Perfect match should lie be on the red line.
@@ -385,19 +378,12 @@ _ = plt.axhline(0, color='red', ls='--')
 
 
 ```python
-sns.displot(residual, kind="kde");
+_ = sns.displot(residual, kind="kde");
 ```
 
 
-
-
-    <seaborn.axisgrid.FacetGrid at 0x126e57f40>
-
-
-
-
     
-![png](multiple_linear_regression_sklearn_files/multiple_linear_regression_sklearn_22_1.png)
+![png](multiple_linear_regression_sklearn_files/multiple_linear_regression_sklearn_22_0.png)
     
 
 
@@ -411,7 +397,7 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.7309350895226565
-    mse: 23.512240928723475
-    rmse: 4.848942248441764
-    mae: 3.197823006350557
+    r2 score: 0.6414112677059822
+    mse: 25.612532345671852
+    rmse: 5.060882565884319
+    mae: 3.388306242894526
