@@ -71,7 +71,7 @@ plt.legend(bbox_to_anchor=(1.25, 1))
 
 
 
-    <matplotlib.legend.Legend at 0x12807cdf0>
+    <matplotlib.legend.Legend at 0x12411cdf0>
 
 
 
@@ -98,7 +98,7 @@ ax.scatter(df.X, df.Y, df.Z, 'o')
 
 
 
-    <mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x128184f40>
+    <mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x1242ad1c0>
 
 
 
@@ -135,7 +135,7 @@ plt.legend(bbox_to_anchor=(1.25, 1))
 
 
 
-    <matplotlib.legend.Legend at 0x128315880>
+    <matplotlib.legend.Legend at 0x1243b7880>
 
 
 
@@ -184,7 +184,7 @@ plt.legend(bbox_to_anchor=(1.25, 1))
 
 
 
-    <matplotlib.legend.Legend at 0x128415340>
+    <matplotlib.legend.Legend at 0x1244b6340>
 
 
 
@@ -245,7 +245,7 @@ plt.legend(bbox_to_anchor=(1.25, 1))
 
 
 
-    <matplotlib.legend.Legend at 0x1285818b0>
+    <matplotlib.legend.Legend at 0x1059d3f10>
 
 
 
@@ -294,7 +294,7 @@ plt.legend(bbox_to_anchor=(1.25, 1))
 
 
 
-    <matplotlib.legend.Legend at 0x128101280>
+    <matplotlib.legend.Legend at 0x1243e5d00>
 
 
 

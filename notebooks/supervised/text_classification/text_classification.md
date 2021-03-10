@@ -196,7 +196,7 @@ print('------------------')
 
     English sample:
     ------------------
-    End of It STAVE MARLEY'S GHOST MARLEY was dead to begin with There is no doubt whatever about that The
+    when can get anything in it by reaching it out for the sake of such man as He was promise
     ------------------
 
 
@@ -320,12 +320,12 @@ for scoring in ['f1_weighted', 'accuracy']:
 ```
 
     f1_weighted
-    scores: [0.99839745 0.99839742 1.         1.         1.        ]
-    f1_weighted: 0.999359 (+/- 0.0016)
+    scores: [1.         0.99839724 1.         1.         1.        ]
+    f1_weighted: 0.999679 (+/- 0.0013)
     
     accuracy
-    scores: [0.99839744 0.99839744 1.         1.         1.        ]
-    accuracy: 0.999359 (+/- 0.0016)
+    scores: [1.         0.99839744 1.         1.         1.        ]
+    accuracy: 0.999679 (+/- 0.0013)
     
 
 
@@ -344,14 +344,14 @@ print(metrics.classification_report(y_test, predicted, digits=4))
 
                   precision    recall  f1-score   support
     
-               0     1.0000    1.0000    1.0000       516
-               1     1.0000    1.0000    1.0000       522
-               2     1.0000    1.0000    1.0000       523
-               3     1.0000    1.0000    1.0000       519
+               0     1.0000    0.9981    0.9990       526
+               1     0.9980    1.0000    0.9990       495
+               2     1.0000    1.0000    1.0000       511
+               3     1.0000    1.0000    1.0000       548
     
-        accuracy                         1.0000      2080
-       macro avg     1.0000    1.0000    1.0000      2080
-    weighted avg     1.0000    1.0000    1.0000      2080
+        accuracy                         0.9995      2080
+       macro avg     0.9995    0.9995    0.9995      2080
+    weighted avg     0.9995    0.9995    0.9995      2080
     
 
 
@@ -375,10 +375,10 @@ def show_top10(classifier, vectorizer, categories):
 show_top10(text_clf.named_steps['clf'], text_clf.named_steps['vect'], data.labels)
 ```
 
-    de: ein das ich es zu sie er die der und
+    de: ich das ein es zu sie er die der und
     en: was that in his he it of to and the
-    fr: vous une que les un il la et le de
-    nl: op te dat zijn hij van het de een en
+    fr: qu une que un les il la et le de
+    nl: op te dat zijn hij van het een de en
 
 
     /Users/mru/.local/share/virtualenvs/machine-learning-snippets-mLikUPnf/lib/python3.8/site-packages/sklearn/utils/deprecation.py:101: FutureWarning: Attribute coef_ was deprecated in version 0.24 and will be removed in 1.1 (renaming of 0.26).
@@ -396,8 +396,8 @@ print('first features: %s'% feature_names[0:10])
 print('last features: %s' % feature_names[-10:])
 ```
 
-    number of features: 823
-    first features: ['aan' 'aber' 'about' 'affaires' 'after' 'again' 'ai' 'air' 'al' 'all']
+    number of features: 812
+    first features: ['aan' 'aber' 'about' 'affaires' 'after' 'again' 'ah' 'ai' 'ainsi' 'air']
     last features: ['zurück' 'zwei' 'zóó' 'écria' 'étaient' 'était' 'été' 'één' 'être' 'über']
 
 
@@ -423,11 +423,11 @@ for i, p in enumerate(predicted):
     
 ```
 
-    Hallo mein Name ist Hugo.  -->  de , prob: 0.7236232179373793
-    Hi my name is Hugo.  -->  en , prob: 0.856163438650243
-    Bonjour mon nom est Hugo.  -->  fr , prob: 0.9523580224267726
-    Hallo mijn naam is Hugo.  -->  nl , prob: 0.7275688119884336
-    Eins, zwei und drei.  -->  de , prob: 0.9302891186910273
-    One, two and three.  -->  en , prob: 0.9763196206194424
-    Un, deux et trois.  -->  fr , prob: 0.987710666620261
-    Een, twee en drie.  -->  nl , prob: 0.9677895457889932
+    Hallo mein Name ist Hugo.  -->  de , prob: 0.8198937307609587
+    Hi my name is Hugo.  -->  en , prob: 0.8561398334483348
+    Bonjour mon nom est Hugo.  -->  fr , prob: 0.9468726662969341
+    Hallo mijn naam is Hugo.  -->  nl , prob: 0.8383115810724273
+    Eins, zwei und drei.  -->  de , prob: 0.9434218443959597
+    One, two and three.  -->  en , prob: 0.9730263631023841
+    Un, deux et trois.  -->  fr , prob: 0.9847603434327509
+    Een, twee en drie.  -->  nl , prob: 0.9692061020862457
