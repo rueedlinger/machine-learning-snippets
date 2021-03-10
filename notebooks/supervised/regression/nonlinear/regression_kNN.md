@@ -1,6 +1,6 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [regression_kNN.ipynb](regression_kNN.ipynb).
 
-## Regression with k-NN
+## Regression with k-nearest neighbors (k-NN)
 
 
 ```python
@@ -147,7 +147,7 @@ sns.displot(residual, kind="kde");
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x1222335b0>
+    <seaborn.axisgrid.FacetGrid at 0x1284e3ca0>
 
 
 
@@ -164,6 +164,6 @@ print("mse: {}".format(metrics.mean_squared_error(y_test, predicted)))
 print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 ```
 
-    r2 score: 0.43666997212023273
-    mse: 47.23824210526317
-    rmse: 6.873008228226063
+    r2 score: 0.46019045532454794
+    mse: 35.01681315789474
+    rmse: 5.917500583683514

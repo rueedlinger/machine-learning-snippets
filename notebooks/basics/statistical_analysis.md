@@ -1,6 +1,6 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [statistical_analysis.ipynb](statistical_analysis.ipynb).
 
-## Statistical Analysis
+## Statistical analysis
 
 In this notebook we use _pandas_ and the _stats_ module from _scipy_ for some basic statistical analysis.
 
@@ -347,43 +347,29 @@ df.quantile(q=[0.05, 0.95])
 
 In the next sample we replace a value with _None_ so that we can show how to hanlde missing values in a dataframe.
 
-## Basic Visualization
+## Basic visualization
 
 First let's create a pair plot
 
 
 ```python
-sns.pairplot(df, hue="Target")
+_ = sns.pairplot(df, hue="Target")
 ```
 
 
-
-
-    <seaborn.axisgrid.PairGrid at 0x1080aaa00>
-
-
-
-
     
-![png](statistical_analysis_files/statistical_analysis_21_1.png)
+![png](statistical_analysis_files/statistical_analysis_21_0.png)
     
 
 
 
 ```python
-sns.displot(df, x="Age" ,hue="Sex", label="male", kind="kde", log_scale=False)
+_ = sns.displot(df, x="Age" ,hue="Sex", label="male", kind="kde", log_scale=False)
 ```
 
 
-
-
-    <seaborn.axisgrid.FacetGrid at 0x12571bb50>
-
-
-
-
     
-![png](statistical_analysis_files/statistical_analysis_22_1.png)
+![png](statistical_analysis_files/statistical_analysis_22_0.png)
     
 
 
@@ -393,7 +379,6 @@ sns.displot(df, x="Age" ,hue="Sex", label="male", kind="kde", log_scale=False)
 ```python
 female = df[df.Sex == 'Female']
 male = df[df.Sex == 'Male']
-
 ```
 
 T-Test
@@ -401,12 +386,12 @@ T-Test
 
 ```python
 t, p = stats.ttest_ind(female['Age'], male['Age'])
-print(t)
-print(p)
+print("test statistic: {}".format(t))
+print("p-value: {}".format(p))
 ```
 
-    -16.092517011911756
-    4.8239930687799265e-58
+    test statistic: -16.092517011911756
+    p-value: 4.8239930687799265e-58
 
 
 Wilcoxon rank-sum test 
@@ -414,45 +399,9 @@ Wilcoxon rank-sum test
 
 ```python
 z, p = stats.ranksums(female['Age'], male['Age'])
-print(z)
-print(p)
+print("test statistic: {}".format(z))
+print("p-value: {}".format(p))
 ```
 
-    -18.107256874221704
-    2.79324734147619e-73
-
-
-
-```python
-sns.displot(female, x="Age" ,hue="Sex", label="male", kind="kde", log_scale=False)
-```
-
-
-
-
-    <seaborn.axisgrid.FacetGrid at 0x125862af0>
-
-
-
-
-    
-![png](statistical_analysis_files/statistical_analysis_29_1.png)
-    
-
-
-
-```python
-sns.displot(male, x="Age" ,hue="Sex", label="male", kind="kde", log_scale=False)
-```
-
-
-
-
-    <seaborn.axisgrid.FacetGrid at 0x127df78e0>
-
-
-
-
-    
-![png](statistical_analysis_files/statistical_analysis_30_1.png)
-    
+    test statistic: -18.107256874221704
+    p-value: 2.79324734147619e-73

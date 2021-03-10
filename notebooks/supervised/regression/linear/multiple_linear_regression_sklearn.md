@@ -272,7 +272,7 @@ sns.pairplot(X);
 
 
 
-    <seaborn.axisgrid.PairGrid at 0x1047f5280>
+    <seaborn.axisgrid.PairGrid at 0x12eebba60>
 
 
 
@@ -316,11 +316,11 @@ print('Intercept:', lr.intercept_)
 
     No coef: 13
     Coefficients: 
-     [-1.42158155e-01  4.52954790e-02  3.40748214e-02  1.12088784e+00
-     -1.86258193e+01  4.00400469e+00  2.02850651e-03 -1.50183927e+00
-      3.78119289e-01 -1.55524013e-02 -9.25814307e-01  8.59072180e-03
-     -5.08253971e-01]
-    Intercept: 36.10523415380978
+     [-1.05329208e-01  4.05986117e-02  7.46545888e-03  3.79925793e+00
+     -1.24701372e+01  4.22678326e+00 -3.62305301e-03 -1.28283670e+00
+      2.86531527e-01 -1.14875900e-02 -9.41329005e-01  8.44012591e-03
+     -5.46343721e-01]
+    Intercept: 30.857430704956233
 
 
 Print the predicated values against the the true values. Perfect match should lie be on the red line.
@@ -372,7 +372,7 @@ sns.displot(residual, kind="kde");
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x12926ac10>
+    <seaborn.axisgrid.FacetGrid at 0x133f0e5e0>
 
 
 
@@ -392,7 +392,7 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.7315934488953911
-    mse: 25.115745242592055
-    rmse: 5.011561158221264
-    mae: 3.7415312875643223
+    r2 score: 0.6814928582287283
+    mse: 23.56448826444223
+    rmse: 4.854326757073758
+    mae: 3.384770582431319

@@ -1,6 +1,6 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [classification_kNN.ipynb](classification_kNN.ipynb).
 
-## Classification with kNN
+## Classification with k-nearest neighbors (k-NN)
 
 
 ```python
@@ -202,21 +202,21 @@ truth_table
   <tbody>
     <tr>
       <th>0</th>
-      <td>25.0</td>
-      <td>4.0</td>
+      <td>28.0</td>
+      <td>5.0</td>
       <td>3.0</td>
     </tr>
     <tr>
       <th>1</th>
       <td>0.0</td>
-      <td>22.0</td>
-      <td>10.0</td>
+      <td>25.0</td>
+      <td>6.0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>5.0</td>
-      <td>9.0</td>
-      <td>11.0</td>
+      <td>1.0</td>
+      <td>6.0</td>
+      <td>15.0</td>
     </tr>
   </tbody>
 </table>
@@ -243,7 +243,7 @@ print("recall: {:.3f}".format(metrics.recall_score(y_test, predicted, average='w
 print("f1 score: {:.3f}".format(metrics.f1_score(y_test, predicted, average='weighted')))
 ```
 
-    accuracy: 0.652
-    precision: 0.652
-    recall: 0.652
-    f1 score: 0.651
+    accuracy: 0.764
+    precision: 0.763
+    recall: 0.764
+    f1 score: 0.758

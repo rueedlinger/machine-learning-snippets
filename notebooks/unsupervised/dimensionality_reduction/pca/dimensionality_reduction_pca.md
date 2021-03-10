@@ -96,7 +96,7 @@ plt.legend(bbox_to_anchor=(1.25, 1))
 
 
 
-    <matplotlib.legend.Legend at 0x12842bfd0>
+    <matplotlib.legend.Legend at 0x12b776df0>
 
 
 
