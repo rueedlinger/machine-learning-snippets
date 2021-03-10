@@ -97,6 +97,25 @@ print('test samples', len(X_test))
     test samples 152
 
 
+
+```python
+df_train = pd.DataFrame(y_train, columns=['target'])
+df_train['type'] = 'train'
+
+df_test = pd.DataFrame(y_test, columns=['target'])
+df_test['type'] = 'test'
+
+df_set = df_train.append(df_test)
+
+_ = sns.displot(df_set, x="target" ,hue="type", kind="kde", log_scale=False)
+```
+
+
+    
+![png](regression_with_automl_files/regression_with_automl_6_0.png)
+    
+
+
 **Note:** We do some restrictions here running time and number of ensembles, because the model fitting would not take much longer. So this is just an example how you could run AutoML.
 
 
@@ -119,21 +138,14 @@ for m in model.get_models_with_weights():
     print(m)
 ```
 
+    (0.6666666666666666, SimpleRegressionPipeline({'data_preprocessing:categorical_transformer:categorical_encoding:__choice__': 'one_hot_encoding', 'data_preprocessing:categorical_transformer:category_coalescence:__choice__': 'minority_coalescer', 'data_preprocessing:numerical_transformer:imputation:strategy': 'mean', 'data_preprocessing:numerical_transformer:rescaling:__choice__': 'standardize', 'feature_preprocessor:__choice__': 'no_preprocessing', 'regressor:__choice__': 'random_forest', 'data_preprocessing:categorical_transformer:category_coalescence:minority_coalescer:minimum_fraction': 0.01, 'regressor:random_forest:bootstrap': 'True', 'regressor:random_forest:criterion': 'mse', 'regressor:random_forest:max_depth': 'None', 'regressor:random_forest:max_features': 1.0, 'regressor:random_forest:max_leaf_nodes': 'None', 'regressor:random_forest:min_impurity_decrease': 0.0, 'regressor:random_forest:min_samples_leaf': 1, 'regressor:random_forest:min_samples_split': 2, 'regressor:random_forest:min_weight_fraction_leaf': 0.0},
+    dataset_properties={
+      'task': 4,
+      'sparse': False,
+      'multioutput': False,
+      'target_type': 'regression',
+      'signed': False}))
     (0.3333333333333333, SimpleRegressionPipeline({'data_preprocessing:categorical_transformer:categorical_encoding:__choice__': 'no_encoding', 'data_preprocessing:categorical_transformer:category_coalescence:__choice__': 'no_coalescense', 'data_preprocessing:numerical_transformer:imputation:strategy': 'median', 'data_preprocessing:numerical_transformer:rescaling:__choice__': 'minmax', 'feature_preprocessor:__choice__': 'feature_agglomeration', 'regressor:__choice__': 'extra_trees', 'feature_preprocessor:feature_agglomeration:affinity': 'euclidean', 'feature_preprocessor:feature_agglomeration:linkage': 'average', 'feature_preprocessor:feature_agglomeration:n_clusters': 272, 'feature_preprocessor:feature_agglomeration:pooling_func': 'median', 'regressor:extra_trees:bootstrap': 'False', 'regressor:extra_trees:criterion': 'mse', 'regressor:extra_trees:max_depth': 'None', 'regressor:extra_trees:max_features': 0.5120356089629183, 'regressor:extra_trees:max_leaf_nodes': 'None', 'regressor:extra_trees:min_impurity_decrease': 0.0, 'regressor:extra_trees:min_samples_leaf': 1, 'regressor:extra_trees:min_samples_split': 4, 'regressor:extra_trees:min_weight_fraction_leaf': 0.0},
-    dataset_properties={
-      'task': 4,
-      'sparse': False,
-      'multioutput': False,
-      'target_type': 'regression',
-      'signed': False}))
-    (0.3333333333333333, SimpleRegressionPipeline({'data_preprocessing:categorical_transformer:categorical_encoding:__choice__': 'one_hot_encoding', 'data_preprocessing:categorical_transformer:category_coalescence:__choice__': 'minority_coalescer', 'data_preprocessing:numerical_transformer:imputation:strategy': 'mean', 'data_preprocessing:numerical_transformer:rescaling:__choice__': 'standardize', 'feature_preprocessor:__choice__': 'no_preprocessing', 'regressor:__choice__': 'random_forest', 'data_preprocessing:categorical_transformer:category_coalescence:minority_coalescer:minimum_fraction': 0.01, 'regressor:random_forest:bootstrap': 'True', 'regressor:random_forest:criterion': 'mse', 'regressor:random_forest:max_depth': 'None', 'regressor:random_forest:max_features': 1.0, 'regressor:random_forest:max_leaf_nodes': 'None', 'regressor:random_forest:min_impurity_decrease': 0.0, 'regressor:random_forest:min_samples_leaf': 1, 'regressor:random_forest:min_samples_split': 2, 'regressor:random_forest:min_weight_fraction_leaf': 0.0},
-    dataset_properties={
-      'task': 4,
-      'sparse': False,
-      'multioutput': False,
-      'target_type': 'regression',
-      'signed': False}))
-    (0.3333333333333333, SimpleRegressionPipeline({'data_preprocessing:categorical_transformer:categorical_encoding:__choice__': 'one_hot_encoding', 'data_preprocessing:categorical_transformer:category_coalescence:__choice__': 'no_coalescense', 'data_preprocessing:numerical_transformer:imputation:strategy': 'most_frequent', 'data_preprocessing:numerical_transformer:rescaling:__choice__': 'standardize', 'feature_preprocessor:__choice__': 'polynomial', 'regressor:__choice__': 'ard_regression', 'feature_preprocessor:polynomial:degree': 2, 'feature_preprocessor:polynomial:include_bias': 'True', 'feature_preprocessor:polynomial:interaction_only': 'False', 'regressor:ard_regression:alpha_1': 0.0003701926442639788, 'regressor:ard_regression:alpha_2': 2.2118001735899097e-07, 'regressor:ard_regression:fit_intercept': 'True', 'regressor:ard_regression:lambda_1': 1.2037591637980971e-06, 'regressor:ard_regression:lambda_2': 4.358378124977852e-09, 'regressor:ard_regression:n_iter': 300, 'regressor:ard_regression:threshold_lambda': 1136.5286041327277, 'regressor:ard_regression:tol': 0.021944240404849075},
     dataset_properties={
       'task': 4,
       'sparse': False,
@@ -156,7 +168,7 @@ _ = ax.plot([0, y.max()], [0, y.max()], ls='-', color='red')
 
 
     
-![png](regression_with_automl_files/regression_with_automl_11_0.png)
+![png](regression_with_automl_files/regression_with_automl_12_0.png)
     
 
 
@@ -174,7 +186,7 @@ _ = plt.axhline(0, color='red', ls='--')
 
 
     
-![png](regression_with_automl_files/regression_with_automl_12_0.png)
+![png](regression_with_automl_files/regression_with_automl_13_0.png)
     
 
 
@@ -186,13 +198,13 @@ sns.displot(residual, kind="kde");
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x12ac48dc0>
+    <seaborn.axisgrid.FacetGrid at 0x12aa51ac0>
 
 
 
 
     
-![png](regression_with_automl_files/regression_with_automl_13_1.png)
+![png](regression_with_automl_files/regression_with_automl_14_1.png)
     
 
 
@@ -204,7 +216,7 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.8893459981002496
-    mse: 11.893862832373605
-    rmse: 3.448748009404805
-    mae: 2.313559225201607
+    r2 score: 0.8333477984232542
+    mse: 12.904023076626173
+    rmse: 3.5922170141329395
+    mae: 2.611924586798015

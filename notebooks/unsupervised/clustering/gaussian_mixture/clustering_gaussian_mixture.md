@@ -1,6 +1,7 @@
-> **Note**: This is a generated markdown export from the Jupyter notebook file [clustering_gaussian_mixture.ipynb](clustering_gaussian_mixture.ipynb).
+>**Note**: This is a generated markdown export from the Jupyter notebook file [clustering_gaussian_mixture.ipynb](clustering_gaussian_mixture.ipynb).
 
 # Clustering with a Gaussian Mixture Model
+
 
 ```python
 %matplotlib inline
@@ -16,6 +17,7 @@ from sklearn import mixture
 from sklearn import manifold
 ```
 
+
 ```python
 data, labels_true = datasets.make_blobs(n_samples=750, centers=[[1,1],[0,5],[2,8]], cluster_std=0.7,
                             random_state=0)
@@ -26,7 +28,12 @@ plt.scatter(data[:,0], data[:,1])
 df = pd.DataFrame(data, columns=['X', 'Y'])
 ```
 
+
+    
 ![png](clustering_gaussian_mixture_files/clustering_gaussian_mixture_2_0.png)
+    
+
+
 
 ```python
 gmm = mixture.GaussianMixture(n_components=2)
@@ -42,10 +49,10 @@ ax = fig.add_subplot(111)
 clusters = list(set(label))
 
 for i in range(len(clusters)):
-    plt.scatter(df[df.label == clusters[i]].X, df[df.label == clusters[i]].Y,
+    plt.scatter(df[df.label == clusters[i]].X, df[df.label == clusters[i]].Y, 
                 label=clusters[i], color=plt.cm.jet(np.float(i) / len(np.unique(label))))
 
-
+    
 plt.legend(bbox_to_anchor=(1.25, 1))
 ```
 
@@ -60,9 +67,16 @@ plt.legend(bbox_to_anchor=(1.25, 1))
 
 
 
-    <matplotlib.legend.Legend at 0x12b379280>
+    <matplotlib.legend.Legend at 0x12c477400>
 
+
+
+
+    
 ![png](clustering_gaussian_mixture_files/clustering_gaussian_mixture_3_2.png)
+    
+
+
 
 ```python
 gmm = mixture.GaussianMixture(n_components=3)
@@ -78,10 +92,10 @@ ax = fig.add_subplot(111)
 clusters = list(set(label))
 
 for i in range(len(clusters)):
-    plt.scatter(df[df.label == clusters[i]].X, df[df.label == clusters[i]].Y,
+    plt.scatter(df[df.label == clusters[i]].X, df[df.label == clusters[i]].Y, 
                 label=clusters[i], color=plt.cm.jet(np.float(i) / len(np.unique(label))))
 
-
+    
 plt.legend(bbox_to_anchor=(1.25, 1))
 ```
 
@@ -99,9 +113,16 @@ plt.legend(bbox_to_anchor=(1.25, 1))
 
 
 
-    <matplotlib.legend.Legend at 0x12d4eda90>
+    <matplotlib.legend.Legend at 0x12e5db100>
 
+
+
+
+    
 ![png](clustering_gaussian_mixture_files/clustering_gaussian_mixture_4_2.png)
+    
+
+
 
 ```python
 gmm = mixture.GaussianMixture(n_components=4)
@@ -117,10 +138,10 @@ ax = fig.add_subplot(111)
 clusters = list(set(label))
 
 for i in range(len(clusters)):
-    plt.scatter(df[df.label == clusters[i]].X, df[df.label == clusters[i]].Y,
+    plt.scatter(df[df.label == clusters[i]].X, df[df.label == clusters[i]].Y, 
                 label=clusters[i], color=plt.cm.jet(np.float(i) / len(np.unique(label))))
 
-
+    
 plt.legend(bbox_to_anchor=(1.25, 1))
 ```
 
@@ -141,9 +162,16 @@ plt.legend(bbox_to_anchor=(1.25, 1))
 
 
 
-    <matplotlib.legend.Legend at 0x10cc6e940>
+    <matplotlib.legend.Legend at 0x10dccae80>
 
+
+
+
+    
 ![png](clustering_gaussian_mixture_files/clustering_gaussian_mixture_5_2.png)
+    
+
+
 
 ```python
 data, t = datasets.make_swiss_roll(n_samples=200, noise=0.1, random_state=0)
@@ -158,9 +186,19 @@ ax.view_init(7, -80)
 ax.scatter(df.X, df.Y, df.Z, 'o')
 ```
 
-    <mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x12d74fc40>
 
+
+
+    <mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x12e84cdc0>
+
+
+
+
+    
 ![png](clustering_gaussian_mixture_files/clustering_gaussian_mixture_6_1.png)
+    
+
+
 
 ```python
 gmm = mixture.GaussianMixture(n_components=2)
@@ -175,8 +213,8 @@ ax.view_init(7, -80)
 fig.suptitle('GaussianMixture n=2', fontsize=14, fontweight='bold')
 
 for l in np.unique(label):
-
-    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z,
+    
+    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 
                'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
 ```
 
@@ -187,7 +225,13 @@ for l in np.unique(label):
     Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
       'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
 
+
+
+    
 ![png](clustering_gaussian_mixture_files/clustering_gaussian_mixture_7_1.png)
+    
+
+
 
 ```python
 gmm = mixture.GaussianMixture(n_components=3)
@@ -202,8 +246,8 @@ ax.view_init(7, -80)
 fig.suptitle('GaussianMixture n=3', fontsize=14, fontweight='bold')
 
 for l in np.unique(label):
-
-    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z,
+    
+    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 
                'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
 ```
 
@@ -217,7 +261,13 @@ for l in np.unique(label):
     Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
       'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
 
+
+
+    
 ![png](clustering_gaussian_mixture_files/clustering_gaussian_mixture_8_1.png)
+    
+
+
 
 ```python
 gmm = mixture.GaussianMixture(n_components=4)
@@ -232,8 +282,8 @@ ax.view_init(7, -80)
 fig.suptitle('GaussianMixture n=4', fontsize=14, fontweight='bold')
 
 for l in np.unique(label):
-
-    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z,
+    
+    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 
                'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
 ```
 
@@ -250,7 +300,13 @@ for l in np.unique(label):
     Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
       'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
 
+
+
+    
 ![png](clustering_gaussian_mixture_files/clustering_gaussian_mixture_9_1.png)
+    
+
+
 
 ```python
 gmm = mixture.GaussianMixture(n_components=5)
@@ -265,8 +321,8 @@ ax.view_init(7, -80)
 fig.suptitle('GaussianMixture n=5', fontsize=14, fontweight='bold')
 
 for l in np.unique(label):
-
-    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z,
+    
+    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 
                'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
 ```
 
@@ -286,4 +342,8 @@ for l in np.unique(label):
     Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
       'o', color=plt.cm.jet(np.float(l) / len(np.unique(label))))
 
+
+
+    
 ![png](clustering_gaussian_mixture_files/clustering_gaussian_mixture_10_1.png)
+    
