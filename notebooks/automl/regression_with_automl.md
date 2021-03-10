@@ -97,6 +97,25 @@ print('test samples', len(X_test))
     test samples 152
 
 
+
+```python
+df_train = pd.DataFrame(y_train, columns=['target'])
+df_train['type'] = 'train'
+
+df_test = pd.DataFrame(y_test, columns=['target'])
+df_test['type'] = 'test'
+
+df_set = df_train.append(df_test)
+
+_ = sns.displot(df_set, x="target" ,hue="type", kind="kde", log_scale=False)
+```
+
+
+    
+![png](regression_with_automl_files/regression_with_automl_6_0.png)
+    
+
+
 **Note:** We do some restrictions here running time and number of ensembles, because the model fitting would not take much longer. So this is just an example how you could run AutoML.
 
 
@@ -156,7 +175,7 @@ _ = ax.plot([0, y.max()], [0, y.max()], ls='-', color='red')
 
 
     
-![png](regression_with_automl_files/regression_with_automl_11_0.png)
+![png](regression_with_automl_files/regression_with_automl_12_0.png)
     
 
 
@@ -174,7 +193,7 @@ _ = plt.axhline(0, color='red', ls='--')
 
 
     
-![png](regression_with_automl_files/regression_with_automl_12_0.png)
+![png](regression_with_automl_files/regression_with_automl_13_0.png)
     
 
 
@@ -186,13 +205,13 @@ sns.displot(residual, kind="kde");
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x12ac48dc0>
+    <seaborn.axisgrid.FacetGrid at 0x12954f3d0>
 
 
 
 
     
-![png](regression_with_automl_files/regression_with_automl_13_1.png)
+![png](regression_with_automl_files/regression_with_automl_14_1.png)
     
 
 
@@ -204,7 +223,7 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.8893459981002496
-    mse: 11.893862832373605
-    rmse: 3.448748009404805
-    mae: 2.313559225201607
+    r2 score: 0.8498729329557938
+    mse: 14.919319923243707
+    rmse: 3.862553549563256
+    mae: 2.3167894358697687
