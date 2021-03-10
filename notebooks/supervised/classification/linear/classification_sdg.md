@@ -129,7 +129,7 @@ Stratify the data by the target label
 
 
 ```python
-X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, train_size=0.7, stratify=y)
+X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, train_size=0.5, stratify=y)
 
 df_train = pd.DataFrame(y_train, columns=['target'])
 df_train['type'] = 'train'
@@ -145,8 +145,8 @@ print('train samples:', len(X_train))
 print('test samples', len(X_test))
 ```
 
-    train samples: 124
-    test samples 54
+    train samples: 89
+    test samples 89
 
 
 
@@ -203,21 +203,21 @@ truth_table
   <tbody>
     <tr>
       <th>0</th>
-      <td>18.0</td>
+      <td>30.0</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>1</th>
       <td>0.0</td>
-      <td>20.0</td>
+      <td>30.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>2</th>
       <td>0.0</td>
-      <td>1.0</td>
-      <td>15.0</td>
+      <td>5.0</td>
+      <td>24.0</td>
     </tr>
   </tbody>
 </table>
@@ -244,7 +244,7 @@ print("recall: {:.3f}".format(metrics.recall_score(y_test, predicted, average='w
 print("f1 score: {:.3f}".format(metrics.f1_score(y_test, predicted, average='weighted')))
 ```
 
-    accuracy: 0.981
-    precision: 0.983
-    recall: 0.981
-    f1 score: 0.982
+    accuracy: 0.944
+    precision: 0.954
+    recall: 0.944
+    f1 score: 0.944

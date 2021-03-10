@@ -1,6 +1,6 @@
->**Note**: This is a generated markdown export from the Jupyter notebook file [regression_lasso.ipynb](regression_lasso.ipynb).
+>**Note**: This is a generated markdown export from the Jupyter notebook file [regression_with_automl.ipynb](regression_with_automl.ipynb).
 
-## Lasso Regression (regularized linear regression model)
+# Regression with AutoML (auto-sklearn)
 
 
 ```python
@@ -10,7 +10,12 @@ import seaborn as sns
 import pandas as pd
 import numpy as np
 
-from sklearn import linear_model, datasets, metrics, model_selection, preprocessing, pipeline
+from sklearn import datasets, metrics, model_selection, preprocessing, pipeline
+
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
+
+import autosklearn.regression
 ```
 
 Load the data set
@@ -92,17 +97,42 @@ print('test samples', len(X_test))
     test samples 152
 
 
+**Note:** We do some restrictions here running time and number of ensembles, because the model fitting would not take much longer. So this is just an example how you could run AutoML.
+
 
 ```python
-model = linear_model.Lasso(alpha=.1)
-model.fit(X_train, y_train)
+model = autosklearn.regression.AutoSklearnRegressor(time_left_for_this_task=30, ensemble_size=3)
 ```
 
 
+```python
+%%capture
+# ignore oput from model fit with capture magic command
+model.fit(X_train, y_train)
+```
+
+Print the final ensemble constructed by auto-sklearn
 
 
-    Lasso(alpha=0.1)
+```python
+for m in model.get_models_with_weights():
+    print(m)
+```
 
+    (0.6666666666666666, SimpleRegressionPipeline({'data_preprocessing:categorical_transformer:categorical_encoding:__choice__': 'no_encoding', 'data_preprocessing:categorical_transformer:category_coalescence:__choice__': 'no_coalescense', 'data_preprocessing:numerical_transformer:imputation:strategy': 'median', 'data_preprocessing:numerical_transformer:rescaling:__choice__': 'minmax', 'feature_preprocessor:__choice__': 'feature_agglomeration', 'regressor:__choice__': 'extra_trees', 'feature_preprocessor:feature_agglomeration:affinity': 'euclidean', 'feature_preprocessor:feature_agglomeration:linkage': 'average', 'feature_preprocessor:feature_agglomeration:n_clusters': 272, 'feature_preprocessor:feature_agglomeration:pooling_func': 'median', 'regressor:extra_trees:bootstrap': 'False', 'regressor:extra_trees:criterion': 'mse', 'regressor:extra_trees:max_depth': 'None', 'regressor:extra_trees:max_features': 0.5120356089629183, 'regressor:extra_trees:max_leaf_nodes': 'None', 'regressor:extra_trees:min_impurity_decrease': 0.0, 'regressor:extra_trees:min_samples_leaf': 1, 'regressor:extra_trees:min_samples_split': 4, 'regressor:extra_trees:min_weight_fraction_leaf': 0.0},
+    dataset_properties={
+      'task': 4,
+      'sparse': False,
+      'multioutput': False,
+      'target_type': 'regression',
+      'signed': False}))
+    (0.3333333333333333, SimpleRegressionPipeline({'data_preprocessing:categorical_transformer:categorical_encoding:__choice__': 'one_hot_encoding', 'data_preprocessing:categorical_transformer:category_coalescence:__choice__': 'minority_coalescer', 'data_preprocessing:numerical_transformer:imputation:strategy': 'mean', 'data_preprocessing:numerical_transformer:rescaling:__choice__': 'standardize', 'feature_preprocessor:__choice__': 'no_preprocessing', 'regressor:__choice__': 'random_forest', 'data_preprocessing:categorical_transformer:category_coalescence:minority_coalescer:minimum_fraction': 0.01, 'regressor:random_forest:bootstrap': 'True', 'regressor:random_forest:criterion': 'mse', 'regressor:random_forest:max_depth': 'None', 'regressor:random_forest:max_features': 1.0, 'regressor:random_forest:max_leaf_nodes': 'None', 'regressor:random_forest:min_impurity_decrease': 0.0, 'regressor:random_forest:min_samples_leaf': 1, 'regressor:random_forest:min_samples_split': 2, 'regressor:random_forest:min_weight_fraction_leaf': 0.0},
+    dataset_properties={
+      'task': 4,
+      'sparse': False,
+      'multioutput': False,
+      'target_type': 'regression',
+      'signed': False}))
 
 
 
@@ -119,7 +149,7 @@ _ = ax.plot([0, y.max()], [0, y.max()], ls='-', color='red')
 
 
     
-![png](regression_lasso_files/regression_lasso_7_0.png)
+![png](regression_with_automl_files/regression_with_automl_11_0.png)
     
 
 
@@ -137,7 +167,7 @@ _ = plt.axhline(0, color='red', ls='--')
 
 
     
-![png](regression_lasso_files/regression_lasso_8_0.png)
+![png](regression_with_automl_files/regression_with_automl_12_0.png)
     
 
 
@@ -149,13 +179,13 @@ sns.displot(residual, kind="kde");
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x12865ab80>
+    <seaborn.axisgrid.FacetGrid at 0x1276dc3a0>
 
 
 
 
     
-![png](regression_lasso_files/regression_lasso_9_1.png)
+![png](regression_with_automl_files/regression_with_automl_13_1.png)
     
 
 
@@ -167,7 +197,7 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.7195826866828197
-    mse: 25.185696409796027
-    rmse: 5.018535285299489
-    mae: 3.5161312363809945
+    r2 score: 0.890065020562115
+    mse: 9.393593023261449
+    rmse: 3.064896902550141
+    mae: 2.1883697387419248

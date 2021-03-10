@@ -196,7 +196,7 @@ print('------------------')
 
     English sample:
     ------------------
-    Scrooge Both very busy sir Oh was afraid from what you said at first that something had occurred to stop
+    before although he recognised its situation and its bad repute The ways were foul and narrow the shops and houses
     ------------------
 
 
@@ -320,12 +320,12 @@ for scoring in ['f1_weighted', 'accuracy']:
 ```
 
     f1_weighted
-    scores: [0.99839749 1.         1.         1.         1.        ]
-    f1_weighted: 0.999679 (+/- 0.0013)
+    scores: [1.         0.99679976 1.         1.         1.        ]
+    f1_weighted: 0.999360 (+/- 0.0026)
     
     accuracy
-    scores: [0.99839744 1.         1.         1.         1.        ]
-    accuracy: 0.999679 (+/- 0.0013)
+    scores: [1.         0.99679487 1.         1.         1.        ]
+    accuracy: 0.999359 (+/- 0.0026)
     
 
 
@@ -344,10 +344,10 @@ print(metrics.classification_report(y_test, predicted, digits=4))
 
                   precision    recall  f1-score   support
     
-               0     1.0000    1.0000    1.0000       510
-               1     1.0000    1.0000    1.0000       529
-               2     1.0000    1.0000    1.0000       532
-               3     1.0000    1.0000    1.0000       509
+               0     1.0000    1.0000    1.0000       520
+               1     1.0000    1.0000    1.0000       512
+               2     1.0000    1.0000    1.0000       520
+               3     1.0000    1.0000    1.0000       528
     
         accuracy                         1.0000      2080
        macro avg     1.0000    1.0000    1.0000      2080
@@ -375,10 +375,10 @@ def show_top10(classifier, vectorizer, categories):
 show_top10(text_clf.named_steps['clf'], text_clf.named_steps['vect'], data.labels)
 ```
 
-    de: ich ein das es zu sie er die der und
-    en: was in that his he it of to and the
-    fr: qu une que les un il et la le de
-    nl: op te dat zijn hij van de een het en
+    de: ich das ein es sie zu er die der und
+    en: in was that his he it of to and the
+    fr: qu que une les un il la et le de
+    nl: op dat te zijn van hij het de een en
 
 
     /Users/mru/.local/share/virtualenvs/machine-learning-snippets-mLikUPnf/lib/python3.8/site-packages/sklearn/utils/deprecation.py:101: FutureWarning: Attribute coef_ was deprecated in version 0.24 and will be removed in 1.1 (renaming of 0.26).
@@ -396,9 +396,9 @@ print('first features: %s'% feature_names[0:10])
 print('last features: %s' % feature_names[-10:])
 ```
 
-    number of features: 820
-    first features: ['aan' 'aber' 'about' 'affaires' 'after' 'again' 'ah' 'ai' 'air' 'al']
-    last features: ['zur' 'zwei' 'zóó' 'écria' 'étaient' 'était' 'été' 'één' 'être' 'über']
+    number of features: 813
+    first features: ['aan' 'aber' 'about' 'after' 'again' 'ah' 'ai' 'air' 'al' 'all']
+    last features: ['zu' 'zum' 'zwei' 'écria' 'étaient' 'était' 'été' 'één' 'être' 'über']
 
 
 ### New data
@@ -423,11 +423,11 @@ for i, p in enumerate(predicted):
     
 ```
 
-    Hallo mein Name ist Hugo.  -->  de , prob: 0.8510287603669051
-    Hi my name is Hugo.  -->  en , prob: 0.8234647987630547
-    Bonjour mon nom est Hugo.  -->  fr , prob: 0.9413398602036183
-    Hallo mijn naam is Hugo.  -->  nl , prob: 0.7512891270006902
-    Eins, zwei und drei.  -->  de , prob: 0.9335797091389161
-    One, two and three.  -->  en , prob: 0.9698291120335577
-    Un, deux et trois.  -->  fr , prob: 0.9856589223583836
-    Een, twee en drie.  -->  nl , prob: 0.9700044531048181
+    Hallo mein Name ist Hugo.  -->  de , prob: 0.8150942543943148
+    Hi my name is Hugo.  -->  en , prob: 0.8551368597688355
+    Bonjour mon nom est Hugo.  -->  fr , prob: 0.9468339057138813
+    Hallo mijn naam is Hugo.  -->  nl , prob: 0.8968272491618567
+    Eins, zwei und drei.  -->  de , prob: 0.9414719915781357
+    One, two and three.  -->  en , prob: 0.9756439045005061
+    Un, deux et trois.  -->  fr , prob: 0.9876003996864834
+    Een, twee en drie.  -->  nl , prob: 0.9631743522164151

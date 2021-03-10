@@ -1,6 +1,6 @@
->**Note**: This is a generated markdown export from the Jupyter notebook file [classification_xgboost.ipynb](classification_xgboost.ipynb).
+>**Note**: This is a generated markdown export from the Jupyter notebook file [classification_with_automl.ipynb](classification_with_automl.ipynb).
 
-## Classification with gradient boosting (xgboost)
+# Classification with AutoML (auto-sklearn)
 
 
 ```python
@@ -10,12 +10,13 @@ import seaborn as sns
 import pandas as pd
 import numpy as np
 
-import xgboost as xgb
-
 from sklearn import datasets, metrics, model_selection, preprocessing, pipeline
-```
 
-Load the data set
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
+
+import autosklearn.classification
+```
 
 
 ```python
@@ -127,8 +128,6 @@ X = pd.DataFrame(wine.data, columns=wine.feature_names)
 y = wine.target
 ```
 
-Stratify the data by the target label
-
 
 ```python
 X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, train_size=0.5, stratify=y)
@@ -153,30 +152,57 @@ print('test samples', len(X_test))
 
 
     
-![png](classification_xgboost_files/classification_xgboost_6_1.png)
+![png](classification_with_automl_files/classification_with_automl_4_1.png)
     
 
 
+**Note:** We do some restrictions here running time and number of ensembles, because the model fitting would not take much longer. So this is just an example how you could run AutoML.
+
 
 ```python
-model = xgb.XGBClassifier(n_estimators=100, max_depth=4, booster='gbtree', eval_metric='mlogloss', use_label_encoder=False)
-model.fit(X_train, y_train)
+model = autosklearn.classification.AutoSklearnClassifier(time_left_for_this_task=30, ensemble_size=3)
 ```
 
 
+```python
+%%capture
+# ignore oput from model fit with capture magic command
+model.fit(X_train, y_train)
+```
+
+Print the final ensemble constructed by auto-sklearn
 
 
-    XGBClassifier(base_score=0.5, booster='gbtree', colsample_bylevel=1,
-                  colsample_bynode=1, colsample_bytree=1, eval_metric='mlogloss',
-                  gamma=0, gpu_id=-1, importance_type='gain',
-                  interaction_constraints='', learning_rate=0.300000012,
-                  max_delta_step=0, max_depth=4, min_child_weight=1, missing=nan,
-                  monotone_constraints='()', n_estimators=100, n_jobs=8,
-                  num_parallel_tree=1, objective='multi:softprob', random_state=0,
-                  reg_alpha=0, reg_lambda=1, scale_pos_weight=None, subsample=1,
-                  tree_method='exact', use_label_encoder=False,
-                  validate_parameters=1, verbosity=None)
+```python
+for m in model.get_models_with_weights():
+    print(m)
 
+```
+
+    (0.3333333333333333, SimpleClassificationPipeline({'balancing:strategy': 'weighting', 'classifier:__choice__': 'random_forest', 'data_preprocessing:categorical_transformer:categorical_encoding:__choice__': 'no_encoding', 'data_preprocessing:categorical_transformer:category_coalescence:__choice__': 'minority_coalescer', 'data_preprocessing:numerical_transformer:imputation:strategy': 'most_frequent', 'data_preprocessing:numerical_transformer:rescaling:__choice__': 'robust_scaler', 'feature_preprocessor:__choice__': 'extra_trees_preproc_for_classification', 'classifier:random_forest:bootstrap': 'True', 'classifier:random_forest:criterion': 'entropy', 'classifier:random_forest:max_depth': 'None', 'classifier:random_forest:max_features': 0.4775492074518431, 'classifier:random_forest:max_leaf_nodes': 'None', 'classifier:random_forest:min_impurity_decrease': 0.0, 'classifier:random_forest:min_samples_leaf': 2, 'classifier:random_forest:min_samples_split': 2, 'classifier:random_forest:min_weight_fraction_leaf': 0.0, 'data_preprocessing:categorical_transformer:category_coalescence:minority_coalescer:minimum_fraction': 0.015996368052062886, 'data_preprocessing:numerical_transformer:rescaling:robust_scaler:q_max': 0.7845396961078424, 'data_preprocessing:numerical_transformer:rescaling:robust_scaler:q_min': 0.25545052141264185, 'feature_preprocessor:extra_trees_preproc_for_classification:bootstrap': 'False', 'feature_preprocessor:extra_trees_preproc_for_classification:criterion': 'entropy', 'feature_preprocessor:extra_trees_preproc_for_classification:max_depth': 'None', 'feature_preprocessor:extra_trees_preproc_for_classification:max_features': 0.5662900693317384, 'feature_preprocessor:extra_trees_preproc_for_classification:max_leaf_nodes': 'None', 'feature_preprocessor:extra_trees_preproc_for_classification:min_impurity_decrease': 0.0, 'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_leaf': 1, 'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_split': 7, 'feature_preprocessor:extra_trees_preproc_for_classification:min_weight_fraction_leaf': 0.0, 'feature_preprocessor:extra_trees_preproc_for_classification:n_estimators': 100},
+    dataset_properties={
+      'task': 2,
+      'sparse': False,
+      'multilabel': False,
+      'multiclass': True,
+      'target_type': 'classification',
+      'signed': False}))
+    (0.3333333333333333, SimpleClassificationPipeline({'balancing:strategy': 'weighting', 'classifier:__choice__': 'passive_aggressive', 'data_preprocessing:categorical_transformer:categorical_encoding:__choice__': 'one_hot_encoding', 'data_preprocessing:categorical_transformer:category_coalescence:__choice__': 'no_coalescense', 'data_preprocessing:numerical_transformer:imputation:strategy': 'mean', 'data_preprocessing:numerical_transformer:rescaling:__choice__': 'standardize', 'feature_preprocessor:__choice__': 'select_rates_classification', 'classifier:passive_aggressive:C': 2.6029223727861803e-05, 'classifier:passive_aggressive:average': 'False', 'classifier:passive_aggressive:fit_intercept': 'True', 'classifier:passive_aggressive:loss': 'squared_hinge', 'classifier:passive_aggressive:tol': 4.631073253805713e-05, 'feature_preprocessor:select_rates_classification:alpha': 0.10415815816641485, 'feature_preprocessor:select_rates_classification:score_func': 'f_classif', 'feature_preprocessor:select_rates_classification:mode': 'fpr'},
+    dataset_properties={
+      'task': 2,
+      'sparse': False,
+      'multilabel': False,
+      'multiclass': True,
+      'target_type': 'classification',
+      'signed': False}))
+    (0.3333333333333333, SimpleClassificationPipeline({'balancing:strategy': 'weighting', 'classifier:__choice__': 'lda', 'data_preprocessing:categorical_transformer:categorical_encoding:__choice__': 'no_encoding', 'data_preprocessing:categorical_transformer:category_coalescence:__choice__': 'minority_coalescer', 'data_preprocessing:numerical_transformer:imputation:strategy': 'most_frequent', 'data_preprocessing:numerical_transformer:rescaling:__choice__': 'robust_scaler', 'feature_preprocessor:__choice__': 'polynomial', 'classifier:lda:shrinkage': 'auto', 'classifier:lda:tol': 0.00010000000000000009, 'data_preprocessing:categorical_transformer:category_coalescence:minority_coalescer:minimum_fraction': 0.01207807613316353, 'data_preprocessing:numerical_transformer:rescaling:robust_scaler:q_max': 0.7778831771256954, 'data_preprocessing:numerical_transformer:rescaling:robust_scaler:q_min': 0.18524123907056736, 'feature_preprocessor:polynomial:degree': 2, 'feature_preprocessor:polynomial:include_bias': 'True', 'feature_preprocessor:polynomial:interaction_only': 'True'},
+    dataset_properties={
+      'task': 2,
+      'sparse': False,
+      'multilabel': False,
+      'multiclass': True,
+      'target_type': 'classification',
+      'signed': False}))
 
 
 
@@ -214,13 +240,13 @@ truth_table
     <tr>
       <th>0</th>
       <td>29.0</td>
-      <td>2.0</td>
+      <td>1.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>1</th>
       <td>0.0</td>
-      <td>34.0</td>
+      <td>35.0</td>
       <td>1.0</td>
     </tr>
     <tr>
@@ -242,7 +268,7 @@ _ = sns.heatmap(truth_table, annot=True, cmap="Blues")
 
 
     
-![png](classification_xgboost_files/classification_xgboost_9_0.png)
+![png](classification_with_automl_files/classification_with_automl_11_0.png)
     
 
 
@@ -254,10 +280,10 @@ print("recall: {:.3f}".format(metrics.recall_score(y_test, predicted, average='w
 print("f1 score: {:.3f}".format(metrics.f1_score(y_test, predicted, average='weighted')))
 ```
 
-    accuracy: 0.966
-    precision: 0.967
-    recall: 0.966
-    f1 score: 0.966
+    accuracy: 0.978
+    precision: 0.978
+    recall: 0.978
+    f1 score: 0.978
 
 
 
