@@ -92,12 +92,12 @@ The following machine learning snippets are available as Jupyter Notebook.
 
 ### Text & model evaluation
 
-- [Text clustering basics](notebooks/unsupervised/clustering/clustering_text.ipynb) (scikit-learn)
-- [Clustering basics and model evaluation](notebooks/unsupervised/clustering/clustering_basics_model_evaluation.ipynb) (scikit-learn)
+- [Text clustering basics](notebooks/unsupervised/clustering/clustering_text.md) (scikit-learn)
+- [Clustering basics and model evaluation](notebooks/unsupervised/clustering/clustering_basics_model_evaluation.md) (scikit-learn)
 
 ### Centroid-based clustering
 
-- [K-means](notebooks/unsupervised/clustering/kmeans/clustering_kmeans.ipynb) (scikit-learn)
+- [K-means](notebooks/unsupervised/clustering/kmeans/clustering_kmeans.md) (scikit-learn)
 
 ### Density-based clustering
 
