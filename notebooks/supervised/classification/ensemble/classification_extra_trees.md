@@ -1,6 +1,6 @@
->**Note**: This is a generated markdown export from the Jupyter notebook file [classification_svm.ipynb](classification_svm.ipynb).
+>**Note**: This is a generated markdown export from the Jupyter notebook file [classification_extra_trees.ipynb](classification_extra_trees.ipynb).
 
-## Classification with SVM
+## Classification with a extra-trees classifier
 
 
 ```python
@@ -10,7 +10,7 @@ import seaborn as sns
 import pandas as pd
 import numpy as np
 
-from sklearn import svm, datasets, metrics, model_selection, preprocessing, pipeline
+from sklearn import ensemble, datasets, metrics, model_selection, preprocessing, pipeline
 ```
 
 Load the data set
@@ -151,22 +151,20 @@ print('test samples', len(X_test))
 
 
     
-![png](classification_svm_files/classification_svm_6_1.png)
+![png](classification_extra_trees_files/classification_extra_trees_6_1.png)
     
 
 
 
 ```python
-# ovr -> one-vs-rest
-model = pipeline.make_pipeline(preprocessing.StandardScaler(), svm.SVC(kernel='rbf', degree=3, decision_function_shape='ovr', class_weight='balanced'))
+model = ensemble.ExtraTreesClassifier(n_estimators=50, max_depth=3)
 model.fit(X_train, y_train)
 ```
 
 
 
 
-    Pipeline(steps=[('standardscaler', StandardScaler()),
-                    ('svc', SVC(class_weight='balanced'))])
+    ExtraTreesClassifier(max_depth=3, n_estimators=50)
 
 
 
@@ -204,20 +202,20 @@ truth_table
   <tbody>
     <tr>
       <th>0</th>
-      <td>30.0</td>
+      <td>28.0</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.0</td>
-      <td>34.0</td>
+      <td>2.0</td>
+      <td>35.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>2</th>
       <td>0.0</td>
-      <td>1.0</td>
+      <td>0.0</td>
       <td>24.0</td>
     </tr>
   </tbody>
@@ -233,7 +231,7 @@ _ = sns.heatmap(truth_table, annot=True, cmap="Blues")
 
 
     
-![png](classification_svm_files/classification_svm_9_0.png)
+![png](classification_extra_trees_files/classification_extra_trees_9_0.png)
     
 
 
@@ -245,7 +243,7 @@ print("recall: {:.3f}".format(metrics.recall_score(y_test, predicted, average='w
 print("f1 score: {:.3f}".format(metrics.f1_score(y_test, predicted, average='weighted')))
 ```
 
-    accuracy: 0.989
-    precision: 0.989
-    recall: 0.989
-    f1 score: 0.989
+    accuracy: 0.978
+    precision: 0.979
+    recall: 0.978
+    f1 score: 0.977

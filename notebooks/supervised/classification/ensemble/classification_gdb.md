@@ -1,6 +1,6 @@
->**Note**: This is a generated markdown export from the Jupyter notebook file [classification_svm.ipynb](classification_svm.ipynb).
+>**Note**: This is a generated markdown export from the Jupyter notebook file [classification_gdb.ipynb](classification_gdb.ipynb).
 
-## Classification with SVM
+## Classification with gradient boosting
 
 
 ```python
@@ -10,7 +10,7 @@ import seaborn as sns
 import pandas as pd
 import numpy as np
 
-from sklearn import svm, datasets, metrics, model_selection, preprocessing, pipeline
+from sklearn import ensemble, datasets, metrics, model_selection, preprocessing, pipeline
 ```
 
 Load the data set
@@ -151,22 +151,20 @@ print('test samples', len(X_test))
 
 
     
-![png](classification_svm_files/classification_svm_6_1.png)
+![png](classification_gdb_files/classification_gdb_6_1.png)
     
 
 
 
 ```python
-# ovr -> one-vs-rest
-model = pipeline.make_pipeline(preprocessing.StandardScaler(), svm.SVC(kernel='rbf', degree=3, decision_function_shape='ovr', class_weight='balanced'))
+model = ensemble.GradientBoostingClassifier(loss='deviance', n_estimators=50, max_depth=3)
 model.fit(X_train, y_train)
 ```
 
 
 
 
-    Pipeline(steps=[('standardscaler', StandardScaler()),
-                    ('svc', SVC(class_weight='balanced'))])
+    GradientBoostingClassifier(n_estimators=50)
 
 
 
@@ -204,20 +202,20 @@ truth_table
   <tbody>
     <tr>
       <th>0</th>
-      <td>30.0</td>
-      <td>0.0</td>
+      <td>25.0</td>
+      <td>1.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.0</td>
-      <td>34.0</td>
+      <td>4.0</td>
+      <td>31.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>2</th>
       <td>0.0</td>
-      <td>1.0</td>
+      <td>4.0</td>
       <td>24.0</td>
     </tr>
   </tbody>
@@ -233,7 +231,7 @@ _ = sns.heatmap(truth_table, annot=True, cmap="Blues")
 
 
     
-![png](classification_svm_files/classification_svm_9_0.png)
+![png](classification_gdb_files/classification_gdb_9_0.png)
     
 
 
@@ -245,7 +243,7 @@ print("recall: {:.3f}".format(metrics.recall_score(y_test, predicted, average='w
 print("f1 score: {:.3f}".format(metrics.f1_score(y_test, predicted, average='weighted')))
 ```
 
-    accuracy: 0.989
-    precision: 0.989
-    recall: 0.989
-    f1 score: 0.989
+    accuracy: 0.899
+    precision: 0.903
+    recall: 0.899
+    f1 score: 0.898

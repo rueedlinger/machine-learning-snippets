@@ -213,20 +213,20 @@ truth_table
   <tbody>
     <tr>
       <th>0</th>
-      <td>26.0</td>
-      <td>1.0</td>
+      <td>29.0</td>
+      <td>2.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2.0</td>
-      <td>33.0</td>
+      <td>1.0</td>
+      <td>32.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>2</th>
+      <td>0.0</td>
       <td>1.0</td>
-      <td>2.0</td>
       <td>24.0</td>
     </tr>
   </tbody>
@@ -254,10 +254,10 @@ print("recall: {:.3f}".format(metrics.recall_score(y_test, predicted, average='w
 print("f1 score: {:.3f}".format(metrics.f1_score(y_test, predicted, average='weighted')))
 ```
 
-    accuracy: 0.933
-    precision: 0.935
-    recall: 0.933
-    f1 score: 0.932
+    accuracy: 0.955
+    precision: 0.956
+    recall: 0.955
+    f1 score: 0.955
 
 
 
