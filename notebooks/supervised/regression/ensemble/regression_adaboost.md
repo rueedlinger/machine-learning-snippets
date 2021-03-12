@@ -160,19 +160,12 @@ _ = plt.axhline(0, color='red', ls='--')
 
 
 ```python
-sns.displot(residual, kind="kde");
+_ = sns.displot(residual, kind="kde");
 ```
 
 
-
-
-    <seaborn.axisgrid.FacetGrid at 0x12bea0760>
-
-
-
-
     
-![png](regression_adaboost_files/regression_adaboost_9_1.png)
+![png](regression_adaboost_files/regression_adaboost_9_0.png)
     
 
 
@@ -184,7 +177,7 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.859450105961227
-    mse: 13.197774663297755
-    rmse: 3.632874160124151
-    mae: 2.646835091222793
+    r2 score: 0.8500523281271827
+    mse: 12.728562993833483
+    rmse: 3.567711170180888
+    mae: 2.4521234773869054
