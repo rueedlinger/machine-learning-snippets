@@ -134,7 +134,7 @@ The following machine learning snippets are available as Jupyter Notebook.
 
 ## Hyperparameter optimization
 
-- [Hyperparameter optimization with GridSearch](notebooks/Hyperparameter/Hyperparameter_with_gridsearch.md) (scikit-learn)
+- [Hyperparameter optimization with GridSearch](notebooks/hyperparameter/hyperparameter_gridsearch.md) (scikit-learn)
 
 ## AutoML
 
