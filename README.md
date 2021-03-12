@@ -62,6 +62,9 @@ The following machine learning snippets are available as Jupyter Notebook.
 ### Ensemble learning
 
 - [Classification with random forest](notebooks/supervised/classification/ensemble/classification_random_forest.md) (scikit-learn)
+- [Classification with extra-trees](notebooks/supervised/classification/ensemble/classification_extra_trees.md) (scikit-learn)
+- [Classification with AdaBoost (boosting)](notebooks/supervised/classification/ensemble/classification_adaboost.md) (scikit-learn)
+- [Classification with bagging](notebooks/supervised/classification/ensemble/classification_bagging.md) (scikit-learn)
 - [Classification with gradient boosting](notebooks/supervised/classification/ensemble/classification_xgboost.md) (xgboost)
 
 ## Regression
