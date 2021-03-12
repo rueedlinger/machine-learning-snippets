@@ -1,6 +1,6 @@
->**Note**: This is a generated markdown export from the Jupyter notebook file [classification_sdg.ipynb](classification_sdg.ipynb).
+>**Note**: This is a generated markdown export from the Jupyter notebook file [classification_adaboost.ipynb](classification_adaboost.ipynb).
 
-## Classification with stochastic gradient descent (SGD)
+## Classification with AdaBoost
 
 
 ```python
@@ -10,7 +10,7 @@ import seaborn as sns
 import pandas as pd
 import numpy as np
 
-from sklearn import linear_model, datasets, metrics, model_selection, preprocessing, pipeline
+from sklearn import ensemble, datasets, metrics, model_selection, preprocessing, pipeline
 ```
 
 Load the data set
@@ -151,21 +151,20 @@ print('test samples', len(X_test))
 
 
     
-![png](classification_sdg_files/classification_sdg_6_1.png)
+![png](classification_adaboost_files/classification_adaboost_6_1.png)
     
 
 
 
 ```python
-model = pipeline.make_pipeline(preprocessing.StandardScaler(), linear_model.SGDClassifier(max_iter=1000, tol=1e-3))
+model = ensemble.AdaBoostClassifier(n_estimators=50, algorithm='SAMME.R')
 model.fit(X_train, y_train)
 ```
 
 
 
 
-    Pipeline(steps=[('standardscaler', StandardScaler()),
-                    ('sgdclassifier', SGDClassifier())])
+    AdaBoostClassifier()
 
 
 
@@ -203,21 +202,21 @@ truth_table
   <tbody>
     <tr>
       <th>0</th>
-      <td>25.0</td>
-      <td>0.0</td>
+      <td>26.0</td>
+      <td>1.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>4.0</td>
+      <td>3.0</td>
       <td>35.0</td>
-      <td>0.0</td>
+      <td>3.0</td>
     </tr>
     <tr>
       <th>2</th>
       <td>0.0</td>
-      <td>1.0</td>
-      <td>24.0</td>
+      <td>0.0</td>
+      <td>21.0</td>
     </tr>
   </tbody>
 </table>
@@ -232,7 +231,7 @@ _ = sns.heatmap(truth_table, annot=True, cmap="Blues")
 
 
     
-![png](classification_sdg_files/classification_sdg_9_0.png)
+![png](classification_adaboost_files/classification_adaboost_9_0.png)
     
 
 
@@ -244,7 +243,7 @@ print("recall: {:.3f}".format(metrics.recall_score(y_test, predicted, average='w
 print("f1 score: {:.3f}".format(metrics.f1_score(y_test, predicted, average='weighted')))
 ```
 
-    accuracy: 0.944
-    precision: 0.948
-    recall: 0.944
-    f1 score: 0.943
+    accuracy: 0.921
+    precision: 0.929
+    recall: 0.921
+    f1 score: 0.922
