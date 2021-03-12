@@ -62,6 +62,9 @@ The following machine learning snippets are available as Jupyter Notebook.
 ### Ensemble learning
 
 - [Classification with random forest](notebooks/supervised/classification/ensemble/classification_random_forest.md) (scikit-learn)
+- [Classification with extra-trees](notebooks/supervised/classification/ensemble/classification_extra_trees.md) (scikit-learn)
+- [Classification with bagging](notebooks/supervised/classification/ensemble/classification_bagging.md) (scikit-learn)
+- [Classification with AdaBoost (boosting)](notebooks/supervised/classification/ensemble/classification_adaboost.md) (scikit-learn)
 - [Classification with gradient boosting](notebooks/supervised/classification/ensemble/classification_xgboost.md) (xgboost)
 
 ## Regression
@@ -86,6 +89,9 @@ The following machine learning snippets are available as Jupyter Notebook.
 ### Ensemble learning
 
 - [Regression with random forest](notebooks/supervised/regression/ensemble/regression_random_forest.md) (scikit-learn)
+- [Regression with extra-trees](notebooks/supervised/regression/ensemble/regression_extra_trees.md) (scikit-learn)
+- [Regression with bagging](notebooks/supervised/regression/ensemble/regression_bagging.md) (scikit-learn)
+- [Regression with AdaBoost (boosting)](notebooks/supervised/regression/ensemble/regression_adaboost.md) (scikit-learn)
 - [Regression with gradient boosting](notebooks/supervised/regression/ensemble/regression_xgboost.md) (xgboost)
 
 ## Clustering
@@ -125,6 +131,10 @@ The following machine learning snippets are available as Jupyter Notebook.
 - [MDS](notebooks/unsupervised/dimensionality_reduction/mds/dimensionality_reduction_mds.md) (scikit-learn)
 - [Isomap](notebooks/unsupervised/dimensionality_reduction/isomap/dimensionality_reduction_isomap.md) (scikit-learn)
 - [t-SNE](notebooks/unsupervised/dimensionality_reduction/tsne/dimensionality_reduction_tsne.md) (scikit-learn)
+
+## Hyperparameter optimization
+
+- [Hyperparameter optimization with GridSearch](notebooks/hyperparameter/hyperparameter_gridsearch.md) (scikit-learn)
 
 ## AutoML
 

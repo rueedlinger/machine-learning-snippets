@@ -195,7 +195,7 @@ for m in model.get_models_with_weights():
       'multiclass': True,
       'target_type': 'classification',
       'signed': False}))
-    (0.3333333333333333, SimpleClassificationPipeline({'balancing:strategy': 'weighting', 'classifier:__choice__': 'extra_trees', 'data_preprocessing:categorical_transformer:categorical_encoding:__choice__': 'no_encoding', 'data_preprocessing:categorical_transformer:category_coalescence:__choice__': 'minority_coalescer', 'data_preprocessing:numerical_transformer:imputation:strategy': 'median', 'data_preprocessing:numerical_transformer:rescaling:__choice__': 'normalize', 'feature_preprocessor:__choice__': 'extra_trees_preproc_for_classification', 'classifier:extra_trees:bootstrap': 'False', 'classifier:extra_trees:criterion': 'gini', 'classifier:extra_trees:max_depth': 'None', 'classifier:extra_trees:max_features': 0.9292309396985746, 'classifier:extra_trees:max_leaf_nodes': 'None', 'classifier:extra_trees:min_impurity_decrease': 0.0, 'classifier:extra_trees:min_samples_leaf': 1, 'classifier:extra_trees:min_samples_split': 10, 'classifier:extra_trees:min_weight_fraction_leaf': 0.0, 'data_preprocessing:categorical_transformer:category_coalescence:minority_coalescer:minimum_fraction': 0.032719158639429445, 'feature_preprocessor:extra_trees_preproc_for_classification:bootstrap': 'False', 'feature_preprocessor:extra_trees_preproc_for_classification:criterion': 'entropy', 'feature_preprocessor:extra_trees_preproc_for_classification:max_depth': 'None', 'feature_preprocessor:extra_trees_preproc_for_classification:max_features': 0.9929881254946676, 'feature_preprocessor:extra_trees_preproc_for_classification:max_leaf_nodes': 'None', 'feature_preprocessor:extra_trees_preproc_for_classification:min_impurity_decrease': 0.0, 'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_leaf': 1, 'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_split': 2, 'feature_preprocessor:extra_trees_preproc_for_classification:min_weight_fraction_leaf': 0.0, 'feature_preprocessor:extra_trees_preproc_for_classification:n_estimators': 100},
+    (0.3333333333333333, SimpleClassificationPipeline({'balancing:strategy': 'none', 'classifier:__choice__': 'gradient_boosting', 'data_preprocessing:categorical_transformer:categorical_encoding:__choice__': 'no_encoding', 'data_preprocessing:categorical_transformer:category_coalescence:__choice__': 'minority_coalescer', 'data_preprocessing:numerical_transformer:imputation:strategy': 'mean', 'data_preprocessing:numerical_transformer:rescaling:__choice__': 'normalize', 'feature_preprocessor:__choice__': 'polynomial', 'classifier:gradient_boosting:early_stop': 'valid', 'classifier:gradient_boosting:l2_regularization': 2.203300421531696e-07, 'classifier:gradient_boosting:learning_rate': 0.04179661750981226, 'classifier:gradient_boosting:loss': 'auto', 'classifier:gradient_boosting:max_bins': 255, 'classifier:gradient_boosting:max_depth': 'None', 'classifier:gradient_boosting:max_leaf_nodes': 629, 'classifier:gradient_boosting:min_samples_leaf': 51, 'classifier:gradient_boosting:scoring': 'loss', 'classifier:gradient_boosting:tol': 1e-07, 'data_preprocessing:categorical_transformer:category_coalescence:minority_coalescer:minimum_fraction': 0.004757230995401321, 'feature_preprocessor:polynomial:degree': 2, 'feature_preprocessor:polynomial:include_bias': 'False', 'feature_preprocessor:polynomial:interaction_only': 'False', 'classifier:gradient_boosting:n_iter_no_change': 7, 'classifier:gradient_boosting:validation_fraction': 0.15808664830013874},
     dataset_properties={
       'task': 2,
       'sparse': False,
@@ -239,21 +239,21 @@ truth_table
   <tbody>
     <tr>
       <th>0</th>
-      <td>28.0</td>
-      <td>2.0</td>
+      <td>29.0</td>
       <td>0.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1.0</td>
-      <td>32.0</td>
+      <td>0.0</td>
+      <td>34.0</td>
       <td>1.0</td>
     </tr>
     <tr>
       <th>2</th>
       <td>0.0</td>
       <td>2.0</td>
-      <td>23.0</td>
+      <td>22.0</td>
     </tr>
   </tbody>
 </table>
@@ -280,7 +280,7 @@ print("recall: {:.3f}".format(metrics.recall_score(y_test, predicted, average='w
 print("f1 score: {:.3f}".format(metrics.f1_score(y_test, predicted, average='weighted')))
 ```
 
-    accuracy: 0.933
-    precision: 0.933
-    recall: 0.933
-    f1 score: 0.932
+    accuracy: 0.955
+    precision: 0.955
+    recall: 0.955
+    f1 score: 0.955

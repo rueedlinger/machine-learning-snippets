@@ -203,7 +203,7 @@ truth_table
     <tr>
       <th>0</th>
       <td>29.0</td>
-      <td>0.0</td>
+      <td>2.0</td>
       <td>0.0</td>
     </tr>
     <tr>
@@ -215,7 +215,7 @@ truth_table
     <tr>
       <th>2</th>
       <td>0.0</td>
-      <td>3.0</td>
+      <td>1.0</td>
       <td>24.0</td>
     </tr>
   </tbody>
@@ -244,6 +244,6 @@ print("f1 score: {:.3f}".format(metrics.f1_score(y_test, predicted, average='wei
 ```
 
     accuracy: 0.966
-    precision: 0.970
+    precision: 0.968
     recall: 0.966
-    f1 score: 0.967
+    f1 score: 0.966
