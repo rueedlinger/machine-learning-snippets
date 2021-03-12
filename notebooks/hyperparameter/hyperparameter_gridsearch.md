@@ -159,7 +159,7 @@ print('test samples', len(X_test))
 ```python
 parameters = {
             'kernel':('linear', 'rbf', 'sigmoid'), 
-            'C':[0.5, 1, 10], 'degree': [3,4], 
+            'C':[1, 10], 'degree': [3,4], 
             'decision_function_shape': ['ovo', 'ovr']
         }
 
@@ -173,7 +173,7 @@ model.fit(X_train, y_train)
 
 
     GridSearchCV(estimator=SVC(),
-                 param_grid={'C': [0.5, 1, 10],
+                 param_grid={'C': [1, 10],
                              'decision_function_shape': ['ovo', 'ovr'],
                              'degree': [3, 4],
                              'kernel': ('linear', 'rbf', 'sigmoid')})
@@ -190,7 +190,221 @@ model.best_estimator_
 
 
 
-    SVC(C=0.5, decision_function_shape='ovo', kernel='linear')
+    SVC(C=1, decision_function_shape='ovo', kernel='linear')
+
+
+
+Let's print some more deatils
+
+
+```python
+results_df = pd.DataFrame(model.cv_results_)
+results_df = results_df.sort_values(by=['rank_test_score'])
+results_df = (
+    results_df
+    .set_index(results_df["params"].apply(
+        lambda x: "_".join(str(val) for val in x.values()))
+    )
+    .rename_axis('model')
+)
+results_df[
+    ['params', 'rank_test_score', 'mean_test_score', 'std_test_score']
+]
+```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>params</th>
+      <th>rank_test_score</th>
+      <th>mean_test_score</th>
+      <th>std_test_score</th>
+    </tr>
+    <tr>
+      <th>model</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1_ovo_3_linear</th>
+      <td>{'C': 1, 'decision_function_shape': 'ovo', 'de...</td>
+      <td>1</td>
+      <td>0.899346</td>
+      <td>0.040890</td>
+    </tr>
+    <tr>
+      <th>10_ovr_4_linear</th>
+      <td>{'C': 10, 'decision_function_shape': 'ovr', 'd...</td>
+      <td>1</td>
+      <td>0.899346</td>
+      <td>0.040890</td>
+    </tr>
+    <tr>
+      <th>1_ovo_4_linear</th>
+      <td>{'C': 1, 'decision_function_shape': 'ovo', 'de...</td>
+      <td>1</td>
+      <td>0.899346</td>
+      <td>0.040890</td>
+    </tr>
+    <tr>
+      <th>1_ovr_3_linear</th>
+      <td>{'C': 1, 'decision_function_shape': 'ovr', 'de...</td>
+      <td>1</td>
+      <td>0.899346</td>
+      <td>0.040890</td>
+    </tr>
+    <tr>
+      <th>10_ovr_3_linear</th>
+      <td>{'C': 10, 'decision_function_shape': 'ovr', 'd...</td>
+      <td>1</td>
+      <td>0.899346</td>
+      <td>0.040890</td>
+    </tr>
+    <tr>
+      <th>1_ovr_4_linear</th>
+      <td>{'C': 1, 'decision_function_shape': 'ovr', 'de...</td>
+      <td>1</td>
+      <td>0.899346</td>
+      <td>0.040890</td>
+    </tr>
+    <tr>
+      <th>10_ovo_3_linear</th>
+      <td>{'C': 10, 'decision_function_shape': 'ovo', 'd...</td>
+      <td>1</td>
+      <td>0.899346</td>
+      <td>0.040890</td>
+    </tr>
+    <tr>
+      <th>10_ovo_4_linear</th>
+      <td>{'C': 10, 'decision_function_shape': 'ovo', 'd...</td>
+      <td>1</td>
+      <td>0.899346</td>
+      <td>0.040890</td>
+    </tr>
+    <tr>
+      <th>10_ovr_3_rbf</th>
+      <td>{'C': 10, 'decision_function_shape': 'ovr', 'd...</td>
+      <td>9</td>
+      <td>0.742484</td>
+      <td>0.073115</td>
+    </tr>
+    <tr>
+      <th>10_ovr_4_rbf</th>
+      <td>{'C': 10, 'decision_function_shape': 'ovr', 'd...</td>
+      <td>9</td>
+      <td>0.742484</td>
+      <td>0.073115</td>
+    </tr>
+    <tr>
+      <th>10_ovo_3_rbf</th>
+      <td>{'C': 10, 'decision_function_shape': 'ovo', 'd...</td>
+      <td>9</td>
+      <td>0.742484</td>
+      <td>0.073115</td>
+    </tr>
+    <tr>
+      <th>10_ovo_4_rbf</th>
+      <td>{'C': 10, 'decision_function_shape': 'ovo', 'd...</td>
+      <td>9</td>
+      <td>0.742484</td>
+      <td>0.073115</td>
+    </tr>
+    <tr>
+      <th>1_ovo_3_rbf</th>
+      <td>{'C': 1, 'decision_function_shape': 'ovo', 'de...</td>
+      <td>13</td>
+      <td>0.664706</td>
+      <td>0.089464</td>
+    </tr>
+    <tr>
+      <th>1_ovo_4_rbf</th>
+      <td>{'C': 1, 'decision_function_shape': 'ovo', 'de...</td>
+      <td>13</td>
+      <td>0.664706</td>
+      <td>0.089464</td>
+    </tr>
+    <tr>
+      <th>1_ovr_3_rbf</th>
+      <td>{'C': 1, 'decision_function_shape': 'ovr', 'de...</td>
+      <td>13</td>
+      <td>0.664706</td>
+      <td>0.089464</td>
+    </tr>
+    <tr>
+      <th>1_ovr_4_rbf</th>
+      <td>{'C': 1, 'decision_function_shape': 'ovr', 'de...</td>
+      <td>13</td>
+      <td>0.664706</td>
+      <td>0.089464</td>
+    </tr>
+    <tr>
+      <th>1_ovr_4_sigmoid</th>
+      <td>{'C': 1, 'decision_function_shape': 'ovr', 'de...</td>
+      <td>17</td>
+      <td>0.405229</td>
+      <td>0.032680</td>
+    </tr>
+    <tr>
+      <th>1_ovr_3_sigmoid</th>
+      <td>{'C': 1, 'decision_function_shape': 'ovr', 'de...</td>
+      <td>17</td>
+      <td>0.405229</td>
+      <td>0.032680</td>
+    </tr>
+    <tr>
+      <th>1_ovo_4_sigmoid</th>
+      <td>{'C': 1, 'decision_function_shape': 'ovo', 'de...</td>
+      <td>17</td>
+      <td>0.405229</td>
+      <td>0.032680</td>
+    </tr>
+    <tr>
+      <th>1_ovo_3_sigmoid</th>
+      <td>{'C': 1, 'decision_function_shape': 'ovo', 'de...</td>
+      <td>17</td>
+      <td>0.405229</td>
+      <td>0.032680</td>
+    </tr>
+    <tr>
+      <th>10_ovo_4_sigmoid</th>
+      <td>{'C': 10, 'decision_function_shape': 'ovo', 'd...</td>
+      <td>21</td>
+      <td>0.190850</td>
+      <td>0.056019</td>
+    </tr>
+    <tr>
+      <th>10_ovr_3_sigmoid</th>
+      <td>{'C': 10, 'decision_function_shape': 'ovr', 'd...</td>
+      <td>21</td>
+      <td>0.190850</td>
+      <td>0.056019</td>
+    </tr>
+    <tr>
+      <th>10_ovo_3_sigmoid</th>
+      <td>{'C': 10, 'decision_function_shape': 'ovo', 'd...</td>
+      <td>21</td>
+      <td>0.190850</td>
+      <td>0.056019</td>
+    </tr>
+    <tr>
+      <th>10_ovr_4_sigmoid</th>
+      <td>{'C': 10, 'decision_function_shape': 'ovr', 'd...</td>
+      <td>21</td>
+      <td>0.190850</td>
+      <td>0.056019</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 
 
@@ -228,20 +442,20 @@ truth_table
   <tbody>
     <tr>
       <th>0</th>
-      <td>25.0</td>
-      <td>1.0</td>
+      <td>30.0</td>
+      <td>4.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>5.0</td>
-      <td>33.0</td>
+      <td>0.0</td>
+      <td>31.0</td>
       <td>1.0</td>
     </tr>
     <tr>
       <th>2</th>
       <td>0.0</td>
-      <td>1.0</td>
+      <td>0.0</td>
       <td>23.0</td>
     </tr>
   </tbody>
@@ -257,7 +471,7 @@ _ = sns.heatmap(truth_table, annot=True, cmap="Blues")
 
 
     
-![png](hyperparameter_gridsearch_files/hyperparameter_gridsearch_11_0.png)
+![png](hyperparameter_gridsearch_files/hyperparameter_gridsearch_13_0.png)
     
 
 
@@ -269,7 +483,7 @@ print("recall: {:.3f}".format(metrics.recall_score(y_test, predicted, average='w
 print("f1 score: {:.3f}".format(metrics.f1_score(y_test, predicted, average='weighted')))
 ```
 
-    accuracy: 0.910
-    precision: 0.915
-    recall: 0.910
-    f1 score: 0.910
+    accuracy: 0.944
+    precision: 0.948
+    recall: 0.944
+    f1 score: 0.944
