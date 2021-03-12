@@ -206,14 +206,14 @@ truth_table
   <tbody>
     <tr>
       <th>0</th>
-      <td>29.0</td>
+      <td>30.0</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>1</th>
       <td>0.0</td>
-      <td>35.0</td>
+      <td>34.0</td>
       <td>0.0</td>
     </tr>
     <tr>

@@ -202,15 +202,21 @@ truth_table
   <tbody>
     <tr>
       <th>0</th>
-      <td>1.0</td>
+      <td>29.0</td>
       <td>1.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>28.0</td>
+      <td>0.0</td>
       <td>35.0</td>
-      <td>24.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>16.0</td>
     </tr>
   </tbody>
 </table>
@@ -237,11 +243,7 @@ print("recall: {:.3f}".format(metrics.recall_score(y_test, predicted, average='w
 print("f1 score: {:.3f}".format(metrics.f1_score(y_test, predicted, average='weighted')))
 ```
 
-    accuracy: 0.404
-    precision: 0.326
-    recall: 0.404
-    f1 score: 0.251
-
-
-    /Users/mru/.local/share/virtualenvs/machine-learning-snippets-mLikUPnf/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1245: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
-      _warn_prf(average, modifier, msg_start, len(result))
+    accuracy: 0.899
+    precision: 0.914
+    recall: 0.899
+    f1 score: 0.894

@@ -1,6 +1,6 @@
->**Note**: This is a generated markdown export from the Jupyter notebook file [classification_sdg.ipynb](classification_sdg.ipynb).
+>**Note**: This is a generated markdown export from the Jupyter notebook file [hyperparameter_gridsearch.ipynb](hyperparameter_gridsearch.ipynb).
 
-## Classification with stochastic gradient descent (SGD)
+# Hyperparameter optimization with GridSearch
 
 
 ```python
@@ -10,7 +10,7 @@ import seaborn as sns
 import pandas as pd
 import numpy as np
 
-from sklearn import linear_model, datasets, metrics, model_selection, preprocessing, pipeline
+from sklearn import svm, datasets, metrics, model_selection, preprocessing, pipeline
 ```
 
 Load the data set
@@ -151,21 +151,46 @@ print('test samples', len(X_test))
 
 
     
-![png](classification_sdg_files/classification_sdg_6_1.png)
+![png](hyperparameter_gridsearch_files/hyperparameter_gridsearch_6_1.png)
     
 
 
 
 ```python
-model = pipeline.make_pipeline(preprocessing.StandardScaler(), linear_model.SGDClassifier(max_iter=1000, tol=1e-3))
+parameters = {
+            'kernel':('linear', 'rbf', 'sigmoid'), 
+            'C':[0.5, 1, 10], 'degree': [3,4], 
+            'decision_function_shape': ['ovo', 'ovr']
+        }
+
+estimator = svm.SVC()
+
+model = model_selection.GridSearchCV(estimator, parameters)
 model.fit(X_train, y_train)
 ```
 
 
 
 
-    Pipeline(steps=[('standardscaler', StandardScaler()),
-                    ('sgdclassifier', SGDClassifier())])
+    GridSearchCV(estimator=SVC(),
+                 param_grid={'C': [0.5, 1, 10],
+                             'decision_function_shape': ['ovo', 'ovr'],
+                             'degree': [3, 4],
+                             'kernel': ('linear', 'rbf', 'sigmoid')})
+
+
+
+What was the best estimator?
+
+
+```python
+model.best_estimator_
+```
+
+
+
+
+    SVC(C=0.5, decision_function_shape='ovo', kernel='linear')
 
 
 
@@ -203,21 +228,21 @@ truth_table
   <tbody>
     <tr>
       <th>0</th>
-      <td>30.0</td>
-      <td>2.0</td>
+      <td>25.0</td>
+      <td>1.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.0</td>
-      <td>30.0</td>
-      <td>0.0</td>
+      <td>5.0</td>
+      <td>33.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>2</th>
       <td>0.0</td>
-      <td>3.0</td>
-      <td>24.0</td>
+      <td>1.0</td>
+      <td>23.0</td>
     </tr>
   </tbody>
 </table>
@@ -232,7 +257,7 @@ _ = sns.heatmap(truth_table, annot=True, cmap="Blues")
 
 
     
-![png](classification_sdg_files/classification_sdg_9_0.png)
+![png](hyperparameter_gridsearch_files/hyperparameter_gridsearch_11_0.png)
     
 
 
@@ -244,7 +269,7 @@ print("recall: {:.3f}".format(metrics.recall_score(y_test, predicted, average='w
 print("f1 score: {:.3f}".format(metrics.f1_score(y_test, predicted, average='weighted')))
 ```
 
-    accuracy: 0.944
-    precision: 0.949
-    recall: 0.944
-    f1 score: 0.943
+    accuracy: 0.910
+    precision: 0.915
+    recall: 0.910
+    f1 score: 0.910
