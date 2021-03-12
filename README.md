@@ -132,6 +132,10 @@ The following machine learning snippets are available as Jupyter Notebook.
 - [Isomap](notebooks/unsupervised/dimensionality_reduction/isomap/dimensionality_reduction_isomap.md) (scikit-learn)
 - [t-SNE](notebooks/unsupervised/dimensionality_reduction/tsne/dimensionality_reduction_tsne.md) (scikit-learn)
 
+## Hyperparameter optimization
+
+- [Hyperparameter optimization with GridSearch](notebooks/Hyperparameter/Hyperparameter_with_gridsearch.md) (scikit-learn)
+
 ## AutoML
 
 ### Classification
