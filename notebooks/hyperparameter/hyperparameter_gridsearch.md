@@ -238,169 +238,169 @@ results_df[
       <th>1_ovo_3_linear</th>
       <td>{'C': 1, 'decision_function_shape': 'ovo', 'de...</td>
       <td>1</td>
-      <td>0.899346</td>
-      <td>0.040890</td>
+      <td>0.966013</td>
+      <td>0.027776</td>
     </tr>
     <tr>
       <th>10_ovr_4_linear</th>
       <td>{'C': 10, 'decision_function_shape': 'ovr', 'd...</td>
       <td>1</td>
-      <td>0.899346</td>
-      <td>0.040890</td>
+      <td>0.966013</td>
+      <td>0.027776</td>
     </tr>
     <tr>
       <th>1_ovo_4_linear</th>
       <td>{'C': 1, 'decision_function_shape': 'ovo', 'de...</td>
       <td>1</td>
-      <td>0.899346</td>
-      <td>0.040890</td>
+      <td>0.966013</td>
+      <td>0.027776</td>
     </tr>
     <tr>
       <th>1_ovr_3_linear</th>
       <td>{'C': 1, 'decision_function_shape': 'ovr', 'de...</td>
       <td>1</td>
-      <td>0.899346</td>
-      <td>0.040890</td>
+      <td>0.966013</td>
+      <td>0.027776</td>
     </tr>
     <tr>
       <th>10_ovr_3_linear</th>
       <td>{'C': 10, 'decision_function_shape': 'ovr', 'd...</td>
       <td>1</td>
-      <td>0.899346</td>
-      <td>0.040890</td>
+      <td>0.966013</td>
+      <td>0.027776</td>
     </tr>
     <tr>
       <th>1_ovr_4_linear</th>
       <td>{'C': 1, 'decision_function_shape': 'ovr', 'de...</td>
       <td>1</td>
-      <td>0.899346</td>
-      <td>0.040890</td>
+      <td>0.966013</td>
+      <td>0.027776</td>
     </tr>
     <tr>
       <th>10_ovo_3_linear</th>
       <td>{'C': 10, 'decision_function_shape': 'ovo', 'd...</td>
       <td>1</td>
-      <td>0.899346</td>
-      <td>0.040890</td>
+      <td>0.966013</td>
+      <td>0.027776</td>
     </tr>
     <tr>
       <th>10_ovo_4_linear</th>
       <td>{'C': 10, 'decision_function_shape': 'ovo', 'd...</td>
       <td>1</td>
-      <td>0.899346</td>
-      <td>0.040890</td>
+      <td>0.966013</td>
+      <td>0.027776</td>
     </tr>
     <tr>
       <th>10_ovr_3_rbf</th>
       <td>{'C': 10, 'decision_function_shape': 'ovr', 'd...</td>
       <td>9</td>
-      <td>0.742484</td>
-      <td>0.073115</td>
+      <td>0.697386</td>
+      <td>0.053203</td>
     </tr>
     <tr>
       <th>10_ovr_4_rbf</th>
       <td>{'C': 10, 'decision_function_shape': 'ovr', 'd...</td>
       <td>9</td>
-      <td>0.742484</td>
-      <td>0.073115</td>
+      <td>0.697386</td>
+      <td>0.053203</td>
     </tr>
     <tr>
       <th>10_ovo_3_rbf</th>
       <td>{'C': 10, 'decision_function_shape': 'ovo', 'd...</td>
       <td>9</td>
-      <td>0.742484</td>
-      <td>0.073115</td>
+      <td>0.697386</td>
+      <td>0.053203</td>
     </tr>
     <tr>
       <th>10_ovo_4_rbf</th>
       <td>{'C': 10, 'decision_function_shape': 'ovo', 'd...</td>
       <td>9</td>
-      <td>0.742484</td>
-      <td>0.073115</td>
+      <td>0.697386</td>
+      <td>0.053203</td>
     </tr>
     <tr>
       <th>1_ovo_3_rbf</th>
       <td>{'C': 1, 'decision_function_shape': 'ovo', 'de...</td>
       <td>13</td>
-      <td>0.664706</td>
-      <td>0.089464</td>
+      <td>0.662092</td>
+      <td>0.055328</td>
     </tr>
     <tr>
       <th>1_ovo_4_rbf</th>
       <td>{'C': 1, 'decision_function_shape': 'ovo', 'de...</td>
       <td>13</td>
-      <td>0.664706</td>
-      <td>0.089464</td>
+      <td>0.662092</td>
+      <td>0.055328</td>
     </tr>
     <tr>
       <th>1_ovr_3_rbf</th>
       <td>{'C': 1, 'decision_function_shape': 'ovr', 'de...</td>
       <td>13</td>
-      <td>0.664706</td>
-      <td>0.089464</td>
+      <td>0.662092</td>
+      <td>0.055328</td>
     </tr>
     <tr>
       <th>1_ovr_4_rbf</th>
       <td>{'C': 1, 'decision_function_shape': 'ovr', 'de...</td>
       <td>13</td>
-      <td>0.664706</td>
-      <td>0.089464</td>
+      <td>0.662092</td>
+      <td>0.055328</td>
     </tr>
     <tr>
       <th>1_ovr_4_sigmoid</th>
       <td>{'C': 1, 'decision_function_shape': 'ovr', 'de...</td>
       <td>17</td>
-      <td>0.405229</td>
-      <td>0.032680</td>
+      <td>0.271242</td>
+      <td>0.113168</td>
     </tr>
     <tr>
       <th>1_ovr_3_sigmoid</th>
       <td>{'C': 1, 'decision_function_shape': 'ovr', 'de...</td>
       <td>17</td>
-      <td>0.405229</td>
-      <td>0.032680</td>
+      <td>0.271242</td>
+      <td>0.113168</td>
     </tr>
     <tr>
       <th>1_ovo_4_sigmoid</th>
       <td>{'C': 1, 'decision_function_shape': 'ovo', 'de...</td>
       <td>17</td>
-      <td>0.405229</td>
-      <td>0.032680</td>
+      <td>0.271242</td>
+      <td>0.113168</td>
     </tr>
     <tr>
       <th>1_ovo_3_sigmoid</th>
       <td>{'C': 1, 'decision_function_shape': 'ovo', 'de...</td>
       <td>17</td>
-      <td>0.405229</td>
-      <td>0.032680</td>
+      <td>0.271242</td>
+      <td>0.113168</td>
     </tr>
     <tr>
       <th>10_ovo_4_sigmoid</th>
       <td>{'C': 10, 'decision_function_shape': 'ovo', 'd...</td>
       <td>21</td>
-      <td>0.190850</td>
-      <td>0.056019</td>
+      <td>0.168627</td>
+      <td>0.060984</td>
     </tr>
     <tr>
       <th>10_ovr_3_sigmoid</th>
       <td>{'C': 10, 'decision_function_shape': 'ovr', 'd...</td>
       <td>21</td>
-      <td>0.190850</td>
-      <td>0.056019</td>
+      <td>0.168627</td>
+      <td>0.060984</td>
     </tr>
     <tr>
       <th>10_ovo_3_sigmoid</th>
       <td>{'C': 10, 'decision_function_shape': 'ovo', 'd...</td>
       <td>21</td>
-      <td>0.190850</td>
-      <td>0.056019</td>
+      <td>0.168627</td>
+      <td>0.060984</td>
     </tr>
     <tr>
       <th>10_ovr_4_sigmoid</th>
       <td>{'C': 10, 'decision_function_shape': 'ovr', 'd...</td>
       <td>21</td>
-      <td>0.190850</td>
-      <td>0.056019</td>
+      <td>0.168627</td>
+      <td>0.060984</td>
     </tr>
   </tbody>
 </table>
@@ -442,21 +442,21 @@ truth_table
   <tbody>
     <tr>
       <th>0</th>
-      <td>30.0</td>
-      <td>4.0</td>
+      <td>27.0</td>
+      <td>3.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>1</th>
+      <td>2.0</td>
+      <td>29.0</td>
       <td>0.0</td>
-      <td>31.0</td>
-      <td>1.0</td>
     </tr>
     <tr>
       <th>2</th>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>23.0</td>
+      <td>4.0</td>
+      <td>24.0</td>
     </tr>
   </tbody>
 </table>
@@ -483,7 +483,7 @@ print("recall: {:.3f}".format(metrics.recall_score(y_test, predicted, average='w
 print("f1 score: {:.3f}".format(metrics.f1_score(y_test, predicted, average='weighted')))
 ```
 
-    accuracy: 0.944
-    precision: 0.948
-    recall: 0.944
-    f1 score: 0.944
+    accuracy: 0.899
+    precision: 0.903
+    recall: 0.899
+    f1 score: 0.897

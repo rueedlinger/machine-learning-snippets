@@ -173,12 +173,8 @@ model.fit(X_train, y_train)
 ```python
 predicted = model.predict(X_test)
 
-truth_table = pd.DataFrame(predicted, columns=['target_predicted'])
-truth_table['target_truth'] = y_test
-
-truth_table = truth_table.groupby(['target_predicted', 'target_truth']).size().unstack().fillna(0)
-
-truth_table
+confusion_matrix = pd.DataFrame(metrics.confusion_matrix(y_test, predicted))
+confusion_matrix
 ```
 
 
@@ -188,36 +184,30 @@ truth_table
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th>target_truth</th>
+      <th></th>
       <th>0</th>
       <th>1</th>
       <th>2</th>
-    </tr>
-    <tr>
-      <th>target_predicted</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>30.0</td>
-      <td>2.0</td>
-      <td>1.0</td>
+      <td>24</td>
+      <td>5</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.0</td>
-      <td>31.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>35</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.0</td>
-      <td>2.0</td>
-      <td>23.0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>22</td>
     </tr>
   </tbody>
 </table>
@@ -227,7 +217,7 @@ truth_table
 
 
 ```python
-_ = sns.heatmap(truth_table, annot=True, cmap="Blues")
+_ = sns.heatmap(confusion_matrix, annot=True, cmap="Blues")
 ```
 
 
@@ -244,7 +234,7 @@ print("recall: {:.3f}".format(metrics.recall_score(y_test, predicted, average='w
 print("f1 score: {:.3f}".format(metrics.f1_score(y_test, predicted, average='weighted')))
 ```
 
-    accuracy: 0.944
-    precision: 0.948
-    recall: 0.944
-    f1 score: 0.944
+    accuracy: 0.910
+    precision: 0.921
+    recall: 0.910
+    f1 score: 0.911
