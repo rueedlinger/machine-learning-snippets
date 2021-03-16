@@ -37,6 +37,7 @@ The following machine learning snippets are available as Jupyter Notebook.
 ## Basics
 
 - [Statistical analysis](notebooks/basics/statistical_analysis.md)
+- [Feature scaling](notebooks/basics/feature_scaling.md)
 
 ## Classification
 
