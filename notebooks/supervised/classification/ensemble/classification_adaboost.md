@@ -192,21 +192,21 @@ confusion_matrix
   <tbody>
     <tr>
       <th>0</th>
-      <td>27</td>
-      <td>2</td>
+      <td>0</td>
+      <td>30</td>
       <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
-      <td>34</td>
+      <td>0</td>
+      <td>35</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2</th>
       <td>0</td>
-      <td>3</td>
-      <td>21</td>
+      <td>11</td>
+      <td>13</td>
     </tr>
   </tbody>
 </table>
@@ -233,7 +233,11 @@ print("recall: {:.3f}".format(metrics.recall_score(y_test, predicted, average='w
 print("f1 score: {:.3f}".format(metrics.f1_score(y_test, predicted, average='weighted')))
 ```
 
-    accuracy: 0.921
-    precision: 0.926
-    recall: 0.921
-    f1 score: 0.922
+    accuracy: 0.539
+    precision: 0.451
+    recall: 0.539
+    f1 score: 0.437
+
+
+    /Users/mru/.local/share/virtualenvs/machine-learning-snippets-mLikUPnf/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1245: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+      _warn_prf(average, modifier, msg_start, len(result))

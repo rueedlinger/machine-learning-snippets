@@ -138,21 +138,14 @@ for m in model.get_models_with_weights():
     print(m)
 ```
 
+    (0.6666666666666666, SimpleRegressionPipeline({'data_preprocessing:categorical_transformer:categorical_encoding:__choice__': 'one_hot_encoding', 'data_preprocessing:categorical_transformer:category_coalescence:__choice__': 'no_coalescense', 'data_preprocessing:numerical_transformer:imputation:strategy': 'most_frequent', 'data_preprocessing:numerical_transformer:rescaling:__choice__': 'standardize', 'feature_preprocessor:__choice__': 'polynomial', 'regressor:__choice__': 'ard_regression', 'feature_preprocessor:polynomial:degree': 2, 'feature_preprocessor:polynomial:include_bias': 'True', 'feature_preprocessor:polynomial:interaction_only': 'False', 'regressor:ard_regression:alpha_1': 0.0003701926442639788, 'regressor:ard_regression:alpha_2': 2.2118001735899097e-07, 'regressor:ard_regression:fit_intercept': 'True', 'regressor:ard_regression:lambda_1': 1.2037591637980971e-06, 'regressor:ard_regression:lambda_2': 4.358378124977852e-09, 'regressor:ard_regression:n_iter': 300, 'regressor:ard_regression:threshold_lambda': 1136.5286041327277, 'regressor:ard_regression:tol': 0.021944240404849075},
+    dataset_properties={
+      'task': 4,
+      'sparse': False,
+      'multioutput': False,
+      'target_type': 'regression',
+      'signed': False}))
     (0.3333333333333333, SimpleRegressionPipeline({'data_preprocessing:categorical_transformer:categorical_encoding:__choice__': 'no_encoding', 'data_preprocessing:categorical_transformer:category_coalescence:__choice__': 'no_coalescense', 'data_preprocessing:numerical_transformer:imputation:strategy': 'median', 'data_preprocessing:numerical_transformer:rescaling:__choice__': 'minmax', 'feature_preprocessor:__choice__': 'feature_agglomeration', 'regressor:__choice__': 'extra_trees', 'feature_preprocessor:feature_agglomeration:affinity': 'euclidean', 'feature_preprocessor:feature_agglomeration:linkage': 'average', 'feature_preprocessor:feature_agglomeration:n_clusters': 272, 'feature_preprocessor:feature_agglomeration:pooling_func': 'median', 'regressor:extra_trees:bootstrap': 'False', 'regressor:extra_trees:criterion': 'mse', 'regressor:extra_trees:max_depth': 'None', 'regressor:extra_trees:max_features': 0.5120356089629183, 'regressor:extra_trees:max_leaf_nodes': 'None', 'regressor:extra_trees:min_impurity_decrease': 0.0, 'regressor:extra_trees:min_samples_leaf': 1, 'regressor:extra_trees:min_samples_split': 4, 'regressor:extra_trees:min_weight_fraction_leaf': 0.0},
-    dataset_properties={
-      'task': 4,
-      'sparse': False,
-      'multioutput': False,
-      'target_type': 'regression',
-      'signed': False}))
-    (0.3333333333333333, SimpleRegressionPipeline({'data_preprocessing:categorical_transformer:categorical_encoding:__choice__': 'one_hot_encoding', 'data_preprocessing:categorical_transformer:category_coalescence:__choice__': 'minority_coalescer', 'data_preprocessing:numerical_transformer:imputation:strategy': 'mean', 'data_preprocessing:numerical_transformer:rescaling:__choice__': 'standardize', 'feature_preprocessor:__choice__': 'no_preprocessing', 'regressor:__choice__': 'random_forest', 'data_preprocessing:categorical_transformer:category_coalescence:minority_coalescer:minimum_fraction': 0.01, 'regressor:random_forest:bootstrap': 'True', 'regressor:random_forest:criterion': 'mse', 'regressor:random_forest:max_depth': 'None', 'regressor:random_forest:max_features': 1.0, 'regressor:random_forest:max_leaf_nodes': 'None', 'regressor:random_forest:min_impurity_decrease': 0.0, 'regressor:random_forest:min_samples_leaf': 1, 'regressor:random_forest:min_samples_split': 2, 'regressor:random_forest:min_weight_fraction_leaf': 0.0},
-    dataset_properties={
-      'task': 4,
-      'sparse': False,
-      'multioutput': False,
-      'target_type': 'regression',
-      'signed': False}))
-    (0.3333333333333333, SimpleRegressionPipeline({'data_preprocessing:categorical_transformer:categorical_encoding:__choice__': 'one_hot_encoding', 'data_preprocessing:categorical_transformer:category_coalescence:__choice__': 'no_coalescense', 'data_preprocessing:numerical_transformer:imputation:strategy': 'most_frequent', 'data_preprocessing:numerical_transformer:rescaling:__choice__': 'standardize', 'feature_preprocessor:__choice__': 'polynomial', 'regressor:__choice__': 'ard_regression', 'feature_preprocessor:polynomial:degree': 2, 'feature_preprocessor:polynomial:include_bias': 'True', 'feature_preprocessor:polynomial:interaction_only': 'False', 'regressor:ard_regression:alpha_1': 0.0003701926442639788, 'regressor:ard_regression:alpha_2': 2.2118001735899097e-07, 'regressor:ard_regression:fit_intercept': 'True', 'regressor:ard_regression:lambda_1': 1.2037591637980971e-06, 'regressor:ard_regression:lambda_2': 4.358378124977852e-09, 'regressor:ard_regression:n_iter': 300, 'regressor:ard_regression:threshold_lambda': 1136.5286041327277, 'regressor:ard_regression:tol': 0.021944240404849075},
     dataset_properties={
       'task': 4,
       'sparse': False,
@@ -216,7 +209,7 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.8492122601821573
-    mse: 14.226561148470697
-    rmse: 3.7718113882418214
-    mae: 2.3187484229865825
+    r2 score: 0.844443544790985
+    mse: 12.625480538495678
+    rmse: 3.553235221385671
+    mae: 2.4026141674895034
