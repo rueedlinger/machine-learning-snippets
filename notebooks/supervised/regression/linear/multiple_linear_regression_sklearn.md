@@ -328,11 +328,11 @@ print('Intercept:', lr.intercept_)
 
     No coef: 13
     Coefficients: 
-     [-9.94938106e-02  4.78287924e-02 -3.93792118e-02  2.40721149e+00
-     -1.42558063e+01  3.69433826e+00 -1.02128110e-03 -1.43064557e+00
-      3.26711602e-01 -1.29759106e-02 -9.51276539e-01  1.24446032e-02
-     -4.99899131e-01]
-    Intercept: 34.477332797824936
+     [-9.31032231e-02  4.17356229e-02  2.70387439e-02  3.61152166e+00
+     -2.21939090e+01  3.72409604e+00  5.05744961e-03 -1.57445868e+00
+      2.99035201e-01 -9.92384563e-03 -1.05064750e+00  7.93979867e-03
+     -5.49010143e-01]
+    Intercept: 41.13393719369943
 
 
 Print the predicated values against the the true values. Perfect match should lie be on the red line.
@@ -397,7 +397,7 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.7129118193459818
-    mse: 24.55009675343013
-    rmse: 4.954805420339948
-    mae: 3.4571057429415974
+    r2 score: 0.7602660398063259
+    mse: 15.755849516870294
+    rmse: 3.9693638680360728
+    mae: 3.0886809650843974
