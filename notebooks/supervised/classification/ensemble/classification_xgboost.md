@@ -205,20 +205,20 @@ confusion_matrix
     <tr>
       <th>0</th>
       <td>29</td>
-      <td>1</td>
+      <td>0</td>
       <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
-      <td>33</td>
+      <td>1</td>
+      <td>35</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2</th>
       <td>0</td>
-      <td>0</td>
-      <td>24</td>
+      <td>2</td>
+      <td>22</td>
     </tr>
   </tbody>
 </table>

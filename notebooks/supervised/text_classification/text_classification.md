@@ -197,7 +197,7 @@ print('------------------')
 
     English sample:
     ------------------
-    belief but no one seemed to care on the contrary the mother and daughter laughed heartily and enjoyed it very
+    tucker not the one with the roses--blushed Do go on Fred said Scrooge's niece clapping her hands He never finishes
     ------------------
 
 
@@ -321,12 +321,12 @@ for scoring in ['f1_weighted', 'accuracy']:
 ```
 
     f1_weighted
-    scores: [1.         0.99839742 1.         1.         1.        ]
-    f1_weighted: 0.999679 (+/- 0.0013)
+    scores: [0.9983974  1.         1.         1.         0.99839729]
+    f1_weighted: 0.999359 (+/- 0.0016)
     
     accuracy
-    scores: [1.         0.99839744 1.         1.         1.        ]
-    accuracy: 0.999679 (+/- 0.0013)
+    scores: [0.99839744 1.         1.         1.         0.99839744]
+    accuracy: 0.999359 (+/- 0.0016)
     
 
 
@@ -345,10 +345,10 @@ print(metrics.classification_report(y_test, predicted, digits=4))
 
                   precision    recall  f1-score   support
     
-               0     1.0000    1.0000    1.0000       508
-               1     1.0000    1.0000    1.0000       513
-               2     1.0000    1.0000    1.0000       525
-               3     1.0000    1.0000    1.0000       534
+               0     1.0000    1.0000    1.0000       539
+               1     1.0000    1.0000    1.0000       497
+               2     1.0000    1.0000    1.0000       540
+               3     1.0000    1.0000    1.0000       504
     
         accuracy                         1.0000      2080
        macro avg     1.0000    1.0000    1.0000      2080
@@ -369,21 +369,17 @@ def show_top10(classifier, vectorizer, categories):
 
     feature_names = np.asarray(vectorizer.get_feature_names())
     for i, category in enumerate(categories):
-        top10 = np.argsort(classifier.coef_[i])[-10:]
+        top10 = np.argsort(classifier.feature_log_prob_[i])[-10:]
         print("%s: %s" % (category, " ".join(feature_names[top10])))
 
 
 show_top10(text_clf.named_steps['clf'], text_clf.named_steps['vect'], data.labels)
 ```
 
-    de: das ein ich es zu sie er die der und
+    de: ein ich das es sie zu er die der und
     en: was that in his he it of to and the
-    fr: qu que une les un il la le et de
-    nl: op te dat van hij zijn de het een en
-
-
-    /Users/mru/.local/share/virtualenvs/machine-learning-snippets-mLikUPnf/lib/python3.8/site-packages/sklearn/utils/deprecation.py:101: FutureWarning: Attribute coef_ was deprecated in version 0.24 and will be removed in 1.1 (renaming of 0.26).
-      warnings.warn(msg, category=FutureWarning)
+    fr: qu une que les un il et la le de
+    nl: ik te dat zijn hij van een de het en
 
 
 Let's see which and how many features our model has.
@@ -397,9 +393,9 @@ print('first features: %s'% feature_names[0:10])
 print('last features: %s' % feature_names[-10:])
 ```
 
-    number of features: 818
-    first features: ['aan' 'aber' 'about' 'after' 'again' 'ah' 'ai' 'air' 'al' 'all']
-    last features: ['zur' 'zurück' 'zwei' 'écria' 'étaient' 'était' 'été' 'één' 'être' 'über']
+    number of features: 801
+    first features: ['aan' 'aber' 'about' 'achter' 'after' 'again' 'ah' 'ai' 'air' 'al']
+    last features: ['zu' 'zum' 'zwei' 'écria' 'étaient' 'était' 'été' 'één' 'être' 'über']
 
 
 ### New data
@@ -424,11 +420,11 @@ for i, p in enumerate(predicted):
     
 ```
 
-    Hallo mein Name ist Hugo.  -->  de , prob: 0.8361005063516573
-    Hi my name is Hugo.  -->  en , prob: 0.8216607125170503
-    Bonjour mon nom est Hugo.  -->  fr , prob: 0.9502440025818124
-    Hallo mijn naam is Hugo.  -->  nl , prob: 0.6894312199603082
-    Eins, zwei und drei.  -->  de , prob: 0.9416510822923774
-    One, two and three.  -->  en , prob: 0.9783009940145442
-    Un, deux et trois.  -->  fr , prob: 0.9884204112525765
-    Een, twee en drie.  -->  nl , prob: 0.9640756842218831
+    Hallo mein Name ist Hugo.  -->  de , prob: 0.8605484364670046
+    Hi my name is Hugo.  -->  en , prob: 0.81641907225009
+    Bonjour mon nom est Hugo.  -->  fr , prob: 0.9392996522221346
+    Hallo mijn naam is Hugo.  -->  nl , prob: 0.7723281448063812
+    Eins, zwei und drei.  -->  de , prob: 0.9111410198057384
+    One, two and three.  -->  en , prob: 0.970535824440863
+    Un, deux et trois.  -->  fr , prob: 0.9885050691991835
+    Een, twee en drie.  -->  nl , prob: 0.9671922322311047
