@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [regression_bagging.ipynb](regression_bagging.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/supervised/regression/ensemble/regression_bagging.ipynb) from Jupyter. 
 
 ## Regression with bagging
 
@@ -178,7 +179,7 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.811841467249316
-    mse: 15.588209868421053
-    rmse: 3.9481907082132004
-    mae: 2.5680921052631573
+    r2 score: 0.7888019534060059
+    mse: 17.371782236842108
+    rmse: 4.167947005042423
+    mae: 2.694144736842105

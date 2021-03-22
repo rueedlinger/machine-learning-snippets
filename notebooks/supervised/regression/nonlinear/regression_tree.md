@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [regression_tree.ipynb](regression_tree.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/supervised/regression/nonlinear/regression_tree.ipynb) from Jupyter. 
 
 ## Regression with a decision tree
 
@@ -167,7 +168,7 @@ sns.displot(residual, kind="kde");
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x12c4cacd0>
+    <seaborn.axisgrid.FacetGrid at 0x12a347430>
 
 
 
@@ -184,9 +185,9 @@ print("mse: {}".format(metrics.mean_squared_error(y_test, predicted)))
 print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 ```
 
-    r2 score: 0.7489201391157018
-    mse: 22.873404451127914
-    rmse: 4.782614813167365
+    r2 score: 0.8411976458099506
+    mse: 11.117782441072611
+    rmse: 3.3343338826627145
 
 
 

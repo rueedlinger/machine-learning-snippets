@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [clustering_agglomerative.ipynb](clustering_agglomerative.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/unsupervised/clustering/agglomerative/clustering_agglomerative.ipynb) from Jupyter. 
 
 # Agglomerative Clustering (Hierarchical Clustering) 
 

@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [regression_lasso.ipynb](regression_lasso.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/supervised/regression/linear/regression_lasso.ipynb) from Jupyter. 
 
 ## Lasso Regression (regularized linear regression model)
 
@@ -179,7 +180,7 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.6475955828366148
-    mse: 31.28040918773031
-    rmse: 5.592889162832598
-    mae: 3.544413948379423
+    r2 score: 0.7043341433063475
+    mse: 26.419967932145507
+    rmse: 5.140035790940128
+    mae: 3.645740189290007

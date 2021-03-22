@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [clustering_text.ipynb](clustering_text.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/unsupervised/clustering/clustering_text.ipynb) from Jupyter. 
 
 # Text Clustering Basics
 
@@ -119,7 +120,7 @@ metrics.adjusted_rand_score(dataset.target, label)
 
 
 
-    0.16658179619413632
+    0.1686525785375348
 
 
 
@@ -131,7 +132,7 @@ metrics.adjusted_mutual_info_score(dataset.target, label)
 
 
 
-    0.20783297922805763
+    0.20899422114568802
 
 
 
@@ -143,4 +144,4 @@ metrics.accuracy_score(dataset.target, label)
 
 
 
-    0.5767401642888024
+    0.5780371811500216

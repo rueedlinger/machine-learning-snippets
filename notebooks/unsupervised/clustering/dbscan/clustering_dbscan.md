@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [clustering_dbscan.ipynb](clustering_dbscan.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/unsupervised/clustering/dbscan/clustering_dbscan.ipynb) from Jupyter. 
 
 # Clustering with DBSCAN
 

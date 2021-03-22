@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [regression_ridge.ipynb](regression_ridge.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/supervised/regression/linear/regression_ridge.ipynb) from Jupyter. 
 
 ## Ridge Regression (regularized linear regression model)
 
@@ -179,7 +180,7 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.7358274319068459
-    mse: 15.735989568553281
-    rmse: 3.966861425428582
-    mae: 2.9440858802332044
+    r2 score: 0.7279668595340901
+    mse: 23.240578183385153
+    rmse: 4.8208482846263845
+    mae: 3.4395405097005036

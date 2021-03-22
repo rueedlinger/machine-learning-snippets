@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [text_classification.ipynb](text_classification.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/supervised/text_classification/text_classification.ipynb) from Jupyter. 
 
 # Text Classification (scikit-learn) with Naive Bayes
 
@@ -196,7 +197,7 @@ print('------------------')
 
     English sample:
     ------------------
-    the dense gloom wherein they melted away And in the very wonder of this it would be itself again distinct
+    belief but no one seemed to care on the contrary the mother and daughter laughed heartily and enjoyed it very
     ------------------
 
 
@@ -320,11 +321,11 @@ for scoring in ['f1_weighted', 'accuracy']:
 ```
 
     f1_weighted
-    scores: [1.         1.         0.99839745 1.         1.        ]
+    scores: [1.         0.99839742 1.         1.         1.        ]
     f1_weighted: 0.999679 (+/- 0.0013)
     
     accuracy
-    scores: [1.         1.         0.99839744 1.         1.        ]
+    scores: [1.         0.99839744 1.         1.         1.        ]
     accuracy: 0.999679 (+/- 0.0013)
     
 
@@ -344,14 +345,14 @@ print(metrics.classification_report(y_test, predicted, digits=4))
 
                   precision    recall  f1-score   support
     
-               0     1.0000    1.0000    1.0000       512
-               1     0.9981    1.0000    0.9990       520
+               0     1.0000    1.0000    1.0000       508
+               1     1.0000    1.0000    1.0000       513
                2     1.0000    1.0000    1.0000       525
-               3     1.0000    0.9981    0.9990       523
+               3     1.0000    1.0000    1.0000       534
     
-        accuracy                         0.9995      2080
-       macro avg     0.9995    0.9995    0.9995      2080
-    weighted avg     0.9995    0.9995    0.9995      2080
+        accuracy                         1.0000      2080
+       macro avg     1.0000    1.0000    1.0000      2080
+    weighted avg     1.0000    1.0000    1.0000      2080
     
 
 
@@ -375,10 +376,10 @@ def show_top10(classifier, vectorizer, categories):
 show_top10(text_clf.named_steps['clf'], text_clf.named_steps['vect'], data.labels)
 ```
 
-    de: ich ein es zu das sie er die der und
+    de: das ein ich es zu sie er die der und
     en: was that in his he it of to and the
-    fr: qu une que les un il et le la de
-    nl: op te dat zijn van hij de een het en
+    fr: qu que une les un il la le et de
+    nl: op te dat van hij zijn de het een en
 
 
     /Users/mru/.local/share/virtualenvs/machine-learning-snippets-mLikUPnf/lib/python3.8/site-packages/sklearn/utils/deprecation.py:101: FutureWarning: Attribute coef_ was deprecated in version 0.24 and will be removed in 1.1 (renaming of 0.26).
@@ -396,9 +397,9 @@ print('first features: %s'% feature_names[0:10])
 print('last features: %s' % feature_names[-10:])
 ```
 
-    number of features: 823
-    first features: ['aan' 'aber' 'about' 'af' 'after' 'again' 'ah' 'ai' 'air' 'al']
-    last features: ['zum' 'zur' 'zurück' 'zwei' 'écria' 'étaient' 'était' 'été' 'être' 'über']
+    number of features: 818
+    first features: ['aan' 'aber' 'about' 'after' 'again' 'ah' 'ai' 'air' 'al' 'all']
+    last features: ['zur' 'zurück' 'zwei' 'écria' 'étaient' 'était' 'été' 'één' 'être' 'über']
 
 
 ### New data
@@ -423,11 +424,11 @@ for i, p in enumerate(predicted):
     
 ```
 
-    Hallo mein Name ist Hugo.  -->  de , prob: 0.7249633668708169
-    Hi my name is Hugo.  -->  en , prob: 0.8773260768595808
-    Bonjour mon nom est Hugo.  -->  fr , prob: 0.9453776056495589
-    Hallo mijn naam is Hugo.  -->  nl , prob: 0.8123800116595941
-    Eins, zwei und drei.  -->  de , prob: 0.9386986497866608
-    One, two and three.  -->  en , prob: 0.9672917648433016
-    Un, deux et trois.  -->  fr , prob: 0.9845424619673355
-    Een, twee en drie.  -->  nl , prob: 0.9653791883565951
+    Hallo mein Name ist Hugo.  -->  de , prob: 0.8361005063516573
+    Hi my name is Hugo.  -->  en , prob: 0.8216607125170503
+    Bonjour mon nom est Hugo.  -->  fr , prob: 0.9502440025818124
+    Hallo mijn naam is Hugo.  -->  nl , prob: 0.6894312199603082
+    Eins, zwei und drei.  -->  de , prob: 0.9416510822923774
+    One, two and three.  -->  en , prob: 0.9783009940145442
+    Un, deux et trois.  -->  fr , prob: 0.9884204112525765
+    Een, twee en drie.  -->  nl , prob: 0.9640756842218831

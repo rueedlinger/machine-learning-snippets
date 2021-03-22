@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [classification_ridge.ipynb](classification_ridge.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/supervised/classification/linear/classification_ridge.ipynb) from Jupyter. 
 
 ## Classification with ridge regression
 
@@ -192,21 +193,21 @@ confusion_matrix
   <tbody>
     <tr>
       <th>0</th>
-      <td>28</td>
-      <td>1</td>
+      <td>30</td>
+      <td>0</td>
       <td>0</td>
     </tr>
     <tr>
       <th>1</th>
       <td>0</td>
-      <td>34</td>
-      <td>2</td>
+      <td>35</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2</th>
       <td>0</td>
-      <td>0</td>
-      <td>24</td>
+      <td>1</td>
+      <td>23</td>
     </tr>
   </tbody>
 </table>
@@ -233,7 +234,7 @@ print("recall: {:.3f}".format(metrics.recall_score(y_test, predicted, average='w
 print("f1 score: {:.3f}".format(metrics.f1_score(y_test, predicted, average='weighted')))
 ```
 
-    accuracy: 0.966
-    precision: 0.968
-    recall: 0.966
-    f1 score: 0.966
+    accuracy: 0.989
+    precision: 0.989
+    recall: 0.989
+    f1 score: 0.989

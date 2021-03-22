@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [dimensionality_reduction_tsne.ipynb](dimensionality_reduction_tsne.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/unsupervised/dimensionality_reduction/tsne/dimensionality_reduction_tsne.ipynb) from Jupyter. 
 
 # Dimensionality Reduction with t-SNE
 
@@ -44,32 +45,32 @@ df.head()
   <tbody>
     <tr>
       <th>0</th>
-      <td>-14.806158</td>
-      <td>10.297752</td>
+      <td>-18.590828</td>
+      <td>15.346337</td>
       <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-13.236295</td>
-      <td>12.403381</td>
+      <td>-18.992107</td>
+      <td>12.511853</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>-14.224988</td>
-      <td>12.688573</td>
+      <td>-17.869286</td>
+      <td>12.968143</td>
       <td>0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>-13.829868</td>
-      <td>12.962555</td>
+      <td>-18.138460</td>
+      <td>12.415766</td>
       <td>0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>-15.104300</td>
-      <td>10.338697</td>
+      <td>-18.264929</td>
+      <td>15.447813</td>
       <td>0</td>
     </tr>
   </tbody>

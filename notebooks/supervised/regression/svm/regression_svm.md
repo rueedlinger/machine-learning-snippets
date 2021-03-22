@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [regression_svm.ipynb](regression_svm.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/supervised/regression/svm/regression_svm.ipynb) from Jupyter. 
 
 ## Regression with SVM
 
@@ -169,7 +170,7 @@ sns.displot(residual, kind="kde");
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x10393fb20>
+    <seaborn.axisgrid.FacetGrid at 0x129d16940>
 
 
 
@@ -187,7 +188,7 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.4812119628396192
-    mse: 49.21337546383957
-    rmse: 7.015224548354783
-    mae: 4.018313430672431
+    r2 score: 0.5934700973947089
+    mse: 40.10187690009368
+    rmse: 6.332604274711446
+    mae: 3.597135246038234

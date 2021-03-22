@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [classification_bagging.ipynb](classification_bagging.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/supervised/classification/ensemble/classification_bagging.ipynb) from Jupyter. 
 
 ## Classification with bagging
 
@@ -194,20 +195,20 @@ confusion_matrix
     <tr>
       <th>0</th>
       <td>29</td>
-      <td>1</td>
+      <td>0</td>
       <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0</td>
-      <td>33</td>
-      <td>2</td>
+      <td>4</td>
+      <td>29</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>2</th>
       <td>0</td>
-      <td>0</td>
-      <td>24</td>
+      <td>1</td>
+      <td>23</td>
     </tr>
   </tbody>
 </table>
@@ -234,7 +235,7 @@ print("recall: {:.3f}".format(metrics.recall_score(y_test, predicted, average='w
 print("f1 score: {:.3f}".format(metrics.f1_score(y_test, predicted, average='weighted')))
 ```
 
-    accuracy: 0.966
-    precision: 0.968
-    recall: 0.966
-    f1 score: 0.966
+    accuracy: 0.910
+    precision: 0.916
+    recall: 0.910
+    f1 score: 0.908

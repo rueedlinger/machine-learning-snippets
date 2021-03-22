@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [classification_kNN.ipynb](classification_kNN.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/supervised/classification/nonlinear/classification_kNN.ipynb) from Jupyter. 
 
 ## Classification with k-nearest neighbors (k-NN)
 
@@ -194,19 +195,19 @@ confusion_matrix
       <th>0</th>
       <td>24</td>
       <td>1</td>
-      <td>4</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
-      <td>17</td>
-      <td>17</td>
+      <td>1</td>
+      <td>23</td>
+      <td>11</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>2</td>
-      <td>3</td>
-      <td>19</td>
+      <td>1</td>
+      <td>7</td>
+      <td>16</td>
     </tr>
   </tbody>
 </table>
@@ -233,7 +234,7 @@ print("recall: {:.3f}".format(metrics.recall_score(y_test, predicted, average='w
 print("f1 score: {:.3f}".format(metrics.f1_score(y_test, predicted, average='weighted')))
 ```
 
-    accuracy: 0.674
-    precision: 0.735
-    recall: 0.674
-    f1 score: 0.676
+    accuracy: 0.708
+    precision: 0.738
+    recall: 0.708
+    f1 score: 0.717

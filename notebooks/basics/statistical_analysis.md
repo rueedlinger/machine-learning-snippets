@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [statistical_analysis.ipynb](statistical_analysis.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/basics/statistical_analysis.ipynb) from Jupyter. 
 
 ## Statistical analysis
 
