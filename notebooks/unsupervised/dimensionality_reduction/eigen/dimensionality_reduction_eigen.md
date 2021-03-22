@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [dimensionality_reduction_eigen.ipynb](dimensionality_reduction_eigen.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/unsupervised/dimensionality_reduction/eigen/dimensionality_reduction_eigen.ipynb) from Jupyter. 
 
 # Dimensionality Reduction with Eigenvector / Eigenvalues and Correlation Matrix (PCA)
 

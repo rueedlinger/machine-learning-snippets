@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [regression_xgboost.ipynb](regression_xgboost.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/supervised/regression/ensemble/regression_xgboost.ipynb) from Jupyter. 
 
 ## Regression with gradient boosting (xgboost)
 
@@ -185,7 +186,7 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.8858110564592299
-    mse: 11.608060319401982
-    rmse: 3.407060363334055
-    mae: 2.4736380715119215
+    r2 score: 0.9059969641094966
+    mse: 7.153202313301081
+    rmse: 2.6745471230286975
+    mae: 2.002491814839212

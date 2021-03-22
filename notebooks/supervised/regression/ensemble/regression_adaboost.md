@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [regression_adaboost.ipynb](regression_adaboost.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/supervised/regression/ensemble/regression_adaboost.ipynb) from Jupyter. 
 
 ## Regression with AdaBoost regressor
 
@@ -177,7 +178,7 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.78184220841455
-    mse: 19.291027913349712
-    rmse: 4.392155269722339
-    mae: 3.056387066233888
+    r2 score: 0.8528927705314364
+    mse: 10.836441076771537
+    rmse: 3.291875009287494
+    mae: 2.5724733992182376

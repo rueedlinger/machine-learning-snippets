@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [clustering_hclust.ipynb](clustering_hclust.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/unsupervised/clustering/hclust/clustering_hclust.ipynb) from Jupyter. 
 
 # Hierarchical Clustering (SciPy)
 

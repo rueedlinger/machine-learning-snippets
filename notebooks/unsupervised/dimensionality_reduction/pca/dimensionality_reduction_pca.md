@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [dimensionality_reduction_pca.ipynb](dimensionality_reduction_pca.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/unsupervised/dimensionality_reduction/pca/dimensionality_reduction_pca.ipynb) from Jupyter. 
 
 # Dimensionality Reduction with PCA (SVD)
 

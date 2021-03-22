@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [clustering_basics_model_evaluation.ipynb](clustering_basics_model_evaluation.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/unsupervised/clustering/clustering_basics_model_evaluation.ipynb) from Jupyter. 
 
 # Clustering Basics and Model Evaluation
 

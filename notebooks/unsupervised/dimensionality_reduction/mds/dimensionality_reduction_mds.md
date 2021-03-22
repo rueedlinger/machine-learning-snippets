@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [dimensionality_reduction_mds.ipynb](dimensionality_reduction_mds.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/unsupervised/dimensionality_reduction/mds/dimensionality_reduction_mds.ipynb) from Jupyter. 
 
 # Dimensionality Reduction with MDS
 
@@ -45,32 +46,32 @@ df.head()
   <tbody>
     <tr>
       <th>0</th>
-      <td>2.704123</td>
-      <td>0.196418</td>
+      <td>-2.692652</td>
+      <td>-0.299874</td>
       <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2.709808</td>
-      <td>-0.343997</td>
+      <td>-2.621085</td>
+      <td>-0.750770</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>2.891327</td>
-      <td>-0.274305</td>
+      <td>-2.825695</td>
+      <td>-0.702567</td>
       <td>0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>2.733552</td>
-      <td>-0.467063</td>
+      <td>-2.640824</td>
+      <td>-0.849112</td>
       <td>0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>2.754413</td>
-      <td>0.221003</td>
+      <td>-2.747761</td>
+      <td>-0.283088</td>
       <td>0</td>
     </tr>
   </tbody>

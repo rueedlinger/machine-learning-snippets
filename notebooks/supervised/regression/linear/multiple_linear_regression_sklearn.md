@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [multiple_linear_regression_sklearn.ipynb](multiple_linear_regression_sklearn.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/supervised/regression/linear/multiple_linear_regression_sklearn.ipynb) from Jupyter. 
 
 ## Linear regression with scikit-learn (OLS)
 
@@ -328,11 +329,11 @@ print('Intercept:', lr.intercept_)
 
     No coef: 13
     Coefficients: 
-     [-9.31032231e-02  4.17356229e-02  2.70387439e-02  3.61152166e+00
-     -2.21939090e+01  3.72409604e+00  5.05744961e-03 -1.57445868e+00
-      2.99035201e-01 -9.92384563e-03 -1.05064750e+00  7.93979867e-03
-     -5.49010143e-01]
-    Intercept: 41.13393719369943
+     [-1.27801198e-01  5.98241698e-02  7.11335273e-02  2.38876353e+00
+     -2.20162960e+01  3.41002004e+00  7.14172721e-03 -1.76434285e+00
+      3.55581250e-01 -1.63402658e-02 -1.04845247e+00  7.04375068e-03
+     -5.24903981e-01]
+    Intercept: 45.07960756591856
 
 
 Print the predicated values against the the true values. Perfect match should lie be on the red line.
@@ -397,7 +398,7 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.7602660398063259
-    mse: 15.755849516870294
-    rmse: 3.9693638680360728
-    mae: 3.0886809650843974
+    r2 score: 0.6882638808688621
+    mse: 27.020423136403643
+    rmse: 5.198117268435144
+    mae: 3.8900205065793196

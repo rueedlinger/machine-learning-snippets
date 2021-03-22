@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [classification_random_forest.ipynb](classification_random_forest.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/supervised/classification/ensemble/classification_random_forest.ipynb) from Jupyter. 
 
 ## Classification with random forest
 
@@ -199,14 +200,14 @@ confusion_matrix
     <tr>
       <th>1</th>
       <td>2</td>
-      <td>29</td>
-      <td>4</td>
+      <td>32</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2</th>
       <td>0</td>
-      <td>0</td>
-      <td>24</td>
+      <td>1</td>
+      <td>23</td>
     </tr>
   </tbody>
 </table>
@@ -233,7 +234,7 @@ print("recall: {:.3f}".format(metrics.recall_score(y_test, predicted, average='w
 print("f1 score: {:.3f}".format(metrics.f1_score(y_test, predicted, average='weighted')))
 ```
 
-    accuracy: 0.933
-    precision: 0.940
-    recall: 0.933
-    f1 score: 0.932
+    accuracy: 0.955
+    precision: 0.956
+    recall: 0.955
+    f1 score: 0.955

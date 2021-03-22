@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [regression_sgd.ipynb](regression_sgd.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/supervised/regression/linear/regression_sgd.ipynb) from Jupyter. 
 
 ## Regression with stochastic gradient descent
 
@@ -180,7 +181,7 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.6542012472616019
-    mse: 33.24116473401411
-    rmse: 5.7655151317132205
-    mae: 3.7524914794782553
+    r2 score: 0.722869199383984
+    mse: 21.805745329839002
+    rmse: 4.669662228666973
+    mae: 3.337884415215154

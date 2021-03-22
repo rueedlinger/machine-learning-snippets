@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [feature_scaling.ipynb](feature_scaling.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/basics/feature_scaling.ipynb) from Jupyter. 
 
 # Feature scaling
 

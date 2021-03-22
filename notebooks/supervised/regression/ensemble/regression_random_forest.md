@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [regression_random_forest.ipynb](regression_random_forest.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/supervised/regression/ensemble/regression_random_forest.ipynb) from Jupyter. 
 
 ## Regression with random forest
 
@@ -177,7 +178,7 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.8020639320659206
-    mse: 14.210559555132582
-    rmse: 3.769689583391792
-    mae: 2.593044702295023
+    r2 score: 0.794583156590919
+    mse: 19.118996214655226
+    rmse: 4.372527440126046
+    mae: 2.761664219862118

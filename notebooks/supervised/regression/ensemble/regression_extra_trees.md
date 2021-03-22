@@ -1,4 +1,5 @@
 >**Note**: This is a generated markdown export from the Jupyter notebook file [regression_extra_trees.ipynb](regression_extra_trees.ipynb).
+>You can also view the notebook with the [nbviewer](https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master/notebooks/supervised/regression/ensemble/regression_extra_trees.ipynb) from Jupyter. 
 
 ## Regression with extra trees
 
@@ -177,7 +178,7 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.8777654996517978
-    mse: 10.36845684210526
-    rmse: 3.220008826401763
-    mae: 2.0551315789473685
+    r2 score: 0.8753285609562955
+    mse: 10.466183657894735
+    rmse: 3.2351481662969834
+    mae: 2.147986842105263

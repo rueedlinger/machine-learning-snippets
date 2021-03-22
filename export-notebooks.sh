@@ -3,6 +3,17 @@
 DIR_NOTEBOOKS="notebooks"
 FORMAT="markdown"
 
+NBVIEWER_LINK="https://nbviewer.jupyter.org/github/rueedlinger/machine-learning-snippets/blob/master"
+
+quit() {
+    echo "quit export notebook script!"
+    exit 1
+}
+
+
+trap quit SIGINT
+trap quit SIGTERM
+
 function cleanup_md() {
     ######
     # Clenaup. First remove exsting markdonw files
@@ -52,8 +63,7 @@ function export_notebooks() {
         newFile=${path//.ipynb/.md} 
 
         # add note to every markdown export
-        echo -e ">**Note**: This is a generated markdown export from the Jupyter notebook file [$file]($file).\n\n$(cat $newFile)" > $newFile
-
+        echo -e ">**Note**: This is a generated markdown export from the Jupyter notebook file [$file]($file).\n>You can also view the notebook with the [nbviewer]($NBVIEWER_LINK/$path) from Jupyter. \n\n$(cat $newFile)" > $newFile
     done
 
 }
