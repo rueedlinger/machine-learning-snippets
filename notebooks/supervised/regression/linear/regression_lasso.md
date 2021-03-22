@@ -180,7 +180,7 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.7043341433063475
-    mse: 26.419967932145507
-    rmse: 5.140035790940128
-    mae: 3.645740189290007
+    r2 score: 0.6910082217547602
+    mse: 24.705373300890848
+    rmse: 4.970450009897579
+    mae: 3.377670610073562
