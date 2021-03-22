@@ -21,6 +21,7 @@ nbconvert = "*"
 graphviz = "*"
 xgboost = "*"
 auto-sklearn = "*"
+jupyterlab-git = "*"
 
 [requires]
 python_version = "3.8"
