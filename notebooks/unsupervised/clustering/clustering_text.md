@@ -120,7 +120,7 @@ metrics.adjusted_rand_score(dataset.target, label)
 
 
 
-    0.17241214694738044
+    0.16573127846581223
 
 
 
@@ -132,7 +132,7 @@ metrics.adjusted_mutual_info_score(dataset.target, label)
 
 
 
-    0.2100528378769404
+    0.20670022648427355
 
 
 
@@ -144,4 +144,4 @@ metrics.accuracy_score(dataset.target, label)
 
 
 
-    0.5793341980112409
+    0.5767401642888024
