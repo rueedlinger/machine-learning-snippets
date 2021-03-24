@@ -21,6 +21,9 @@ nbconvert = "*"
 graphviz = "*"
 xgboost = "*"
 auto-sklearn = "*"
+jupyterlab-git = "*"
+nbdime = "*"
+tensorflow = "*"
 
 [requires]
 python_version = "3.8"

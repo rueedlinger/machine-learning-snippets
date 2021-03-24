@@ -68,6 +68,10 @@ The following machine learning snippets are available as Jupyter Notebook.
 - [Classification with AdaBoost (boosting)](notebooks/supervised/classification/ensemble/classification_adaboost.md) (scikit-learn)
 - [Classification with gradient boosting](notebooks/supervised/classification/ensemble/classification_xgboost.md) (xgboost)
 
+### Neural network
+
+- [Classification with a neural network](notebooks/supervised/neural_net/classification_neural_net.md) (tensorflow / keras)
+
 ## Regression
 
 ### Linear
@@ -94,6 +98,10 @@ The following machine learning snippets are available as Jupyter Notebook.
 - [Regression with bagging](notebooks/supervised/regression/ensemble/regression_bagging.md) (scikit-learn)
 - [Regression with AdaBoost (boosting)](notebooks/supervised/regression/ensemble/regression_adaboost.md) (scikit-learn)
 - [Regression with gradient boosting](notebooks/supervised/regression/ensemble/regression_xgboost.md) (xgboost)
+
+### Neural network
+
+- [Regression with a neural network](notebooks/supervised/neural_net/regression_neural_net.md) (tensorflow / keras)
 
 ## Clustering
 
