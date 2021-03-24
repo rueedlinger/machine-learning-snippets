@@ -70,7 +70,7 @@ The following machine learning snippets are available as Jupyter Notebook.
 
 ### Neural network
 
-- [Classification with a neural network](notebooks/supervised/neural_net/regression_neural_net.md) (tensorflow / keras)
+- [Classification with a neural network](notebooks/supervised/neural_net/classification_neural_net.md) (tensorflow / keras)
 
 ## Regression
 
