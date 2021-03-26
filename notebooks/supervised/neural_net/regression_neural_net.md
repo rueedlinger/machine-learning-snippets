@@ -126,9 +126,8 @@ model = tf.keras.Sequential([
 
 model.compile(
     optimizer=tf.optimizers.Adam(learning_rate=0.1),
-    loss='mean_absolute_error')
-
-
+    loss="mse", 
+    metrics=['mae'])
 model.summary()
 ```
 
@@ -152,8 +151,8 @@ model.summary()
 history = model.fit(X_train, y_train, epochs=100, validation_split = 0.2, verbose=0)
 ```
 
-    CPU times: user 5.18 s, sys: 412 ms, total: 5.59 s
-    Wall time: 5.08 s
+    CPU times: user 5.33 s, sys: 419 ms, total: 5.75 s
+    Wall time: 5.21 s
 
 
 
@@ -172,39 +171,51 @@ hist.tail()
     <tr style="text-align: right;">
       <th></th>
       <th>loss</th>
+      <th>mae</th>
       <th>val_loss</th>
+      <th>val_mae</th>
       <th>epoch</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>95</th>
-      <td>3.102436</td>
-      <td>3.449647</td>
+      <td>17.054680</td>
+      <td>2.893474</td>
+      <td>22.156794</td>
+      <td>3.065092</td>
       <td>95</td>
     </tr>
     <tr>
       <th>96</th>
-      <td>3.124186</td>
-      <td>3.501871</td>
+      <td>17.112535</td>
+      <td>2.897738</td>
+      <td>22.163271</td>
+      <td>3.060177</td>
       <td>96</td>
     </tr>
     <tr>
       <th>97</th>
-      <td>3.085092</td>
-      <td>3.450218</td>
+      <td>17.074369</td>
+      <td>2.884479</td>
+      <td>22.267155</td>
+      <td>3.075595</td>
       <td>97</td>
     </tr>
     <tr>
       <th>98</th>
-      <td>3.132863</td>
-      <td>3.440988</td>
+      <td>17.070080</td>
+      <td>2.880415</td>
+      <td>21.804264</td>
+      <td>3.051659</td>
       <td>98</td>
     </tr>
     <tr>
       <th>99</th>
-      <td>3.093181</td>
-      <td>3.529952</td>
+      <td>17.084637</td>
+      <td>2.894545</td>
+      <td>22.471186</td>
+      <td>3.074053</td>
       <td>99</td>
     </tr>
   </tbody>
@@ -224,12 +235,24 @@ def plot_loss(history):
   plt.grid(True)
 
 plot_loss(history)
+
 ```
 
 
     
 ![png](regression_neural_net_files/regression_neural_net_9_0.png)
     
+
+
+
+```python
+test_mse, test_mae = model.evaluate(X_test,  y_test, verbose=0)
+print('Test loss (mse):', test_mse)
+print('Test mae:', test_mae)
+```
+
+    Test loss (mse): 40.807926177978516
+    Test mae: 4.008775234222412
 
 
 
@@ -246,7 +269,7 @@ _ = ax.plot([0, y.max()], [0, y.max()], ls='-', color='red')
 
 
     
-![png](regression_neural_net_files/regression_neural_net_10_0.png)
+![png](regression_neural_net_files/regression_neural_net_11_0.png)
     
 
 
@@ -264,7 +287,7 @@ _ = plt.axhline(0, color='red', ls='--')
 
 
     
-![png](regression_neural_net_files/regression_neural_net_11_0.png)
+![png](regression_neural_net_files/regression_neural_net_12_0.png)
     
 
 
@@ -275,7 +298,7 @@ _ = sns.displot(residual, kind="kde");
 
 
     
-![png](regression_neural_net_files/regression_neural_net_12_0.png)
+![png](regression_neural_net_files/regression_neural_net_13_0.png)
     
 
 
@@ -287,7 +310,7 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.7146802114175688
-    mse: 23.324526681358662
-    rmse: 4.829547254283642
-    mae: 3.0605333278053686
+    r2 score: 0.47695910195859137
+    mse: 40.80792524433216
+    rmse: 6.388108111509397
+    mae: 4.008775288180301

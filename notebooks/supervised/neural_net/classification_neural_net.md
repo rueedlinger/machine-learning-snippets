@@ -20,10 +20,10 @@ from sklearn import datasets, metrics, model_selection
 ```python
 digits = datasets.load_digits()
 
-_, axes = plt.subplots(nrows=1, ncols=10, figsize=(10, 3))
+fig, axes = plt.subplots(nrows=1, ncols=10, figsize=(10, 3))
 for ax, image, label in zip(axes, digits.images, digits.target):
     ax.set_axis_off()
-    ax.imshow(image)
+    ax.imshow(image, cmap=plt.cm.gray_r)
     ax.set_title('%i' % label)
 ```
 
@@ -36,7 +36,7 @@ for ax, image, label in zip(axes, digits.images, digits.target):
 
 ```python
 plt.figure()
-plt.imshow(digits.images[0])
+plt.imshow(digits.images[0], cmap=plt.cm.gray_r)
 plt.colorbar()
 plt.grid(False)
 plt.show()
@@ -69,6 +69,8 @@ X_train, X_test, y_train, y_test = model_selection.train_test_split(
     data, target, test_size=0.5)
 
 
+X_train = X_train.astype('float32') / 16.
+X_test = X_test.astype('float32') / 16.
 
 df_train = pd.DataFrame(y_train, columns=['target'])
 df_train['type'] = 'train'
@@ -135,8 +137,8 @@ model.summary()
 history = model.fit(X_train, y_train, epochs=100, validation_split = 0.2, verbose=0)
 ```
 
-    CPU times: user 6.68 s, sys: 854 ms, total: 7.53 s
-    Wall time: 5.92 s
+    CPU times: user 6.62 s, sys: 829 ms, total: 7.45 s
+    Wall time: 5.82 s
 
 
 
@@ -164,42 +166,42 @@ hist.tail()
   <tbody>
     <tr>
       <th>95</th>
-      <td>0.000963</td>
+      <td>0.009560</td>
       <td>1.0</td>
-      <td>0.112194</td>
-      <td>0.961111</td>
+      <td>0.176772</td>
+      <td>0.944444</td>
       <td>95</td>
     </tr>
     <tr>
       <th>96</th>
-      <td>0.000933</td>
+      <td>0.009074</td>
       <td>1.0</td>
-      <td>0.112080</td>
-      <td>0.955556</td>
+      <td>0.175751</td>
+      <td>0.944444</td>
       <td>96</td>
     </tr>
     <tr>
       <th>97</th>
-      <td>0.000913</td>
+      <td>0.008608</td>
       <td>1.0</td>
-      <td>0.109569</td>
-      <td>0.966667</td>
+      <td>0.176466</td>
+      <td>0.944444</td>
       <td>97</td>
     </tr>
     <tr>
       <th>98</th>
-      <td>0.000889</td>
+      <td>0.008466</td>
       <td>1.0</td>
-      <td>0.111811</td>
-      <td>0.955556</td>
+      <td>0.176388</td>
+      <td>0.944444</td>
       <td>98</td>
     </tr>
     <tr>
       <th>99</th>
-      <td>0.000877</td>
+      <td>0.008738</td>
       <td>1.0</td>
-      <td>0.109068</td>
-      <td>0.966667</td>
+      <td>0.178775</td>
+      <td>0.944444</td>
       <td>99</td>
     </tr>
   </tbody>
@@ -230,14 +232,13 @@ plot_loss(history)
 
 
 ```python
-test_loss, test_acc = model.evaluate(X_test,  y_test, verbose=2)
-print('
-Test accuracy:', test_acc)
+test_loss, test_acc = model.evaluate(X_test,  y_test, verbose=0)
+print('Test loss:', test_loss)
+print('Test accuracy:', test_acc)
 ```
 
-    29/29 - 0s - loss: 0.1359 - accuracy: 0.9666
-    
-    Test accuracy: 0.9666295647621155
+    Test loss: 0.09384721517562866
+    Test accuracy: 0.9688543081283569
 
 
 
@@ -278,7 +279,7 @@ confusion_matrix
   <tbody>
     <tr>
       <th>0</th>
-      <td>83</td>
+      <td>99</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -292,26 +293,26 @@ confusion_matrix
     <tr>
       <th>1</th>
       <td>0</td>
-      <td>92</td>
+      <td>87</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2</th>
       <td>0</td>
-      <td>0</td>
-      <td>94</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <td>1</td>
+      <td>87</td>
+      <td>1</td>
       <td>0</td>
       <td>0</td>
+      <td>0</td>
+      <td>1</td>
       <td>0</td>
       <td>0</td>
     </tr>
@@ -320,24 +321,24 @@ confusion_matrix
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>75</td>
+      <td>88</td>
       <td>0</td>
       <td>2</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>4</th>
       <td>0</td>
-      <td>5</td>
       <td>0</td>
       <td>0</td>
-      <td>100</td>
+      <td>0</td>
+      <td>95</td>
       <td>0</td>
       <td>0</td>
-      <td>3</td>
+      <td>0</td>
       <td>0</td>
       <td>0</td>
     </tr>
@@ -348,7 +349,7 @@ confusion_matrix
       <td>1</td>
       <td>0</td>
       <td>1</td>
-      <td>79</td>
+      <td>85</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
@@ -357,12 +358,12 @@ confusion_matrix
     <tr>
       <th>6</th>
       <td>0</td>
-      <td>1</td>
+      <td>4</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>1</td>
-      <td>92</td>
+      <td>0</td>
+      <td>94</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -376,35 +377,35 @@ confusion_matrix
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>79</td>
+      <td>80</td>
       <td>0</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>8</th>
       <td>0</td>
-      <td>4</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>83</td>
+      <td>77</td>
       <td>0</td>
     </tr>
     <tr>
       <th>9</th>
       <td>0</td>
-      <td>0</td>
+      <td>1</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>2</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
-      <td>3</td>
-      <td>92</td>
+      <td>79</td>
     </tr>
   </tbody>
 </table>
@@ -431,7 +432,7 @@ print("recall: {:.3f}".format(metrics.recall_score(y_test, predicted, average='w
 print("f1 score: {:.3f}".format(metrics.f1_score(y_test, predicted, average='weighted')))
 ```
 
-    accuracy: 0.967
-    precision: 0.968
-    recall: 0.967
-    f1 score: 0.967
+    accuracy: 0.969
+    precision: 0.969
+    recall: 0.969
+    f1 score: 0.969
