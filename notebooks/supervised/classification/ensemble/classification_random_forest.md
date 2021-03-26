@@ -194,20 +194,20 @@ confusion_matrix
     <tr>
       <th>0</th>
       <td>29</td>
-      <td>1</td>
+      <td>0</td>
       <td>0</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2</td>
-      <td>31</td>
+      <td>32</td>
       <td>2</td>
     </tr>
     <tr>
       <th>2</th>
       <td>0</td>
-      <td>0</td>
-      <td>24</td>
+      <td>1</td>
+      <td>23</td>
     </tr>
   </tbody>
 </table>
