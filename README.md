@@ -154,3 +154,7 @@ The following machine learning snippets are available as Jupyter Notebook.
 ### Regression
 
 - [Regression with AutoML](notebooks/automl/regression_with_automl.md) (auto-sklearn)
+
+## Autoencoder
+
+- [Anomaly detection with an Autoencoder](notebooks/unsupervised/neural_net/anomaly_detection_with_autoencoder.md) (tensorflow / keras)
