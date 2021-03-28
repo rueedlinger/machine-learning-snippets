@@ -151,8 +151,8 @@ model.summary()
 history = model.fit(X_train, y_train, epochs=100, validation_split = 0.2, verbose=0)
 ```
 
-    CPU times: user 5.33 s, sys: 419 ms, total: 5.75 s
-    Wall time: 5.21 s
+    CPU times: user 5.29 s, sys: 432 ms, total: 5.72 s
+    Wall time: 5.2 s
 
 
 
@@ -180,42 +180,42 @@ hist.tail()
   <tbody>
     <tr>
       <th>95</th>
-      <td>17.054680</td>
-      <td>2.893474</td>
-      <td>22.156794</td>
-      <td>3.065092</td>
+      <td>23.828785</td>
+      <td>3.471569</td>
+      <td>22.528730</td>
+      <td>3.481316</td>
       <td>95</td>
     </tr>
     <tr>
       <th>96</th>
-      <td>17.112535</td>
-      <td>2.897738</td>
-      <td>22.163271</td>
-      <td>3.060177</td>
+      <td>23.746853</td>
+      <td>3.445902</td>
+      <td>23.060987</td>
+      <td>3.495504</td>
       <td>96</td>
     </tr>
     <tr>
       <th>97</th>
-      <td>17.074369</td>
-      <td>2.884479</td>
-      <td>22.267155</td>
-      <td>3.075595</td>
+      <td>23.604248</td>
+      <td>3.436066</td>
+      <td>22.829119</td>
+      <td>3.491951</td>
       <td>97</td>
     </tr>
     <tr>
       <th>98</th>
-      <td>17.070080</td>
-      <td>2.880415</td>
-      <td>21.804264</td>
-      <td>3.051659</td>
+      <td>23.777489</td>
+      <td>3.450588</td>
+      <td>23.128935</td>
+      <td>3.508666</td>
       <td>98</td>
     </tr>
     <tr>
       <th>99</th>
-      <td>17.084637</td>
-      <td>2.894545</td>
-      <td>22.471186</td>
-      <td>3.074053</td>
+      <td>23.648293</td>
+      <td>3.458239</td>
+      <td>22.671534</td>
+      <td>3.490924</td>
       <td>99</td>
     </tr>
   </tbody>
@@ -251,8 +251,8 @@ print('Test loss (mse):', test_mse)
 print('Test mae:', test_mae)
 ```
 
-    Test loss (mse): 40.807926177978516
-    Test mae: 4.008775234222412
+    Test loss (mse): 21.1046142578125
+    Test mae: 3.2598514556884766
 
 
 
@@ -310,7 +310,7 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.47695910195859137
-    mse: 40.80792524433216
-    rmse: 6.388108111509397
-    mae: 4.008775288180301
+    r2 score: 0.695745219107465
+    mse: 21.104612728159566
+    rmse: 4.593975699561281
+    mae: 3.25985157866227

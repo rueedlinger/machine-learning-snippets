@@ -197,7 +197,7 @@ print('------------------')
 
     English sample:
     ------------------
-    presence of the Ghost of Christmas Yet To Come said Scrooge The Spirit answered not but pointed onward with its
+    of this because the Christmas Holidays appeared to be condensed into the space of time they passed together It was
     ------------------
 
 
@@ -321,12 +321,12 @@ for scoring in ['f1_weighted', 'accuracy']:
 ```
 
     f1_weighted
-    scores: [1.        1.        1.        0.9983973 1.       ]
-    f1_weighted: 0.999679 (+/- 0.0013)
+    scores: [1.         1.         1.         0.99839734 0.9983974 ]
+    f1_weighted: 0.999359 (+/- 0.0016)
     
     accuracy
-    scores: [1.         1.         1.         0.99839744 1.        ]
-    accuracy: 0.999679 (+/- 0.0013)
+    scores: [1.         1.         1.         0.99839744 0.99839744]
+    accuracy: 0.999359 (+/- 0.0016)
     
 
 
@@ -345,14 +345,14 @@ print(metrics.classification_report(y_test, predicted, digits=4))
 
                   precision    recall  f1-score   support
     
-               0     1.0000    0.9981    0.9990       519
-               1     0.9980    1.0000    0.9990       499
-               2     1.0000    1.0000    1.0000       526
-               3     1.0000    1.0000    1.0000       536
+               0     1.0000    1.0000    1.0000       532
+               1     1.0000    1.0000    1.0000       504
+               2     1.0000    1.0000    1.0000       532
+               3     1.0000    1.0000    1.0000       512
     
-        accuracy                         0.9995      2080
-       macro avg     0.9995    0.9995    0.9995      2080
-    weighted avg     0.9995    0.9995    0.9995      2080
+        accuracy                         1.0000      2080
+       macro avg     1.0000    1.0000    1.0000      2080
+    weighted avg     1.0000    1.0000    1.0000      2080
     
 
 
@@ -376,10 +376,10 @@ def show_top10(classifier, vectorizer, categories):
 show_top10(text_clf.named_steps['clf'], text_clf.named_steps['vect'], data.labels)
 ```
 
-    de: ich ein es das zu sie er die der und
-    en: was that in his he it of to and the
-    fr: qu que une les un il et le la de
-    nl: op te dat zijn hij van de het een en
+    de: das war ich es zu sie er die der und
+    en: was in that his he it of to and the
+    fr: une qu que les un la il et le de
+    nl: op te dat zijn hij van de een het en
 
 
 Let's see which and how many features our model has.
@@ -394,8 +394,8 @@ print('last features: %s' % feature_names[-10:])
 ```
 
     number of features: 820
-    first features: ['aan' 'aber' 'about' 'achter' 'after' 'again' 'ai' 'air' 'al' 'all']
-    last features: ['zu' 'zum' 'zwei' 'écria' 'étaient' 'était' 'été' 'één' 'être' 'über']
+    first features: ['aan' 'aber' 'about' 'achter' 'after' 'again' 'ah' 'ai' 'ainsi' 'air']
+    last features: ['zum' 'zurück' 'zwei' 'écria' 'étaient' 'était' 'été' 'één' 'être' 'über']
 
 
 ### New data
@@ -420,11 +420,11 @@ for i, p in enumerate(predicted):
     
 ```
 
-    Hallo mein Name ist Hugo.  -->  de , prob: 0.7429598242399875
-    Hi my name is Hugo.  -->  en , prob: 0.8710423111953308
-    Bonjour mon nom est Hugo.  -->  fr , prob: 0.9446237634963033
-    Hallo mijn naam is Hugo.  -->  nl , prob: 0.743113942010488
-    Eins, zwei und drei.  -->  de , prob: 0.9369058942117139
-    One, two and three.  -->  en , prob: 0.9659411794715496
-    Un, deux et trois.  -->  fr , prob: 0.9852558382518941
-    Een, twee en drie.  -->  nl , prob: 0.9641629728782933
+    Hallo mein Name ist Hugo.  -->  de , prob: 0.8452562245396373
+    Hi my name is Hugo.  -->  en , prob: 0.8408882497867451
+    Bonjour mon nom est Hugo.  -->  fr , prob: 0.94444760521777
+    Hallo mijn naam is Hugo.  -->  nl , prob: 0.7078958461223464
+    Eins, zwei und drei.  -->  de , prob: 0.9506445157120322
+    One, two and three.  -->  en , prob: 0.9764274055241304
+    Un, deux et trois.  -->  fr , prob: 0.9847383052729574
+    Een, twee en drie.  -->  nl , prob: 0.9709789403377973

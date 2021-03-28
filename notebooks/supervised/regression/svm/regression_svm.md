@@ -170,7 +170,7 @@ sns.displot(residual, kind="kde");
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x14129cd90>
+    <seaborn.axisgrid.FacetGrid at 0x146cace80>
 
 
 
@@ -188,7 +188,7 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.6006606226266691
-    mse: 30.069245705735764
-    rmse: 5.483543170773416
-    mae: 3.1665778670854694
+    r2 score: 0.6569886489086274
+    mse: 23.62569247819373
+    rmse: 4.8606267577539555
+    mae: 3.009994811274321

@@ -120,42 +120,42 @@ print(result.summary())
 
                                      OLS Regression Results                                
     =======================================================================================
-    Dep. Variable:                      y   R-squared (uncentered):                   0.957
-    Model:                            OLS   Adj. R-squared (uncentered):              0.956
-    Method:                 Least Squares   F-statistic:                              585.9
-    Date:                Fri, 26 Mar 2021   Prob (F-statistic):                   3.23e-224
-    Time:                        10:35:57   Log-Likelihood:                         -1071.1
-    No. Observations:                 354   AIC:                                      2168.
-    Df Residuals:                     341   BIC:                                      2219.
+    Dep. Variable:                      y   R-squared (uncentered):                   0.966
+    Model:                            OLS   Adj. R-squared (uncentered):              0.965
+    Method:                 Least Squares   F-statistic:                              742.9
+    Date:                Sun, 28 Mar 2021   Prob (F-statistic):                   4.21e-241
+    Time:                        22:06:17   Log-Likelihood:                         -1036.8
+    No. Observations:                 354   AIC:                                      2100.
+    Df Residuals:                     341   BIC:                                      2150.
     Df Model:                          13                                                  
     Covariance Type:            nonrobust                                                  
     ==============================================================================
                      coef    std err          t      P>|t|      [0.025      0.975]
     ------------------------------------------------------------------------------
-    CRIM          -0.0944      0.040     -2.346      0.020      -0.173      -0.015
-    ZN             0.0489      0.019      2.577      0.010       0.012       0.086
-    INDUS          0.0099      0.079      0.125      0.900      -0.145       0.165
-    CHAS           2.1543      1.209      1.782      0.076      -0.223       4.532
-    NOX           -3.1645      4.186     -0.756      0.450     -11.398       5.069
-    RM             5.9229      0.366     16.183      0.000       5.203       6.643
-    AGE           -0.0049      0.016     -0.301      0.764      -0.037       0.027
-    DIS           -1.0352      0.247     -4.198      0.000      -1.520      -0.550
-    RAD            0.1708      0.086      1.976      0.049       0.001       0.341
-    TAX           -0.0094      0.005     -1.876      0.062      -0.019       0.000
-    PTRATIO       -0.3862      0.133     -2.904      0.004      -0.648      -0.125
-    B              0.0162      0.003      4.875      0.000       0.010       0.023
-    LSTAT         -0.4435      0.060     -7.407      0.000      -0.561      -0.326
+    CRIM          -0.0995      0.035     -2.867      0.004      -0.168      -0.031
+    ZN             0.0445      0.016      2.793      0.006       0.013       0.076
+    INDUS          0.0287      0.070      0.412      0.681      -0.109       0.166
+    CHAS           2.5976      1.045      2.486      0.013       0.542       4.653
+    NOX           -4.8928      3.717     -1.316      0.189     -12.204       2.419
+    RM             6.6648      0.356     18.720      0.000       5.965       7.365
+    AGE           -0.0291      0.015     -1.923      0.055      -0.059       0.001
+    DIS           -1.0878      0.213     -5.114      0.000      -1.506      -0.669
+    RAD            0.1385      0.075      1.844      0.066      -0.009       0.286
+    TAX           -0.0087      0.004     -1.964      0.050      -0.017    1.33e-05
+    PTRATIO       -0.5373      0.124     -4.328      0.000      -0.782      -0.293
+    B              0.0128      0.003      4.074      0.000       0.007       0.019
+    LSTAT         -0.2788      0.058     -4.833      0.000      -0.392      -0.165
     ==============================================================================
-    Omnibus:                      148.438   Durbin-Watson:                   1.945
-    Prob(Omnibus):                  0.000   Jarque-Bera (JB):              769.501
-    Skew:                           1.713   Prob(JB):                    8.03e-168
-    Kurtosis:                       9.358   Cond. No.                     8.65e+03
+    Omnibus:                      178.084   Durbin-Watson:                   1.970
+    Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1320.174
+    Skew:                           1.981   Prob(JB):                    2.13e-287
+    Kurtosis:                      11.591   Cond. No.                     8.46e+03
     ==============================================================================
     
     Notes:
     [1] R² is computed without centering (uncentered) since the model does not contain a constant.
     [2] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-    [3] The condition number is large, 8.65e+03. This might indicate that there are
+    [3] The condition number is large, 8.46e+03. This might indicate that there are
     strong multicollinearity or other numerical problems.
 
 
@@ -164,9 +164,13 @@ print(result.summary())
 _ = sm.qqplot(result.resid, fit=True, line="s")
 ```
 
+    /Users/mru/.local/share/virtualenvs/machine-learning-snippets-mLikUPnf/lib/python3.8/site-packages/statsmodels/graphics/gofplots.py:993: UserWarning: marker is redundantly defined by the 'marker' keyword argument and the fmt string "bo" (-> marker='o'). The keyword argument will take precedence.
+      ax.plot(x, y, fmt, **plot_style)
+
+
 
     
-![png](multiple_linear_regression_statsmodels_files/multiple_linear_regression_statsmodels_9_0.png)
+![png](multiple_linear_regression_statsmodels_files/multiple_linear_regression_statsmodels_9_1.png)
     
 
 
@@ -181,12 +185,12 @@ result.pvalues < 0.05
     CRIM        True
     ZN          True
     INDUS      False
-    CHAS       False
+    CHAS        True
     NOX        False
     RM          True
     AGE        False
     DIS         True
-    RAD         True
+    RAD        False
     TAX        False
     PTRATIO     True
     B           True
@@ -205,10 +209,10 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.7282349202025054
-    mse: 22.761575100720137
-    rmse: 4.770909253037637
-    mae: 3.0531380018410186
+    r2 score: 0.6003548192049106
+    mse: 34.61611699571974
+    rmse: 5.883546294176646
+    mae: 3.756590178075367
 
 
 ### Full model with an intercept
@@ -223,42 +227,42 @@ print(result.summary())
 
                                 OLS Regression Results                            
     ==============================================================================
-    Dep. Variable:                      y   R-squared:                       0.737
-    Model:                            OLS   Adj. R-squared:                  0.727
-    Method:                 Least Squares   F-statistic:                     73.18
-    Date:                Fri, 26 Mar 2021   Prob (F-statistic):           3.99e-90
-    Time:                        10:35:57   Log-Likelihood:                -1051.3
-    No. Observations:                 354   AIC:                             2131.
-    Df Residuals:                     340   BIC:                             2185.
+    Dep. Variable:                      y   R-squared:                       0.767
+    Model:                            OLS   Adj. R-squared:                  0.758
+    Method:                 Least Squares   F-statistic:                     86.27
+    Date:                Sun, 28 Mar 2021   Prob (F-statistic):           3.66e-99
+    Time:                        22:06:17   Log-Likelihood:                -1027.0
+    No. Observations:                 354   AIC:                             2082.
+    Df Residuals:                     340   BIC:                             2136.
     Df Model:                          13                                         
     Covariance Type:            nonrobust                                         
     ==============================================================================
                      coef    std err          t      P>|t|      [0.025      0.975]
     ------------------------------------------------------------------------------
-    const         40.0457      6.315      6.341      0.000      27.624      52.468
-    CRIM          -0.1092      0.038     -2.862      0.004      -0.184      -0.034
-    ZN             0.0483      0.018      2.687      0.008       0.013       0.084
-    INDUS          0.0350      0.075      0.469      0.640      -0.112       0.182
-    CHAS           1.7514      1.147      1.528      0.128      -0.504       4.007
-    NOX          -19.4822      4.726     -4.122      0.000     -28.778     -10.186
-    RM             3.6205      0.502      7.212      0.000       2.633       4.608
-    AGE         -5.14e-07      0.015  -3.36e-05      1.000      -0.030       0.030
-    DIS           -1.6236      0.251     -6.461      0.000      -2.118      -1.129
-    RAD            0.3340      0.086      3.892      0.000       0.165       0.503
-    TAX           -0.0132      0.005     -2.760      0.006      -0.023      -0.004
-    PTRATIO       -1.0094      0.160     -6.318      0.000      -1.324      -0.695
-    B              0.0107      0.003      3.289      0.001       0.004       0.017
-    LSTAT         -0.5464      0.059     -9.264      0.000      -0.662      -0.430
+    const         25.9145      5.901      4.392      0.000      14.307      37.521
+    CRIM          -0.1059      0.034     -3.129      0.002      -0.172      -0.039
+    ZN             0.0439      0.016      2.827      0.005       0.013       0.074
+    INDUS          0.0310      0.068      0.456      0.649      -0.103       0.165
+    CHAS           2.3638      1.020      2.319      0.021       0.358       4.369
+    NOX          -14.7380      4.259     -3.460      0.001     -23.115      -6.361
+    RM             5.0850      0.500     10.176      0.000       4.102       6.068
+    AGE           -0.0230      0.015     -1.556      0.121      -0.052       0.006
+    DIS           -1.4498      0.223     -6.501      0.000      -1.888      -1.011
+    RAD            0.2311      0.076      3.035      0.003       0.081       0.381
+    TAX           -0.0105      0.004     -2.438      0.015      -0.019      -0.002
+    PTRATIO       -0.9178      0.149     -6.169      0.000      -1.210      -0.625
+    B              0.0087      0.003      2.714      0.007       0.002       0.015
+    LSTAT         -0.3689      0.060     -6.165      0.000      -0.487      -0.251
     ==============================================================================
-    Omnibus:                      121.805   Durbin-Watson:                   1.989
-    Prob(Omnibus):                  0.000   Jarque-Bera (JB):              435.075
-    Skew:                           1.505   Prob(JB):                     3.35e-95
-    Kurtosis:                       7.521   Cond. No.                     1.54e+04
+    Omnibus:                      161.414   Durbin-Watson:                   2.037
+    Prob(Omnibus):                  0.000   Jarque-Bera (JB):              955.332
+    Skew:                           1.839   Prob(JB):                    3.57e-208
+    Kurtosis:                      10.158   Cond. No.                     1.52e+04
     ==============================================================================
     
     Notes:
     [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-    [2] The condition number is large, 1.54e+04. This might indicate that there are
+    [2] The condition number is large, 1.52e+04. This might indicate that there are
     strong multicollinearity or other numerical problems.
 
 
@@ -268,9 +272,13 @@ _ = sm.qqplot(result.resid, fit=True, line="s")
 
 ```
 
+    /Users/mru/.local/share/virtualenvs/machine-learning-snippets-mLikUPnf/lib/python3.8/site-packages/statsmodels/graphics/gofplots.py:993: UserWarning: marker is redundantly defined by the 'marker' keyword argument and the fmt string "bo" (-> marker='o'). The keyword argument will take precedence.
+      ax.plot(x, y, fmt, **plot_style)
+
+
 
     
-![png](multiple_linear_regression_statsmodels_files/multiple_linear_regression_statsmodels_14_0.png)
+![png](multiple_linear_regression_statsmodels_files/multiple_linear_regression_statsmodels_14_1.png)
     
 
 
@@ -284,10 +292,10 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.7437718639995317
-    mse: 21.460284613600884
-    rmse: 4.632524647921572
-    mae: 3.2574639509766166
+    r2 score: 0.6535649976590743
+    mse: 30.007204262009406
+    rmse: 5.47788319170913
+    mae: 3.6869996286748674
 
 
 ## Fitting models using R-style formulas
@@ -326,89 +334,89 @@ dat.head()
   </thead>
   <tbody>
     <tr>
-      <th>446</th>
-      <td>6.28807</td>
+      <th>167</th>
+      <td>1.80028</td>
+      <td>0.0</td>
+      <td>19.58</td>
+      <td>0.0</td>
+      <td>0.605</td>
+      <td>5.877</td>
+      <td>79.2</td>
+      <td>2.4259</td>
+      <td>5.0</td>
+      <td>403.0</td>
+      <td>14.7</td>
+      <td>227.61</td>
+      <td>12.14</td>
+      <td>23.8</td>
+    </tr>
+    <tr>
+      <th>373</th>
+      <td>11.10810</td>
       <td>0.0</td>
       <td>18.10</td>
       <td>0.0</td>
-      <td>0.740</td>
-      <td>6.341</td>
-      <td>96.4</td>
-      <td>2.0720</td>
+      <td>0.668</td>
+      <td>4.906</td>
+      <td>100.0</td>
+      <td>1.1742</td>
       <td>24.0</td>
       <td>666.0</td>
       <td>20.2</td>
-      <td>318.01</td>
-      <td>17.79</td>
-      <td>14.9</td>
-    </tr>
-    <tr>
-      <th>176</th>
-      <td>0.07022</td>
-      <td>0.0</td>
-      <td>4.05</td>
-      <td>0.0</td>
-      <td>0.510</td>
-      <td>6.020</td>
-      <td>47.2</td>
-      <td>3.5549</td>
-      <td>5.0</td>
-      <td>296.0</td>
-      <td>16.6</td>
-      <td>393.23</td>
-      <td>10.11</td>
-      <td>23.2</td>
-    </tr>
-    <tr>
-      <th>172</th>
-      <td>0.13914</td>
-      <td>0.0</td>
-      <td>4.05</td>
-      <td>0.0</td>
-      <td>0.510</td>
-      <td>5.572</td>
-      <td>88.5</td>
-      <td>2.5961</td>
-      <td>5.0</td>
-      <td>296.0</td>
-      <td>16.6</td>
       <td>396.90</td>
-      <td>14.69</td>
-      <td>23.1</td>
+      <td>34.77</td>
+      <td>13.8</td>
     </tr>
     <tr>
-      <th>89</th>
-      <td>0.05302</td>
-      <td>0.0</td>
-      <td>3.41</td>
-      <td>0.0</td>
-      <td>0.489</td>
-      <td>7.079</td>
-      <td>63.1</td>
-      <td>3.4145</td>
-      <td>2.0</td>
-      <td>270.0</td>
-      <td>17.8</td>
-      <td>396.06</td>
-      <td>5.70</td>
-      <td>28.7</td>
-    </tr>
-    <tr>
-      <th>275</th>
-      <td>0.09604</td>
+      <th>274</th>
+      <td>0.05644</td>
       <td>40.0</td>
       <td>6.41</td>
-      <td>0.0</td>
+      <td>1.0</td>
       <td>0.447</td>
-      <td>6.854</td>
-      <td>42.8</td>
-      <td>4.2673</td>
+      <td>6.758</td>
+      <td>32.9</td>
+      <td>4.0776</td>
       <td>4.0</td>
       <td>254.0</td>
       <td>17.6</td>
       <td>396.90</td>
-      <td>2.98</td>
-      <td>32.0</td>
+      <td>3.53</td>
+      <td>32.4</td>
+    </tr>
+    <tr>
+      <th>387</th>
+      <td>22.59710</td>
+      <td>0.0</td>
+      <td>18.10</td>
+      <td>0.0</td>
+      <td>0.700</td>
+      <td>5.000</td>
+      <td>89.5</td>
+      <td>1.5184</td>
+      <td>24.0</td>
+      <td>666.0</td>
+      <td>20.2</td>
+      <td>396.90</td>
+      <td>31.99</td>
+      <td>7.4</td>
+    </tr>
+    <tr>
+      <th>458</th>
+      <td>7.75223</td>
+      <td>0.0</td>
+      <td>18.10</td>
+      <td>0.0</td>
+      <td>0.713</td>
+      <td>6.301</td>
+      <td>83.7</td>
+      <td>2.7831</td>
+      <td>24.0</td>
+      <td>666.0</td>
+      <td>20.2</td>
+      <td>272.21</td>
+      <td>16.23</td>
+      <td>14.9</td>
     </tr>
   </tbody>
 </table>
@@ -426,41 +434,41 @@ print(result.summary())
 
                                 OLS Regression Results                            
     ==============================================================================
-    Dep. Variable:                   MEDV   R-squared:                       0.670
-    Model:                            OLS   Adj. R-squared:                  0.659
-    Method:                 Least Squares   F-statistic:                     57.76
-    Date:                Fri, 26 Mar 2021   Prob (F-statistic):           1.27e-74
-    Time:                        10:35:57   Log-Likelihood:                -1091.2
-    No. Observations:                 354   AIC:                             2208.
-    Df Residuals:                     341   BIC:                             2259.
+    Dep. Variable:                   MEDV   R-squared:                       0.741
+    Model:                            OLS   Adj. R-squared:                  0.732
+    Method:                 Least Squares   F-statistic:                     81.45
+    Date:                Sun, 28 Mar 2021   Prob (F-statistic):           2.19e-92
+    Time:                        22:06:17   Log-Likelihood:                -1045.8
+    No. Observations:                 354   AIC:                             2118.
+    Df Residuals:                     341   BIC:                             2168.
     Df Model:                          12                                         
     Covariance Type:            nonrobust                                         
     ==============================================================================
                      coef    std err          t      P>|t|      [0.025      0.975]
     ------------------------------------------------------------------------------
-    Intercept     23.9519      6.785      3.530      0.000      10.606      37.297
-    CRIM          -0.1667      0.042     -3.963      0.000      -0.249      -0.084
-    ZN             0.0463      0.020      2.305      0.022       0.007       0.086
-    INDUS         -0.0329      0.083     -0.397      0.692      -0.196       0.130
-    CHAS           2.8091      1.275      2.203      0.028       0.302       5.317
-    NOX          -22.2469      5.271     -4.221      0.000     -32.614     -11.880
-    RM             6.0289      0.480     12.564      0.000       5.085       6.973
-    AGE           -0.0477      0.016     -2.961      0.003      -0.079      -0.016
-    DIS           -1.7593      0.280     -6.276      0.000      -2.311      -1.208
-    RAD            0.3049      0.096      3.182      0.002       0.116       0.493
-    TAX           -0.0131      0.005     -2.443      0.015      -0.024      -0.003
-    PTRATIO       -1.0293      0.179     -5.765      0.000      -1.380      -0.678
-    B              0.0130      0.004      3.578      0.000       0.006       0.020
+    Intercept     13.4511      5.837      2.304      0.022       1.970      24.932
+    CRIM          -0.1378      0.035     -3.914      0.000      -0.207      -0.069
+    ZN             0.0352      0.016      2.159      0.032       0.003       0.067
+    INDUS          0.0224      0.072      0.313      0.754      -0.118       0.163
+    CHAS           2.5666      1.073      2.392      0.017       0.456       4.677
+    NOX          -17.1829      4.465     -3.849      0.000     -25.965      -8.401
+    RM             6.9345      0.421     16.480      0.000       6.107       7.762
+    AGE           -0.0532      0.015     -3.621      0.000      -0.082      -0.024
+    DIS           -1.4068      0.235     -5.995      0.000      -1.868      -0.945
+    RAD            0.1955      0.080      2.444      0.015       0.038       0.353
+    TAX           -0.0094      0.005     -2.067      0.039      -0.018      -0.000
+    PTRATIO       -0.9937      0.156     -6.366      0.000      -1.301      -0.687
+    B              0.0114      0.003      3.420      0.001       0.005       0.018
     ==============================================================================
-    Omnibus:                      202.636   Durbin-Watson:                   2.055
-    Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1863.619
-    Skew:                           2.249   Prob(JB):                         0.00
-    Kurtosis:                      13.301   Cond. No.                     1.51e+04
+    Omnibus:                      193.130   Durbin-Watson:                   1.954
+    Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1764.139
+    Skew:                           2.112   Prob(JB):                         0.00
+    Kurtosis:                      13.088   Cond. No.                     1.47e+04
     ==============================================================================
     
     Notes:
     [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-    [2] The condition number is large, 1.51e+04. This might indicate that there are
+    [2] The condition number is large, 1.47e+04. This might indicate that there are
     strong multicollinearity or other numerical problems.
 
 
@@ -469,9 +477,13 @@ print(result.summary())
 _ = sm.qqplot(result.resid, fit=True, line="s")
 ```
 
+    /Users/mru/.local/share/virtualenvs/machine-learning-snippets-mLikUPnf/lib/python3.8/site-packages/statsmodels/graphics/gofplots.py:993: UserWarning: marker is redundantly defined by the 'marker' keyword argument and the fmt string "bo" (-> marker='o'). The keyword argument will take precedence.
+      ax.plot(x, y, fmt, **plot_style)
+
+
 
     
-![png](multiple_linear_regression_statsmodels_files/multiple_linear_regression_statsmodels_20_0.png)
+![png](multiple_linear_regression_statsmodels_files/multiple_linear_regression_statsmodels_20_1.png)
     
 
 
@@ -485,10 +497,10 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.7121848687609877
-    mse: 24.105840712507877
-    rmse: 4.909769924600121
-    mae: 3.374624766701121
+    r2 score: 0.5392209055855666
+    mse: 39.911360896930425
+    rmse: 6.317543897507197
+    mae: 3.93466494754723
 
 
 ### Model with a polynomial and the target variable log transformed
@@ -501,39 +513,39 @@ print(result.summary())
 
                                 OLS Regression Results                            
     ==============================================================================
-    Dep. Variable:           np.log(MEDV)   R-squared:                       0.685
-    Model:                            OLS   Adj. R-squared:                  0.676
-    Method:                 Least Squares   F-statistic:                     74.76
-    Date:                Fri, 26 Mar 2021   Prob (F-statistic):           5.97e-80
-    Time:                        10:35:57   Log-Likelihood:                 15.586
-    No. Observations:                 354   AIC:                            -9.171
-    Df Residuals:                     343   BIC:                             33.39
+    Dep. Variable:           np.log(MEDV)   R-squared:                       0.756
+    Model:                            OLS   Adj. R-squared:                  0.749
+    Method:                 Least Squares   F-statistic:                     106.5
+    Date:                Sun, 28 Mar 2021   Prob (F-statistic):           8.65e-99
+    Time:                        22:06:17   Log-Likelihood:                 68.323
+    No. Observations:                 354   AIC:                            -114.6
+    Df Residuals:                     343   BIC:                            -72.08
     Df Model:                          10                                         
     Covariance Type:            nonrobust                                         
     ===============================================================================
                       coef    std err          t      P>|t|      [0.025      0.975]
     -------------------------------------------------------------------------------
-    Intercept       3.3007      0.297     11.130      0.000       2.717       3.884
-    CRIM           -0.0120      0.002     -6.538      0.000      -0.016      -0.008
-    CHAS            0.1263      0.056      2.273      0.024       0.017       0.236
-    NOX            -1.0551      0.225     -4.684      0.000      -1.498      -0.612
-    RM              0.2236      0.021     10.898      0.000       0.183       0.264
-    DIS            -0.0527      0.010     -5.141      0.000      -0.073      -0.033
-    RAD             0.0121      0.004      2.968      0.003       0.004       0.020
-    TAX            -0.0006      0.000     -2.595      0.010      -0.001      -0.000
-    PTRATIO        -0.0458      0.007     -6.241      0.000      -0.060      -0.031
-    B               0.0006      0.000      3.642      0.000       0.000       0.001
-    pow(AGE, 2) -1.896e-05   5.97e-06     -3.175      0.002   -3.07e-05   -7.21e-06
+    Intercept       2.8466      0.250     11.375      0.000       2.354       3.339
+    CRIM           -0.0120      0.002     -7.963      0.000      -0.015      -0.009
+    CHAS            0.1151      0.046      2.515      0.012       0.025       0.205
+    NOX            -0.8012      0.187     -4.279      0.000      -1.169      -0.433
+    RM              0.2544      0.017     14.541      0.000       0.220       0.289
+    DIS            -0.0449      0.009     -5.190      0.000      -0.062      -0.028
+    RAD             0.0060      0.003      1.814      0.070      -0.001       0.012
+    TAX            -0.0002      0.000     -1.451      0.148      -0.001    8.86e-05
+    PTRATIO        -0.0424      0.006     -6.754      0.000      -0.055      -0.030
+    B               0.0005      0.000      3.782      0.000       0.000       0.001
+    pow(AGE, 2) -2.189e-05    5.3e-06     -4.132      0.000   -3.23e-05   -1.15e-05
     ==============================================================================
-    Omnibus:                       95.425   Durbin-Watson:                   2.106
-    Prob(Omnibus):                  0.000   Jarque-Bera (JB):              715.004
-    Skew:                           0.898   Prob(JB):                    5.48e-156
-    Kurtosis:                       9.727   Cond. No.                     1.79e+05
+    Omnibus:                      107.397   Durbin-Watson:                   2.062
+    Prob(Omnibus):                  0.000   Jarque-Bera (JB):              876.952
+    Skew:                           1.018   Prob(JB):                    3.73e-191
+    Kurtosis:                      10.437   Cond. No.                     1.71e+05
     ==============================================================================
     
     Notes:
     [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-    [2] The condition number is large, 1.79e+05. This might indicate that there are
+    [2] The condition number is large, 1.71e+05. This might indicate that there are
     strong multicollinearity or other numerical problems.
 
 
@@ -547,17 +559,17 @@ result.pvalues < 0.05
 
 
 
-    Intercept      True
-    CRIM           True
-    CHAS           True
-    NOX            True
-    RM             True
-    DIS            True
-    RAD            True
-    TAX            True
-    PTRATIO        True
-    B              True
-    pow(AGE, 2)    True
+    Intercept       True
+    CRIM            True
+    CHAS            True
+    NOX             True
+    RM              True
+    DIS             True
+    RAD            False
+    TAX            False
+    PTRATIO         True
+    B               True
+    pow(AGE, 2)     True
     dtype: bool
 
 
@@ -572,10 +584,10 @@ print("rmse: {}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
 print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 ```
 
-    r2 score: 0.7333871723546148
-    mse: 22.33005029118437
-    rmse: 4.725468261578356
-    mae: 3.0573533832621536
+    r2 score: 0.6023494787547354
+    mse: 34.443345318088106
+    rmse: 5.868845313866102
+    mae: 3.433559150305023
 
 
 
@@ -583,7 +595,11 @@ print("mae: {}".format(metrics.mean_absolute_error(y_test, predicted)))
 _ = sm.qqplot(result.resid, fit=True, line="q")
 ```
 
+    /Users/mru/.local/share/virtualenvs/machine-learning-snippets-mLikUPnf/lib/python3.8/site-packages/statsmodels/graphics/gofplots.py:993: UserWarning: marker is redundantly defined by the 'marker' keyword argument and the fmt string "bo" (-> marker='o'). The keyword argument will take precedence.
+      ax.plot(x, y, fmt, **plot_style)
+
+
 
     
-![png](multiple_linear_regression_statsmodels_files/multiple_linear_regression_statsmodels_27_0.png)
+![png](multiple_linear_regression_statsmodels_files/multiple_linear_regression_statsmodels_27_1.png)
     
