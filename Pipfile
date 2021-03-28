@@ -24,6 +24,8 @@ auto-sklearn = "*"
 jupyterlab-git = "*"
 nbdime = "*"
 tensorflow = "*"
+umap-learn = "*"
+numba = "*"
 
 [requires]
 python_version = "3.8"
