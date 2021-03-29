@@ -7,82 +7,35 @@
 ```python
 %matplotlib inline
 import matplotlib.pyplot as plt
-import mpl_toolkits.mplot3d.axes3d as p3
+import seaborn as sns
 
 import pandas as pd
 import numpy as np
 
+import umap
 
-from sklearn import datasets
-from sklearn import mixture
-from sklearn import manifold
+from sklearn import datasets, cluster, preprocessing, mixture
 ```
 
 
 ```python
-data, labels_true = datasets.make_blobs(n_samples=750, centers=[[1,1],[0,5],[2,8]], cluster_std=0.7,
-                            random_state=0)
-
-
-plt.scatter(data[:,0], data[:,1])
-
-df = pd.DataFrame(data, columns=['X', 'Y'])
+def get_color(i, n_clusters):
+    if i == -1:
+        return 'gray'
+    return plt.cm.jet(float(i) / n_clusters)
 ```
 
-
-    
-![png](clustering_gaussian_mixture_files/clustering_gaussian_mixture_2_0.png)
-    
-
+## High dimensional data 
 
 
 ```python
-gmm = mixture.GaussianMixture(n_components=2)
-gmm.fit(data)
-label = gmm.predict(data)
-df['label'] = label
+digits = datasets.load_digits()
 
-
-fig = plt.figure()
-fig.suptitle('GaussianMixture n=2', fontsize=14, fontweight='bold')
-ax = fig.add_subplot(111)
-
-clusters = list(set(label))
-
-for i in range(len(clusters)):
-    plt.scatter(df[df.label == clusters[i]].X, df[df.label == clusters[i]].Y, 
-                label=clusters[i], color=plt.cm.jet(float(i) / len(np.unique(label))))
-
-    
-_ = plt.legend(bbox_to_anchor=(1.25, 1))
-```
-
-
-    
-![png](clustering_gaussian_mixture_files/clustering_gaussian_mixture_3_0.png)
-    
-
-
-
-```python
-gmm = mixture.GaussianMixture(n_components=3)
-gmm.fit(data)
-label = gmm.predict(data)
-df['label'] = label
-
-
-fig = plt.figure()
-fig.suptitle('GaussianMixture n=3', fontsize=14, fontweight='bold')
-ax = fig.add_subplot(111)
-
-clusters = list(set(label))
-
-for i in range(len(clusters)):
-    plt.scatter(df[df.label == clusters[i]].X, df[df.label == clusters[i]].Y, 
-                label=clusters[i], color=plt.cm.jet(float(i) / len(np.unique(label))))
-
-    
-_ = plt.legend(bbox_to_anchor=(1.25, 1))
+fig, axes = plt.subplots(nrows=1, ncols=10, figsize=(10, 3))
+for ax, image, label in zip(axes, digits.images, digits.target):
+    ax.set_axis_off()
+    ax.imshow(image, cmap=plt.cm.gray_r)
+    ax.set_title('%i' % label)
 ```
 
 
@@ -93,94 +46,109 @@ _ = plt.legend(bbox_to_anchor=(1.25, 1))
 
 
 ```python
-gmm = mixture.GaussianMixture(n_components=4)
-gmm.fit(data)
-label = gmm.predict(data)
-df['label'] = label
+X = digits.data
+y = digits.target
+
+n_clusters=10
+
+gmm = mixture.GaussianMixture(n_components=n_clusters)
+label = gmm.fit_predict(X)
 
 
-fig = plt.figure()
-fig.suptitle('GaussianMixture n=4', fontsize=14, fontweight='bold')
-ax = fig.add_subplot(111)
-
-clusters = list(set(label))
-
-for i in range(len(clusters)):
-    plt.scatter(df[df.label == clusters[i]].X, df[df.label == clusters[i]].Y, 
-                label=clusters[i], color=plt.cm.jet(float(i) / len(np.unique(label))))
-
-    
-_ = plt.legend(bbox_to_anchor=(1.25, 1))
+predicted_clusters = np.unique(label)
+true_clusters = list(range(0, n_clusters))
 ```
 
 
-    
-![png](clustering_gaussian_mixture_files/clustering_gaussian_mixture_5_0.png)
-    
+```python
+embedding = umap.UMAP().fit_transform(X)
+```
+
+
+```python
+df = pd.DataFrame(embedding, columns=['X1', 'X2'])
+df['true_cluster'] = y
+df['predicted_cluster'] = label
+df.head()
+```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X1</th>
+      <th>X2</th>
+      <th>true_cluster</th>
+      <th>predicted_cluster</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.073664</td>
+      <td>10.940152</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-4.043107</td>
+      <td>12.226516</td>
+      <td>1</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7.671786</td>
+      <td>6.347104</td>
+      <td>2</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.497302</td>
+      <td>5.744385</td>
+      <td>3</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>6.683604</td>
+      <td>20.668491</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 
 
 
 ```python
-data, t = datasets.make_swiss_roll(n_samples=200, noise=0.1, random_state=0)
+fig, (ax1, ax2) = plt.subplots(2, 1, sharey=True, figsize=(10, 10))
 
-df = pd.DataFrame(data, columns=['X', 'Y', 'Z'])
-
-
-fig = plt.figure()
-ax = p3.Axes3D(fig)
-ax.view_init(7, -80)
-
-_ = ax.scatter(df.X, df.Y, df.Z, 'o')
-```
+fig.suptitle('Clusters in high dimensional data (features = {})'.format(np.shape(X)[1]), fontsize=14, fontweight='bold')
 
 
-    
-![png](clustering_gaussian_mixture_files/clustering_gaussian_mixture_6_0.png)
+ax1.set_title('True values')
+for i in true_clusters:
+    ax1.scatter(df[df.true_cluster == i].X1, df[df.true_cluster == i].X2, label=i, color=get_color(i, len(true_clusters)))
     
 
 
+ax2.set_title('Predicted cluste')
+for i in predicted_clusters:
+    ax2.scatter(df[df.predicted_cluster == i].X1, df[df.predicted_cluster == i].X2, label=i, color=get_color(i, len(predicted_clusters)))
 
-```python
-gmm = mixture.GaussianMixture(n_components=2)
-gmm.fit(data)
-label = gmm.predict(data)
+ax1.legend(bbox_to_anchor=(1.1, 1))
+ax2.legend(bbox_to_anchor=(1.1, 1))
 
-df['label'] = label
-
-fig = plt.figure()
-ax = p3.Axes3D(fig)
-ax.view_init(7, -80)
-fig.suptitle('GaussianMixture n=2', fontsize=14, fontweight='bold')
-
-for l in np.unique(label):
-    
-    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 
-               'o', color=plt.cm.jet(float(l) / len(np.unique(label))))
-```
-
-
-    
-![png](clustering_gaussian_mixture_files/clustering_gaussian_mixture_7_0.png)
-    
-
-
-
-```python
-gmm = mixture.GaussianMixture(n_components=3)
-gmm.fit(data)
-label = gmm.predict(data)
-
-df['label'] = label
-
-fig = plt.figure()
-ax = p3.Axes3D(fig)
-ax.view_init(7, -80)
-fig.suptitle('GaussianMixture n=3', fontsize=14, fontweight='bold')
-
-for l in np.unique(label):
-    
-    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 
-               'o', color=plt.cm.jet(float(l) / len(np.unique(label))))
+plt.show()
 ```
 
 
@@ -189,51 +157,113 @@ for l in np.unique(label):
     
 
 
+## Low dimensional data 
+
 
 ```python
-gmm = mixture.GaussianMixture(n_components=4)
-gmm.fit(data)
-label = gmm.predict(data)
+X, y = datasets.make_blobs(n_samples=750, centers=[[3,4],[-2,6],[3,12]], cluster_std=[1, 0.8, 1.5],
+                            random_state=0)
+```
 
-df['label'] = label
 
-fig = plt.figure()
-ax = p3.Axes3D(fig)
-ax.view_init(7, -80)
-fig.suptitle('GaussianMixture n=4', fontsize=14, fontweight='bold')
+```python
+n_clusters=3
 
-for l in np.unique(label):
+gmm = mixture.GaussianMixture(n_components=n_clusters)
+label = gmm.fit_predict(X)
+
+predicted_clusters = np.unique(label)
+true_clusters = list(range(0, n_clusters))
+```
+
+
+```python
+df = pd.DataFrame(X, columns=['X1', 'X2'])
+df['true_cluster'] = y
+df['predicted_cluster'] = label
+df.head()
+```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X1</th>
+      <th>X2</th>
+      <th>true_cluster</th>
+      <th>predicted_cluster</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2.600551</td>
+      <td>4.370056</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-2.309497</td>
+      <td>5.591766</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2.196590</td>
+      <td>3.310450</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.940436</td>
+      <td>10.398387</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4.230291</td>
+      <td>5.202380</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+fig, (ax1, ax2) = plt.subplots(2, 1, sharey=True, figsize=(10, 10))
+
+fig.suptitle('Clusters in low dimensional data (features = {})'.format(np.shape(X)[1]), fontsize=14, fontweight='bold')
+
+
+ax1.set_title('True values')
+for i in true_clusters:
+    ax1.scatter(df[df.true_cluster == i].X1, df[df.true_cluster == i].X2, label=i, color=get_color(i, len(true_clusters)))
     
-    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 
-               'o', color=plt.cm.jet(float(l) / len(np.unique(label))))
+
+
+ax2.set_title('Predicted cluster')
+for i in predicted_clusters:
+    ax2.scatter(df[df.predicted_cluster == i].X1, df[df.predicted_cluster == i].X2, label=i, color=get_color(i, len(predicted_clusters)))
+
+ax1.legend(bbox_to_anchor=(1.1, 1))
+ax2.legend(bbox_to_anchor=(1.1, 1))
+
+plt.show()
 ```
 
 
     
-![png](clustering_gaussian_mixture_files/clustering_gaussian_mixture_9_0.png)
-    
-
-
-
-```python
-gmm = mixture.GaussianMixture(n_components=5)
-gmm.fit(data)
-label = gmm.predict(data)
-
-df['label'] = label
-
-fig = plt.figure()
-ax = p3.Axes3D(fig)
-ax.view_init(7, -80)
-fig.suptitle('GaussianMixture n=5', fontsize=14, fontweight='bold')
-
-for l in np.unique(label):
-    
-    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 
-               'o', color=plt.cm.jet(float(l) / len(np.unique(label))))
-```
-
-
-    
-![png](clustering_gaussian_mixture_files/clustering_gaussian_mixture_10_0.png)
+![png](clustering_gaussian_mixture_files/clustering_gaussian_mixture_13_0.png)
     

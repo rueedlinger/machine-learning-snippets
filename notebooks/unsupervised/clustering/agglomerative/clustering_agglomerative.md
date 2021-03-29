@@ -7,131 +7,147 @@
 ```python
 %matplotlib inline
 import matplotlib.pyplot as plt
-import mpl_toolkits.mplot3d.axes3d as p3
+import seaborn as sns
 
 import pandas as pd
 import numpy as np
 
-from sklearn import datasets
-from sklearn import cluster
-from sklearn import manifold
+import umap
+
+from sklearn import datasets, cluster, preprocessing
 ```
 
 
 ```python
-data, labels_true = datasets.make_blobs(n_samples=750, centers=[[1,1],[0,5],[2,8]], cluster_std=0.7,
-                            random_state=0)
-
-
-plt.scatter(data[:,0], data[:,1])
-
-df = pd.DataFrame(data, columns=['X', 'Y'])
+def get_color(i, n_clusters):
+    if i == -1:
+        return 'gray'
+    return plt.cm.jet(float(i) / n_clusters)
 ```
 
-
-    
-![png](clustering_agglomerative_files/clustering_agglomerative_2_0.png)
-    
-
+## High dimensional data 
 
 
 ```python
-hclust = cluster.AgglomerativeClustering(n_clusters=2)
-label = hclust.fit_predict(df)
-df['label'] = label
+digits = datasets.load_digits()
 
-
-fig = plt.figure()
-fig.suptitle('Agglomerative n=2', fontsize=14, fontweight='bold')
-ax = fig.add_subplot(111)
-
-clusters = list(set(label))
-
-for i in range(len(clusters)):
-    plt.scatter(df[df.label == clusters[i]].X, df[df.label == clusters[i]].Y, 
-                label=i, color=plt.cm.jet(float(i) / len(np.unique(label))))
-
-
-_ = plt.legend(bbox_to_anchor=(1.25, 1))
+fig, axes = plt.subplots(nrows=1, ncols=10, figsize=(10, 3))
+for ax, image, label in zip(axes, digits.images, digits.target):
+    ax.set_axis_off()
+    ax.imshow(image, cmap=plt.cm.gray_r)
+    ax.set_title('%i' % label)
 ```
 
 
     
-![png](clustering_agglomerative_files/clustering_agglomerative_3_0.png)
-    
-
-
-Clustering with 3 clusters
-
-
-```python
-hclust = cluster.AgglomerativeClustering(n_clusters=3)
-label = hclust.fit_predict(df)
-df['label'] = label
-
-fig = plt.figure()
-fig.suptitle('Agglomerative n=3', fontsize=14, fontweight='bold')
-ax = fig.add_subplot(111)
-
-clusters = list(set(label))
-
-for i in range(len(clusters)):
-    plt.scatter(df[df.label == clusters[i]].X, df[df.label == clusters[i]].Y, 
-                label=i, color=plt.cm.jet(float(i) / len(np.unique(label))))
-
-_ = plt.legend(bbox_to_anchor=(1.25, 1))
-```
-
-
-    
-![png](clustering_agglomerative_files/clustering_agglomerative_5_0.png)
-    
-
-
-Clustering with 4 clusters
-
-
-```python
-hclust = cluster.AgglomerativeClustering(n_clusters=4)
-label = hclust.fit_predict(df)
-df['label'] = label
-
-fig = plt.figure()
-fig.suptitle('Agglomerative n=4', fontsize=14, fontweight='bold')
-ax = fig.add_subplot(111)
-
-clusters = list(set(label))
-
-for i in range(len(clusters)):
-    plt.scatter(df[df.label == clusters[i]].X, df[df.label == clusters[i]].Y, 
-                label=i, color=plt.cm.jet(float(i) / len(np.unique(label))))
-
-_ = plt.legend(bbox_to_anchor=(1.25, 1))
-```
-
-
-    
-![png](clustering_agglomerative_files/clustering_agglomerative_7_0.png)
+![png](clustering_agglomerative_files/clustering_agglomerative_4_0.png)
     
 
 
 
 ```python
-hclust = cluster.AgglomerativeClustering(n_clusters=5)
-label = hclust.fit_predict(df)
-df['label'] = label
+X = digits.data
+y = digits.target
 
-fig = plt.figure()
-fig.suptitle('Agglomerative n=5', fontsize=14, fontweight='bold')
-ax = fig.add_subplot(111)
+n_clusters=10
 
-clusters = list(set(label))
+hclust = cluster.AgglomerativeClustering(n_clusters=n_clusters)
+label = hclust.fit_predict(X)
 
-for i in range(len(clusters)):
-    plt.scatter(df[df.label == clusters[i]].X, df[df.label == clusters[i]].Y, 
-                label=i, color=plt.cm.jet(float(i) / len(np.unique(label))))
+predicted_clusters = np.unique(label)
+true_clusters = list(range(0, n_clusters))
+```
 
-_ = plt.legend(bbox_to_anchor=(1.25, 1))
+
+```python
+embedding = umap.UMAP().fit_transform(X)
+```
+
+
+```python
+df = pd.DataFrame(embedding, columns=['X1', 'X2'])
+df['true_cluster'] = y
+df['predicted_cluster'] = label
+df.head()
+```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X1</th>
+      <th>X2</th>
+      <th>true_cluster</th>
+      <th>predicted_cluster</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>14.255045</td>
+      <td>7.867714</td>
+      <td>0</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.475686</td>
+      <td>10.976616</td>
+      <td>1</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.245667</td>
+      <td>8.391595</td>
+      <td>2</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-6.939600</td>
+      <td>7.400111</td>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4.420443</td>
+      <td>18.329052</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+fig, (ax1, ax2) = plt.subplots(2, 1, sharey=True, figsize=(10, 10))
+
+fig.suptitle('Clusters in high dimensional data (features = {})'.format(np.shape(X)[1]), fontsize=14, fontweight='bold')
+
+
+ax1.set_title('True values')
+for i in true_clusters:
+    ax1.scatter(df[df.true_cluster == i].X1, df[df.true_cluster == i].X2, label=i, color=get_color(i, len(true_clusters)))
+    
+
+
+ax2.set_title('Predicted cluste')
+for i in predicted_clusters:
+    ax2.scatter(df[df.predicted_cluster == i].X1, df[df.predicted_cluster == i].X2, label=i, color=get_color(i, len(predicted_clusters)))
+
+ax1.legend(bbox_to_anchor=(1.1, 1))
+ax2.legend(bbox_to_anchor=(1.1, 1))
+
+plt.show()
 ```
 
 
@@ -140,71 +156,113 @@ _ = plt.legend(bbox_to_anchor=(1.25, 1))
     
 
 
+## Low dimensional data 
+
 
 ```python
-data, t = datasets.make_swiss_roll(n_samples=200, noise=0.1, random_state=0)
+X, y = datasets.make_blobs(n_samples=750, centers=[[3,4],[-2,6],[3,12]], cluster_std=[1, 0.8, 1.5],
+                            random_state=0)
+```
 
-df = pd.DataFrame(data, columns=['X', 'Y', 'Z'])
+
+```python
+n_clusters=3
+
+hclust = cluster.AgglomerativeClustering(n_clusters=n_clusters)
+label = hclust.fit_predict(X)
+
+predicted_clusters = np.unique(label)
+true_clusters = list(range(0, n_clusters))
+```
 
 
-fig = plt.figure()
-ax = p3.Axes3D(fig)
-ax.view_init(7, -80)
+```python
+df = pd.DataFrame(X, columns=['X1', 'X2'])
+df['true_cluster'] = y
+df['predicted_cluster'] = label
+df.head()
+```
 
-_ = ax.scatter(df.X, df.Y, df.Z, 'o')
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X1</th>
+      <th>X2</th>
+      <th>true_cluster</th>
+      <th>predicted_cluster</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2.600551</td>
+      <td>4.370056</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-2.309497</td>
+      <td>5.591766</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2.196590</td>
+      <td>3.310450</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.940436</td>
+      <td>10.398387</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4.230291</td>
+      <td>5.202380</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+fig, (ax1, ax2) = plt.subplots(2, 1, sharey=True, figsize=(10, 10))
+
+fig.suptitle('Clusters in low dimensional data (features = {})'.format(np.shape(X)[1]), fontsize=14, fontweight='bold')
+
+
+ax1.set_title('True values')
+for i in true_clusters:
+    ax1.scatter(df[df.true_cluster == i].X1, df[df.true_cluster == i].X2, label=i, color=get_color(i, len(true_clusters)))
+    
+
+
+ax2.set_title('Predicted cluster')
+for i in predicted_clusters:
+    ax2.scatter(df[df.predicted_cluster == i].X1, df[df.predicted_cluster == i].X2, label=i, color=get_color(i, len(predicted_clusters)))
+
+ax1.legend(bbox_to_anchor=(1.1, 1))
+ax2.legend(bbox_to_anchor=(1.1, 1))
+
+plt.show()
 ```
 
 
     
-![png](clustering_agglomerative_files/clustering_agglomerative_9_0.png)
-    
-
-
-
-```python
-hclust = cluster.AgglomerativeClustering(n_clusters=2)
-label = hclust.fit_predict(data)
-df['label'] = label
-
-fig = plt.figure()
-ax = p3.Axes3D(fig)
-ax.view_init(7, -80)
-
-fig.suptitle('AgglomerativeClustering n=2', fontsize=14, fontweight='bold')
-
-for i, l in enumerate(np.unique(label)):
-    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 'o', 
-               color=plt.cm.jet(float(i) / len(np.unique(label))), label=l)
-    
-_ = plt.legend(bbox_to_anchor=(1.25, 1))
-```
-
-
-    
-![png](clustering_agglomerative_files/clustering_agglomerative_10_0.png)
-    
-
-
-
-```python
-hclust = cluster.AgglomerativeClustering(n_clusters=5)
-label = hclust.fit_predict(data)
-df['label'] = label
-
-fig = plt.figure()
-ax = p3.Axes3D(fig)
-ax.view_init(7, -80)
-
-fig.suptitle('AgglomerativeClustering n=5', fontsize=14, fontweight='bold')
-
-for i, l in enumerate(np.unique(label)):
-    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 'o', 
-               color=plt.cm.jet(float(i) / len(np.unique(label))), label=l)
-    
-_ = plt.legend(bbox_to_anchor=(1.25, 1))
-```
-
-
-    
-![png](clustering_agglomerative_files/clustering_agglomerative_11_0.png)
+![png](clustering_agglomerative_files/clustering_agglomerative_13_0.png)
     

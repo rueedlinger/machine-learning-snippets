@@ -7,135 +7,148 @@
 ```python
 %matplotlib inline
 import matplotlib.pyplot as plt
-import mpl_toolkits.mplot3d.axes3d as p3
+import seaborn as sns
 
 import pandas as pd
 import numpy as np
 
-from sklearn import datasets
-from sklearn import cluster
+import umap
+
+from sklearn import datasets, cluster
 ```
 
 
 ```python
-data, labels_true = datasets.make_blobs(n_samples=750, centers=[[1,1],[0,5],[2,8]], cluster_std=0.7,
-                            random_state=0)
-
-
-plt.scatter(data[:,0], data[:,1])
-
-df = pd.DataFrame(data, columns=['X', 'Y'])
-
+def get_color(i, n_clusters):
+    if i == -1:
+        return 'gray'
+    return plt.cm.jet(float(i) / n_clusters)
 ```
 
-
-    
-![png](clustering_kmeans_files/clustering_kmeans_2_0.png)
-    
-
+## High dimensional data 
 
 
 ```python
-kmeans = cluster.KMeans(n_clusters=2)
-label = kmeans.fit_predict(data)
-df['label'] = label
+digits = datasets.load_digits()
 
-
-fig = plt.figure()
-fig.suptitle('K-means n=2', fontsize=14, fontweight='bold')
-ax = fig.add_subplot(111)
-
-
-for i in range(kmeans.n_clusters):
-    plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(float(i) / len(np.unique(label))))
-
-for i in kmeans.cluster_centers_:
-    plt.scatter(i[0], i[1], color='black', marker='+', s=100)
-    
-_ = plt.legend(bbox_to_anchor=(1.25, 1))
+fig, axes = plt.subplots(nrows=1, ncols=10, figsize=(10, 3))
+for ax, image, label in zip(axes, digits.images, digits.target):
+    ax.set_axis_off()
+    ax.imshow(image, cmap=plt.cm.gray_r)
+    ax.set_title('%i' % label)
 ```
 
 
     
-![png](clustering_kmeans_files/clustering_kmeans_3_0.png)
-    
-
-
-Clustering with 3 clusters
-
-
-```python
-kmeans = cluster.KMeans(n_clusters=3)
-label = kmeans.fit_predict(data)
-df['label'] = label
-
-fig = plt.figure()
-fig.suptitle('K-means n=3', fontsize=14, fontweight='bold')
-ax = fig.add_subplot(111)
-
-for i in range(kmeans.n_clusters):
-    plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(float(i) / len(np.unique(label))))
-
-for i in kmeans.cluster_centers_:
-    plt.scatter(i[0], i[1], color='black', marker='+', s=100)
-    
-_ = plt.legend(bbox_to_anchor=(1.25, 1))
-```
-
-
-    
-![png](clustering_kmeans_files/clustering_kmeans_5_0.png)
-    
-
-
-Clustering with 4 clusters
-
-
-```python
-kmeans = cluster.KMeans(n_clusters=4)
-label = kmeans.fit_predict(data)
-df['label'] = label
-
-
-fig = plt.figure()
-fig.suptitle('K-means n=4', fontsize=14, fontweight='bold')
-ax = fig.add_subplot(111)
-
-
-for i in range(kmeans.n_clusters):
-    plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(float(i) / len(np.unique(label))))
-    
-for i in kmeans.cluster_centers_:
-    plt.scatter(i[0], i[1], color='black', marker='+', s=100)
-
-_ = plt.legend(bbox_to_anchor=(1.25, 1))
-```
-
-
-    
-![png](clustering_kmeans_files/clustering_kmeans_7_0.png)
+![png](clustering_kmeans_files/clustering_kmeans_4_0.png)
     
 
 
 
 ```python
-kmeans = cluster.KMeans(n_clusters=5)
-label = kmeans.fit_predict(data)
-df['label'] = label
+X = digits.data
+y = digits.target
+
+n_clusters=10
+
+kmeans = cluster.KMeans(n_clusters=n_clusters)
+label = kmeans.fit_predict(X)
+
+predicted_clusters = np.unique(label)
+true_clusters = list(range(0, n_clusters))
+
+```
 
 
-fig = plt.figure()
-fig.suptitle('K-means n=5', fontsize=14, fontweight='bold')
-ax = fig.add_subplot(111)
+```python
+embedding = umap.UMAP().fit_transform(X)
+```
 
 
-for i in range(kmeans.n_clusters):
-    plt.scatter(df[df.label == i].X, df[df.label == i].Y, label=i, color=plt.cm.jet(float(i) / len(np.unique(label))))
+```python
+df = pd.DataFrame(embedding, columns=['X1', 'X2'])
+df['true_cluster'] = y
+df['predicted_cluster'] = label
+df.head()
+```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X1</th>
+      <th>X2</th>
+      <th>true_cluster</th>
+      <th>predicted_cluster</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>14.694855</td>
+      <td>8.324355</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-3.138446</td>
+      <td>10.727077</td>
+      <td>1</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.499988</td>
+      <td>10.620826</td>
+      <td>2</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3.153067</td>
+      <td>7.753511</td>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.230979</td>
+      <td>16.669333</td>
+      <td>4</td>
+      <td>7</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+fig, (ax1, ax2) = plt.subplots(2, 1, sharey=True, figsize=(10, 10))
+
+fig.suptitle('Clusters in high dimensional data (features = {})'.format(np.shape(X)[1]), fontsize=14, fontweight='bold')
+
+
+ax1.set_title('True values')
+for i in true_clusters:
+    ax1.scatter(df[df.true_cluster == i].X1, df[df.true_cluster == i].X2, label=i, color=get_color(i, len(true_clusters)))
     
-for i in kmeans.cluster_centers_:
-    plt.scatter(i[0], i[1], color='black', marker='+', s=100)
 
-_ = plt.legend(bbox_to_anchor=(1.25, 1))
+
+ax2.set_title('Predicted cluster')
+for i in predicted_clusters:
+    ax2.scatter(df[df.predicted_cluster == i].X1, df[df.predicted_cluster == i].X2, label=i, color=get_color(i, len(predicted_clusters)))
+
+ax1.legend(bbox_to_anchor=(1.1, 1))
+ax2.legend(bbox_to_anchor=(1.1, 1))
+
+plt.show()
 ```
 
 
@@ -144,120 +157,110 @@ _ = plt.legend(bbox_to_anchor=(1.25, 1))
     
 
 
+## Low dimensional data 
+
 
 ```python
-data, t = datasets.make_swiss_roll(n_samples=200, noise=0.1, random_state=0)
-df = pd.DataFrame(data, columns=['X', 'Y', 'Z'])
-
-fig = plt.figure()
-ax = p3.Axes3D(fig)
-ax.view_init(7, -80)
-
-_ = ax.scatter(df.X, df.Y, df.Z, 'o')
+X, y = datasets.make_blobs(n_samples=750, centers=[[3,4],[-2,6],[3,12]], cluster_std=[1, 0.8, 1.5],
+                            random_state=0)
 ```
 
 
-    
-![png](clustering_kmeans_files/clustering_kmeans_9_0.png)
-    
-
-
-
 ```python
+n_clusters=3
 
-kmeans = cluster.KMeans(n_clusters=2)
-label = kmeans.fit_predict(data, )
+kmeans = cluster.KMeans(n_clusters=n_clusters)
+label = kmeans.fit_predict(X)
 
-df['label'] = label
-
-fig = plt.figure()
-ax = p3.Axes3D(fig)
-ax.view_init(7, -80)
-fig.suptitle('K-means n=2', fontsize=14, fontweight='bold')
-
-for l in np.unique(label):
-    
-    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 
-               'o', color=plt.cm.jet(float(l) / len(np.unique(label))))
-
+predicted_clusters = np.unique(label)
+true_clusters = list(range(0, n_clusters))
 ```
 
 
-    
-![png](clustering_kmeans_files/clustering_kmeans_10_0.png)
-    
-
-
-
 ```python
-
-kmeans = cluster.KMeans(n_clusters=3)
-label = kmeans.fit_predict(data, )
-
-df['label'] = label
-
-fig = plt.figure()
-ax = p3.Axes3D(fig)
-ax.view_init(7, -80)
-fig.suptitle('K-means n=3', fontsize=14, fontweight='bold')
-
-for l in np.unique(label):
-    
-    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 
-               'o', color=plt.cm.jet(float(l) / len(np.unique(label))))
-
+df = pd.DataFrame(X, columns=['X1', 'X2'])
+df['true_cluster'] = y
+df['predicted_cluster'] = label
+df.head()
 ```
 
 
-    
-![png](clustering_kmeans_files/clustering_kmeans_11_0.png)
-    
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X1</th>
+      <th>X2</th>
+      <th>true_cluster</th>
+      <th>predicted_cluster</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2.600551</td>
+      <td>4.370056</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-2.309497</td>
+      <td>5.591766</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2.196590</td>
+      <td>3.310450</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.940436</td>
+      <td>10.398387</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4.230291</td>
+      <td>5.202380</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 
 
 
 ```python
+fig, (ax1, ax2) = plt.subplots(2, 1, sharey=True, figsize=(10, 10))
 
-kmeans = cluster.KMeans(n_clusters=4)
-label = kmeans.fit_predict(data, )
-
-df['label'] = label
-
-fig = plt.figure()
-ax = p3.Axes3D(fig)
-ax.view_init(7, -80)
-fig.suptitle('K-means n=4', fontsize=14, fontweight='bold')
-
-for l in np.unique(label):
-    
-    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 
-               'o', color=plt.cm.jet(float(l) / len(np.unique(label))))
-
-```
+fig.suptitle('Clusters in low dimensional data (features = {})'.format(np.shape(X)[1]), fontsize=14, fontweight='bold')
 
 
-    
-![png](clustering_kmeans_files/clustering_kmeans_12_0.png)
+ax1.set_title('True values')
+for i in true_clusters:
+    ax1.scatter(df[df.true_cluster == i].X1, df[df.true_cluster == i].X2, label=i, color=get_color(i, len(true_clusters)))
     
 
 
+ax2.set_title('Predicted cluster')
+for i in predicted_clusters:
+    ax2.scatter(df[df.predicted_cluster == i].X1, df[df.predicted_cluster == i].X2, label=i, color=get_color(i, len(predicted_clusters)))
 
-```python
+ax1.legend(bbox_to_anchor=(1.1, 1))
+ax2.legend(bbox_to_anchor=(1.1, 1))
 
-kmeans = cluster.KMeans(n_clusters=5)
-label = kmeans.fit_predict(data, )
-
-df['label'] = label
-
-fig = plt.figure()
-ax = p3.Axes3D(fig)
-ax.view_init(7, -80)
-fig.suptitle('K-means n=5', fontsize=14, fontweight='bold')
-
-for l in np.unique(label):
-    
-    ax.scatter(df[df.label == l].X, df[df.label == l].Y, df[df.label == l].Z, 
-               'o', color=plt.cm.jet(float(l) / len(np.unique(label))))
-
+plt.show()
 ```
 
 
