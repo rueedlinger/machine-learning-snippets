@@ -195,15 +195,15 @@ confusion_matrix
   <tbody>
     <tr>
       <th>0</th>
-      <td>29</td>
-      <td>1</td>
+      <td>30</td>
+      <td>0</td>
       <td>0</td>
     </tr>
     <tr>
       <th>1</th>
       <td>0</td>
-      <td>35</td>
-      <td>0</td>
+      <td>34</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2</th>
