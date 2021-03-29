@@ -125,8 +125,8 @@ history = autoencoder.fit(X_train, X_train,
 
 ```
 
-    CPU times: user 7.25 s, sys: 1.17 s, total: 8.42 s
-    Wall time: 6.21 s
+    CPU times: user 8.06 s, sys: 1.22 s, total: 9.28 s
+    Wall time: 7.14 s
 
 
 
@@ -152,32 +152,32 @@ hist.tail()
   <tbody>
     <tr>
       <th>95</th>
-      <td>0.025492</td>
-      <td>0.025646</td>
+      <td>0.029601</td>
+      <td>0.030430</td>
       <td>95</td>
     </tr>
     <tr>
       <th>96</th>
-      <td>0.025467</td>
-      <td>0.025554</td>
+      <td>0.029524</td>
+      <td>0.030292</td>
       <td>96</td>
     </tr>
     <tr>
       <th>97</th>
-      <td>0.025435</td>
-      <td>0.025547</td>
+      <td>0.029474</td>
+      <td>0.030113</td>
       <td>97</td>
     </tr>
     <tr>
       <th>98</th>
-      <td>0.025344</td>
-      <td>0.025525</td>
+      <td>0.029410</td>
+      <td>0.030165</td>
       <td>98</td>
     </tr>
     <tr>
       <th>99</th>
-      <td>0.025311</td>
-      <td>0.025540</td>
+      <td>0.029324</td>
+      <td>0.030212</td>
       <td>99</td>
     </tr>
   </tbody>
@@ -352,43 +352,43 @@ pd.DataFrame(reconstruction_error_flipped_images, columns=['reconstruction_error
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.298801</td>
+      <td>0.301647</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.287393</td>
+      <td>0.322635</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.314767</td>
+      <td>0.349430</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.352347</td>
+      <td>0.339241</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.245026</td>
+      <td>0.247650</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>0.341497</td>
+      <td>0.326075</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.290696</td>
+      <td>0.320290</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>0.309179</td>
+      <td>0.310454</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>0.345891</td>
+      <td>0.348657</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>0.308955</td>
+      <td>0.328239</td>
     </tr>
   </tbody>
 </table>

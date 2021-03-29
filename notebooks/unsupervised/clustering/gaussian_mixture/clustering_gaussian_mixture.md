@@ -89,38 +89,38 @@ df.head()
   <tbody>
     <tr>
       <th>0</th>
-      <td>17.023203</td>
-      <td>7.185099</td>
+      <td>18.073664</td>
+      <td>10.940152</td>
       <td>0</td>
-      <td>8</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2.255033</td>
-      <td>10.159727</td>
+      <td>-4.043107</td>
+      <td>12.226516</td>
       <td>1</td>
-      <td>2</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1.212472</td>
-      <td>7.994164</td>
+      <td>7.671786</td>
+      <td>6.347104</td>
       <td>2</td>
-      <td>2</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>-4.292410</td>
-      <td>9.665708</td>
+      <td>1.497302</td>
+      <td>5.744385</td>
       <td>3</td>
-      <td>3</td>
+      <td>8</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>7.477534</td>
-      <td>16.048000</td>
+      <td>6.683604</td>
+      <td>20.668491</td>
       <td>4</td>
-      <td>0</td>
+      <td>5</td>
     </tr>
   </tbody>
 </table>
@@ -204,35 +204,35 @@ df.head()
       <td>2.600551</td>
       <td>4.370056</td>
       <td>0</td>
-      <td>2</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>1</th>
       <td>-2.309497</td>
       <td>5.591766</td>
       <td>1</td>
-      <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>2</th>
       <td>2.196590</td>
       <td>3.310450</td>
       <td>0</td>
-      <td>2</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>3</th>
       <td>0.940436</td>
       <td>10.398387</td>
       <td>2</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>4</th>
       <td>4.230291</td>
       <td>5.202380</td>
       <td>0</td>
-      <td>2</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>

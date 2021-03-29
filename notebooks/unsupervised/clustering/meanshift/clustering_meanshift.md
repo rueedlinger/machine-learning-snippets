@@ -88,36 +88,36 @@ df.head()
   <tbody>
     <tr>
       <th>0</th>
-      <td>18.320379</td>
-      <td>9.849404</td>
+      <td>18.404015</td>
+      <td>6.346920</td>
       <td>0</td>
       <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-4.998606</td>
-      <td>10.265591</td>
+      <td>0.506613</td>
+      <td>13.250870</td>
       <td>1</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>-2.579588</td>
-      <td>9.908587</td>
+      <td>0.779808</td>
+      <td>8.735795</td>
       <td>2</td>
       <td>0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>1.630815</td>
-      <td>6.830447</td>
+      <td>3.388347</td>
+      <td>8.942648</td>
       <td>3</td>
       <td>0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>4.773311</td>
-      <td>16.844614</td>
+      <td>4.497319</td>
+      <td>19.134645</td>
       <td>4</td>
       <td>0</td>
     </tr>
@@ -140,7 +140,7 @@ for i in true_clusters:
     
 
 
-ax2.set_title('Predicted cluster = {}'.format(len(predicted_clusters)))
+ax2.set_title('Predicted cluste')
 for i in predicted_clusters:
     ax2.scatter(df[df.predicted_cluster == i].X1, df[df.predicted_cluster == i].X2, label=i, color=get_color(i, len(predicted_clusters)))
 
@@ -243,7 +243,7 @@ df.head()
 ```python
 fig, (ax1, ax2) = plt.subplots(2, 1, sharey=True, figsize=(10, 10))
 
-fig.suptitle('Clusters in low dimensional data (features = {})'.format(np.shape(X)[1]), fontsize=14, fontweight='bold')
+fig.suptitle('Clusters in low dimensional', fontsize=14, fontweight='bold')
 
 
 ax1.set_title('True values')

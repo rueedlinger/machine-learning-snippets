@@ -137,8 +137,8 @@ model.summary()
 history = model.fit(X_train, y_train, epochs=100, validation_split = 0.2, verbose=0)
 ```
 
-    CPU times: user 6.55 s, sys: 828 ms, total: 7.38 s
-    Wall time: 5.76 s
+    CPU times: user 7.15 s, sys: 879 ms, total: 8.03 s
+    Wall time: 6.43 s
 
 
 
@@ -166,42 +166,42 @@ hist.tail()
   <tbody>
     <tr>
       <th>95</th>
-      <td>0.008051</td>
+      <td>0.012243</td>
       <td>1.0</td>
-      <td>0.126205</td>
-      <td>0.977778</td>
+      <td>0.148276</td>
+      <td>0.961111</td>
       <td>95</td>
     </tr>
     <tr>
       <th>96</th>
-      <td>0.007862</td>
+      <td>0.012108</td>
       <td>1.0</td>
-      <td>0.123847</td>
-      <td>0.977778</td>
+      <td>0.148234</td>
+      <td>0.961111</td>
       <td>96</td>
     </tr>
     <tr>
       <th>97</th>
-      <td>0.007734</td>
+      <td>0.012138</td>
       <td>1.0</td>
-      <td>0.129429</td>
-      <td>0.972222</td>
+      <td>0.146514</td>
+      <td>0.961111</td>
       <td>97</td>
     </tr>
     <tr>
       <th>98</th>
-      <td>0.007502</td>
+      <td>0.011705</td>
       <td>1.0</td>
-      <td>0.121240</td>
-      <td>0.977778</td>
+      <td>0.151071</td>
+      <td>0.961111</td>
       <td>98</td>
     </tr>
     <tr>
       <th>99</th>
-      <td>0.007251</td>
+      <td>0.011040</td>
       <td>1.0</td>
-      <td>0.125040</td>
-      <td>0.977778</td>
+      <td>0.147597</td>
+      <td>0.961111</td>
       <td>99</td>
     </tr>
   </tbody>
@@ -237,8 +237,8 @@ print('Test loss:', test_loss)
 print('Test accuracy:', test_acc)
 ```
 
-    Test loss: 0.12443657219409943
-    Test accuracy: 0.9699666500091553
+    Test loss: 0.08531661331653595
+    Test accuracy: 0.972191333770752
 
 
 
@@ -279,9 +279,9 @@ confusion_matrix
   <tbody>
     <tr>
       <th>0</th>
-      <td>86</td>
+      <td>91</td>
       <td>0</td>
-      <td>0</td>
+      <td>1</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -293,26 +293,26 @@ confusion_matrix
     <tr>
       <th>1</th>
       <td>0</td>
-      <td>95</td>
+      <td>80</td>
       <td>0</td>
       <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2</th>
       <td>0</td>
       <td>1</td>
-      <td>83</td>
+      <td>93</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>1</td>
+      <td>0</td>
       <td>0</td>
       <td>0</td>
     </tr>
@@ -320,10 +320,10 @@ confusion_matrix
       <th>3</th>
       <td>0</td>
       <td>0</td>
+      <td>1</td>
+      <td>89</td>
       <td>0</td>
-      <td>75</td>
-      <td>0</td>
-      <td>5</td>
+      <td>1</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -335,35 +335,35 @@ confusion_matrix
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>93</td>
+      <td>85</td>
       <td>0</td>
       <td>0</td>
-      <td>2</td>
       <td>0</td>
-      <td>3</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>5</th>
       <td>0</td>
       <td>0</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
-      <td>0</td>
-      <td>84</td>
-      <td>0</td>
+      <td>83</td>
+      <td>1</td>
       <td>0</td>
       <td>0</td>
       <td>1</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>2</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>1</td>
-      <td>95</td>
+      <td>0</td>
+      <td>0</td>
+      <td>87</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -374,38 +374,38 @@ confusion_matrix
       <td>0</td>
       <td>0</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>95</td>
+      <td>85</td>
       <td>1</td>
       <td>1</td>
     </tr>
     <tr>
       <th>8</th>
       <td>0</td>
-      <td>4</td>
+      <td>3</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>2</td>
       <td>0</td>
       <td>0</td>
-      <td>73</td>
+      <td>0</td>
+      <td>90</td>
       <td>0</td>
     </tr>
     <tr>
       <th>9</th>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2</td>
+      <td>1</td>
       <td>0</td>
       <td>1</td>
       <td>0</td>
-      <td>93</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>91</td>
     </tr>
   </tbody>
 </table>
@@ -432,7 +432,7 @@ print("recall: {:.3f}".format(metrics.recall_score(y_test, predicted, average='w
 print("f1 score: {:.3f}".format(metrics.f1_score(y_test, predicted, average='weighted')))
 ```
 
-    accuracy: 0.970
-    precision: 0.971
-    recall: 0.970
-    f1 score: 0.970
+    accuracy: 0.972
+    precision: 0.972
+    recall: 0.972
+    f1 score: 0.972
