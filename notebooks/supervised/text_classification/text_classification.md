@@ -197,7 +197,7 @@ print('------------------')
 
     English sample:
     ------------------
-    Star which led the Wise Men to poor abode Were there no poor homes to which its light would have
+    little crutch was heard upon the floor and back came Tiny Tim before another word was spoken escorted by his
     ------------------
 
 
@@ -321,12 +321,12 @@ for scoring in ['f1_weighted', 'accuracy']:
 ```
 
     f1_weighted
-    scores: [1. 1. 1. 1. 1.]
-    f1_weighted: 1.000000 (+/- 0.0000)
+    scores: [1.         1.         0.99839742 1.         1.        ]
+    f1_weighted: 0.999679 (+/- 0.0013)
     
     accuracy
-    scores: [1. 1. 1. 1. 1.]
-    accuracy: 1.000000 (+/- 0.0000)
+    scores: [1.         1.         0.99839744 1.         1.        ]
+    accuracy: 0.999679 (+/- 0.0013)
     
 
 
@@ -345,10 +345,10 @@ print(metrics.classification_report(y_test, predicted, digits=4))
 
                   precision    recall  f1-score   support
     
-               0     1.0000    0.9981    0.9990       519
-               1     0.9981    1.0000    0.9991       539
-               2     1.0000    1.0000    1.0000       493
-               3     1.0000    1.0000    1.0000       529
+               0     1.0000    0.9981    0.9990       517
+               1     0.9981    1.0000    0.9990       519
+               2     1.0000    1.0000    1.0000       525
+               3     1.0000    1.0000    1.0000       519
     
         accuracy                         0.9995      2080
        macro avg     0.9995    0.9995    0.9995      2080
@@ -376,10 +376,10 @@ def show_top10(classifier, vectorizer, categories):
 show_top10(text_clf.named_steps['clf'], text_clf.named_steps['vect'], data.labels)
 ```
 
-    de: ein das ich es sie zu er die der und
+    de: ein ich das es zu sie er die der und
     en: was that in his he it of to and the
-    fr: vous une que les un il la et le de
-    nl: op te zijn dat van hij het de een en
+    fr: qu que une les un il la et le de
+    nl: ik te zijn dat van hij de het een en
 
 
 Let's see which and how many features our model has.
@@ -393,9 +393,9 @@ print('first features: %s'% feature_names[0:10])
 print('last features: %s' % feature_names[-10:])
 ```
 
-    number of features: 829
-    first features: ['aan' 'aber' 'about' 'achter' 'after' 'again' 'ah' 'ai' 'ainsi' 'air']
-    last features: ['zum' 'zurück' 'zwei' 'écria' 'étaient' 'était' 'été' 'één' 'être' 'über']
+    number of features: 800
+    first features: ['aan' 'aber' 'about' 'after' 'again' 'ah' 'ai' 'air' 'al' 'all']
+    last features: ['zu' 'zurück' 'zwei' 'écria' 'étaient' 'était' 'été' 'één' 'être' 'über']
 
 
 ### New data
@@ -420,11 +420,11 @@ for i, p in enumerate(predicted):
     
 ```
 
-    Hallo mein Name ist Hugo.  -->  de , prob: 0.8615749749898942
-    Hi my name is Hugo.  -->  en , prob: 0.8373592565630447
-    Bonjour mon nom est Hugo.  -->  fr , prob: 0.9464744213806605
-    Hallo mijn naam is Hugo.  -->  nl , prob: 0.7191400209445039
-    Eins, zwei und drei.  -->  de , prob: 0.9371364216546175
-    One, two and three.  -->  en , prob: 0.9745142891826206
-    Un, deux et trois.  -->  fr , prob: 0.9875988525487834
-    Een, twee en drie.  -->  nl , prob: 0.9677179593809587
+    Hallo mein Name ist Hugo.  -->  de , prob: 0.7796210816857256
+    Hi my name is Hugo.  -->  en , prob: 0.8543270254884647
+    Bonjour mon nom est Hugo.  -->  fr , prob: 0.9444131155987668
+    Hallo mijn naam is Hugo.  -->  nl , prob: 0.8469677320165346
+    Eins, zwei und drei.  -->  de , prob: 0.9503095392082924
+    One, two and three.  -->  en , prob: 0.9685119763393646
+    Un, deux et trois.  -->  fr , prob: 0.9877044252659507
+    Een, twee en drie.  -->  nl , prob: 0.9711632752200153

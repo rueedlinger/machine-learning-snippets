@@ -193,15 +193,15 @@ confusion_matrix
   <tbody>
     <tr>
       <th>0</th>
-      <td>29</td>
+      <td>30</td>
       <td>0</td>
       <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0</td>
+      <td>1</td>
       <td>33</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2</th>
@@ -234,7 +234,7 @@ print("recall: {:.3f}".format(metrics.recall_score(y_test, predicted, average='w
 print("f1 score: {:.3f}".format(metrics.f1_score(y_test, predicted, average='weighted')))
 ```
 
-    accuracy: 0.966
-    precision: 0.970
-    recall: 0.966
-    f1 score: 0.967
+    accuracy: 0.978
+    precision: 0.978
+    recall: 0.978
+    f1 score: 0.977
