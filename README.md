@@ -158,3 +158,7 @@ The following machine learning snippets are available as Jupyter Notebook.
 ## Autoencoder
 
 - [Anomaly detection with an Autoencoder](notebooks/unsupervised/neural_net/anomaly_detection_with_autoencoder.md) (tensorflow / keras)
+
+## Transfer learning & pre-trained models
+
+- [Pre-trained model ResNet](notebooks/transfer/pretrained_resnet.md) (tensorflow / keras)
