@@ -194,21 +194,21 @@ confusion_matrix
   <tbody>
     <tr>
       <th>0</th>
-      <td>29</td>
-      <td>0</td>
+      <td>28</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0</td>
-      <td>36</td>
-      <td>0</td>
+      <td>1</td>
+      <td>33</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>2</th>
       <td>0</td>
-      <td>5</td>
-      <td>19</td>
+      <td>1</td>
+      <td>23</td>
     </tr>
   </tbody>
 </table>
@@ -236,6 +236,6 @@ print("f1 score: {:.3f}".format(metrics.f1_score(y_test, predicted, average='wei
 ```
 
     accuracy: 0.944
-    precision: 0.951
+    precision: 0.944
     recall: 0.944
-    f1 score: 0.942
+    f1 score: 0.944
