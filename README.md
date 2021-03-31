@@ -162,3 +162,4 @@ The following machine learning snippets are available as Jupyter Notebook.
 ## Transfer learning & pre-trained models
 
 - [Pre-trained model ResNet](notebooks/transfer/pretrained_resnet.md) (tensorflow / keras)
+- [Example style transfer with a neural net](notebooks/transfer/example_style_transfer.md) (tensorflow / keras)
