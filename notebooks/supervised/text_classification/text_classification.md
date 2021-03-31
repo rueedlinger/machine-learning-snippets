@@ -197,7 +197,7 @@ print('------------------')
 
     English sample:
     ------------------
-    little crutch was heard upon the floor and back came Tiny Tim before another word was spoken escorted by his
+    and the Christmas Time be praised for this say it on my knees old Jacob on my knees He was
     ------------------
 
 
@@ -321,12 +321,12 @@ for scoring in ['f1_weighted', 'accuracy']:
 ```
 
     f1_weighted
-    scores: [1.         1.         0.99839742 1.         1.        ]
-    f1_weighted: 0.999679 (+/- 0.0013)
+    scores: [1.         0.99839747 1.         1.         0.99839735]
+    f1_weighted: 0.999359 (+/- 0.0016)
     
     accuracy
-    scores: [1.         1.         0.99839744 1.         1.        ]
-    accuracy: 0.999679 (+/- 0.0013)
+    scores: [1.         0.99839744 1.         1.         0.99839744]
+    accuracy: 0.999359 (+/- 0.0016)
     
 
 
@@ -345,14 +345,14 @@ print(metrics.classification_report(y_test, predicted, digits=4))
 
                   precision    recall  f1-score   support
     
-               0     1.0000    0.9981    0.9990       517
-               1     0.9981    1.0000    0.9990       519
+               0     1.0000    1.0000    1.0000       531
+               1     1.0000    1.0000    1.0000       519
                2     1.0000    1.0000    1.0000       525
-               3     1.0000    1.0000    1.0000       519
+               3     1.0000    1.0000    1.0000       505
     
-        accuracy                         0.9995      2080
-       macro avg     0.9995    0.9995    0.9995      2080
-    weighted avg     0.9995    0.9995    0.9995      2080
+        accuracy                         1.0000      2080
+       macro avg     1.0000    1.0000    1.0000      2080
+    weighted avg     1.0000    1.0000    1.0000      2080
     
 
 
@@ -376,10 +376,10 @@ def show_top10(classifier, vectorizer, categories):
 show_top10(text_clf.named_steps['clf'], text_clf.named_steps['vect'], data.labels)
 ```
 
-    de: ein ich das es zu sie er die der und
+    de: ein das ich es zu sie er die der und
     en: was that in his he it of to and the
-    fr: qu que une les un il la et le de
-    nl: ik te zijn dat van hij de het een en
+    fr: vous une que les un il la et le de
+    nl: op te dat zijn hij van het de een en
 
 
 Let's see which and how many features our model has.
@@ -393,9 +393,9 @@ print('first features: %s'% feature_names[0:10])
 print('last features: %s' % feature_names[-10:])
 ```
 
-    number of features: 800
-    first features: ['aan' 'aber' 'about' 'after' 'again' 'ah' 'ai' 'air' 'al' 'all']
-    last features: ['zu' 'zurück' 'zwei' 'écria' 'étaient' 'était' 'été' 'één' 'être' 'über']
+    number of features: 817
+    first features: ['aan' 'aber' 'about' 'achter' 'after' 'again' 'ah' 'ai' 'ainsi' 'air']
+    last features: ['zum' 'zur' 'zwei' 'écria' 'étaient' 'était' 'été' 'één' 'être' 'über']
 
 
 ### New data
@@ -420,11 +420,11 @@ for i, p in enumerate(predicted):
     
 ```
 
-    Hallo mein Name ist Hugo.  -->  de , prob: 0.7796210816857256
-    Hi my name is Hugo.  -->  en , prob: 0.8543270254884647
-    Bonjour mon nom est Hugo.  -->  fr , prob: 0.9444131155987668
-    Hallo mijn naam is Hugo.  -->  nl , prob: 0.8469677320165346
-    Eins, zwei und drei.  -->  de , prob: 0.9503095392082924
-    One, two and three.  -->  en , prob: 0.9685119763393646
-    Un, deux et trois.  -->  fr , prob: 0.9877044252659507
-    Een, twee en drie.  -->  nl , prob: 0.9711632752200153
+    Hallo mein Name ist Hugo.  -->  de , prob: 0.8599374595686342
+    Hi my name is Hugo.  -->  en , prob: 0.8389680618600759
+    Bonjour mon nom est Hugo.  -->  fr , prob: 0.9450962636502478
+    Hallo mijn naam is Hugo.  -->  nl , prob: 0.7419758496214637
+    Eins, zwei und drei.  -->  de , prob: 0.9300140817067337
+    One, two and three.  -->  en , prob: 0.974303626238427
+    Un, deux et trois.  -->  fr , prob: 0.9839050551915476
+    Een, twee en drie.  -->  nl , prob: 0.9708074869044301

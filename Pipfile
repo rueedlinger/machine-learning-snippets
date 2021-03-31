@@ -26,6 +26,9 @@ nbdime = "*"
 tensorflow = "*"
 umap-learn = "*"
 numba = "*"
+tensorflow-hub = "*"
+scikit-image = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.8"
