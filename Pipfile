@@ -29,6 +29,10 @@ numba = "*"
 tensorflow-hub = "*"
 scikit-image = "*"
 pillow = "*"
+transformers = "*"
+datasets = "*"
+ipywidgets = "*"
+jupyterlab-widgets = "*"
 
 [requires]
 python_version = "3.8"

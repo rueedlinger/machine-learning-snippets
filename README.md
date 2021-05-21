@@ -30,6 +30,18 @@ You can start `jupyter-lab` to play around with the Juypter notebooks.
 pipenv run jupyter-lab
 ```
 
+### Upgrade Python Packages
+Check which packages have changed.
+
+```
+pipenv update --outdated
+```
+
+This will upgrade everything.
+
+```bash
+pipenv update
+```
 # The Snippets...
 
 The following machine learning snippets are available as Jupyter Notebook.
